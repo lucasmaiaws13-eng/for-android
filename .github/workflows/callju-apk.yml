@@ -1,0 +1,58 @@
+name: APK do Callju
+
+# Gera o APK e publica quando uma versao e marcada.
+#
+# O APK sai assinado com a chave de depuracao do proprio Android, que e o
+# suficiente para instalar direto no celular. Nao usamos chave de release
+# porque ela exigiria guardar um keystore em segredo do repositorio, e por
+# enquanto nao vamos para a Play Store.
+#
+# Consequencia que vale saber: APK de depuracao nao atualiza por cima de um
+# APK assinado de outro jeito. Enquanto ficarmos so nesta chave, atualizar e
+# so instalar o novo por cima, sem desinstalar.
+
+on:
+  push:
+    tags:
+      - "android-v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apk:
+    name: Compilar o APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o codigo
+        uses: actions/checkout@v4
+
+      - name: Preparar o Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Preparar o Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Compilar
+        run: ./gradlew assembleDebug --no-daemon
+
+      - name: Achar o APK
+        id: apk
+        run: echo "caminho=$(find . -name '*-debug.apk' | head -1)" >> "$GITHUB_OUTPUT"
+
+      - name: Publicar
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.apk.outputs.caminho }}
+          name: ${{ github.ref_name }}
+          body: |
+            APK do Callju para Android.
+
+            Baixe o arquivo `.apk` e abra no celular. O Android vai pedir
+            permissao para instalar de fora da loja, o que e esperado: nao
+            estamos na Play Store.

@@ -96,7 +96,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data android:scheme="https" />
-                <data android:host="stoat.chat" />
+                <data android:host="callju.online" />
                 <data android:pathPattern="/channel/.........................." />
                 <data android:pathPattern="/channel/........................../.........................." />
                 <data android:pathPattern="/server/.........................." />
@@ -150,7 +150,7 @@
                 <data android:scheme="http" />
                 <data android:scheme="https" />
 
-                <data android:host="stoat.chat" />
+                <data android:host="callju.online" />
 
                 <data android:pathPrefix="/invite/" />
             </intent-filter>
