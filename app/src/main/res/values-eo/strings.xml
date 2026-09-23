@@ -16,8 +16,8 @@
     <string name="resend_verification">Resendi konfirman retpoŝton</string>
     <string name="password_manager_hint">Ĉu vi uzas pasvortadministrilon\?</string>
     <string name="password_forgot_heading">Ĉu vi forgesis vian pasvorton\?</string>
-    <string name="register_heading">Bonvenon al Revolt</string>
-    <string name="register_image_alt">Uzu Revolt por babili pri aferoj.</string>
+    <string name="register_heading">Bonvenon al Callju</string>
+    <string name="register_image_alt">Uzu Callju por babili pri aferoj.</string>
     <string name="register_email">Retpoŝto</string>
     <string name="register_password">Pasvorto</string>
     <string name="register_password_rules">Ok aŭ pli, komunoj estas malbonaj. Simboloj kaj nombroj estas rekomenditaj.</string>
@@ -41,7 +41,7 @@
     <string name="loading">Ŝarĝante iujn informojn, restu tie…</string>
     <string name="terms_of_service">Uzokondiĉoj</string>
     <string name="privacy_policy">Privateca Politiko</string>
-    <string name="login_onboarding_body">Revolt estas unu el la plej bonaj manieroj resti konektita kun viaj amikoj kaj komunumo, ie ajn, iam ajn.</string>
+    <string name="login_onboarding_body">Callju estas unu el la plej bonaj manieroj resti konektita kun viaj amikoj kaj komunumo, ie ajn, iam ajn.</string>
     <string name="password_forgot_instructions">Enigu vian retpoŝton kaj ni sendos al vi instrukciojn pri kiel reagordi vian pasvorton.</string>
     <string name="register_instructions">Ĝi estas kiel loko por malstreĉiĝi, kunveni kaj paroli pri aferoj. Plej bona parto, ĝi estas en la interreto.</string>
     <string name="register_form_heading">Ni agordu vin.</string>
@@ -56,9 +56,9 @@
     <string name="mfa_recovery_header">Enigu realiran kodon</string>
     <string name="mfa_password_header">Enigu vian pasvorton</string>
     <string name="mfa_password_lead">Enigu vian pasvorton por daŭrigi.</string>
-    <string name="about_brought_to_you_by">Alportis al vi kun ❤️ de la Revolt teamo.</string>
-    <string name="oss_attribution_body">Revolt estas konstruita per la helpo de ĉi tiuj mirindaj malfermitkodaj projektoj.</string>
-    <string name="about_full_name">Revolt en Android</string>
+    <string name="about_brought_to_you_by">Alportis al vi kun ❤️ de la Callju teamo.</string>
+    <string name="oss_attribution_body">Callju estas konstruita per la helpo de ĉi tiuj mirindaj malfermitkodaj projektoj.</string>
+    <string name="about_full_name">Callju en Android</string>
     <string name="about_tab_version">Versio</string>
     <string name="about_tab_details">Detaloj</string>
     <string name="oss_attribution">Atribuo de OSS</string>
@@ -165,7 +165,7 @@
     <string name="status_dnd">Ne Disturbi</string>
     <string name="status_offline">Senkonekte</string>
     <string name="status_invisible">Nevidebla</string>
-    <string name="status_invisible_explainer">Vi povos uzi Revolt kiel ordinare, sed vi ne aperos konektite al aliaj personoj.</string>
+    <string name="status_invisible_explainer">Vi povos uzi Callju kiel ordinare, sed vi ne aperos konektite al aliaj personoj.</string>
     <string name="no_connection">Neniu retkonekto</string>
     <string name="tap_to_retry">Premu por reprovi</string>
     <string name="scroll_to_bottom">Rulumi ĝis malsupre</string>
@@ -220,7 +220,7 @@
     <string name="user_info_sheet_category_owner">Posedanto</string>
     <string name="user_badge_supporter">Adepto</string>
     <string name="user_badge_early_adopter">Frua Ekuzanto</string>
-    <string name="discover">Malkovri Revolt</string>
+    <string name="discover">Malkovri Callju</string>
     <string name="report">Raporti</string>
     <string name="report_cancel">Nuligi</string>
     <string name="report_message_preview">Selektita mesaĝo :</string>
@@ -230,7 +230,7 @@
     <string name="reply_mention_on">\@ ŝaltita</string>
     <string name="reply_mention_off">\@ malŝaltita</string>
     <string name="badge_bot_alt">Roboto</string>
-    <string name="badge_team_member_alt">Revolt teamo membro</string>
+    <string name="badge_team_member_alt">Callju teamo membro</string>
     <string name="friends_outgoing_requests">Elirantaj Petoj</string>
     <string name="friends_incoming_requests">Alvenintaj Petoj</string>
     <string name="friends_deny_all_incoming">Forigi ĉiojn alvenintajn petojn</string>
@@ -276,7 +276,7 @@
     <string name="attachment_preview_spoiler">Marki kiel kaŝindaĵo</string>
     <string name="overview_screen_changelog">Ŝanĝregistro</string>
     <string name="overview_screen_share_profile_description">Rigardu vian uzantkarton kaj ricevu specialan ligilon por dissendi</string>
-    <string name="overview_screen_changelog_description">Revolt neniam dormas, rigardu kio estas en procezo</string>
+    <string name="overview_screen_changelog_description">Callju neniam dormas, rigardu kio estas en procezo</string>
     <string name="overview_screen_feedback">Donu komenton</string>
     <string name="overview_screen_feedback_description">Ĉu vi volas diri ion? Ni tute aŭdas</string>
     <string name="user_card_tap_to_copy">Tuŝi por kopii</string>

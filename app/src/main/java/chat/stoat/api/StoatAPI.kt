@@ -106,7 +106,7 @@ val StoatHttp = HttpClient(OkHttp) {
 
     val chuckerCollector = ChuckerCollector(
         context = StoatApplication.instance,
-        showNotification = true,
+        showNotification = false,
         retentionPeriod = RetentionManager.Period.ONE_DAY
     )
 

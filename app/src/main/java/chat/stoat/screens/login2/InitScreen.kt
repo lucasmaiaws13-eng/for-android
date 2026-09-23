@@ -101,21 +101,17 @@ private fun LeadPart(windowSizeClass: WindowSizeClass) {
         Image(
             painter = painterResource(R.drawable.stoat_logo_white),
             contentDescription = null,
-            colorFilter = ColorFilter.tint(
-                MaterialTheme.colorScheme.onBackground
-            ),
-            modifier = if (windowSizeClass.widthSizeClass <= WindowWidthSizeClass.Compact)
-                Modifier.fillMaxWidth(0.5f) else Modifier.height(32.dp)
+            modifier = Modifier.height(96.dp)
         )
         Spacer(modifier = Modifier.height(64.dp))
         Text(
-            "Find your community", // FIXME hardcoded string
+            "Chama a galera",
             style = MaterialTheme.typography.headlineMedium,
             textAlign = TextAlign.Center
         )
         Spacer(modifier = Modifier.height(16.dp))
         Text(
-            "Stoat is the chat app that’s truly built with you in mind.", // FIXME hardcoded string
+            "O Callju e o nosso canto para conversar, jogar e ficar junto.",
             style = MaterialTheme.typography.bodyLarge,
             fontSize = 18.sp,
             textAlign = TextAlign.Center
@@ -167,15 +163,5 @@ private fun LinkPart(windowSizeClass: WindowSizeClass) {
             url = "$STOAT_MARKETING/aup"
         )
 
-        if (BuildConfig.DEBUG) {
-            AnyLink(
-                text = "Debug: Chucker",
-                action = {
-                    Chucker.getLaunchIntent(context).apply {
-                        context.startActivity(this)
-                    }
-                }
-            )
-        }
     }
 }

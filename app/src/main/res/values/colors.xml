@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#FFFF005C</color>
-    <color name="background">#FF131722</color>
-    <color name="splashscreen_background">#FF2A233A</color>
-    <color name="foreground">#FF000000</color>
+    <color name="primary">#FFE8823C</color>
+    <color name="background">#FF0C0C0E</color>
+    <color name="splashscreen_background">#FF0C0C0E</color>
+    <color name="foreground">#FFEDEDF0</color>
 </resources>

@@ -123,9 +123,8 @@ fun AboutScreen(navController: NavController, viewModel: AboutViewModel = viewMo
                 Image(
                     painter = painterResource(R.drawable.stoat_logo_white),
                     contentDescription = stringResource(R.string.about_full_name),
-                    colorFilter = ColorFilter.tint(LocalContentColor.current),
                     modifier = Modifier
-                        .width(250.dp)
+                        .height(120.dp)
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))

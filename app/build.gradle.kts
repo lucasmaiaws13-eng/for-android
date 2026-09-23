@@ -252,7 +252,10 @@ dependencies {
 
     implementation(libs.shimmer)
 
-    debugImplementation(libs.chucker)
+    // A versao cheia do Chucker grava todo o trafego e deixa aviso fixo na
+    // barra de notificacoes. Como o Callju e entregue no build de depuracao,
+    // aqui tambem entra a versao vazia: mesmas funcoes, sem gravar nada.
+    debugImplementation(libs.chucker.noop)
     releaseImplementation(libs.chucker.noop)
 
     implementation(libs.square.logcat)

@@ -303,7 +303,14 @@ class ChatRouterViewModel(
         }
     }
 
+    /**
+     * O Callju nao tem o servico de novidades do projeto original, entao essa
+     * busca so gastava um pedido a cada abertura do aplicativo.
+     */
+    private val temNovidades = false
+
     fun maybeShowChangelog() {
+        if (!temNovidades) return
         if (changelogCheckDone) return
         changelogCheckDone = true
 

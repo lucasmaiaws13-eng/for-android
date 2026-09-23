@@ -222,10 +222,9 @@ fun systemSupportsDynamicColors(): Boolean {
 }
 
 fun getDefaultTheme(): Theme {
-    return when {
-        systemSupportsDynamicColors() -> Theme.M3Dynamic
-        else -> Theme.Default
-    }
+    // O padrao e o preto do Callju. Quem quiser a cor do papel de parede
+    // ainda escolhe isso nas configuracoes de aparencia.
+    return Theme.Default
 }
 
 fun isThemeDark(theme: Theme, systemIsDark: Boolean): Boolean {

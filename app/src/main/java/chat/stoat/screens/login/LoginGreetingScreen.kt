@@ -72,8 +72,7 @@ fun LoginGreetingScreen(navController: NavController) {
         ) {
             Image(
                 painter = painterResource(id = R.drawable.stoat_logo_white),
-                colorFilter = ColorFilter.tint(LocalContentColor.current),
-                contentDescription = "Stoat",
+                contentDescription = "Callju",
                 contentScale = ContentScale.Fit,
                 modifier = Modifier
                     .height(100.dp)
@@ -178,32 +177,6 @@ fun LoginGreetingScreen(navController: NavController) {
 
             Spacer(modifier = Modifier.height(40.dp))
 
-            CompositionLocalProvider(
-                LocalTextStyle provides LocalTextStyle.current.copy(textAlign = TextAlign.Center)
-            ) {
-                Weblink(
-                    text = stringResource(R.string.terms_of_service),
-                    url = "$STOAT_MARKETING/terms"
-                )
-                Weblink(
-                    text = stringResource(R.string.privacy_policy),
-                    url = "$STOAT_MARKETING/privacy"
-                )
-                Weblink(
-                    text = stringResource(R.string.community_guidelines),
-                    url = "$STOAT_MARKETING/aup"
-                )
-                if (BuildConfig.DEBUG) {
-                    AnyLink(
-                        text = "Debug: Chucker",
-                        action = {
-                            Chucker.getLaunchIntent(context).apply {
-                                context.startActivity(this)
-                            }
-                        }
-                    )
-                }
-            }
         }
     }
 }
