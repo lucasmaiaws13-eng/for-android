@@ -1,6 +1,6 @@
 # 02 — Guia da apresentação
 
-> **Aula:** Prompt bom é briefing bom · Boas práticas de prompt e de Lovable para criar landing pages · Agência Mestre
+> **Treinamento:** Criação de LPs com IA · Prompts para criar páginas incríveis no Lovable · Agência Mestre
 > **Deck:** `apresentacao/index.html` (Chrome) · 28 slides + 8 extras · **cerca de 24 minutos falados**, com folga para a sala participar
 > **A história em uma frase:** com o mesmo cliente, o mesmo briefing e os mesmos textos, um pedido simples deu uma LP genérica e um prompt bem feito deu uma LP incrível. A aula destrincha como a página incrível foi feita: os 5 passos do prompt, como a IA lê, planejar antes e saber alterar.
 

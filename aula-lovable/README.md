@@ -1,6 +1,6 @@
 # Aula: IA para criação de LPs com Lovable · Agência Mestre
 
-> **Ideia central:** *Prompt bom é briefing bom.* Com o mesmo cliente, o mesmo briefing e os mesmos textos, um pedido simples deu uma LP genérica e um prompt bem feito deu uma LP incrível. A aula destrincha como: os 5 passos do prompt, como a IA lê, planejar antes de construir e saber alterar.
+> **Treinamento:** *Criação de LPs com IA · Prompts para criar páginas incríveis no Lovable.* Com o mesmo cliente, o mesmo briefing e os mesmos textos, um pedido simples deu uma LP genérica e um prompt bem feito deu uma LP incrível. A aula destrincha como: os 5 passos do prompt, como a IA lê, planejar antes de construir e saber alterar.
 
 30 minutos + perguntas · público geral da agência.
 
@@ -58,7 +58,6 @@ Se mudar textos do deck, mantenha as regras da Mestre: título termina com ponto
 > 📌 **Guia de bolso**: o modelo de prompt, as palavras que destravam o uau e os pedidos de ajuste → [anexar guia]
 > 🤖 **Agente de prompt**: responda as perguntas sobre o cliente e receba o prompt pronto para o Lovable → lucasmaiadesign.com/agente-ia
 > 💡 Desafio: na próxima LP, usem o checklist e mandem o antes e depois aqui!
-> Prompt bom é briefing bom.
 
 ---
 
