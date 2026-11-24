@@ -1,7 +1,7 @@
 # 02 — Guia da apresentação
 
 > **Treinamento:** Criação de LPs com IA · Prompts para criar páginas incríveis no Lovable · Agência Mestre
-> **Deck:** `apresentacao/index.html` (Chrome) · 28 slides + 8 extras · **cerca de 24 minutos falados**, com folga para a sala participar
+> **Deck:** `apresentacao/index.html` (Chrome) · 28 slides + 9 extras · **cerca de 24 minutos falados**, com folga para a sala participar
 > **A história em uma frase:** com o mesmo cliente, o mesmo briefing e os mesmos textos, um pedido simples deu uma LP genérica e um prompt bem feito deu uma LP incrível. A aula destrincha como a página incrível foi feita: os 5 passos do prompt, como a IA lê, planejar antes e saber alterar.
 
 ---
@@ -14,6 +14,7 @@
 | ← | Volta |
 | **N** | Notas do apresentador |
 | **F** | Tela cheia |
+| **G** | Grade com todos os slides (clique para ir direto) |
 
 - Depois da abertura, a aula tem **4 partes**, cada uma com capa. A faixa no rodapé da capa mostra em que parte vocês estão.
 - Nos 5 passos, o medidor no rodapé mostra **o prompt da página linda crescendo**.
@@ -147,7 +148,9 @@ Aponte as demos: objeto 3D que reage ao mouse, texto que acende no scroll, seç�
 "Dez itens antes de mandar o prompt. Está no guia de bolso." Lance o desafio: na próxima LP, mandar o antes e depois no grupo.
 
 **28 · Perguntas**
-Extras: idioma (29), cliente sem brandbook (30), 3D no Lovable (31), site de concorrente (32), pixel/LGPD/SEO (33), performance (34), memória do Lovable (35), o primeiro resultado é o esqueleto (36).
+Extras: idioma (29), cliente sem brandbook (30), 3D no Lovable (31), site de concorrente (32), pixel/LGPD/SEO (33), **integração com o RD Station (34)**, performance (35), memória do Lovable (36), o primeiro resultado é o esqueleto (37).
+
+Para pular direto para um extra, aperte **G** (ou o botão "Slides") e clique no slide.
 
 ---
 

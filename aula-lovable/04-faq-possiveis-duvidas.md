@@ -1,6 +1,6 @@
 # 05 — Possíveis dúvidas (com respostas)
 
-> Respostas para o apresentador. As marcadas com **[slide N]** têm slide extra no deck (slides 29 a 36, ver `02-guia-da-apresentacao.md`).
+> Respostas para o apresentador. As marcadas com **[slide N]** têm slide extra no deck (slides 29 a 37, ver `02-guia-da-apresentacao.md`).
 > Informações do Lovable conferidas na documentação oficial em nov/2026. O produto muda rápido: se algo estiver diferente na tela, a lógica continua valendo.
 
 ---
@@ -64,12 +64,18 @@ Pelo chat do Lovable: anexe até 10 arquivos por mensagem (PDF, imagens, Word, P
 **"Dá para mudar um detalhe sem reescrever o prompt?"**
 Sim: no preview, use *Select elements* (seleciona o elemento e descreve a mudança), *Edit text inline* (edita o texto direto) ou *Draw* (rabisca por cima). Apontar é mais rápido e mais preciso que descrever.
 
-**"O que são Instructions e Skills?" [slide 35]**
+**"O que são Instructions e Skills?" [slide 36]**
 - **Instructions** (antigo *Knowledge*): uma memória fixa que vai em toda mensagem. Três níveis: workspace (regras da agência, só admins editam, até 10 mil caracteres), projeto (o cliente) e pessoal.
 - **Skills:** "playbooks" sob demanda, chamados com `/` ou aplicados quando o pedido combina. Deixamos prontas a `/lp-brief` e a `/revisao-lp` (pasta `05-material-pos-aula/bonus-lovable-da-agencia/`).
 
 **"Onde caem os leads do formulário?"**
 O Lovable pode salvar os envios num banco de dados do próprio projeto (Lovable Cloud) e há conectores para ferramentas de e-mail, CRM e automação. Para campanha de verdade, combine com o time responsável pela integração (CRM, régua) e teste o envio de ponta a ponta antes de subir mídia.
+
+**"Como integro o RD Station com a LP do Lovable?" [slide 34]**
+É simples, e tem dois caminhos:
+- **Recomendado, API do RD:** mantém o formulário com o visual da LP. Pegue a chave de API pública do RD Station Marketing (em Integrações) e peça ao Lovable: "Ao enviar o formulário, mande os campos para o RD Station pela API de conversões (api.rd.services/platform/conversions), com o identificador [nome-da-campanha]. Guarde a chave do RD como secret e envie pelo backend. Mostre a mensagem de sucesso só depois que o RD confirmar."
+- **Mais rápido, formulário do próprio RD:** crie o formulário no RD, copie o código de incorporação e peça ao Lovable para colocá-lo no lugar do formulário. Funciona na hora, mas o visual fica o do RD.
+- **Sempre:** mande um lead de teste e confira no RD se ele chegou com o identificador certo. Para rastrear visitas e a jornada do lead, peça para incluir o código de monitoramento do RD na página. Combine o identificador de conversão com quem cuida da automação.
 
 **"E pixel, GTM, LGPD, SEO?" [slide 33]**
 - **LGPD:** peça no bloco R o checkbox de consentimento e o link da política de privacidade.
@@ -89,7 +95,7 @@ Duplique (*remix*) o projeto e mude só uma variável por vez (headline, hero, C
 
 ## Sobre design e performance
 
-**"Animação não deixa a página pesada?" [slide 34]**
+**"Animação não deixa a página pesada?" [slide 35]**
 Pode deixar. Por isso o carimbo pede mobile-first, página rápida e respeito ao "reduzir movimento". Um momento uau bem escolhido pesa menos que dez efeitos espalhados. 3D completo (Three.js/Spline) é o mais pesado: use em produto/tech, com moderação. Teste sempre no celular. Para mídia isso importa em dinheiro: página lenta derruba conversão (o guia de tendências do Lovable cita que 53% dos usuários de celular abandonam páginas que demoram mais de 3 s).
 
 **"E as imagens?"**

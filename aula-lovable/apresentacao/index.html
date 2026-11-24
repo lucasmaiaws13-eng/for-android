@@ -534,6 +534,23 @@ button.lpbtn::after{display:none}
 #lpov .lpbar button{background:var(--paper);color:var(--ink);border-color:var(--paper)}
 #lpov iframe{flex:1;width:100%;border:0;background:#fff}
 
+/* grade de slides */
+#grid{position:fixed;inset:0;z-index:150;background:#0a0a0a;overflow-y:auto;opacity:0;transition:opacity .3s var(--kease)}
+#grid[hidden]{display:none}
+#grid.on{opacity:1}
+#grid .ghd{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:16px 28px;background:rgba(10,10,10,.92);border-bottom:1px solid #222;font:600 14px var(--font);color:var(--paper);letter-spacing:.04em}
+#grid .ghd button{font:600 12px var(--font);letter-spacing:.14em;text-transform:uppercase;background:var(--paper);color:var(--ink);border:0;padding:8px 12px;cursor:pointer}
+#grid .gwrap{display:grid;grid-template-columns:repeat(auto-fill,320px);gap:28px 22px;justify-content:center;padding:28px}
+.thumb{background:none;border:0;padding:0;cursor:pointer;text-align:left;font:500 13px/1.35 var(--font);color:var(--grey-d)}
+.thumb .tb{width:320px;height:180px;overflow:hidden;position:relative;outline:1px solid #262626;transition:outline-color .2s,transform .2s}
+.thumb:hover .tb{outline:2px solid var(--paper);transform:translateY(-2px)}
+.thumb.cur .tb{outline:2px solid var(--paper)}
+.thumb .tin{width:1600px;height:900px;transform:scale(.2);transform-origin:0 0;position:relative;pointer-events:none}
+.thumb .tin *,.thumb .tin *::before,.thumb .tin *::after{animation:none!important;transition:none!important}
+.thumb .cap{display:flex;gap:10px;margin-top:9px}
+.thumb .cap b{color:var(--paper);font-weight:700;min-width:22px}
+.thumb .cap span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
 </style>
 </head>
 <body>
@@ -1130,6 +1147,18 @@ No celular, 3D mais leve. Com "reduzir movimento", versão estática e completa.
 </section>
 
 <!-- 34 -->
+<section class="sl light" data-name="extra-rd">
+  <div class="kicker" data-a style="--d:0">Extra · RD Station</div>
+  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Como ligar a LP do Lovable ao RD Station?</span></h2>
+  <div class="cols c3 mt3" style="gap:40px">
+    <div data-a style="--d:2"><hr class="hr forte"><div class="t-md b mt2">Recomendado: API do RD</div><p class="t-body mt1">Mantém o formulário com o visual da LP. Pegue a chave de API pública no RD (Integrações) e peça ao Lovable para enviar cada cadastro para a API de conversões, com um identificador da campanha.</p></div>
+    <div data-a style="--d:3"><hr class="hr forte"><div class="t-md b mt2">Mais rápido: formulário do RD</div><p class="t-body mt1">Crie o formulário no RD, copie o código de incorporação e peça ao Lovable para colocá-lo no lugar do formulário. Funciona na hora, mas o visual fica o do RD.</p></div>
+    <div data-a style="--d:4"><hr class="hr forte"><div class="t-md b mt2">Sempre: teste</div><p class="t-body mt1">Mande um lead de teste e confira no RD se chegou com o identificador certo. Para rastrear visitas, peça para incluir o código de monitoramento do RD.</p></div>
+  </div>
+  <div class="inkbox mt3" data-a style="--d:5"><div class="lbl">Peça assim</div><p class="t-md mt1" style="font-size:20px">"Ao enviar o formulário, mande nome, e-mail e a resposta de plantas para o RD Station pela API de conversões, com o identificador <span class="b">ebook-selva-de-ape</span>. Guarde a chave do RD como secret e envie pelo backend. Mostre a mensagem de sucesso só depois que o RD confirmar."</p></div>
+  <aside class="notes"><ul><li>É simples: a chave pública do RD fica em Integrações. O Lovable faz a chamada para a API de conversões (api.rd.services/platform/conversions).</li><li>Guardar a chave como secret, no backend do Lovable, evita deixar a chave exposta no código da página.</li><li>O identificador de conversão é o que aparece no RD para separar os leads de cada campanha. Combine o nome com quem cuida da automação.</li></ul></aside>
+</section>
+
 <section class="sl light" data-name="extra-peso">
   <div class="kicker" data-a style="--d:0">Extra · Performance</div>
   <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">3D e animação não deixam a página pesada?</span></h2>
@@ -1178,8 +1207,9 @@ No celular, 3D mais leve. Com "reduzir movimento", versão estática e completa.
 </div></div>
 
 <div id="prog"></div>
-<div id="ui"><button id="bprev" aria-label="Anterior">‹</button><button id="bnext" aria-label="Próximo">›</button><span id="count">1 / 1</span><span class="sp"></span><button id="bnotes">Notas (N)</button><button id="bfull">Tela cheia (F)</button></div>
+<div id="ui"><button id="bprev" aria-label="Anterior">‹</button><button id="bnext" aria-label="Próximo">›</button><span id="count">1 / 1</span><span class="sp"></span><button id="bgrid">Slides (G)</button><button id="bnotes">Notas (N)</button><button id="bfull">Tela cheia (F)</button></div>
 <div id="lpov" hidden><div class="lpbar"><b id="lpt"></b><a id="lpnew" target="_blank" rel="noopener">Abrir em nova aba</a><button id="lpx">Fechar · Esc</button></div><iframe id="lpf" title="Landing page"></iframe></div>
+<div id="grid" hidden></div>
 <div id="notes" hidden><h4 id="ntitle">Notas</h4><div id="nbody"></div></div>
 
 <script>
@@ -1228,7 +1258,36 @@ const ov=document.getElementById('lpov'),lpf=document.getElementById('lpf');
 function openLP(u,t){document.getElementById('lpt').textContent=t||'Landing page';document.getElementById('lpnew').href=u;lpf.src=u;ov.hidden=false;requestAnimationFrame(()=>ov.classList.add('on'));}
 function closeLP(){ov.classList.remove('on');setTimeout(()=>{ov.hidden=true;lpf.src='about:blank'},350);}
 document.getElementById('lpx').onclick=closeLP;
-addEventListener('keydown',e=>{if(!ov.hidden){if(e.key==='Escape')closeLP();return}if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();next()}else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();prev()}
+const grid=document.getElementById('grid');
+function buildGrid(){
+  if(grid.dataset.built)return;
+  grid.innerHTML='<div class="ghd"><span>Todos os slides</span><button id="gx">Fechar · Esc</button></div><div class="gwrap"></div>';
+  const w=grid.querySelector('.gwrap');
+  slides.forEach((sl,i)=>{
+    const c=sl.cloneNode(true);c.classList.add('active');
+    c.querySelectorAll('.notes').forEach(n=>n.remove());
+    c.querySelectorAll('[data-step],[data-stepc]').forEach(e=>e.classList.add('shown'));
+    c.querySelectorAll('[data-hl]').forEach(e=>e.classList.add('on'));
+    const av=c.querySelector('#avg');if(av)av.classList.add('merged');
+    const dc=c.querySelector('#bdoc');if(dc)dc.classList.add('filled');
+    c.querySelectorAll('[data-count]').forEach(e=>e.textContent=(+e.dataset.count).toLocaleString('pt-BR'));
+    c.querySelectorAll('video').forEach(v=>{const im=document.createElement('img');im.src='assets/espetacular-hero.webp';im.style.cssText='width:100%;display:block';v.replaceWith(im)});
+    c.querySelectorAll('img').forEach(im=>im.loading='lazy');
+    c.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));
+    const h=sl.querySelector('h1,h2');let t=sl.dataset.name;if(h){const hc=h.cloneNode(true);hc.querySelectorAll('br').forEach(x=>x.replaceWith(' '));t=hc.textContent.replace(/\s+/g,' ').trim()}
+    const b=document.createElement('button');b.className='thumb';b.dataset.i=i;
+    b.innerHTML='<div class="tb"><div class="tin"></div></div><div class="cap"><b>'+(i+1)+'</b><span></span></div>';
+    b.querySelector('.tin').appendChild(c);b.querySelector('.cap span').textContent=t;
+    b.onclick=()=>{closeGrid();if(i!==cur)show(i,i>cur?1:-1)};
+    w.appendChild(b);
+  });
+  grid.querySelector('#gx').onclick=closeGrid;
+  grid.dataset.built=1;
+}
+function openGrid(){buildGrid();grid.querySelectorAll('.thumb').forEach(t=>t.classList.toggle('cur',+t.dataset.i===cur));grid.hidden=false;requestAnimationFrame(()=>{grid.classList.add('on');const c=grid.querySelector('.thumb.cur');if(c)c.scrollIntoView({block:'center'})});}
+function closeGrid(){grid.classList.remove('on');setTimeout(()=>grid.hidden=true,300);}
+document.getElementById('bgrid').onclick=()=>grid.hidden?openGrid():closeGrid();
+addEventListener('keydown',e=>{if(!ov.hidden){if(e.key==='Escape')closeLP();return}if(!grid.hidden){if(e.key==='Escape'||e.key==='g'||e.key==='G')closeGrid();return}if(e.key==='g'||e.key==='G'){openGrid();return}if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();next()}else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();prev()}
   else if(e.key==='n'||e.key==='N'){const n=document.getElementById('notes');n.hidden=!n.hidden}else if(e.key==='f'||e.key==='F'){toggleFull()}
   else if(e.key==='Home'){show(0,-1)}else if(e.key==='End'){show(slides.length-1,1)}});
 deck.addEventListener('click',e=>{const lp=e.target.closest('[data-lp]');if(lp){openLP(lp.dataset.lp,lp.dataset.lpt);return}if(e.target.closest('a,button,video'))return;const r=deck.getBoundingClientRect();(e.clientX-r.left)<r.width*.25?prev():next();});
