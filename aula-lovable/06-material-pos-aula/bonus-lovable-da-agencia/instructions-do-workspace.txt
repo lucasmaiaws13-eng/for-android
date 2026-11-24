@@ -1,0 +1,39 @@
+PADRÃO AGÊNCIA MESTRE PARA LANDING PAGES
+
+Contexto
+- Somos uma agência de marketing. A maioria das páginas deste workspace são landing pages de campanha (captação de leads, vendas, eventos) para clientes diferentes. Cada projeto é de um cliente: as Instructions do projeto e o brandbook do cliente sempre têm prioridade sobre estas regras.
+
+Idioma e texto
+- Todo texto visível em português do Brasil, no tom de voz do cliente.
+- Nunca use lorem ipsum nem texto de exemplo genérico. Se faltar texto, escreva uma versão plausível e realista e marque o que precisa de validação com [validar].
+- Nunca invente dados do cliente: preços, números, prêmios, depoimentos, garantias, registros. Use o que foi informado; o resto fica como [inserir].
+- Evite clichês: "Transforme…", "Revolucione…", "Descubra os segredos…", "O futuro de…", "solução completa e inovadora".
+- CTAs dizem exatamente o que acontece ("Agendar avaliação", "Quero o guia grátis"), nunca "Enviar" ou "Saiba mais" como ação principal.
+- Títulos e botões em sentence case (só a primeira letra maiúscula).
+
+Conversão
+- Cada página tem uma ação principal. Repita o mesmo CTA ao longo da página.
+- Formulários curtos: só os campos que serão usados. Sempre com checkbox de consentimento LGPD e link para a política de privacidade.
+- Tráfego de mídia é majoritariamente mobile: projete mobile-first, botões confortáveis para o dedo e, quando fizer sentido, CTA fixo no rodapé no celular.
+
+Design (fugir da cara de template)
+- Siga o brandbook do cliente à risca (cores, fontes, logo). Sem brandbook, proponha uma direção específica para o segmento antes de construir.
+- Não use, a menos que o cliente peça: gradiente roxo/azul decorativo, texto em gradiente, emojis como ícones ou logo, grade de cards idênticos com ícone + título + frase, selos em caixa alta acima de todos os títulos, bolhas desfocadas de fundo, numeração 01/02/03 decorativa, badges flutuando sobre o hero.
+- Não use Inter, Roboto ou Arial como escolha padrão: escolha fontes com personalidade adequadas à marca (máximo 2 famílias).
+- Use ícones de uma biblioteca consistente (lucide), nunca emojis.
+- Uma ideia por seção. Hero com, no máximo: marca, headline, frase de apoio, CTA e um elemento visual dominante.
+
+Movimento
+- Animação com intenção: uma entrada marcante no hero, um grande momento de scroll e microinterações discretas. Não aplique o mesmo efeito em todas as seções.
+- Respeite prefers-reduced-motion. Animações devem ficar suaves no celular.
+
+Qualidade técnica
+- Contraste de texto adequado (mínimo 4,5:1 para texto comum).
+- Imagens otimizadas e carregamento rápido. Evite vídeos pesados no hero mobile.
+- Título, meta descrição e imagem de compartilhamento configurados em toda página.
+- Teste a página em 390 px e em 1440 px antes de considerar uma tarefa concluída.
+
+Forma de trabalhar
+- Se faltar informação crítica (o que o cliente vende, para quem, qual a ação da página), pergunte antes de construir.
+- Em pedidos de ajuste, altere apenas o que foi pedido e preserve o resto do layout e do estilo.
+- Segmentos regulados (saúde, estética, financeiro, imobiliário, jurídico, bebidas): não prometa resultados e sinalize no chat o que precisa de validação jurídica.
