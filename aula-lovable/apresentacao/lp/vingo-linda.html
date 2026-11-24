@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selva de Apê · Vingô</title>
+<meta name="description" content="Baixe grátis o Selva de Apê, o guia da Vingô para ter plantas que não morrem, mesmo com pouca luz e pouco tempo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noite:#06140E; --noite-2:#0A1E15; --mata:#0E3B2C; --broto:#C9F264; --folha:#EEF4E6; --musgo:#3E8E4E; --anturio:#FF6F91;
+  --t2:rgba(238,244,230,.64); --t3:rgba(238,244,230,.38); --linha:rgba(238,244,230,.12); --linha-2:rgba(238,244,230,.22);
+  --ease:cubic-bezier(.16,1,.3,1);
+  --display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;
+  --body:'Figtree',ui-sans-serif,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--noite)}
+body{font-family:var(--body);color:var(--folha);background:var(--noite);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--broto);color:var(--noite)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--broto);outline-offset:4px;border-radius:4px}
+.wrap{width:min(1280px,100% - 64px);margin-inline:auto}
+@media (max-width:700px){.wrap{width:calc(100% - 36px)}}
+h1,h2,h3,.disp{font-family:var(--display);font-weight:250;letter-spacing:-.03em;line-height:.98;font-variation-settings:"opsz" 96}
+.em{font-weight:700;color:var(--broto)}
+.kick{display:flex;align-items:center;gap:14px;font:600 11px/1 var(--body);letter-spacing:.32em;text-transform:uppercase;color:var(--broto)}
+.kick::before{content:"";width:32px;height:1px;background:currentColor;opacity:.7}
+.grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.06;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;gap:14px;border-radius:999px;font:600 15px/1 var(--body);padding:8px 8px 8px 24px;cursor:pointer;border:0;transition:transform .5s var(--ease),box-shadow .5s,background .4s}
+.btn .ic{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;transition:transform .6s var(--ease)}
+.btn .ic svg{width:18px;height:18px}
+.btn-lime{background:var(--broto);color:var(--noite);box-shadow:0 0 0 0 rgba(201,242,100,.0),0 18px 50px -18px rgba(201,242,100,.55)}
+.btn-lime .ic{background:var(--noite);color:var(--broto)}
+.btn-lime:hover{transform:translateY(-2px);box-shadow:0 0 0 8px rgba(201,242,100,.12),0 22px 60px -18px rgba(201,242,100,.7)}
+.btn-lime:hover .ic{transform:rotate(-30deg)}
+.btn-ghost{background:transparent;color:var(--folha);border:1px solid var(--linha-2);padding:16px 24px}
+.btn-ghost:hover{border-color:var(--broto);color:var(--broto)}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .5s,backdrop-filter .5s,border-color .5s;border-bottom:1px solid transparent}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+nav .logo svg{height:36px;width:auto;display:block}
+nav ul{display:flex;gap:30px;list-style:none;font-size:13px;color:var(--t2)}
+nav ul a:hover{color:var(--folha)}
+nav .btn{padding:12px 20px;font-size:13px;border:1px solid var(--linha-2);background:rgba(6,20,14,.4);color:var(--folha)}
+nav .btn:hover{border-color:var(--broto);color:var(--broto)}
+nav.on{background:rgba(6,20,14,.72);backdrop-filter:blur(14px) saturate(1.3);border-color:var(--linha)}
+@media (max-width:900px){nav ul{display:none}}
+
+/* HERO */
+.hero{position:relative;height:100svh;min-height:680px;overflow:hidden;isolation:isolate}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.hero .glow{position:absolute;inset:auto -10% -40% 30%;height:90%;z-index:-2;background:radial-gradient(closest-side,rgba(62,142,78,.42),rgba(14,59,44,.25) 55%,transparent);filter:blur(10px)}
+.hero .wrap{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;padding-top:40px}
+.hero h1{font-size:clamp(52px,7.6vw,124px);max-width:9.5ch;margin-top:26px}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block;transform:translateY(110%);transition:transform 1.3s var(--ease)}
+.ready .hero h1 .ln>span{transform:none}
+.hero h1 .ln:nth-child(2)>span{transition-delay:.08s}.hero h1 .ln:nth-child(3)>span{transition-delay:.16s}
+.hero .sub{max-width:40ch;margin:28px 0 36px;color:var(--t2);font-size:18px;opacity:0;transform:translateY(16px);transition:1s .5s var(--ease)}
+.hero .row{display:flex;gap:14px;flex-wrap:wrap;opacity:0;transform:translateY(16px);transition:1s .65s var(--ease)}
+.hero .kick{opacity:0;transition:1s .2s}
+.ready .hero .sub,.ready .hero .row,.ready .hero .kick{opacity:1;transform:none}
+.facts{position:absolute;left:0;right:0;bottom:0;border-top:1px solid var(--linha)}
+.facts .wrap{display:grid;grid-template-columns:repeat(5,1fr);height:auto;padding:0}
+.facts div{padding:18px 18px 22px 0;border-right:1px solid var(--linha);font-size:13px}
+.facts div:last-child{border:0}
+.facts small{display:block;font:600 9.5px/1 var(--body);letter-spacing:.3em;text-transform:uppercase;color:var(--t3);margin-bottom:8px}
+.scrollcue{position:absolute;right:max(32px,calc((100vw - 1280px)/2));bottom:110px;writing-mode:vertical-rl;font:600 10px var(--body);letter-spacing:.4em;color:var(--t3);text-transform:uppercase}
+@media (max-width:900px){
+  .hero{height:auto;min-height:0;padding:110px 0 0;display:flex;flex-direction:column}
+  .hero .wrap{order:1}.hero canvas{order:2}.hero .facts{order:3}
+  .hero .wrap{height:auto;justify-content:flex-start}
+  .hero canvas{position:relative;display:block;height:50vh;z-index:0;margin-top:8px}
+  .facts{position:relative}
+  .facts .wrap{grid-template-columns:1fr 1fr;width:calc(100% - 36px)}
+  .facts div{border-right:0;border-bottom:1px solid var(--linha);padding:14px 0}
+  .scrollcue{display:none}
+}
+
+/* MANIFESTO */
+.manifesto{position:relative;padding:22vh 0 18vh}
+.manifesto p.disp{font-size:clamp(34px,4.6vw,72px);line-height:1.08;max-width:17ch}
+.manifesto .w{opacity:.14;transition:opacity .25s}
+.manifesto .w.em{font-weight:700}
+.manifesto .side{margin-top:56px;display:flex;gap:56px;flex-wrap:wrap;color:var(--t2);font-size:15px}
+.manifesto .side b{color:var(--folha);font-weight:600}
+
+/* NÚMEROS (fixo) */
+.nums{position:relative;height:420vh}
+.nums .stick{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;isolation:isolate}
+.nums .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;width:min(1280px,100% - 64px)}
+.bignum{position:relative;height:clamp(150px,22vw,300px)}
+.bignum .n{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;opacity:0;transform:translateY(40px);transition:opacity .7s var(--ease),transform .9s var(--ease)}
+.bignum .n.on{opacity:1;transform:none}
+.bignum .n.out{opacity:0;transform:translateY(-40px)}
+.bignum .v{font-family:var(--display);font-weight:200;font-size:clamp(110px,17vw,250px);line-height:.85;letter-spacing:-.06em;background:linear-gradient(180deg,#fff 10%,rgba(238,244,230,.55));-webkit-background-clip:text;background-clip:text;color:transparent}
+.bignum .v sup{font-size:.3em;letter-spacing:0;vertical-align:top;margin-left:.08em;color:var(--broto);-webkit-text-fill-color:var(--broto)}
+.numcap{min-height:80px;margin-top:18px;position:relative}
+.numcap p{position:absolute;inset:0;font-size:19px;color:var(--t2);max-width:30ch;opacity:0;transition:opacity .6s}
+.numcap p.on{opacity:1}
+.numlist{list-style:none;border-top:1px solid var(--linha)}
+.numlist li{display:flex;gap:18px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--linha);color:var(--t3);transition:color .5s;position:relative}
+.numlist li::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--broto);transition:width .8s var(--ease)}
+.numlist li.on{color:var(--folha)}
+.numlist li.on::after{width:100%}
+.numlist small{font:600 10px var(--body);letter-spacing:.2em;color:var(--broto);opacity:.8}
+.wire{position:absolute;right:-14vw;top:50%;width:min(1000px,90vw);transform:translateY(-50%);z-index:-1;opacity:.6}
+.wire path{fill:none;stroke-width:1.2}
+@media (max-width:900px){.nums .wrap{grid-template-columns:1fr;width:calc(100% - 36px)}.numlist{display:none}.wire{right:-50vw;opacity:.5}}
+
+/* LETREIRO */
+.marq{padding:9vh 0;border-block:1px solid var(--linha);overflow:hidden;position:relative}
+.marq .row{display:flex;width:max-content;will-change:transform}
+.marq span{font-family:var(--display);font-weight:200;font-size:clamp(48px,8vw,128px);letter-spacing:-.04em;white-space:nowrap;display:flex;align-items:center;gap:.35em;padding-right:.35em;line-height:1.1}
+.marq .row2 span{font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(238,244,230,.25)}
+.marq svg{width:.42em;height:.42em;flex:none;color:var(--broto)}
+
+/* CAPÍTULOS (horizontal) */
+.caps{position:relative}
+.caps .stick{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.caps .head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:5vh}
+.caps h2{font-size:clamp(40px,5vw,80px);max-width:14ch}
+.caps .meta{text-align:right;color:var(--t2);font-size:14px}
+.caps .meta b{display:block;font-family:var(--display);font-weight:200;font-size:56px;color:var(--folha);letter-spacing:-.04em;line-height:1}
+.track{display:flex;gap:22px;padding-left:max(32px,calc((100vw - 1280px)/2));will-change:transform}
+.cap{flex:none;width:min(360px,78vw);height:min(500px,58vh);border:1px solid var(--linha);background:linear-gradient(180deg,rgba(14,59,44,.35),rgba(6,20,14,.2));position:relative;overflow:hidden;display:flex;flex-direction:column;padding:26px;transition:border-color .5s}
+.cap:hover{border-color:rgba(201,242,100,.45)}
+.cap .no{display:flex;justify-content:space-between;font:600 10px var(--body);letter-spacing:.28em;color:var(--t3);text-transform:uppercase}
+.cap .no b{font-family:var(--display);font-weight:200;font-size:54px;letter-spacing:-.04em;color:var(--folha);line-height:.8}
+.cap .art{flex:1;display:grid;place-items:center;position:relative}
+.cap .art::before{content:"";position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(201,242,100,.16),transparent);}
+.cap .art svg{width:76%;height:auto;position:relative;overflow:visible}
+.cap .art svg *{vector-effect:non-scaling-stroke}
+.cap h3{font-size:30px;font-weight:400;letter-spacing:-.02em;margin-bottom:8px}
+.cap p{font-size:14.5px;color:var(--t2)}
+.cap.bonus{border-color:rgba(255,111,145,.45)}
+.cap.bonus .tag{position:absolute;top:22px;right:22px;background:var(--anturio);color:var(--noite);font:700 11px var(--body);padding:7px 11px;border-radius:999px;transform:rotate(6deg);letter-spacing:.06em}
+.progress{margin-top:5vh;display:flex;align-items:center;gap:18px;font:600 11px var(--body);letter-spacing:.2em;color:var(--t3)}
+.progress .bar{flex:1;height:1px;background:var(--linha);position:relative}
+.progress .bar i{position:absolute;inset:0;transform-origin:left;transform:scaleX(0);background:var(--broto)}
+
+/* TESTE DE LUZ */
+.luz{padding:20vh 0 16vh;position:relative}
+.luz .top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.luz h2{font-size:clamp(40px,5vw,80px)}
+.luz .top p{color:var(--t2);max-width:42ch}
+.seg{display:inline-flex;border:1px solid var(--linha-2);border-radius:999px;padding:5px;gap:4px;margin-top:26px}
+.seg button{font:500 14px var(--body);color:var(--t2);background:none;border:0;padding:12px 20px;border-radius:999px;cursor:pointer;transition:all .4s var(--ease)}
+.seg button[aria-selected=true]{background:var(--folha);color:var(--noite)}
+.plants{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linha);border:1px solid var(--linha)}
+.plant{background:var(--noite);padding:28px 28px 32px;min-height:400px;display:flex;flex-direction:column}
+.plant .art{flex:1;display:grid;place-items:center;position:relative;min-height:220px}
+.plant .art::before{content:"";position:absolute;inset:12% 20%;border-radius:50%;background:radial-gradient(closest-side,rgba(62,142,78,.35),transparent)}
+.plant .art svg{height:200px;position:relative}
+.plant h3{font-size:30px;font-weight:400;letter-spacing:-.02em}
+.plant p{color:var(--t2);font-size:15px;margin-top:8px}
+.plant .lv{font:600 10px var(--body);letter-spacing:.24em;color:var(--broto);text-transform:uppercase;margin-bottom:10px}
+.plant{opacity:0;transform:translateY(20px)}
+.plant.in{opacity:1;transform:none;transition:opacity .7s,transform 1s var(--ease)}
+@media (max-width:900px){.luz .top{grid-template-columns:1fr}.plants{grid-template-columns:1fr}.seg{display:grid;grid-template-columns:repeat(3,1fr);border-radius:20px;width:100%}.seg button{padding:12px 6px;font-size:13px;border-radius:16px}}
+
+/* AUTORA */
+.autora{padding:14vh 0;position:relative}
+.autora .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:5vw;align-items:center}
+.mono{position:relative;aspect-ratio:4/5;border:1px solid var(--linha);overflow:hidden;background:linear-gradient(180deg,var(--noite-2),var(--noite));isolation:isolate}
+.mono .letters{position:absolute;left:8%;bottom:30%;font-family:var(--display);font-weight:200;font-size:clamp(120px,15vw,220px);letter-spacing:-.06em;line-height:.8}
+.mono svg{position:absolute;inset:-10% -30% auto auto;width:110%;z-index:-1;opacity:.6}
+.mono .glowb{position:absolute;inset:auto 0 0 0;height:45%;background:radial-gradient(60% 90% at 70% 100%,rgba(201,242,100,.28),transparent 70%);z-index:-1}
+.mono .info{position:absolute;inset:auto 0 0 0;padding:22px 24px;border-top:1px solid var(--linha);background:rgba(6,20,14,.6);backdrop-filter:blur(6px)}
+.mono .info small{font:600 9.5px var(--body);letter-spacing:.3em;color:var(--broto);text-transform:uppercase}
+.mono .info div{font-family:var(--display);font-size:28px;font-weight:300;letter-spacing:-.02em;margin-top:6px}
+.cred{list-style:none;margin-top:26px;border-top:1px solid var(--linha)}
+.cred li{padding:14px 0;border-bottom:1px solid var(--linha);color:var(--t2);font-size:15px}
+.autora blockquote{font-family:var(--display);font-weight:250;font-size:clamp(30px,3.4vw,54px);line-height:1.1;letter-spacing:-.025em}
+
+/* PROVA */
+.prova{padding:6vh 0 18vh}
+.prova .grid{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:end;border-top:1px solid var(--linha);padding-top:8vh}
+.prova .big{font-family:var(--display);font-weight:200;font-size:clamp(90px,12vw,190px);letter-spacing:-.06em;line-height:.85}
+.prova .big sup{font-size:.28em;color:var(--broto);vertical-align:top}
+.prova .lbl{color:var(--t2);margin-top:16px;font-size:18px}
+.q{border-top:1px solid var(--linha);padding:24px 0}
+.q:last-child{border-bottom:1px solid var(--linha)}
+.q p{font-family:var(--display);font-weight:300;font-size:24px;letter-spacing:-.01em;line-height:1.25}
+.q footer{display:flex;justify-content:space-between;margin-top:14px;font-size:13px;color:var(--t3);gap:12px;flex-wrap:wrap}
+.q .pl{color:var(--broto)}
+
+/* CTA FINAL */
+.final{position:relative;padding:18vh 0 16vh;overflow:hidden;isolation:isolate}
+.final .neon{position:absolute;left:73%;top:50%;width:min(760px,110vw);transform:translate(-50%,-50%);z-index:-1}
+@media (max-width:900px){.final .neon{left:50%;top:64%;opacity:.5}}
+.final .neon path{fill:none;stroke:var(--broto);stroke-width:1.6;filter:drop-shadow(0 0 6px rgba(201,242,100,.9)) drop-shadow(0 0 22px rgba(201,242,100,.5))}
+.final .floor{position:absolute;inset:auto -20% -30% -20%;height:70%;z-index:-2;background:radial-gradient(50% 60% at 50% 100%,rgba(62,142,78,.45),transparent 70%)}
+.final .grid{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center}
+.final h2{font-size:clamp(48px,6.4vw,104px)}
+.final .lead{color:var(--t2);margin-top:22px;max-width:36ch;font-size:18px}
+.badge{position:relative;width:150px;height:150px;margin-top:44px}
+.badge svg{position:absolute;inset:0;animation:spin 22s linear infinite}
+.badge text{font:600 10.5px var(--body);letter-spacing:.34em;fill:var(--t2);text-transform:uppercase}
+.badge b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-weight:200;font-size:44px;letter-spacing:-.04em}
+@keyframes spin{to{transform:rotate(360deg)}}
+.formcard{border:1px solid var(--linha-2);background:linear-gradient(180deg,rgba(14,59,44,.55),rgba(6,20,14,.6));backdrop-filter:blur(16px);padding:36px;position:relative}
+.formcard::before{content:"";position:absolute;inset:-1px;background:linear-gradient(140deg,rgba(201,242,100,.6),transparent 40%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;padding:1px;pointer-events:none}
+.formcard small.k{font:600 10px var(--body);letter-spacing:.3em;color:var(--broto);text-transform:uppercase}
+form{display:grid;gap:16px;margin-top:20px}
+label.f{display:grid;gap:8px;font-size:13px;color:var(--t2)}
+input[type=text],input[type=email]{font:500 16px var(--body);color:var(--folha);background:rgba(238,244,230,.04);border:1px solid var(--linha-2);padding:16px;border-radius:0;transition:border-color .3s}
+input::placeholder{color:var(--t3)}
+input:focus{outline:none;border-color:var(--broto)}
+fieldset{border:0}
+legend{font-size:13px;color:var(--t2);margin-bottom:10px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills label{cursor:pointer}
+.pills input{position:absolute;opacity:0}
+.pills span{display:inline-block;padding:10px 14px;border:1px solid var(--linha-2);border-radius:999px;font-size:14px;transition:all .3s}
+.pills input:checked+span{background:var(--broto);color:var(--noite);border-color:var(--broto)}
+.pills input:focus-visible+span{outline:2px solid var(--broto);outline-offset:2px}
+.lgpd{display:flex;gap:10px;font-size:12.5px;color:var(--t3);align-items:flex-start;cursor:pointer}
+.lgpd input{accent-color:var(--broto);width:18px;height:18px;flex:none;margin-top:1px}
+form .btn{justify-content:space-between;width:100%;font-size:16px}
+.success{display:none}
+.sent form{display:none}.sent .success{display:block}
+.success h3{font-size:64px;font-weight:700;color:var(--broto);letter-spacing:-.04em}
+.success p{color:var(--t2);margin-top:12px}
+@media (max-width:900px){.final .grid,.prova .grid,.autora .grid{grid-template-columns:1fr}.formcard{padding:24px}}
+
+/* RODAPÉ */
+footer.site{border-top:1px solid var(--linha);padding:44px 0 0;overflow:hidden}
+footer.site .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12.5px;color:var(--t3)}
+footer.site .row svg{height:30px;width:auto}
+.giant{font-family:var(--display);font-weight:200;font-size:31vw;letter-spacing:-.07em;line-height:.86;color:transparent;-webkit-text-stroke:1px rgba(238,244,230,.24);text-align:center;margin-top:30px;white-space:nowrap;background:linear-gradient(180deg,rgba(201,242,100,.10),transparent 70%);-webkit-background-clip:text;background-clip:text}
+
+/* chuva de folhas */
+.rain{position:fixed;top:-60px;z-index:80;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(calc(100vh + 120px)) rotate(var(--r))}}
+
+/* revelação genérica */
+.rv{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1.2s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* CTA fixo mobile */
+.mcta{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:none;transform:translateY(160%);transition:transform .6s var(--ease)}
+.mcta .btn{width:100%;justify-content:space-between}
+.mcta.show{transform:none}
+@media (max-width:900px){.mcta{display:block}}
+
+/* movimento reduzido: tudo estático e legível */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv,.plant,.hero .sub,.hero .row,.hero .kick{opacity:1!important;transform:none!important}
+  .hero h1 .ln>span{transform:none!important}
+  .manifesto .w{opacity:1!important}
+  .nums{height:auto}.nums .stick{position:relative;height:auto;padding:12vh 0}
+  .bignum{height:auto}.bignum .n{position:relative;opacity:1;transform:none;margin-bottom:20px}
+  .numcap{display:none}.bignum .n .cap2{display:block!important}
+  .caps .stick{position:relative;height:auto;padding:14vh 0}
+  .track{flex-wrap:wrap;transform:none!important;padding:0 32px}
+}
+.cap2{display:none;color:var(--t2);margin-top:10px;max-width:34ch}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="sprout" viewBox="0 0 24 24"><path d="M12 22V11.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/><path fill="currentColor" d="M11.6 13.6C6.6 13.8 2.8 10.6 2.2 5.2 7.6 4.8 11.4 8.2 11.6 13.6Z"/><path fill="currentColor" d="M12.4 11.2C12.6 5.8 16.2 2.4 21.8 2.6 21.6 8 17.8 11.4 12.4 11.2Z"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="heart" viewBox="0 0 100 120"><path fill="currentColor" d="M50 110 C 14 84 2 50 14 28 C 24 10 44 12 50 30 C 56 12 76 10 86 28 C 98 50 86 84 50 110Z"/></symbol>
+  </defs>
+</svg>
+
+<nav id="nav"><div class="wrap">
+  <a class="logo" href="#" aria-label="Vingô"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="30 -850 2730 1080" role="img" aria-label="Vingô"><path fill="#EEF4E6" d="M181 0 8 -527H187L287 -126H304L406 -527H577L403 0ZM647 0V-528H808V0ZM728 -602Q682 -602 657.5 -621.5Q633 -641 633 -677Q633 -715 657.5 -734.5Q682 -754 728 -754Q775 -754 799.5 -734.5Q824 -715 824 -678Q824 -641 799.5 -621.5Q775 -602 728 -602ZM933 0V-318V-528H1063L1065 -373H1085Q1098 -429 1122.0 -467.0Q1146 -505 1183.0 -523.5Q1220 -542 1270 -542Q1363 -542 1411.5 -477.0Q1460 -412 1460 -270V0H1298V-252Q1298 -334 1274.5 -371.5Q1251 -409 1205 -409Q1167 -409 1142.5 -386.0Q1118 -363 1106.0 -325.0Q1094 -287 1094 -240V0ZM1789 185Q1701 185 1644.5 171.5Q1588 158 1562.0 131.5Q1536 105 1536 67Q1536 21 1572.5 -8.0Q1609 -37 1680 -41V-62Q1625 -62 1595.5 -73.0Q1566 -84 1566 -114Q1566 -142 1595.0 -165.0Q1624 -188 1691 -201V-222Q1630 -227 1594.0 -262.5Q1558 -298 1558 -356Q1558 -405 1586.0 -445.5Q1614 -486 1670.0 -510.5Q1726 -535 1810 -535H2084V-414L1917 -436V-412Q1982 -403 2010.0 -382.0Q2038 -361 2038 -323Q2038 -283 2010.5 -252.0Q1983 -221 1933.0 -203.5Q1883 -186 1814 -186Q1802 -186 1787.5 -187.0Q1773 -188 1734 -192Q1718 -178 1709.0 -168.5Q1700 -159 1700 -151Q1700 -145 1705.0 -141.0Q1710 -137 1719.5 -135.5Q1729 -134 1740 -134H1901Q1921 -134 1953.5 -131.5Q1986 -129 2018.5 -116.0Q2051 -103 2073.5 -74.0Q2096 -45 2096 9Q2096 68 2063.0 107.5Q2030 147 1962.0 166.0Q1894 185 1789 185ZM1810 57Q1868 57 1900.0 51.0Q1932 45 1944.5 32.0Q1957 19 1957 0Q1957 -18 1950.0 -28.5Q1943 -39 1932.0 -43.0Q1921 -47 1909.5 -48.0Q1898 -49 1890 -49H1761Q1724 -49 1706.5 -31.5Q1689 -14 1689 9Q1689 28 1701.0 38.5Q1713 49 1739.5 53.0Q1766 57 1810 57ZM1803 -266Q1846 -266 1867.5 -289.0Q1889 -312 1889 -347Q1889 -385 1867.0 -409.5Q1845 -434 1804 -434Q1763 -434 1740.0 -409.5Q1717 -385 1717 -347Q1717 -324 1727.0 -305.5Q1737 -287 1756.0 -276.5Q1775 -266 1803 -266ZM2426 14Q2346 14 2284.5 -17.0Q2223 -48 2188.0 -110.0Q2153 -172 2153 -265Q2153 -358 2188.0 -419.5Q2223 -481 2285.0 -511.5Q2347 -542 2427 -542Q2507 -542 2569.0 -511.0Q2631 -480 2666.0 -418.5Q2701 -357 2701 -264Q2701 -169 2665.0 -107.0Q2629 -45 2566.5 -15.5Q2504 14 2426 14ZM2431 -103Q2467 -103 2491.0 -119.5Q2515 -136 2527.0 -170.0Q2539 -204 2539 -254Q2539 -307 2526.0 -343.5Q2513 -380 2487.5 -399.5Q2462 -419 2422 -419Q2388 -419 2363.5 -402.5Q2339 -386 2327.0 -352.0Q2315 -318 2315 -267Q2315 -185 2345.5 -144.0Q2376 -103 2431 -103Z"/><g transform="translate(1027 0)"><path d="M1400 -548 C1400 -600 1398 -640 1404 -690" stroke="#C9F264" stroke-width="40" stroke-linecap="round" fill="none"/><path fill="#C9F264" d="M1401 -636 C1336 -634 1266 -684 1246 -772 C1330 -784 1394 -730 1401 -636 Z"/><path fill="#C9F264" d="M1407 -684 C1440 -770 1522 -822 1606 -812 C1596 -724 1512 -672 1407 -684 Z"/></g></svg></a>
+  <ul><li><a href="#manifesto">O guia</a></li><li><a href="#capitulos">Capítulos</a></li><li><a href="#luz">Teste de luz</a></li><li><a href="#autora">Autora</a></li></ul>
+  <a class="btn" href="#baixar">Baixar grátis</a>
+</div></nav>
+
+<header class="hero grain" id="hero">
+  <div class="glow"></div>
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="kick">E-book gratuito · Vingô</div>
+    <h1 aria-label="Chega de velório de planta."><span class="ln"><span>Chega de</span></span><span class="ln"><span>velório de</span></span><span class="ln"><span class="em">planta.</span></span></h1>
+    <p class="sub">O Selva de Apê é o guia da Vingô para escolher, regar e manter plantas vivas no apartamento, mesmo com pouca luz e pouco tempo.</p>
+    <div class="row">
+      <a class="btn btn-lime" href="#baixar">Quero o guia grátis <span class="ic"><svg><use href="#sprout"/></svg></span></a>
+      <a class="btn btn-ghost" href="#capitulos">Ver o que tem dentro</a>
+    </div>
+  </div>
+  <span class="scrollcue">Role para baixo</span>
+  <div class="facts"><div class="wrap">
+    <div><small>Formato</small>E-book em PDF</div>
+    <div><small>Tamanho</small>52 páginas</div>
+    <div><small>Conteúdo</small>7 capítulos</div>
+    <div><small>Bônus</small>Calendário de rega</div>
+    <div><small>Autora</small>Marina Okabe, bióloga</div>
+  </div></div>
+</header>
+
+<section class="manifesto" id="manifesto">
+  <div class="wrap">
+    <div class="kick rv">O guia</div>
+    <p class="disp" id="mtext" style="margin-top:34px">Sua planta não morreu por falta de amor. Morreu por falta de [manual.] O Selva de Apê é o manual que ninguém te deu, escrito para quem tem [pouco tempo] e um apê de verdade.</p>
+    <div class="side rv"><span><b>Sem jargão.</b> Explicado como uma amiga explicaria.</span><span><b>Sem culpa.</b> Planta morta ensina, a gente explica o porquê.</span><span><b>Sem enrolação.</b> 52 páginas que você lê numa tarde.</span></div>
+  </div>
+</section>
+
+<section class="nums" id="nums">
+  <div class="stick">
+    <svg class="wire" id="wire" viewBox="-20 -20 240 260" aria-hidden="true">
+      <defs><linearGradient id="wg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9F264" stop-opacity=".9"/><stop offset=".6" stop-color="#3E8E4E" stop-opacity=".35"/><stop offset="1" stop-color="#C9F264" stop-opacity=".05"/></linearGradient></defs>
+      <g id="wireg">
+        <path stroke="url(#wg)" d="M100 40 C 120 12, 170 12, 190 50 C 205 85, 190 140, 150 170 C 130 185, 112 192, 100 196 C 88 192, 70 185, 50 170 C 10 140, -5 85, 10 50 C 30 12, 80 12, 100 40 Z"/>
+        <path stroke="url(#wg)" d="M100 42 C 101 90, 101 150, 100 194 M100 196 C 100 210 98 222 94 236"/>
+        <path stroke="url(#wg)" d="M8 76 Q 50 80 93 84 M12 122 Q 50 112 95 106 M46 162 Q 70 140 96 122 M192 86 Q 152 88 107 90 M186 134 Q 150 120 105 112 M148 168 Q 128 148 104 128"/>
+        <path stroke="url(#wg)" opacity=".5" d="M100 52 C 116 28, 160 28, 178 56 C 192 86, 180 132, 146 158 C 128 172, 112 180, 100 184 C 88 180, 72 172, 54 158 C 20 132, 8 86, 22 56 C 40 28, 84 28, 100 52 Z"/>
+      </g>
+    </svg>
+    <div class="wrap">
+      <div>
+        <div class="kick">Por que funciona</div>
+        <div class="bignum" style="margin-top:30px">
+          <div class="n on"><div class="v">3<sup>sem.</sup></div><p class="cap2">É quanto uma zamioculca aguenta sem água. Sério.</p></div>
+          <div class="n"><div class="v">12</div><p class="cap2">plantas indestrutíveis, escolhidas para quem esquece de regar.</p></div>
+          <div class="n"><div class="v">10<sup>min</sup></div><p class="cap2">por semana. É a rotina que mantém tudo vivo.</p></div>
+          <div class="n"><div class="v">52</div><p class="cap2">páginas sem jargão, escritas por uma bióloga.</p></div>
+        </div>
+        <div class="numcap">
+          <p class="on">É quanto uma zamioculca aguenta sem água. Sério.</p>
+          <p>plantas indestrutíveis, escolhidas para quem esquece de regar.</p>
+          <p>por semana. É a rotina que mantém tudo vivo.</p>
+          <p>páginas sem jargão, escritas por uma bióloga.</p>
+        </div>
+      </div>
+      <ol class="numlist">
+        <li class="on"><small>01</small>Plantas que perdoam</li>
+        <li><small>02</small>As indestrutíveis</li>
+        <li><small>03</small>A rotina mínima</li>
+        <li><small>04</small>O guia inteiro</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="marq" aria-label="Desculpas clássicas">
+  <div class="row" id="m1"><span>esqueci de regar <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> reguei demais <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> pouca luz <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> o gato comeu <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> viajei dez dias <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> </span><span>esqueci de regar <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> reguei demais <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> pouca luz <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> o gato comeu <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> viajei dez dias <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> </span></div>
+  <div class="row row2" id="m2" style="margin-top:6px"><span>comprei no impulso <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> achei que era de plástico <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> sol do meio-dia <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> vaso sem furo <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> conversei pouco com ela <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> </span><span>comprei no impulso <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> achei que era de plástico <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> sol do meio-dia <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> vaso sem furo <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> conversei pouco com ela <svg viewBox="0 0 24 24"><use href="#sprout"/></svg> </span></div>
+</section>
+
+<section class="caps" id="capitulos">
+  <div class="stick">
+    <div class="wrap head">
+      <div><div class="kick">Capítulos</div><h2 style="margin-top:22px">Do primeiro vaso à <span class="em">selva inteira.</span></h2></div>
+      <div class="meta"><b>7+1</b>capítulos curtos e um bônus</div>
+    </div>
+    <div class="track" id="track"><article class="cap"><div class="no"><span>Capítulo</span><b>01</b></div><div class="art"><svg viewBox="0 0 200 200" aria-hidden="true"><rect data-d x="30" y="28" width="90" height="110" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M75 28v110M30 83h90" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path data-d d="M120 60 L176 120 M120 82 L170 150 M120 104 L160 170" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 6"/>
+<path data-d d="M140 168c0-22 6-40 18-52" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M158 116c-14 2-22 12-22 24 12 0 22-10 22-24z" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M150 150c10-8 22-8 28-2-8 8-20 8-28 2z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M128 170h44l-5 20h-34z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Que luz é essa?</h3><p>Descubra em 2 minutos a luz real de cada canto do seu apê. Spoiler: não é a que você acha.</p></article><article class="cap"><div class="no"><span>Capítulo</span><b>02</b></div><div class="art"><svg viewBox="0 0 200 200" aria-hidden="true"><path data-d d="M100 24c18 26 30 42 30 58a30 30 0 0 1-60 0c0-16 12-32 30-58z" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path data-d d="M86 86a14 14 0 0 0 14 14" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M40 150c30-8 90-8 120 0" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M50 170c26-6 74-6 100 0" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".4"/>
+<path data-d d="M118 120v34a8 8 0 0 0 16 0v-34a8 8 0 0 0-16 0z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M118 140h16" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Rega sem drama</h3><p>O teste do dedo e o fim do afogamento. Regar demais mata mais que esquecer.</p></article><article class="cap"><div class="no"><span>Capítulo</span><b>03</b></div><div class="art"><svg viewBox="0 0 200 200" aria-hidden="true"><path data-d transform="translate(30 30) scale(.3)" d="M50 110 C 14 84 2 50 14 28 C 24 10 44 12 50 30 C 56 12 76 10 86 28 C 98 50 86 84 50 110Z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d transform="translate(68 30) scale(.3)" d="M50 110 C 14 84 2 50 14 28 C 24 10 44 12 50 30 C 56 12 76 10 86 28 C 98 50 86 84 50 110Z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d transform="translate(106 30) scale(.3)" d="M50 110 C 14 84 2 50 14 28 C 24 10 44 12 50 30 C 56 12 76 10 86 28 C 98 50 86 84 50 110Z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d transform="translate(144 30) scale(.3)" d="M50 110 C 14 84 2 50 14 28 C 24 10 44 12 50 30 C 56 12 76 10 86 28 C 98 50 86 84 50 110Z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d transform="translate(30 78) scale(.3)" d="M50 110 C 14 84 2 50 14 28 C 24 10 44 12 50 30 C 56 12 76 10 86 28 C 98 50 86 84 50 110Z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d transform="translate(68 78) scale(.3)" d="M50 110 C 14 84 2 50 14 28 C 24 10 44 12 50 30 C 56 12 76 10 86 28 C 98 50 86 84 50 110Z" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d transform="translate(106 78) scale(.3)" d="M50 110 C 14 84 2 50 14 28 C 24 10 44 12 50 30 C 56 12 76 10 86 28 C 98 50 86 84 50 110Z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d transform="translate(144 78) scale(.3)" d="M50 110 C 14 84 2 50 14 28 C 24 10 44 12 50 30 C 56 12 76 10 86 28 C 98 50 86 84 50 110Z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d transform="translate(30 126) scale(.3)" d="M50 110 C 14 84 2 50 14 28 C 24 10 44 12 50 30 C 56 12 76 10 86 28 C 98 50 86 84 50 110Z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d transform="translate(68 126) scale(.3)" d="M50 110 C 14 84 2 50 14 28 C 24 10 44 12 50 30 C 56 12 76 10 86 28 C 98 50 86 84 50 110Z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d transform="translate(106 126) scale(.3)" d="M50 110 C 14 84 2 50 14 28 C 24 10 44 12 50 30 C 56 12 76 10 86 28 C 98 50 86 84 50 110Z" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d transform="translate(144 126) scale(.3)" d="M50 110 C 14 84 2 50 14 28 C 24 10 44 12 50 30 C 56 12 76 10 86 28 C 98 50 86 84 50 110Z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>As 12 indestrutíveis</h3><p>Plantas que perdoam viagem, esquecimento e segunda-feira.</p></article><article class="cap"><div class="no"><span>Capítulo</span><b>04</b></div><div class="art"><svg viewBox="0 0 200 200" aria-hidden="true"><path data-d d="M50 70h100l-14 104H64z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M44 62h112v12H44z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path data-d d="M58 100h84M60 130h80" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".5"/>
+<circle data-d cx="80" cy="150" r="5" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle data-d cx="100" cy="156" r="5" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle data-d cx="120" cy="150" r="5" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle data-d cx="90" cy="162" r="4" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle data-d cx="112" cy="164" r="4" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path data-d d="M100 174v12" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M96 186h8" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M100 62c0-20-4-34-14-44M100 62c2-18 10-30 22-36" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Vaso, terra e drenagem</h3><p>O básico que ninguém explica, incluindo por que o furo no vaso é inegociável.</p></article><article class="cap"><div class="no"><span>Capítulo</span><b>05</b></div><div class="art"><svg viewBox="0 0 200 200" aria-hidden="true"><path data-d transform="translate(18 40) scale(1.1)" d="M50 110 C 14 84 2 50 14 28 C 24 10 44 12 50 30 C 56 12 76 10 86 28 C 98 50 86 84 50 110Z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M73 73v80" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".5"/>
+<circle data-d cx="130" cy="78" r="34" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M154 102l30 30" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+<circle data-d cx="122" cy="72" r="3" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle data-d cx="136" cy="86" r="3" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle data-d cx="128" cy="92" r="2" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Pragas sem pânico</h3><p>Reconheça cochonilha, pulgão e fungo e resolva com o que já tem em casa.</p></article><article class="cap"><div class="no"><span>Capítulo</span><b>06</b></div><div class="art"><svg viewBox="0 0 200 200" aria-hidden="true"><path data-d d="M40 170c0-34 10-60 36-60s36 26 36 60z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M54 114l-6-22 18 12M98 114l6-22-18 12" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle data-d cx="66" cy="132" r="3" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle data-d cx="86" cy="132" r="3" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M112 160c18 0 26-10 30-24" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path data-d d="M150 170h36l-4 18h-28z" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M168 170c0-30 4-52 14-70M168 150c-12-6-20-18-20-32 12 4 20 16 20 32zM172 120c8-10 18-14 26-12-4 10-14 14-26 12z" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Pets e plantas</h3><p>O que é seguro para gatos e cachorros curiosos, e o que é melhor deixar no alto.</p></article><article class="cap"><div class="no"><span>Capítulo</span><b>07</b></div><div class="art"><svg viewBox="0 0 200 200" aria-hidden="true"><rect data-d x="36" y="40" width="128" height="124" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M36 70h128M68 30v20M132 30v20" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect data-d x="48" y="82" width="12" height="12" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect data-d x="70" y="82" width="12" height="12" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect data-d x="92" y="82" width="12" height="12" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect data-d x="114" y="82" width="12" height="12" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect data-d x="136" y="82" width="12" height="12" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect data-d x="48" y="106" width="12" height="12" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect data-d x="70" y="106" width="12" height="12" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect data-d x="92" y="106" width="12" height="12" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect data-d x="114" y="106" width="12" height="12" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect data-d x="136" y="106" width="12" height="12" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect data-d x="48" y="130" width="12" height="12" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect data-d x="70" y="130" width="12" height="12" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect data-d x="92" y="130" width="12" height="12" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect data-d x="114" y="130" width="12" height="12" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect data-d x="136" y="130" width="12" height="12" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M88 142l6 6 12-14" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Calendário verde</h3><p>A rotina de 10 minutos por semana que mantém tudo vivo.</p></article><article class="cap bonus"><span class="tag">BÔNUS</span><div class="no"><span>Bônus</span><b>+</b></div><div class="art"><svg viewBox="0 0 200 200" aria-hidden="true"><rect data-d x="50" y="24" width="100" height="150" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle data-d cx="100" cy="24" r="7" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path data-d d="M66 56h68M66 76h68M66 96h68M66 116h44" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".6"/>
+<path data-d d="M66 140l8 8 16-18" stroke="#C9F264" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path data-d d="M104 146h30" stroke="#EEF4E6" stroke-opacity=".85" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Calendário de rega</h3><p>Para imprimir e colar na geladeira. Sua jiboia agradece.</p></article></div>
+    <div class="wrap progress"><span id="pnum">01 / 08</span><span class="bar"><i id="pbar"></i></span><span>Role para avançar</span></div>
+  </div>
+</section>
+
+<section class="luz" id="luz">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="kick rv">Amostra do capítulo 1</div><h2 class="rv" style="margin-top:22px">Qual é a luz do <span class="em">seu apê?</span></h2></div>
+      <div class="rv"><p>Escolha a luz do seu canto preferido e veja três plantas que vão se dar bem por lá. No guia, a lista completa tem doze.</p>
+        <div class="seg" role="tablist" aria-label="Tipo de luz">
+          <button role="tab" aria-selected="true" data-k="sol">Sol direto</button>
+          <button role="tab" aria-selected="false" data-k="clara">Claridade, sem sol</button>
+          <button role="tab" aria-selected="false" data-k="pouca">Pouca luz</button>
+        </div></div>
+    </div>
+    <div class="plants" id="plants" role="tabpanel" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="autora" id="autora">
+  <div class="wrap grid">
+    <div class="mono rv" aria-hidden="true">
+      <svg viewBox="-20 -20 240 260"><g fill="none" stroke="rgba(201,242,100,.35)" stroke-width="1"><path d="M100 40 C 120 12, 170 12, 190 50 C 205 85, 190 140, 150 170 C 130 185, 112 192, 100 196 C 88 192, 70 185, 50 170 C 10 140, -5 85, 10 50 C 30 12, 80 12, 100 40 Z"/><path d="M100 42 C 101 90, 101 150, 100 194 M8 76 Q 50 80 93 84 M12 122 Q 50 112 95 106 M46 162 Q 70 140 96 122 M192 86 Q 152 88 107 90 M186 134 Q 150 120 105 112 M148 168 Q 128 148 104 128"/></g></svg>
+      <div class="glowb"></div>
+      <div class="letters">MO</div>
+      <div class="info"><small>Autora</small><div>Marina Okabe</div></div>
+    </div>
+    <div>
+      <div class="kick rv">Quem escreveu</div>
+      <blockquote class="rv" style="margin-top:26px">"Eu já matei uma costela-de-adão de tanto amor. Foi aí que entendi: <span class="em">ninguém ensina o básico.</span>"</blockquote>
+      <ul class="cred rv">
+        <li>Bióloga e cofundadora da Vingô</li>
+        <li>Responde as dúvidas de plantas da loja todos os dias</li>
+        <li>Escreveu o guia que gostaria de ter lido no primeiro apê</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="prova">
+  <div class="wrap grid">
+    <div class="rv"><div class="kick">Quem já leu</div><div class="big" style="margin-top:26px"><span id="count" data-to="18400">0</span><sup>+</sup></div><div class="lbl">pessoas já baixaram o guia. Os velórios caíram bastante.</div></div>
+    <div class="rv">
+      <figure class="q"><p>"Minha jiboia sobreviveu às minhas férias. Eu ainda não acredito."</p><footer><span>Camila, 31, Vila Mariana</span><span class="pl">1 jiboia, 2 suculentas</span></footer></figure>
+      <figure class="q"><p>"Descobri que o problema era regar demais. Seis meses sem perder nenhuma."</p><footer><span>Rafael, 36, Santana</span><span class="pl">7 plantas e contando</span></footer></figure>
+    </div>
+  </div>
+</section>
+
+<section class="final grain" id="baixar">
+  <div class="floor"></div>
+  <svg class="neon" id="neon" viewBox="-20 -20 240 260" aria-hidden="true"><path pathLength="1" d="M100 40 C 120 12, 170 12, 190 50 C 205 85, 190 140, 150 170 C 130 185, 112 192, 100 196 C 88 192, 70 185, 50 170 C 10 140, -5 85, 10 50 C 30 12, 80 12, 100 40 Z"/><path pathLength="1" d="M100 196 C 100 210 98 222 94 236"/></svg>
+  <div class="wrap grid">
+    <div class="rv">
+      <div class="kick">Download gratuito</div>
+      <h2 style="margin-top:24px">Sua selva começa <span class="em">aqui.</span></h2>
+      <p class="lead">Deixe seu nome e e-mail e o Selva de Apê chega em instantes, com o calendário de rega de bônus.</p>
+      <div class="badge" aria-hidden="true"><svg viewBox="0 0 150 150"><defs><path id="circ" d="M75 75 m-60 0 a60 60 0 1 1 120 0 a60 60 0 1 1 -120 0"/></defs><text><textPath href="#circ">grátis · 52 páginas · bônus · grátis · 52 páginas · bônus ·</textPath></text></svg><b>52</b></div>
+    </div>
+    <div class="formcard rv" id="formbox">
+      <small class="k">Selva de Apê · PDF</small>
+      <form id="form" novalidate>
+        <label class="f" for="nome">Seu nome<input id="nome" type="text" name="nome" autocomplete="given-name" placeholder="Como podemos te chamar?" required></label>
+        <label class="f" for="email">Seu e-mail<input id="email" type="email" name="email" autocomplete="email" placeholder="voce@email.com" required></label>
+        <fieldset>
+          <legend>Quantas plantas você tem hoje?</legend>
+          <div class="pills">
+            <label><input type="radio" name="plantas" value="0" required><span>Nenhuma ainda</span></label>
+            <label><input type="radio" name="plantas" value="1-5"><span>1 a 5</span></label>
+            <label><input type="radio" name="plantas" value="6+"><span>6 ou mais</span></label>
+            <label><input type="radio" name="plantas" value="perdi"><span>Perdi a conta</span></label>
+          </div>
+        </fieldset>
+        <label class="lgpd"><input id="lgpd" type="checkbox" required><span>Quero receber o guia e dicas da Vingô por e-mail. Posso cancelar quando quiser.</span></label>
+        <button class="btn btn-lime" type="submit">Quero o guia grátis <span class="ic"><svg><use href="#sprout"/></svg></span></button>
+      </form>
+      <div class="success" role="status"><h3>Vingou!</h3><p>O Selva de Apê já está a caminho do seu e-mail. Enquanto isso, olhe a planta mais perto de você: ela está pedindo água ou é só drama?</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap row"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="30 -850 2730 1080" role="img" aria-label="Vingô"><path fill="#EEF4E6" d="M181 0 8 -527H187L287 -126H304L406 -527H577L403 0ZM647 0V-528H808V0ZM728 -602Q682 -602 657.5 -621.5Q633 -641 633 -677Q633 -715 657.5 -734.5Q682 -754 728 -754Q775 -754 799.5 -734.5Q824 -715 824 -678Q824 -641 799.5 -621.5Q775 -602 728 -602ZM933 0V-318V-528H1063L1065 -373H1085Q1098 -429 1122.0 -467.0Q1146 -505 1183.0 -523.5Q1220 -542 1270 -542Q1363 -542 1411.5 -477.0Q1460 -412 1460 -270V0H1298V-252Q1298 -334 1274.5 -371.5Q1251 -409 1205 -409Q1167 -409 1142.5 -386.0Q1118 -363 1106.0 -325.0Q1094 -287 1094 -240V0ZM1789 185Q1701 185 1644.5 171.5Q1588 158 1562.0 131.5Q1536 105 1536 67Q1536 21 1572.5 -8.0Q1609 -37 1680 -41V-62Q1625 -62 1595.5 -73.0Q1566 -84 1566 -114Q1566 -142 1595.0 -165.0Q1624 -188 1691 -201V-222Q1630 -227 1594.0 -262.5Q1558 -298 1558 -356Q1558 -405 1586.0 -445.5Q1614 -486 1670.0 -510.5Q1726 -535 1810 -535H2084V-414L1917 -436V-412Q1982 -403 2010.0 -382.0Q2038 -361 2038 -323Q2038 -283 2010.5 -252.0Q1983 -221 1933.0 -203.5Q1883 -186 1814 -186Q1802 -186 1787.5 -187.0Q1773 -188 1734 -192Q1718 -178 1709.0 -168.5Q1700 -159 1700 -151Q1700 -145 1705.0 -141.0Q1710 -137 1719.5 -135.5Q1729 -134 1740 -134H1901Q1921 -134 1953.5 -131.5Q1986 -129 2018.5 -116.0Q2051 -103 2073.5 -74.0Q2096 -45 2096 9Q2096 68 2063.0 107.5Q2030 147 1962.0 166.0Q1894 185 1789 185ZM1810 57Q1868 57 1900.0 51.0Q1932 45 1944.5 32.0Q1957 19 1957 0Q1957 -18 1950.0 -28.5Q1943 -39 1932.0 -43.0Q1921 -47 1909.5 -48.0Q1898 -49 1890 -49H1761Q1724 -49 1706.5 -31.5Q1689 -14 1689 9Q1689 28 1701.0 38.5Q1713 49 1739.5 53.0Q1766 57 1810 57ZM1803 -266Q1846 -266 1867.5 -289.0Q1889 -312 1889 -347Q1889 -385 1867.0 -409.5Q1845 -434 1804 -434Q1763 -434 1740.0 -409.5Q1717 -385 1717 -347Q1717 -324 1727.0 -305.5Q1737 -287 1756.0 -276.5Q1775 -266 1803 -266ZM2426 14Q2346 14 2284.5 -17.0Q2223 -48 2188.0 -110.0Q2153 -172 2153 -265Q2153 -358 2188.0 -419.5Q2223 -481 2285.0 -511.5Q2347 -542 2427 -542Q2507 -542 2569.0 -511.0Q2631 -480 2666.0 -418.5Q2701 -357 2701 -264Q2701 -169 2665.0 -107.0Q2629 -45 2566.5 -15.5Q2504 14 2426 14ZM2431 -103Q2467 -103 2491.0 -119.5Q2515 -136 2527.0 -170.0Q2539 -204 2539 -254Q2539 -307 2526.0 -343.5Q2513 -380 2487.5 -399.5Q2462 -419 2422 -419Q2388 -419 2363.5 -402.5Q2339 -386 2327.0 -352.0Q2315 -318 2315 -267Q2315 -185 2345.5 -144.0Q2376 -103 2431 -103Z"/><g transform="translate(1027 0)"><path d="M1400 -548 C1400 -600 1398 -640 1404 -690" stroke="#C9F264" stroke-width="40" stroke-linecap="round" fill="none"/><path fill="#C9F264" d="M1401 -636 C1336 -634 1266 -684 1246 -772 C1330 -784 1394 -730 1401 -636 Z"/><path fill="#C9F264" d="M1407 -684 C1440 -770 1522 -822 1606 -812 C1596 -724 1512 -672 1407 -684 Z"/></g></svg><span>@vingo.plantas · Marca fictícia criada para a aula "IA para LPs com Lovable"</span></div>
+  <div class="giant" aria-hidden="true">vingô</div>
+</footer>
+
+<div class="mcta" id="mcta"><a class="btn btn-lime" href="#baixar">Quero o guia grátis <span class="ic"><svg><use href="#sprout"/></svg></span></a></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+const REDUCE = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const MOBILE = matchMedia('(max-width: 900px)').matches;
+window.addEventListener('load',()=>requestAnimationFrame(()=>document.body.classList.add('ready')));
+setTimeout(()=>document.body.classList.add('ready'),1500);
+
+/* rolagem suave (desligada em automação e com movimento reduzido) */
+let lenis=null;
+if(!REDUCE && !navigator.webdriver && window.Lenis){
+  lenis=new Lenis({lerp:.09,smoothWheel:true});
+  lenis.on('scroll',()=>window.ScrollTrigger&&ScrollTrigger.update());
+  gsap.ticker.add(t=>lenis.raf(t*1000)); gsap.ticker.lagSmoothing(0);
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id.length>1){e.preventDefault();lenis.scrollTo(id,{offset:-20})}}));
+}
+gsap.registerPlugin(ScrollTrigger);
+
+/* menu */
+const nav=document.getElementById('nav');
+ScrollTrigger.create({start:60,onUpdate:s=>nav.classList.toggle('on',s.scroll()>60)});
+
+/* revelações */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* manifesto que acende palavra por palavra */
+(()=>{const el=document.getElementById('mtext');let html='';
+  el.textContent.split(/(\[[^\]]+\])/).forEach(part=>{
+    const em=part.startsWith('[');const txt=em?part.slice(1,-1):part;
+    txt.split(/\s+/).filter(Boolean).forEach(w=>html+=`<span class="w${em?' em':''}">${w}</span> `);
+  });
+  el.innerHTML=html;
+  const ws=[...el.querySelectorAll('.w')];
+  if(REDUCE){ws.forEach(w=>w.style.opacity=1);return}
+  ScrollTrigger.create({trigger:el,start:'top 80%',end:'bottom 45%',scrub:true,onUpdate:s=>{
+    const n=s.progress*ws.length;ws.forEach((w,i)=>w.style.opacity=Math.min(1,Math.max(.14,(n-i)*1)))}});
+})();
+
+/* números na seção fixa */
+(()=>{const ns=[...document.querySelectorAll('.bignum .n')],cs=[...document.querySelectorAll('.numcap p')],ls=[...document.querySelectorAll('.numlist li')];
+  if(REDUCE){ns.forEach(n=>n.classList.add('on'));return}
+  let cur=0;
+  const set=i=>{if(i===cur)return;ns.forEach((n,k)=>{n.classList.toggle('on',k===i);n.classList.toggle('out',k<i)});cs.forEach((c,k)=>c.classList.toggle('on',k===i));ls.forEach((l,k)=>l.classList.toggle('on',k===i));cur=i};
+  ScrollTrigger.create({trigger:'#nums',start:'top top',end:'bottom bottom',scrub:true,onUpdate:s=>{
+    set(Math.min(ns.length-1,Math.floor(s.progress*ns.length*0.999)));}});
+  gsap.fromTo('#wireg',{rotate:-18,scale:.92,transformOrigin:'50% 50%'},{rotate:28,scale:1.08,ease:'none',scrollTrigger:{trigger:'#nums',start:'top bottom',end:'bottom top',scrub:true}});
+})();
+
+/* letreiro: velocidade acompanha a rolagem */
+(()=>{if(REDUCE)return;
+  const m1=document.getElementById('m1'),m2=document.getElementById('m2');let x1=0,x2=0,v=0;
+  ScrollTrigger.create({trigger:'.marq',start:'top bottom',end:'bottom top',onUpdate:s=>{v=Math.min(18,Math.abs(s.getVelocity())/180)}});
+  gsap.ticker.add(()=>{const w1=m1.scrollWidth/2,w2=m2.scrollWidth/2;x1-=.6+v;x2+=.45+v*.8;if(-x1>w1)x1+=w1;if(x2>0)x2-=w2;
+    m1.style.transform=`translateX(${x1}px)`;m2.style.transform=`translateX(${x2}px)`;v*=.92;});
+  m2.style.transform=`translateX(${-m2.scrollWidth/2}px)`;x2=-m2.scrollWidth/2;
+})();
+
+/* capítulos na horizontal */
+(()=>{const sec=document.querySelector('.caps'),track=document.getElementById('track'),pb=document.getElementById('pbar'),pn=document.getElementById('pnum');
+  const n=track.children.length;
+  if(REDUCE){sec.style.height='auto';return}
+  const dist=()=>Math.max(0,track.scrollWidth-innerWidth+Math.max(32,(innerWidth-1280)/2));
+  sec.style.height=`calc(100vh + ${dist()}px)`;
+  gsap.to(track,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:sec,start:'top top',end:()=>'+='+dist(),scrub:.6,invalidateOnRefresh:true,
+    onUpdate:s=>{pb.style.transform=`scaleX(${s.progress})`;pn.textContent=String(Math.min(n,1+Math.floor(s.progress*n*.999))).padStart(2,'0')+' / '+String(n).padStart(2,'0')}}});
+  addEventListener('resize',()=>{sec.style.height=`calc(100vh + ${dist()}px)`;ScrollTrigger.refresh()});
+  // desenho dos traços quando o card entra
+  gsap.utils.toArray('.cap .art svg [data-d]').forEach(p=>{const L=p.getTotalLength?p.getTotalLength():300;p.style.strokeDasharray=L;p.style.strokeDashoffset=L;});
+  ScrollTrigger.create({trigger:sec,start:'top 60%',onEnter:()=>{}});
+  const caps=[...track.children];
+  gsap.ticker.add(()=>{caps.forEach(c=>{const r=c.getBoundingClientRect();if(r.left<innerWidth*.92&&!c.dataset.drawn){c.dataset.drawn=1;c.querySelectorAll('[data-d]').forEach((p,i)=>gsap.to(p,{strokeDashoffset:0,duration:1.6,delay:i*.08,ease:'power2.out'}))}})});
+})();
+
+/* neon do CTA se desenha */
+(()=>{const ps=document.querySelectorAll('#neon path');if(REDUCE)return;ps.forEach(p=>{p.style.strokeDasharray=1;p.style.strokeDashoffset=1});
+  gsap.to(ps,{strokeDashoffset:0,duration:2.6,ease:'power2.inOut',stagger:.3,scrollTrigger:{trigger:'#baixar',start:'top 65%'}});})();
+
+/* teste de luz */
+const pot='<path d="M30 112h60l-7 26H37z" fill="#0E3B2C"/><rect x="26" y="104" width="68" height="10" fill="#164a38"/><path d="M28 109h64" stroke="#C9F264" stroke-width="1.5" opacity=".7"/>';
+const H=(x,y,w,h,c)=>`<use href="#heart" x="${x}" y="${y}" width="${w}" height="${h}" style="color:${c}"/>`;
+const art={
+ succ:`<g transform="translate(60 92)">${[0,45,90,135,180,225,270,315].map(a=>`<ellipse rx="10" ry="24" transform="rotate(${a}) translate(0 -14)" fill="#3E8E4E"/>`).join('')}${[22,112,202,292].map(a=>`<ellipse rx="7" ry="15" transform="rotate(${a}) translate(0 -8)" fill="#6fb06f"/>`).join('')}<circle r="6" fill="#C9F264"/></g>`,
+ cact:`<rect x="40" y="38" width="40" height="70" rx="20" fill="#3E8E4E"/><path d="M40 70h-8a8 8 0 0 1-8-8V50" stroke="#3E8E4E" stroke-width="12" stroke-linecap="round" fill="none"/><path d="M80 80h8a8 8 0 0 0 8-8V60" stroke="#3E8E4E" stroke-width="12" stroke-linecap="round" fill="none"/><circle cx="60" cy="38" r="7" fill="#FF6F91"/>`,
+ bird:`<path d="M60 106V40M52 106L30 50M68 106L92 44" stroke="#2E5E3A" stroke-width="3"/><ellipse cx="60" cy="28" rx="12" ry="26" fill="#3E8E4E"/><ellipse cx="26" cy="42" rx="11" ry="24" transform="rotate(-24 26 42)" fill="#2E5E3A"/><ellipse cx="96" cy="36" rx="11" ry="24" transform="rotate(22 96 36)" fill="#3E8E4E"/>`,
+ mon:`<g transform="translate(14 2) scale(.46)"><path d="M100 194 C 100 205 98 212 96 220" stroke="#3E8E4E" stroke-width="6" fill="none"/><path fill="#3E8E4E" d="M100 40 C 120 12, 170 12, 190 50 C 205 85, 190 140, 150 170 C 130 185, 112 192, 100 196 C 88 192, 70 185, 50 170 C 10 140, -5 85, 10 50 C 30 12, 80 12, 100 40 Z"/><g fill="#06140E"><path d="M4 58 Q 50 70 93 84 Q 48 80 8 76Z"/><path d="M6 100 Q 52 102 95 106 Q 50 112 12 122Z"/><path d="M28 146 Q 64 128 96 122 Q 70 140 46 162Z"/><path d="M196 66 Q 150 76 107 90 Q 152 88 192 86Z"/><path d="M192 112 Q 148 112 105 112 Q 150 120 186 134Z"/><path d="M164 154 Q 134 136 104 128 Q 128 148 148 168Z"/></g></g>`,
+ pot:`<path d="M58 104C54 84 40 66 31 57M62 104C66 82 74 58 77 46M60 104C58 90 54 76 50 67M30 108C18 112 12 122 14 127" stroke="#2E5E3A" stroke-width="2.6" fill="none" stroke-linecap="round"/>${H(14,46,34,40,'#3E8E4E')}${H(58,34,38,46,'#2E5E3A')}${H(36,58,28,34,'#6fb06f')}${H(4,120,20,24,'#6fb06f')}`,
+ pac:`${[-38,-14,10,34].map((a,i)=>`<ellipse cx="60" cy="64" rx="15" ry="40" transform="rotate(${a} 60 104)" fill="${i%2?'#2E5E3A':'#3E8E4E'}"/>`).join('')}`,
+ zz:`${[[48,-14],[72,12],[60,0]].map(([x,a])=>`<g transform="rotate(${a} 60 106)"><path d="M${x} 106V26" stroke="#2E5E3A" stroke-width="3"/>${[34,50,66,82].map(y=>`<ellipse cx="${x-8}" cy="${y}" rx="8" ry="5" fill="#3E8E4E"/><ellipse cx="${x+8}" cy="${y}" rx="8" ry="5" fill="#2E5E3A"/>`).join('')}</g>`).join('')}`,
+ sna:`${[[24,44,26,65],[58,36,30,75],[40,18,36,90]].map(([x,y,w,h])=>`<g transform="translate(${x} ${y}) scale(${w/40} ${h/100})"><path fill="#2E5E3A" d="M20 2 C 28 20 34 50 32 98 L 8 98 C 6 50 12 20 20 2Z"/><path d="M11 30 Q20 26 29 30 M10 45 Q20 41 30 45 M9 60 Q20 56 31 60 M9 75 Q20 71 31 75" stroke="#C9F264" stroke-width="2" fill="none" opacity=".5"/></g>`).join('')}`,
+ lil:`${[-40,-14,14,40].map((a,i)=>`<ellipse cx="60" cy="66" rx="13" ry="38" transform="rotate(${a} 60 104)" fill="${i%2?'#2E5E3A':'#3E8E4E'}"/>`).join('')}<path d="M54 52c0-18 6-30 10-34 4 12 2 28-10 34z" fill="#EEF4E6"/><rect x="58" y="40" width="3" height="16" rx="1.5" fill="#C9F264"/>`
+};
+const data={
+ sol:[['Suculentas','Fácil','Amam sol e odeiam excesso de água. Rega a cada 10 a 15 dias.','succ'],['Cacto-bola','Muito fácil','O colega de quarto ideal: quase não pede nada.','cact'],['Ave-do-paraíso','Média','Folhas enormes de resort. Gosta de janela bem ensolarada.','bird']],
+ clara:[['Costela-de-adão','Fácil','A rainha do apê. Quanto mais claridade, mais recortes nas folhas.','mon'],['Jiboia','Muito fácil','Cresce caindo da estante e avisa quando tem sede: as folhas murcham.','pot'],['Pacová','Média','Folhas largas e brilhantes. Adora banheiro claro e úmido.','pac']],
+ pouca:[['Zamioculca','Muito fácil','Aguenta três semanas sem água. Sério.','zz'],['Espada-de-são-jorge','Muito fácil','Sobrevive a corredor, a esquecimento e a quase tudo.','sna'],['Lírio-da-paz','Fácil','Floresce na sombra e desmaia quando quer água. Regou, levantou.','lil']]
+};
+const plantsEl=document.getElementById('plants');
+function show(k){plantsEl.innerHTML=data[k].map(([n,l,t,a])=>`<article class="plant"><div class="art"><svg viewBox="0 0 120 140" aria-hidden="true">${art[a]}${pot}</svg></div><div class="lv">${l}</div><h3>${n}</h3><p>${t}</p></article>`).join('');
+  [...plantsEl.children].forEach((c,i)=>setTimeout(()=>c.classList.add('in'),REDUCE?0:80+i*120));}
+document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-selected',x===b));show(b.dataset.k)}));
+show('sol');
+
+/* contador */
+(()=>{const c=document.getElementById('count');new IntersectionObserver((es,o)=>es.forEach(e=>{if(!e.isIntersecting)return;o.disconnect();
+  const to=+c.dataset.to;if(REDUCE){c.textContent=to.toLocaleString('pt-BR');return}
+  gsap.to({v:0},{v:to,duration:2.2,ease:'power3.out',onUpdate(){c.textContent=Math.round(this.targets()[0].v).toLocaleString('pt-BR')}});}),{threshold:.5}).observe(c);})();
+
+/* formulário */
+document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();const f=e.target;if(!f.checkValidity()){f.reportValidity();return}
+  document.getElementById('formbox').classList.add('sent');if(REDUCE)return;
+  const cols=['#C9F264','#3E8E4E','#FF6F91','#EEF4E6'];
+  for(let i=0;i<40;i++){const s=document.createElementNS('http://www.w3.org/2000/svg','svg');const sz=14+Math.random()*22;
+    s.setAttribute('viewBox','0 0 100 120');s.setAttribute('width',sz);s.setAttribute('height',sz*1.2);s.innerHTML='<use href="#heart"/>';s.classList.add('rain');
+    s.style.cssText=`left:${Math.random()*100}vw;color:${cols[i%4]};animation-duration:${2.4+Math.random()*2.4}s;animation-delay:${Math.random()*.6}s;--r:${(Math.random()*720-360)|0}deg`;
+    document.body.appendChild(s);setTimeout(()=>s.remove(),6000);}
+});
+
+/* CTA fixo no celular */
+(()=>{const m=document.getElementById('mcta');let a=false,b=false;const u=()=>m.classList.toggle('show',a&&!b);
+  new IntersectionObserver(es=>{a=!es[0].isIntersecting;u()}).observe(document.getElementById('hero'));
+  new IntersectionObserver(es=>{b=es[0].isIntersecting;u()},{threshold:.1}).observe(document.getElementById('baixar'));})();
+</script>
+
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+const canvas=document.getElementById('gl');
+const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let renderer;
+try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'high-performance'});}catch(e){canvas.style.display='none';}
+if(renderer){
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+const scene=new THREE.Scene();scene.fog=new THREE.Fog(0x06140E,11,17.5);
+const pmrem=new THREE.PMREMGenerator(renderer);scene.environment=pmrem.fromScene(new RoomEnvironment(),.04).texture;
+const camera=new THREE.PerspectiveCamera(32,1,.1,100);camera.position.set(0,0,12);
+
+scene.add(new THREE.AmbientLight(0xdfffe0,.25));
+const key=new THREE.DirectionalLight(0xfff2dc,1.7);key.position.set(-4,6,6);scene.add(key);
+const rim=new THREE.PointLight(0xC9F264,60,30);rim.position.set(4,1,-3);scene.add(rim);
+const pink=new THREE.PointLight(0xFF6F91,5,20);pink.position.set(-3,-3,2);scene.add(pink);
+
+const root=new THREE.Group();scene.add(root);
+
+/* capa do livro desenhada em canvas */
+await Promise.all([document.fonts.load('800 120px "Bricolage Grotesque"'),document.fonts.load('300 40px "Bricolage Grotesque"'),document.fonts.load('500 30px "Figtree"')]).catch(()=>{});
+function coverTex(){const c=document.createElement('canvas');c.width=1024;c.height=1400;const g=c.getContext('2d');
+  const gr=g.createLinearGradient(0,0,1024,1400);gr.addColorStop(0,'#145039');gr.addColorStop(1,'#0B3022');g.fillStyle=gr;g.fillRect(0,0,1024,1400);
+  // monstera com recortes
+  const m=document.createElement('canvas');m.width=1024;m.height=1400;const mg=m.getContext('2d');
+  mg.save();mg.translate(430,640);mg.scale(3.4,3.4);mg.fillStyle='#3E8E4E';
+  mg.fill(new Path2D('M100 40 C 120 12, 170 12, 190 50 C 205 85, 190 140, 150 170 C 130 185, 112 192, 100 196 C 88 192, 70 185, 50 170 C 10 140, -5 85, 10 50 C 30 12, 80 12, 100 40 Z'));
+  mg.globalCompositeOperation='destination-out';
+  ['M4 58 Q 50 70 93 84 Q 48 80 8 76Z','M6 100 Q 52 102 95 106 Q 50 112 12 122Z','M28 146 Q 64 128 96 122 Q 70 140 46 162Z','M196 66 Q 150 76 107 90 Q 152 88 192 86Z','M192 112 Q 148 112 105 112 Q 150 120 186 134Z','M164 154 Q 134 136 104 128 Q 128 148 148 168Z'].forEach(d=>mg.fill(new Path2D(d)));
+  mg.restore();g.drawImage(m,0,0);
+  g.fillStyle='#EEF4E6';g.font='800 64px "Bricolage Grotesque"';g.fillText('vingô',84,140);
+  g.fillStyle='#C9F264';g.font='800 200px "Bricolage Grotesque"';g.fillText('Selva',76,420);g.fillText('de Apê',76,600);
+  g.fillStyle='#EEF4E6';g.font='500 40px "Figtree"';g.fillText('o guia das plantas',84,700);g.fillText('que não morrem',84,752);
+  g.globalAlpha=.75;g.font='500 30px "Figtree"';g.fillText('por Marina Okabe',84,1320);g.globalAlpha=1;
+  g.fillStyle='#FF6F91';g.beginPath();g.ellipse(860,180,120,54,-.18,0,Math.PI*2);g.fill();
+  g.fillStyle='#06140E';g.font='800 30px "Bricolage Grotesque"';g.save();g.translate(860,190);g.rotate(-.18);g.textAlign='center';g.fillText('à prova de',0,-6);g.fillText('esquecidos',0,28);g.restore();
+  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=8;return t;}
+function pagesTex(){const c=document.createElement('canvas');c.width=64;c.height=512;const g=c.getContext('2d');g.fillStyle='#f3f6ee';g.fillRect(0,0,64,512);
+  for(let x=0;x<64;x+=3){g.fillStyle=`rgba(0,0,0,${.05+Math.random()*.07})`;g.fillRect(x,0,1,512)}const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;}
+function spineTex(){const c=document.createElement('canvas');c.width=128;c.height=1400;const g=c.getContext('2d');g.fillStyle='#0B3022';g.fillRect(0,0,128,1400);
+  g.save();g.translate(78,1300);g.rotate(-Math.PI/2);g.fillStyle='#C9F264';g.font='800 56px "Bricolage Grotesque"';g.fillText('Selva de Apê',0,0);g.fillStyle='#EEF4E6';g.font='800 40px "Bricolage Grotesque"';g.fillText('vingô',900,-2);g.restore();
+  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;}
+const pages=new THREE.MeshStandardMaterial({map:pagesTex(),roughness:.9});
+const bookMats=[pages,new THREE.MeshStandardMaterial({map:spineTex(),roughness:.5}),pages,pages,
+  new THREE.MeshPhysicalMaterial({map:coverTex(),roughness:.42,clearcoat:.5,clearcoatRoughness:.35}),new THREE.MeshStandardMaterial({color:0x0B3022,roughness:.5})];
+const book=new THREE.Mesh(new THREE.BoxGeometry(2.6,3.55,.38),bookMats);
+const bookG=new THREE.Group();book.scale.setScalar(1.12);bookG.add(book);root.add(bookG);
+
+/* folhas extrudadas a partir dos mesmos desenhos da marca */
+function shapeFromHeart(){const s=new THREE.Shape();s.moveTo(50,110);s.bezierCurveTo(14,84,2,50,14,28);s.bezierCurveTo(24,10,44,12,50,30);s.bezierCurveTo(56,12,76,10,86,28);s.bezierCurveTo(98,50,86,84,50,110);return s;}
+function shapeMonstera(){const s=new THREE.Shape();s.moveTo(100,40);s.bezierCurveTo(120,12,170,12,190,50);s.bezierCurveTo(205,85,190,140,150,170);s.bezierCurveTo(130,185,112,192,100,196);s.bezierCurveTo(88,192,70,185,50,170);s.bezierCurveTo(10,140,-5,85,10,50);s.bezierCurveTo(30,12,80,12,100,40);
+  [[66,72,16,5.5,.32],[134,72,16,5.5,-.32],[58,108,20,6,.05],[142,108,20,6,-.05],[70,142,16,5,-.35],[130,142,16,5,.35],[40,92,9,4,.2],[160,92,9,4,-.2]].forEach(([x,y,rx,ry,r])=>{const h=new THREE.Path();h.absellipse(x,y,rx,ry,0,Math.PI*2,false,r);s.holes.push(h)});return s;}
+function shapeBlade(){const s=new THREE.Shape();s.moveTo(20,2);s.bezierCurveTo(30,22,36,52,32,98);s.lineTo(8,98);s.bezierCurveTo(4,52,10,22,20,2);return s;}
+function leafGeo(shape,w,depth){const g=new THREE.ExtrudeGeometry(shape,{depth,bevelEnabled:true,bevelThickness:depth*.6,bevelSize:depth*.6,bevelSegments:4,curveSegments:40});
+  g.center();g.computeBoundingBox();const sz=new THREE.Vector3();g.boundingBox.getSize(sz);const k=w/sz.x;g.scale(k,-k,k);
+  // curva suave para não parecer chapa
+  g.computeVertexNormals();return g;}
+const greens=[0x2F7A45,0x245F38,0x3B8F52,0x1A4D30];
+const mat=(c,em=0)=>new THREE.MeshPhysicalMaterial({color:c,roughness:.5,metalness:0,clearcoat:.45,clearcoatRoughness:.4,sheen:.5,sheenColor:new THREE.Color(0xC9F264),side:THREE.DoubleSide,emissive:em?new THREE.Color(c):new THREE.Color(0),emissiveIntensity:em});
+const leaves=[];
+const defs=[
+ ['m',2.9,[-1.25,1.25,-1.5],[.2,.45,-.5],1],['m',2.3,[1.55,-1.3,-1.1],[-.3,-.5,2.5],0],
+ ['h',1.05,[-1.25,-1.65,1.15],[-.35,.55,2.25],2],['h',.95,[1.35,1.95,.8],[.45,-.35,-.75],3],['h',.55,[1.7,-.15,1.6],[.2,-.3,.5],0],
+ ['b',2.4,[-1.95,-.55,-1.3],[.1,.3,.42],1],['b',2.0,[2.15,.95,-1.9],[-.2,-.4,-.35],3],
+ ['h',.42,[-.35,2.3,1.35],[.3,.4,2.8],2],['m',1.5,[2.7,2.4,-3.4],[.6,-.4,1.2],2],['m',1.3,[-2.9,-2.3,-3.0],[.3,.8,-.9],1]
+];
+defs.forEach(([t,w,pos,rot,ci],i)=>{const shp=t==='m'?shapeMonstera():t==='h'?shapeFromHeart():shapeBlade();
+  const geo=leafGeo(shp,t==='b'?w*.3:w,t==='m'?1.2:.6);
+  const mesh=new THREE.Mesh(geo,mat(greens[ci%4],i===7?.15:0));
+  if(t==='b'){mesh.scale.set(1,1,1)}
+  const g=new THREE.Group();g.add(mesh);g.position.set(...pos);g.rotation.set(...rot);
+  g.userData={base:new THREE.Vector3(...pos),rot:new THREE.Euler(...rot),ph:Math.random()*6,sp:.4+Math.random()*.5,out:new THREE.Vector3(...pos).normalize().multiplyScalar(2.2+Math.random()*2)};
+  root.add(g);leaves.push(g);});
+// um broto verde-limão pequeno, emissivo
+const sproutL=new THREE.Mesh(leafGeo(shapeFromHeart(),.42,.4),mat(0xC9F264,.35));sproutL.position.set(-.35,2.35,1.4);root.add(sproutL);
+
+/* poeira de luz */
+const pts=new THREE.BufferGeometry();const N=260;const arr=new Float32Array(N*3);for(let i=0;i<N;i++){arr[i*3]=(Math.random()-.5)*16;arr[i*3+1]=(Math.random()-.5)*10;arr[i*3+2]=(Math.random()-.5)*8-1}
+pts.setAttribute('position',new THREE.BufferAttribute(arr,3));
+const dust=new THREE.Points(pts,new THREE.PointsMaterial({color:0xC9F264,size:.03,transparent:true,opacity:.55,depthWrite:false}));scene.add(dust);
+
+/* layout responsivo */
+function layout(){const w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();
+  const mob=innerWidth<=900;root.position.set(mob?0:2.9,mob?.1:-.2,0);root.scale.setScalar(mob?.68:.92);}
+layout();addEventListener('resize',layout);
+
+/* estado guiado pelo mouse e pelo scroll */
+const st={mx:0,my:0,tx:0,ty:0,p:0};
+addEventListener('pointermove',e=>{st.tx=e.clientX/innerWidth-.5;st.ty=e.clientY/innerHeight-.5});
+if(window.ScrollTrigger){ScrollTrigger.create({trigger:'#hero',start:'top top',end:'bottom top',scrub:true,onUpdate:s=>st.p=s.progress});}
+let visible=true;new IntersectionObserver(es=>visible=es[0].isIntersecting).observe(canvas);
+const clock=new THREE.Clock();let intro=0;
+function frame(){requestAnimationFrame(frame);if(!visible)return;const t=clock.getElapsedTime();
+  intro=Math.min(1,t/2.4);const ei=1-Math.pow(1-intro,3);
+  st.mx+=(st.tx-st.mx)*.05;st.my+=(st.ty-st.my)*.05;
+  const p=st.p;
+  bookG.rotation.y=-.5+st.mx*.7+p*1.4+(1-ei)*-1.2+(REDUCE?0:Math.sin(t*.5)*.06);
+  bookG.rotation.x=.08+st.my*.35-p*.3;
+  bookG.position.y=(REDUCE?0:Math.sin(t*.9)*.12)+p*1.6-(1-ei)*1.2;
+  bookG.scale.setScalar(.85+ei*.15);
+  leaves.forEach((g,i)=>{if(!g.userData.base)return;const u=g.userData;
+    const sp=(REDUCE?0:1);
+    g.position.copy(u.base).addScaledVector(u.out,p*1.4+(1-ei)*.9);
+    g.position.y+=Math.sin(t*u.sp+u.ph)*.12*sp;
+    g.rotation.set(u.rot.x+Math.sin(t*u.sp*.8+u.ph)*.08*sp+st.my*.2,u.rot.y+st.mx*.3+p*.6,u.rot.z+Math.cos(t*u.sp*.6+u.ph)*.05*sp);});
+  sproutL.rotation.set(.35,-.5,Math.sin(t*.8)*.25);sproutL.position.y=2.35+Math.sin(t*1.3)*.1;
+  dust.rotation.y=t*.02;dust.position.y=p*1.5;
+  root.rotation.y=st.mx*.15;
+  renderer.render(scene,camera);}
+frame();
+}
+</script>
+</body>
+</html>

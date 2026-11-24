@@ -23,7 +23,7 @@ Para mostrar a alguém fora da sua conta, use o menu Share de cada página. O de
 
 | Arquivo / pasta | Para quê |
 |---|---|
-| `apresentacao/index.html` + `assets/` | **O deck.** 28 slides + 8 extras. Abertura (meu processo de sempre, a LP genérica, por que ela é genérica, a LP linda) e 4 partes com capa: o prompt em 5 passos, como a IA lê o prompt, planeje antes de construir, aprenda a alterar. Fecha com "isso demora mais?", o agente e o checklist. Notas do apresentador na tecla N |
+| `apresentacao/index.html` + `assets/` + `lp/` | **O deck.** 28 slides + 8 extras. Abertura (meu processo de sempre, a LP genérica, por que ela é genérica, a LP linda) e 4 partes com capa: o prompt em 5 passos, como a IA lê o prompt, planeje antes de construir, aprenda a alterar. Fecha com "isso demora mais?", o agente e o checklist. Notas do apresentador na tecla N. Clique em qualquer print ou vídeo de LP para abrir a página de verdade em tela cheia (as cópias ficam em `lp/`; se mudar uma LP em `exemplos/`, copie de novo) |
 | `02-guia-da-apresentacao.md` | **Guia resumido:** como usar o deck, tempos (~24 min falados) e o que falar em cada slide |
 | `01-fundamentos-da-pesquisa.md` | A pesquisa que sustenta a aula, com fontes |
 | `03-exemplo-vingo-prompts.md` | O case Vingô: brandbook, prompt de sempre, prompt completo, mapa "trecho do prompt → resultado" e inventário de capturas |

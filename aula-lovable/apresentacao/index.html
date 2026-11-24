@@ -518,6 +518,22 @@ body:hover #ui,#ui:focus-within{opacity:1}
 .vlist .bad{color:#d9a0a0;border-color:#4a2a2a}
 .vlist .now{background:var(--paper);color:var(--ink)}.vlist .now b{color:var(--ink)}
 
+/* LPs em tela cheia */
+[data-lp]{cursor:zoom-in;position:relative}
+[data-lp]::after{content:"⤢  Tela cheia";position:absolute;right:12px;bottom:12px;z-index:5;background:var(--ink);color:var(--paper);font:600 12px var(--font);letter-spacing:.14em;text-transform:uppercase;padding:8px 12px;opacity:0;transform:translateY(6px);transition:all .3s var(--kease);pointer-events:none}
+[data-lp]:hover::after{opacity:1;transform:none}
+.dark [data-lp]::after{background:var(--paper);color:var(--ink)}
+button.lpbtn{cursor:pointer;font-family:var(--font);background:var(--paper);color:var(--ink)}
+button.lpbtn::after{display:none}
+#lpov{position:fixed;inset:0;z-index:200;background:#050505;display:flex;flex-direction:column;opacity:0;transform:scale(.98);transition:opacity .35s var(--kease),transform .35s var(--kease)}
+#lpov[hidden]{display:none}
+#lpov.on{opacity:1;transform:none}
+#lpov .lpbar{display:flex;align-items:center;gap:16px;padding:10px 16px;border-bottom:1px solid #222;font:500 13px var(--font);color:var(--paper)}
+#lpov .lpbar b{font-weight:600;margin-right:auto;letter-spacing:.04em}
+#lpov .lpbar a,#lpov .lpbar button{font:600 12px var(--font);letter-spacing:.14em;text-transform:uppercase;color:var(--paper);background:none;border:1px solid #3a3a3a;padding:8px 12px;cursor:pointer;text-decoration:none}
+#lpov .lpbar button{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+#lpov iframe{flex:1;width:100%;border:0;background:#fff}
+
 </style>
 </head>
 <body>
@@ -560,7 +576,7 @@ body:hover #ui,#ui:focus-within{opacity:1}
         <div class="think" data-step="1">Pronto! Criei uma landing page moderna e responsiva para o e-book, com hero chamativo, seção de benefícios, depoimentos e formulário de captura. 🌿</div>
         <div class="inp">Peça ao Lovable…</div>
       </div>
-      <div class="pane prev">
+      <div class="pane prev" data-lp="lp/vingo-generica.html" data-lpt="LP do pedido simples">
         <div class="loading"><i></i><i></i><i></i><span>Construindo…</span></div>
         <div class="shot" data-step="1"><img class="roll" src="assets/generica-pagina-inteira.webp" alt="LP gerada a partir do pedido simples"></div>
       </div>
@@ -572,7 +588,7 @@ body:hover #ui,#ui:focus-within{opacity:1}
 <!-- 3 -->
 <section class="sl light" data-name="sinais" data-steps="7">
   <div class="cols" style="grid-template-columns:1.55fr 1fr;gap:52px;align-items:center">
-    <div data-a style="position:relative;--d:1">
+    <div data-a style="position:relative;--d:1" data-lp="lp/vingo-generica.html" data-lpt="LP do pedido simples">
       <div class="win"><div class="bar"><i></i><i></i><i></i><span>LP do pedido simples</span></div><img src="assets/generica-hero.webp" alt="LP genérica"></div>
       <span class="mk" data-step="1" style="left:9%;top:6%">1</span>
       <span class="mk" data-step="2" style="left:11%;top:27%">2</span>
@@ -635,9 +651,9 @@ body:hover #ui,#ui:focus-within{opacity:1}
       <h2 class="t-xl mt1" data-a style="--d:1"><span class="bk">Agora, com um prompt melhor.</span></h2>
       <p class="t-body mt2" data-a style="--d:2">O briefing e os textos são os mesmos. O que mudou foram detalhes no prompt e um pouco mais de esforço para desenrolar.</p>
       <p class="t-md mt3" data-a style="--d:3">Hoje vou mostrar como chegar <span class="b">nesse resultado em poucos passos.</span></p>
-      <div class="mt3" data-a style="--d:4"><a class="org" style="background:var(--paper);color:var(--ink);text-decoration:none" href="https://claude.ai/artifact/LfUyk1eTUr1QZ4zfbUFf89" target="_blank" rel="noopener">Abrir a LP da Vingô</a></div>
+      <div class="mt3" data-a style="--d:4"><button class="org lpbtn" data-lp="lp/vingo-linda.html" data-lpt="LP do prompt completo">Abrir a LP em tela cheia</button></div>
     </div>
-    <div class="win" data-a style="--d:2"><div class="bar"><i></i><i></i><i></i><span>LP do prompt completo</span></div><video data-src="assets/espetacular-tour-completo.mp4" muted loop playsinline></video></div>
+    <div class="win" data-a style="--d:2" data-lp="lp/vingo-linda.html" data-lpt="LP do prompt completo"><div class="bar"><i></i><i></i><i></i><span>LP do prompt completo</span></div><video data-src="assets/espetacular-tour-completo.mp4" muted loop playsinline></video></div>
   </div>
   <aside class="notes"><ul><li>Deixe o vídeo correr. Se der, abra a LP e passe por ela ao vivo: mouse no livro, capítulos, formulário.</li><li>"Mesmo briefing, mesmos textos. A diferença está nos detalhes do prompt. É isso que vamos destrinchar."</li></ul></aside>
 </section>
@@ -727,7 +743,7 @@ body:hover #ui,#ui:focus-within{opacity:1}
         <div class="strong"><div class="lab"><i>✓</i>Prompt forte</div><q>Você tem liberdade total para uma experiência cinematográfica. <b>Hero com o e-book em 3D entre folhas 3D da marca, reagindo ao mouse.</b> Manifesto que acende palavra por palavra no scroll. Capítulos em rolagem horizontal. Nenhum efeito sem motivo.</q></div>
       </div>
     </div>
-    <div data-a style="--d:3"><div class="win"><div class="bar"><i></i><i></i><i></i><span>o que esse trecho gerou</span></div><video data-src="assets/espetacular-clip1-hero-3d.mp4" muted loop playsinline></video></div></div>
+    <div data-a style="--d:3" data-lp="lp/vingo-linda.html" data-lpt="LP do prompt completo"><div class="win"><div class="bar"><i></i><i></i><i></i><span>o que esse trecho gerou</span></div><video data-src="assets/espetacular-clip1-hero-3d.mp4" muted loop playsinline></video></div></div>
   </div>
   <div class="meter" data-a style="--d:6"><span>Prompt da Vingô</span><span class="segs" data-n="4"></span><b>~620 palavras</b></div>
   <aside class="notes"><ul><li>A Anthropic recomenda pedir explicitamente para ir além do básico. Isso é a permissão.</li><li>A direção é dizer cada momento. Sem direção, ela aplica o mesmo efeito em tudo, e isso também é cara de IA.</li></ul></aside>
@@ -761,8 +777,8 @@ body:hover #ui,#ui:focus-within{opacity:1}
     <div class="strong"><div class="lab"><i>✓</i>O carimbo</div><q>Sem cara de template: <b>nada de gradiente roxo, emoji como ícone, grade de cards iguais com ícone ou frases genéricas.</b> Nenhum efeito sem motivo. Mobile-first, rápido e acessível. <b>Antes de construir, me faça as perguntas que precisar.</b></q></div>
   </div>
     <div class="cols c2 mt3" data-a style="gap:26px;max-width:900px;--d:5">
-    <div><div class="cap-lbl">Sem o carimbo</div><div class="win"><img class="fit" style="--h:125px" src="assets/generica-hero.webp" alt=""></div></div>
-    <div><div class="cap-lbl">Com o carimbo</div><div class="win"><img class="fit" style="--h:125px" src="assets/espetacular-hero.webp" alt=""></div></div>
+    <div data-lp="lp/vingo-generica.html" data-lpt="LP do pedido simples"><div class="cap-lbl">Sem o carimbo</div><div class="win"><img class="fit" style="--h:125px" src="assets/generica-hero.webp" alt=""></div></div>
+    <div data-lp="lp/vingo-linda.html" data-lpt="LP do prompt completo"><div class="cap-lbl">Com o carimbo</div><div class="win"><img class="fit" style="--h:125px" src="assets/espetacular-hero.webp" alt=""></div></div>
   </div>
   <div class="meter" data-a style="--d:6"><span>Prompt da Vingô</span><span class="segs" data-n="5"></span><b>~700 palavras</b></div>
   <aside class="notes"><ul><li>Copiem o carimbo. Ele elimina os sintomas que vimos no começo: emoji, degradê, cards iguais.</li><li>A última linha pede perguntas: ela volta com dúvidas que a gente nem tinha pensado, antes de gastar crédito.</li></ul></aside>
@@ -886,7 +902,7 @@ No celular, 3D mais leve. Com "reduzir movimento", versão estática e completa.
     </div>
     <div class="trio" data-a style="--d:3">
       <div class="h"><div class="hv ed"><b>Chega de velório<br>de planta.</b><i></i></div><span>A · editorial</span></div>
-      <div class="h on"><div class="hv cin"><img src="assets/espetacular-hero.webp" alt=""></div><span>B · cinematográfica ✓</span></div>
+      <div class="h on" data-lp="lp/vingo-linda.html" data-lpt="LP do prompt completo"><div class="hv cin"><img src="assets/espetacular-hero.webp" alt=""></div><span>B · cinematográfica ✓</span></div>
       <div class="h"><div class="hv hum"><b>Sua planta<br>merece mais.</b><em>🌵?</em></div><span>C · bem-humorada</span></div>
     </div>
   </div>
@@ -1163,6 +1179,7 @@ No celular, 3D mais leve. Com "reduzir movimento", versão estática e completa.
 
 <div id="prog"></div>
 <div id="ui"><button id="bprev" aria-label="Anterior">‹</button><button id="bnext" aria-label="Próximo">›</button><span id="count">1 / 1</span><span class="sp"></span><button id="bnotes">Notas (N)</button><button id="bfull">Tela cheia (F)</button></div>
+<div id="lpov" hidden><div class="lpbar"><b id="lpt"></b><a id="lpnew" target="_blank" rel="noopener">Abrir em nova aba</a><button id="lpx">Fechar · Esc</button></div><iframe id="lpf" title="Landing page"></iframe></div>
 <div id="notes" hidden><h4 id="ntitle">Notas</h4><div id="nbody"></div></div>
 
 <script>
@@ -1207,10 +1224,14 @@ function show(i,dir){
 }
 function next(){if(busy)return;const sl=slides[cur];if(step<steps(sl)){step++;applySteps(sl,step);return}show(cur+1,1);}
 function prev(){if(busy)return;const sl=slides[cur];if(step>0){step--;applySteps(sl,step);return}show(cur-1,-1);}
-addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();next()}else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();prev()}
+const ov=document.getElementById('lpov'),lpf=document.getElementById('lpf');
+function openLP(u,t){document.getElementById('lpt').textContent=t||'Landing page';document.getElementById('lpnew').href=u;lpf.src=u;ov.hidden=false;requestAnimationFrame(()=>ov.classList.add('on'));}
+function closeLP(){ov.classList.remove('on');setTimeout(()=>{ov.hidden=true;lpf.src='about:blank'},350);}
+document.getElementById('lpx').onclick=closeLP;
+addEventListener('keydown',e=>{if(!ov.hidden){if(e.key==='Escape')closeLP();return}if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();next()}else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();prev()}
   else if(e.key==='n'||e.key==='N'){const n=document.getElementById('notes');n.hidden=!n.hidden}else if(e.key==='f'||e.key==='F'){toggleFull()}
   else if(e.key==='Home'){show(0,-1)}else if(e.key==='End'){show(slides.length-1,1)}});
-deck.addEventListener('click',e=>{if(e.target.closest('a,button,video'))return;const r=deck.getBoundingClientRect();(e.clientX-r.left)<r.width*.25?prev():next();});
+deck.addEventListener('click',e=>{const lp=e.target.closest('[data-lp]');if(lp){openLP(lp.dataset.lp,lp.dataset.lpt);return}if(e.target.closest('a,button,video'))return;const r=deck.getBoundingClientRect();(e.clientX-r.left)<r.width*.25?prev():next();});
 let tx=null;addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>40)(dx<0?next:prev)();tx=null});
 function toggleFull(){try{if(!document.fullscreenElement)document.documentElement.requestFullscreen().catch(()=>{});else document.exitFullscreen()}catch(e){}}
 document.getElementById('bnext').onclick=next;document.getElementById('bprev').onclick=prev;document.getElementById('bfull').onclick=toggleFull;
