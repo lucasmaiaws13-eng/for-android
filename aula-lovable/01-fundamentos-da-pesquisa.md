@@ -13,7 +13,7 @@
 4. **Explique o porquê.** Dizer *por que* você quer algo faz a IA generalizar melhor do que dar ordens soltas.
 5. **Texto real, nada de lorem ipsum.** Copy real muda o layout, o espaçamento e a hierarquia. Placeholder gera página de template.
 6. **Palavras de "vibe" mudam o design de verdade.** "Editorial", "cinematográfico", "brutalista", "premium e calmo" alteram tipografia, espaçamento, sombra, raio de borda e paleta.
-7. **Dê permissão E direção.** Liberar a IA para "sair do genérico, usar animação, 3D, ilustração" funciona (a própria Anthropic recomenda pedir explicitamente para ir além do básico). Mas o melhor resultado vem quando você **diz onde** fica o momento "uau". Animação em tudo vira cara de IA.
+7. **Dê permissão, direção e coerência.** Liberar a IA para "sair do genérico, usar 3D, scroll e ilustração" funciona (a Anthropic recomenda pedir explicitamente para ir além do básico). O salto vem quando você **descreve cada momento** e quando **todo efeito nasce da marca**, como no case do PHE. Efeito sem motivo, igual em todas as seções, é a nova cara de IA.
 8. **Começo e fim do prompt pesam mais.** O mais importante vai no início (o que é e para quem). As regras de qualidade vão no fecho.
 9. **Construa em camadas, não de uma vez.** Primeiro um prompt estruturado para a página, depois ajustes **por seção**, com o que muda e o que **não** pode mudar.
 10. **Use IA para escrever o prompt (meta-prompting).** O próprio Lovable recomenda isso — é a base do Gem/Skill que você vai entregar no fim da aula.
@@ -99,7 +99,7 @@ Compilado da skill `frontend-design` da Anthropic, do guia de frontend da OpenAI
 
 ---
 
-## 7. Animação, 3D e "fator uau": permissão + direção
+## 7. Animação, 3D e "fator uau": permissão, direção e coerência
 
 Aqui a pesquisa **confirma e refina** a sua intuição.
 
@@ -117,7 +117,17 @@ Aqui a pesquisa **confirma e refina** a sua intuição.
   3. uma **microinteração** (hover, revelação, transição) que deixe claro o que é clicável.
   Regras: perceptível numa gravação rápida, suave no celular, rápido e contido, consistente, e **removido se for só enfeite**.
 
-👉 **Fórmula da aula:** *"Libere o arsenal (animação, scroll, 3D, ilustração vetorial) e escolha onde fica o momento uau."*
+**O que o case do PHE ensinou (e ajustou a leitura das fontes):**
+As duas versões da página do PHE (pós em Ciências da Obesidade), feitas na agência, mostram que uma LP de vitrine pode ter **vários** momentos de movimento e continuar sofisticada, desde que eles formem uma única coreografia. Na versão cinematográfica:
+- o **símbolo da marca** é o objeto 3D do hero (WebGL, com luz e reflexo, reagindo ao mouse);
+- o texto do manifesto **acende palavra por palavra** com a rolagem;
+- os números de mercado trocam numa **seção fixa**, com o símbolo em **linha fina** girando ao fundo;
+- o símbolo volta como **separador do letreiro**, em **neon** e como **marca gigante no rodapé**;
+- tipografia fina gigante, linhas de 1 px, granulado e fotos em duotone amarram tudo.
+
+Ou seja: o conselho "um momento só" das fontes vale para **efeitos soltos**. Quando todos os efeitos contam a mesma marca, a página fica rica sem ficar genérica. A regra prática virou: **permissão + direção + coerência**.
+
+👉 **Fórmula da aula:** *"Tire o cenário de dentro da marca. Dê liberdade para 3D e scroll, descreva cada momento e corte qualquer efeito que não venha da marca ou da história."*
 
 **Repertório técnico que o Lovable entende** (não precisa saber programar, só nomear):
 - Movimento: *Framer Motion (Motion), scroll-triggered reveals, staggered animation, parallax, sticky scroll storytelling, Ken Burns, kinetic typography, marquee, count-up, smooth scroll (Lenis), GSAP ScrollTrigger*.

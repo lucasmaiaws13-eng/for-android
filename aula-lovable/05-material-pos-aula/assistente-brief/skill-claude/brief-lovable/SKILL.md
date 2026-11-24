@@ -47,15 +47,21 @@ Se o crítico estiver claro, **não pergunte nada**: entregue o prompt e liste s
 - Teste da marca: se o hero, sem o logo, poderia ser de qualquer marca do segmento, a direção está fraca. Puxe referências do universo do cliente (materiais, cultura, produto, cidade).
 
 ### Passo 4: Escolher o fator uau (bloco F)
-Dê **permissão e direção**:
-- Permissão explícita: "Você tem liberdade para sair do genérico: animação, scroll, 3D e ilustração vetorial."
-- Direção com a receita dos 3 movimentos:
-  1. **uma entrada marcante** no hero;
-  2. **um grande momento de scroll**, ligado ao assunto do cliente (ex.: plantas → ramo que cresce; imobiliário → manhã/tarde/noite; curso → trilha que se desenha; produto → objeto 3D que gira);
-  3. **microinterações** discretas (hover, transições, sucesso do formulário).
-- Escreva também: "No resto, só revelações sutis e hovers discretos." Animação em tudo é cara de IA.
-- Segmentos sóbrios (saúde, jurídico, financeiro): uau elegante e contido (linha do tempo, simulador, revelações suaves).
-- Pode nomear bibliotecas (Framer Motion, GSAP ScrollTrigger, Three.js, Spline): o Lovable instala sozinho.
+O bloco F decide se a página fica memorável. Siga três regras:
+
+1. **Permissão explícita.** Escreva: "Você tem liberdade total para criar uma experiência cinematográfica: 3D, animações ligadas ao scroll e ilustrações vetoriais." Sem isso, a IA joga seguro.
+2. **Direção momento a momento.** Descreva de 3 a 6 momentos, em ordem, dizendo o que acontece e onde. Repertório (detalhes em `references/dicionario.md`, seção 3):
+   - **Hero:** um objeto 3D em WebGL (Three.js) tirado da marca, que reage ao mouse e muda com o scroll; ou mockup 3D do produto; headline entrando linha por linha.
+   - **Scroll:** texto que acende palavra por palavra; seção fixa (sticky) com números gigantes que trocam; rolagem horizontal presa na tela; elemento que se desenha ou cresce com a rolagem; sequência de imagens presa na tela.
+   - **Ritmo:** letreiro (marquee) que acelera com a velocidade da rolagem; cards de imagem que expandem.
+   - **Fechamento:** contorno da marca em neon que se desenha no CTA; nome da marca gigante no rodapé; comemoração no envio do formulário.
+   Nomeie as bibliotecas: Three.js, GSAP com ScrollTrigger, Lenis (rolagem suave), Framer Motion. O Lovable instala sozinho.
+3. **Coerência com a marca.** Todo efeito nasce do universo do cliente: o símbolo do logo, o produto, os materiais do segmento, a metáfora da campanha (plantas → folhas em 3D e ramo que cresce; curso de saúde → símbolo em 3D e números de mercado; imobiliário → manhã/tarde/noite no apartamento). Escreva no prompt: "Nenhum efeito sem motivo: se não vem da marca ou da história, sai."
+
+Ajuste a intensidade ao segmento:
+- **Vitrine, lançamento, e-book, curso, marca de consumo, evento:** experiência cinematográfica completa.
+- **Saúde, jurídico, financeiro:** sofisticado e contido (3D sutil do símbolo, números fixos, revelações elegantes), sem nada que pareça brincadeira.
+- Sempre: 3D mais leve no celular e versão estática quando "reduzir movimento" estiver ativo.
 
 ### Passo 5: Escrever a estrutura com texto real (bloco E)
 - 5 a 8 seções, na ordem, cada uma com uma função (chamar atenção, gerar identificação, mostrar, provar, converter).
@@ -64,7 +70,7 @@ Dê **permissão e direção**:
 - Segmentos regulados (saúde, estética, financeiro, imobiliário, educação, jurídico, bebidas): não prometa resultados e sinalize "validar com jurídico/compliance". Veja `references/segmentos.md`.
 
 ### Passo 6: Montar o prompt
-Formato fixo, em português, com os termos de design em inglês quando ajudarem. Entre 300 e 650 palavras. Comece pelo mais importante e termine com o carimbo (a IA dá mais peso ao começo e ao fim).
+Formato fixo, em português, com os termos de design em inglês quando ajudarem. Entre 400 e 800 palavras. Comece pelo mais importante e termine com o carimbo (a IA dá mais peso ao começo e ao fim).
 
 ```text
 Crie a landing page de [o quê] da [cliente]. [Se houver: Anexei o brandbook e o logo: siga à risca.]
@@ -83,14 +89,16 @@ Crie a landing page de [o quê] da [cliente]. [Se houver: Anexei o brandbook e o
 ...
 
 [F] FATOR UAU
-Você tem liberdade para sair do genérico: animação, scroll, 3D e ilustração vetorial. Quero 3 momentos marcantes:
-1. [entrada]
-2. [grande momento de scroll]
-3. [microinteração ou segundo momento]
-No resto, só revelações sutis e hovers discretos.
+Você tem liberdade total para criar uma experiência cinematográfica: 3D, animações ligadas ao scroll e ilustrações vetoriais. Use [bibliotecas]. Cada efeito vem do universo da marca:
+1. [hero: objeto 3D da marca ou do produto + entrada da headline]
+2. [momento de scroll]
+3. [momento de scroll]
+4. [ritmo: letreiro, cards, imagens]
+5. [fechamento: neon, marca gigante, comemoração no envio]
+No celular, deixe o 3D mais leve. Com "reduzir movimento", mostre uma versão estática e completa.
 
 [CARIMBO] REGRAS DE QUALIDADE
-Sem cara de template: nada de gradiente roxo, emoji como ícone, cards idênticos em grade, selo acima dos títulos ou frases genéricas. Mobile-first, rápido e respeitando a preferência de reduzir movimento. Se faltar alguma informação importante, me pergunte antes de construir.
+Sem cara de template: nada de gradiente roxo, emoji como ícone, grade de cards iguais com ícone ou frases genéricas. Nenhum efeito sem motivo: se não vem da marca ou da história, sai. Mobile-first, rápido (o 3D não pode travar a página) e acessível. Se faltar alguma informação importante, me pergunte antes de construir.
 ```
 
 Ajuste o carimbo se a marca pedir algo que ele proíbe (ex.: a marca é roxa → remova "gradiente roxo"). O brief do cliente sempre vence.
@@ -136,7 +144,7 @@ Regras:
 - Persona não faz milagre: não comece o prompt com "você é o melhor designer do mundo". Gaste as palavras no cliente.
 - Texto real em tudo. Nada de lorem ipsum.
 - Uma ideia por seção. Se cortar 30% do texto melhora, corte.
-- Ousadia em um lugar só: um momento memorável, o resto quieto e bem-feito.
+- Coerência acima de quantidade: vários momentos podem conviver se todos contam a mesma marca; efeito solto e repetido em toda seção é cara de IA.
 - Sempre: mobile-first, contraste legível, consentimento LGPD em formulários, página leve.
 - Evite os sinais de "cara de IA" listados em `references/dicionario.md` (seção 6), a menos que a marca peça explicitamente.
 

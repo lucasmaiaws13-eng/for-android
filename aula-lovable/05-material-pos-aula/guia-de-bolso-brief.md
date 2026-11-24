@@ -12,7 +12,7 @@
 | **R** | Resultado | Qual é a ÚNICA ação da página? | Texto exato do CTA, campos e por quê, LGPD, origem do tráfego (celular?), o que acontece após o envio |
 | **I** | Identidade | Como a marca se parece? | Cores em HEX, nomes das fontes, 3 palavras de vibe, estilo de imagem. Anexe o brandbook **e** repita o essencial no texto |
 | **E** | Estrutura | O que vem em cada parte? | Seções na ordem, uma função por seção, **textos reais** (nada de lorem ipsum) |
-| **F** | Fator uau | Onde mora o momento memorável? | **Permissão + direção:** 1 entrada + 1 grande momento de scroll + microinterações. Não anime tudo |
+| **F** | Fator uau | Qual é a experiência que ninguém esquece? | **Permissão + direção + coerência:** libere 3D e scroll, descreva cada momento e faça todo efeito nascer da marca |
 | **+** | Carimbo | Quais regras sempre valem? | Bloco fixo no fim (abaixo) |
 
 **Dica de ouro:** diga o **porquê** ("formulário curto *porque* o tráfego é do Instagram no celular"). A IA acerta mais quando entende a intenção.
@@ -40,14 +40,15 @@ Vibe: [3 palavras + palavras-chave em inglês]. Cores: [HEX e papel de cada uma]
 ...
 
 [F] FATOR UAU
-Você tem liberdade para sair do genérico: animação, scroll, 3D e ilustração vetorial. Quero 3 momentos marcantes:
-1. [entrada no hero]
-2. [grande momento de scroll, ligado ao assunto do cliente]
-3. [microinteração]
-No resto, só revelações sutis e hovers discretos.
+Você tem liberdade total para criar uma experiência cinematográfica: 3D, animações ligadas ao scroll e ilustrações vetoriais. Use Three.js, GSAP com ScrollTrigger e Lenis. Cada efeito vem do universo da marca:
+1. [hero: o símbolo ou o produto em 3D, reagindo ao mouse e ao scroll]
+2. [scroll: texto que acende, números em seção fixa, rolagem horizontal…]
+3. [ritmo: letreiro, cards que expandem, imagens presas na tela]
+4. [fechamento: neon da marca no CTA, nome gigante no rodapé]
+No celular, 3D mais leve. Com "reduzir movimento", versão estática e completa.
 
 [CARIMBO]
-Sem cara de template: nada de gradiente roxo, emoji como ícone, cards idênticos em grade, selo acima dos títulos ou frases genéricas. Mobile-first, rápido e respeitando a preferência de reduzir movimento. Se faltar alguma informação importante, me pergunte antes de construir.
+Sem cara de template: nada de gradiente roxo, emoji como ícone, grade de cards iguais com ícone ou frases genéricas. Nenhum efeito sem motivo: se não vem da marca ou da história, sai. Mobile-first, rápido e acessível. Se faltar alguma informação importante, me pergunte antes de construir.
 ```
 
 ---
@@ -55,9 +56,9 @@ Sem cara de template: nada de gradiente roxo, emoji como ícone, cards idêntico
 ## Palavras que funcionam (escreva em português, mantenha estes termos em inglês)
 
 - **Vibe:** premium (*refined, layered depth*) · ousado (*bold, brutalist, oversized typography*) · editorial (*magazine-style grid*) · calmo (*soft gradients, generous spacing*) · futurista (*dark mode, glowing edges*) · orgânico (*earth tones, hand-drawn, botanical*)
-- **Entrada:** *headline word by word* · *staggered reveal* · *Ken Burns* · *kinetic typography* · *floating 3D mockup*
-- **Scroll:** *parallax* · *sticky scroll storytelling* · *scroll-triggered* · *scroll-linked progress* · *count-up* · *marquee*
-- **3D e profundidade:** *tilt on mouse move* · *Three.js* · *Spline* · *grain texture* · *glassmorphism* (com moderação)
+- **Hero 3D:** *3D scene with Three.js* · *tilt on mouse move* · *brand symbol as 3D object* · *floating 3D mockup* · *headline line by line*
+- **Scroll:** *scroll-linked text reveal* · *sticky section with big numbers* · *horizontal scroll section* · *parallax* · *marquee with scroll velocity* · *count-up*
+- **Acabamento:** *thin oversized typography* · *1px hairlines* · *grain texture* · *duotone photos* · *glowing neon outline* · *giant wordmark footer*
 - **Interação:** *hover states* · *smooth transitions* · *interactive quiz/calculator* · *before-after slider* · *success animation*
 - **Bibliotecas (o Lovable instala sozinho):** Framer Motion · GSAP ScrollTrigger · Lenis · Three.js · componentes do 21st.dev
 

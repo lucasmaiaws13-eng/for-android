@@ -31,7 +31,7 @@ Cada segmento traz: estrutura típica de LP, direção visual sugerida, ideia de
 ## Educação (faculdade, curso, pós, infoproduto)
 - **Estrutura:** Hero com o curso e a promessa → para quem é → o que vai aprender (módulos) → professores → formato/duração/certificado → depoimentos de alunos → preço/condição → inscrição + FAQ
 - **Visual:** editorial ou ousado (público jovem). Cor institucional forte, tipografia grande.
-- **Momento uau:** trilha dos módulos que se desenha no scroll · contador de vagas/data de início · "simulador de carreira" interativo
+- **Momento uau:** símbolo da instituição em 3D no hero · números de mercado em seção fixa · módulos em rolagem horizontal · sequência de fotos presa na tela · neon do símbolo no CTA (ver o case PHE)
 - **Evitar:** "transforme sua carreira", stock photo de formatura, 12 cards de benefícios
 - **Atenção:** graduações e pós citam credenciamento/ato regulatório quando aplicável.
 
@@ -94,6 +94,6 @@ Cada segmento traz: estrutura típica de LP, direção visual sugerida, ideia de
 ## E-book / isca digital (qualquer segmento)
 - **Estrutura:** Hero com o título do material + promessa + capa → dor/identificação → o que tem dentro (capítulos) → amostra de valor (trecho, quiz, checklist) → quem escreveu → prova → formulário
 - **Visual:** a identidade da marca; mockup da capa como protagonista.
-- **Momento uau:** capa em 3D que inclina com o mouse · capítulos revelados com um elemento que cresce/desenha no scroll · quiz que entrega uma amostra
+- **Momento uau:** e-book em 3D (WebGL) entre elementos da marca, reagindo ao mouse · manifesto que acende no scroll · números do material em seção fixa · capítulos em rolagem horizontal com ilustrações que se desenham · quiz que entrega uma amostra · neon no CTA
 - **Evitar:** mockup de gradiente com emoji, "baixe agora gratuitamente 🚀"
 - **Atenção:** formulário com consentimento LGPD e link para a política de privacidade; pergunte só o que a régua vai usar.

@@ -24,7 +24,7 @@ Quando esta skill for usada, antes de escrever qualquer código:
    - R (Resultado): ação única, texto do CTA, campos do formulário, origem do tráfego.
    - I (Identidade): cores em HEX, fontes, estilo de imagem. Se houver brandbook anexado, extraia daí.
    - E (Estrutura): seções na ordem, com a função de cada uma.
-   - F (Fator uau): 1 entrada marcante no hero, 1 grande momento de scroll ligado ao assunto do cliente, microinterações discretas.
+   - F (Fator uau): de 3 a 6 momentos descritos em ordem (hero com o símbolo ou produto em 3D, scroll, ritmo, fechamento), todos tirados do universo da marca.
 2. Se faltar o que o cliente vende, para quem ou qual é a ação da página, faça no máximo 5 perguntas, com uma sugestão de resposta para cada. Se não faltar, não pergunte.
 3. Se não houver direção visual, proponha uma específica para o segmento (vibe em 3 palavras, paleta HEX de 4 a 6 cores, 2 fontes do Google Fonts que não sejam Inter/Roboto/Arial) e siga com ela.
 4. Construa seguindo as Instructions do workspace e do projeto:

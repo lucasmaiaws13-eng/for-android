@@ -46,7 +46,22 @@ Dicas:
 
 ## 3. Movimento (fator uau)
 
-Receita: **1 entrada marcante + 1 momento de scroll + microinterações**. Animação em tudo = cara de IA.
+Regra: **permissão + direção + coerência.** Dê liberdade, descreva cada momento e faça todo efeito nascer da marca. Efeito solto, repetido igual em toda seção, é cara de IA.
+
+**Padrões de uma LP cinematográfica** (vistos no case do PHE e na LP da Vingô):
+| Padrão | Como pedir |
+|---|---|
+| Símbolo ou produto em 3D no hero | "hero com cena 3D em WebGL (Three.js): o [símbolo/produto] como objeto 3D com luz e reflexo, reagindo ao mouse; ao rolar, ele gira e se afasta" |
+| Texto que acende com a rolagem | "manifesto que acende palavra por palavra conforme a rolagem (scroll-linked text reveal)" |
+| Números em seção fixa | "seção fixa (sticky) em que números gigantes em fonte fina trocam conforme a rolagem, com o [símbolo] em linha fina girando ao fundo" |
+| Rolagem horizontal | "seção de [módulos/capítulos] em rolagem horizontal presa na tela, com barra de progresso (GSAP ScrollTrigger)" |
+| Sequência de imagens presa na tela | "imagem fixa à esquerda que troca (01/05) enquanto os textos rolam à direita" |
+| Cards que expandem | "cards de imagem que expandem no hover/toque, mostrando o texto" |
+| Letreiro com velocidade | "letreiro em duas linhas, direções opostas, acelerando com a velocidade da rolagem, com o [símbolo] como separador" |
+| Neon da marca | "contorno do [símbolo] em neon que se desenha em volta do CTA final" |
+| Marca gigante no rodapé | "nome da marca gigante, em contorno, no rodapé" |
+| Textura e acabamento | "tipografia fina em tamanho enorme, linhas de 1 px, granulado sutil, fotos em duotone" |
+| Rolagem suave | "rolagem suave com Lenis" |
 
 **Entrada (primeira dobra)**
 - headline revealing word by word (palavra por palavra) / line by line

@@ -9,9 +9,9 @@ Use este exemplo como referência de **nível de qualidade e formato** da respos
 ## Raciocínio esperado (interno, não precisa mostrar)
 - B: completo o suficiente. Público não foi dito → assumir pelo contexto (25–40, apê, já perdeu plantas) e declarar como suposição.
 - R: lead para régua + segmentação por nº de plantas → formulário com nome, e-mail e a pergunta; LGPD; tráfego mobile → CTA fixo.
-- I: tem brandbook → usar os HEX e fontes exatamente; Musgo não foi citado, não inventar cor nova (usar tons do próprio verde); sugerir anexar PDF + logo.
+- I: tem brandbook → usar os HEX e fontes exatamente; para uma vitrine cinematográfica, usar o fundo escuro da própria paleta (Noite) e a Bricolage em pesos finos; sugerir anexar PDF + logo.
 - E: estrutura de isca digital (ver segmentos.md) adaptada ao humor da marca.
-- F: assunto = plantas que crescem → momento uau ligado ao tema: ramo que cresce no scroll. Entrada: capa 3D. Micro: letreiro de desculpas.
+- F: assunto = plantas; o universo da marca são as folhas. Logo: e-book em 3D entre folhas 3D, manifesto que acende, números fixos, capítulos na horizontal com ilustrações em traço, neon de folha no CTA.
 - Nada a perguntar de crítico → entregar direto, com suposições listadas.
 
 ## Saída ideal
@@ -22,33 +22,39 @@ Use este exemplo como referência de **nível de qualidade e formato** da respos
 Crie a landing page de captura do e-book gratuito "Selva de Apê", da Vingô. Anexei o brandbook e o logo: siga à risca.
 
 [B] SOBRE O CLIENTE
-A Vingô é uma loja de plantas de São Paulo. Público: 25 a 40 anos, mora em apartamento, trabalha muito e já perdeu algumas plantas pelo caminho. Tom de voz: bem-humorado e acolhedor, como uma amiga que entende de planta — frases curtas, zero culpa e zero jargão.
-O e-book: "Selva de Apê — o guia das plantas que não morrem", 52 páginas, da bióloga Marina Okabe, sócia da Vingô. Capítulos: Que luz é essa?; Rega sem drama; As 12 indestrutíveis; Vaso, terra e drenagem; Pragas sem pânico; Pets e plantas; Calendário verde. Bônus: calendário de rega para imprimir.
+A Vingô é uma loja de plantas para apartamento em São Paulo (e-commerce + loja em Pinheiros). Propósito: fazer qualquer apê virar um cantinho verde, sem culpa e sem planta morta. Público: 25 a 40 anos, mora em apartamento, trabalha muito e já perdeu algumas plantas pelo caminho. Tom de voz: amiga que entende de planta, bem-humorada, frases curtas, zero culpa e zero jargão.
+O e-book: "Selva de Apê, o guia das plantas que não morrem", 52 páginas, da bióloga Marina Okabe, cofundadora da Vingô. Capítulos: Que luz é essa?; Rega sem drama; As 12 indestrutíveis; Vaso, terra e drenagem; Pragas sem pânico; Pets e plantas; Calendário verde. Bônus: calendário de rega para imprimir.
 
 [R] RESULTADO
-Objetivo: captar leads para a régua de e-mails. Ação única: baixar o e-book, CTA "Quero o guia grátis". Formulário: nome, e-mail e "Quantas plantas você tem hoje?" (Nenhuma ainda / 1 a 5 / 6 ou mais / Perdi a conta), porque essa resposta segmenta a régua. Checkbox LGPD com link para a política de privacidade. O tráfego vem de Instagram e Pinterest Ads, quase todo no celular: formulário curto e CTA fixo no rodapé no mobile. Por enquanto, o envio só mostra uma mensagem de sucesso.
+Objetivo: captar leads para a régua de e-mails. Ação única: baixar o e-book, com o CTA "Quero o guia grátis". Formulário: nome, e-mail e "Quantas plantas você tem hoje?" (Nenhuma ainda / 1 a 5 / 6 ou mais / Perdi a conta), porque essa resposta segmenta a régua. Checkbox LGPD. O tráfego vem de Instagram e Pinterest Ads, quase todo no celular: CTA sempre à mão, fixo no rodapé no celular. Por enquanto, o envio só mostra uma mensagem de sucesso.
 
 [I] IDENTIDADE VISUAL
-Cores: verde-escuro #0E3B2C (base e textos), verde-limão #C9F264 (CTAs, só sobre o verde-escuro), fundo #EEF4E6, rosa #FF6F91 só em detalhes de humor (adesivos). Fontes: Bricolage Grotesque ExtraBold nos títulos, grandes e apertados; Figtree nos textos. Linguagem visual: ilustrações vetoriais chapadas de folhas (costela-de-adão, jiboia, espada-de-são-jorge), sem fotos de banco. Botões em pílula.
+Direção: cinematográfica, escura e botânica, como o lançamento de um produto premium. Fundo Noite #06140E com camadas de Mata #0E3B2C; Broto #C9F264 é a luz da página (CTAs, palavra-chave de cada título, brilhos); Folha Clara #EEF4E6 nos textos; Antúrio #FF6F91 só no selo de humor. Tipografia: Bricolage Grotesque em pesos finos (200 a 300) e tamanhos enormes para títulos e números, com a palavra-chave em 700 verde-limão; Figtree nos textos. Divisores em linha de 1 px, granulado sutil, ilustrações em traço fino feitas a partir das folhas da marca. Nada de foto de banco.
 
 [E] ESTRUTURA (textos em português, no tom da marca)
-1. Hero: headline "Chega de velório de planta.", subtítulo sobre o guia, CTA e o e-book.
-2. Faixa escura com as desculpas clássicas ("esqueci de regar", "reguei demais", "o gato comeu"...) e a virada: "Não é falta de mão verde. É falta de manual."
-3. O que tem dentro: os 7 capítulos + bônus, cada um com uma frase.
-4. Teste rápido "Qual é a luz do seu apê?": 3 opções que mostram 3 plantas indicadas cada.
-5. Quem escreveu: Marina Okabe, com uma frase dela.
-6. Prova social: [número de downloads] e 2 depoimentos curtos. 
-7. CTA final com o formulário, em fundo verde-escuro.
+1. Hero em tela cheia: "E-book gratuito · Vingô", headline "Chega de velório de planta.", subtítulo, CTA e botão "Ver o que tem dentro"; faixa inferior com 5 fatos (formato, páginas, capítulos, bônus, autora).
+2. Manifesto: "Sua planta não morreu por falta de amor. Morreu por falta de manual. O Selva de Apê é o manual que ninguém te deu…" + três apoios curtos.
+3. Por que funciona: 4 números (3 semanas, 12, 10 min, 52) com legenda.
+4. Letreiro com as desculpas clássicas ("esqueci de regar", "reguei demais", "o gato comeu"…).
+5. Capítulos: os 7 + bônus, cada um com uma ilustração em traço.
+6. Teste "Qual é a luz do seu apê?": 3 opções, cada uma mostra 3 plantas (amostra do capítulo 1).
+7. Autora: Marina Okabe, com uma frase dela.
+8. Prova social: 18.400 downloads e 2 depoimentos curtos com quantas plantas a pessoa tem.
+9. CTA final com o formulário.
+10. Rodapé com o nome da marca gigante, em contorno.
 
 [F] FATOR UAU
-Você tem liberdade para sair do genérico: animação, scroll, 3D e ilustração vetorial. Quero 3 momentos marcantes:
-1. Hero: mockup 3D do e-book que inclina com o movimento do mouse e flutua devagar, entre folhas vetoriais que balançam; headline entrando palavra por palavra.
-2. "O que tem dentro" é o grande momento: um ramo de planta cresce conforme a pessoa rola a página, abrindo uma folha em cada capítulo.
-3. As desculpas rolam em loop, como letreiro.
-No resto, só revelações sutis e hovers discretos. Ao enviar o formulário, uma chuva de folhinhas. Use Framer Motion.
+Você tem liberdade total para criar uma experiência cinematográfica com 3D, animações ligadas ao scroll e ilustrações vetoriais. Use Three.js, GSAP com ScrollTrigger e Lenis para a rolagem suave. Cada efeito vem do universo da marca:
+1. Hero com cena 3D em WebGL: o e-book como objeto 3D com a capa real, flutuando entre folhas 3D extrudadas das ilustrações da marca. Tudo reage ao mouse; ao rolar, o livro gira e as folhas se afastam. A headline entra linha por linha.
+2. Manifesto que acende palavra por palavra conforme a rolagem.
+3. Seção fixa em que os 4 números trocam com o scroll, com o contorno de uma costela-de-adão em linha fina girando ao fundo.
+4. Letreiro em duas linhas, em direções opostas, que acelera com a velocidade da rolagem.
+5. Capítulos em rolagem horizontal presa na tela, com barra de progresso; cada ilustração se desenha quando o card entra.
+6. CTA final com uma folha em neon verde-limão desenhando-se em volta do formulário; ao enviar, chuva de folhinhas.
+No celular, deixe o 3D mais leve. Com "reduzir movimento" ativo, mostre uma versão estática e completa.
 
 [CARIMBO] REGRAS DE QUALIDADE
-Sem cara de template: nada de gradiente roxo, emoji como ícone, cards idênticos em grade, selo acima dos títulos ou frases genéricas. Mobile-first, rápido e respeitando a preferência de reduzir movimento. Se faltar alguma informação importante, me pergunte antes de construir.
+Sem cara de template: nada de gradiente roxo, emoji como ícone, grade de cards iguais com ícone ou frases genéricas. Nenhum efeito sem motivo: se não vem da marca ou da história, sai. Mobile-first, carregamento rápido (o 3D não pode travar a página) e acessível.
 ```
 
 **2. O que anexar no Lovable**

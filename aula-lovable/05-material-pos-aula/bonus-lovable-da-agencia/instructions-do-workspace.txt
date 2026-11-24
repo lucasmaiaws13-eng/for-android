@@ -24,7 +24,7 @@ Design (fugir da cara de template)
 - Uma ideia por seção. Hero com, no máximo: marca, headline, frase de apoio, CTA e um elemento visual dominante.
 
 Movimento
-- Animação com intenção: uma entrada marcante no hero, um grande momento de scroll e microinterações discretas. Não aplique o mesmo efeito em todas as seções.
+- Movimento com coerência: experiências com 3D e scroll são bem-vindas quando cada efeito nasce da marca ou da história (símbolo, produto, metáfora da campanha). Descreva cada momento. Nunca aplique o mesmo efeito genérico em todas as seções.
 - Respeite prefers-reduced-motion. Animações devem ficar suaves no celular.
 
 Qualidade técnica
