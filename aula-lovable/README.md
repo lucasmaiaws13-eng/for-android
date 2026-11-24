@@ -1,6 +1,6 @@
 # Aula: IA para criação de LPs com Lovable · Agência Mestre
 
-> **Ideia central:** *Prompt bom é briefing bom.* A IA é um freela brilhante que nunca ouviu falar do seu cliente; se você não decide, ela decide pela média. A fórmula **BRIEF** (Base, Resultado, Identidade, Estrutura, Fator uau + Carimbo) transforma o briefing que a agência já sabe fazer num prompt que gera LP com cara de marca.
+> **Ideia central:** *Prompt bom é briefing bom.* A IA é um freela brilhante que nunca ouviu falar do seu cliente; se você não decide, ela decide pela média. A fórmula **BRIEF** (Base, Resultado, Identidade, Estrutura, Fator uau + Carimbo) transforma o briefing que a agência já sabe fazer num prompt que gera uma LP que parece mesmo do cliente.
 
 30 minutos + perguntas · público geral da agência.
 
@@ -23,8 +23,8 @@ Para mostrar a alguém fora da sua conta, use o menu Share de cada página. O de
 
 | Arquivo / pasta | Para quê |
 |---|---|
-| `apresentacao/index.html` + `assets/` | **O deck.** 32 slides + 6 extras: 12 boas práticas de prompt (fraco × forte), o prompt completo, 8 dicas de Lovable, os assistentes. Transições, demos animadas, vídeos e notas do apresentador (tecla N) |
-| `02-guia-da-apresentacao.md` | **Guia resumido:** como usar o deck, tempos (29 min) e o que falar em cada slide |
+| `apresentacao/index.html` + `assets/` | **O deck.** 29 slides + 6 extras, em 4 partes com capa própria: 8 boas práticas de prompt (fraco × forte), o prompt completo, 7 dicas de Lovable (com o selo do Lovable), os assistentes. Transições, demos animadas, vídeos e notas do apresentador (tecla N) |
+| `02-guia-da-apresentacao.md` | **Guia resumido:** como usar o deck, tempos (~25 min falados) e o que falar em cada slide |
 | `01-fundamentos-da-pesquisa.md` | A pesquisa que sustenta a aula, com fontes |
 | `03-exemplo-vingo-prompts.md` | O case Vingô: brandbook, prompt de sempre, prompt completo, mapa "trecho do prompt → resultado" e inventário de capturas |
 | `04-faq-possiveis-duvidas.md` | Respostas para as dúvidas prováveis (base dos slides extras) |
@@ -42,9 +42,9 @@ Para mostrar a alguém fora da sua conta, use o menu Share de cada página. O de
 
 1. **Abrir o deck** e passar por ele com as notas abertas (N). Siga `02-guia-da-apresentacao.md`.
 2. **Preencher o nome** na capa: procure "[Seu nome]" em `apresentacao/index.html`.
-3. **Criar o Gem** (10 min) com `05-material-pos-aula/assistente-brief/como-instalar-e-usar.md`. Rode os 4 casos de teste e coloque o link no slide 29 (procure "Link do Gem").
-4. **Ensaiar uma vez cronometrando:** chegar no slide 18 até 16:00. Se apertar, pule os slides 17, 30 e 26.
-5. **Deixar a LP da Vingô aberta numa aba** para o slide 20.
+3. **Criar o Gem** (10 min) com `05-material-pos-aula/assistente-brief/como-instalar-e-usar.md`. Rode os 4 casos de teste e coloque o link no slide 27 (procure "Link do Gem").
+4. **Ensaiar uma vez cronometrando:** chegar no slide 14 até 13:00. Se apertar, pule os slides 21 e 23.
+5. **Deixar a LP da Vingô aberta numa aba** para o slide 17.
 6. **(Opcional, 20 min)** Rodar o prompt completo no Lovable com o brandbook anexado (`03-exemplo-vingo-prompts.md`, seção 6) para ter também um resultado 100% Lovable da Vingô.
 
 Se mudar textos do deck, mantenha as regras da Mestre: título termina com ponto, sem travessão, Outfit, tinta e papel.
@@ -64,9 +64,10 @@ Se mudar textos do deck, mantenha as regras da Mestre: título termina com ponto
 
 ## Decisões tomadas (e por quê)
 
-- **A aula virou um guia de boas práticas.** Doze práticas de prompt, cada uma com um exemplo de prompt fraco e de prompt forte, e oito dicas de Lovable, uma por slide. O "BRIEF" aparece como esqueleto de prompt, sem tomar o centro: o recado é que o briefing precisa ir inteiro e detalhado para o prompt.
+- **A aula virou um guia de boas práticas.** Oito práticas de prompt, cada uma com um exemplo de prompt fraco e de prompt forte, e sete dicas de Lovable, uma por slide. Cabe em 30 minutos com folga para a sala participar. O "BRIEF" aparece como esqueleto de prompt, sem tomar o centro: o recado é que o briefing precisa ir inteiro e detalhado para o prompt.
 - **Fio da história:** a mesma IA fez a versão A e a versão B da Vingô. Cada prática acrescenta uma peça ao prompt (o medidor no rodapé dos slides mostra o prompt crescendo) até ele virar o briefing completo, mostrado na íntegra, que gerou a versão B.
 - **Sem slides de frase de impacto.** Toda tela tem conteúdo para falar.
+- **Quatro partes com capa própria** (número grande, visual da parte e a faixa de progresso), para a aula não virar uma sequência de telas iguais.
 - **O fator uau é "permissão + direção + coerência":** vários momentos de movimento funcionam quando todos nascem da marca. Efeito genérico repetido em toda seção é cara de IA.
 - **A LP da Vingô é cinematográfica de verdade:** 3D em WebGL (Three.js), GSAP ScrollTrigger e Lenis, com versão estática para "reduzir movimento".
 - **O deck segue o design system da Mestre:** tinta e papel, Outfit de 300 a 900, raio zero, sem sombra. Prints, vídeos e demos levam a cor.
