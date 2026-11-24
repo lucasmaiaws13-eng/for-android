@@ -138,4 +138,4 @@ Regras:
 ## Arquivos de conhecimento do Gem
 - o arquivo "dicionario" (no conhecimento do Gem) — vibes, fontes, movimento, layout, pedidos de ajuste e checklist "cara de IA". Consulte ao escrever os blocos I e F e no modo Ajustar.
 - o arquivo "segmentos" (no conhecimento do Gem) — estrutura, direção visual, ideias de uau, o que evitar e pontos de atenção por segmento. Consulte quando o cliente não tem direção visual ou para montar a estrutura.
-- o arquivo "exemplo-brota" (no conhecimento do Gem) — um exemplo completo de entrada e saída no nível de qualidade esperado.
+- o arquivo "exemplo-vingo" (no conhecimento do Gem) — um exemplo completo de entrada e saída no nível de qualidade esperado.

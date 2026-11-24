@@ -11,7 +11,7 @@ O assistente transforma o briefing de um cliente em um prompt pronto para o Lova
 2. **Nome:** `Assistente BRIEF — LPs no Lovable`
 3. **Descrição (opcional):** "Cole o briefing do cliente e receba o prompt pronto para o Lovable."
 4. **Instruções:** cole todo o conteúdo de `gem-gemini/instrucoes-do-gem.txt`.
-5. **Conhecimento:** envie os 3 arquivos de `gem-gemini/conhecimento/` (`dicionario.txt`, `segmentos.txt`, `exemplo-brota.txt`). Se preferir, converta-os em Google Docs antes. Gems com arquivos do Drive ou do computador podem ser compartilhados.
+5. **Conhecimento:** envie os 3 arquivos de `gem-gemini/conhecimento/` (`dicionario.txt`, `segmentos.txt`, `exemplo-vingo.txt`). Se preferir, converta-os em Google Docs antes. Gems com arquivos do Drive ou do computador podem ser compartilhados.
 6. Salve e teste com os casos de teste abaixo.
 7. **Compartilhar:** no Gem, use **Compartilhar** e mande o link no grupo. Dê acesso de **Leitor** para o time (só quem precisa editar recebe **Editor**).
 
@@ -54,7 +54,7 @@ Ele vai:
 ## Casos de teste (rode depois de instalar)
 
 1. **Criar, com pouca informação:** "LP para um curso online de Excel para iniciantes, captação de leads para aula gratuita." → Deve fazer poucas perguntas OU entregar com suposições claras, direção visual específica (não roxo), e um "uau" ligado ao tema (ex.: planilha que se preenche no scroll).
-2. **Criar, com brandbook:** cole o exemplo da Brota (`exemplo-brota.txt`, só a parte "Entrada"). → Deve usar exatamente as cores e fontes informadas.
+2. **Criar, com brandbook:** cole o exemplo da Vingô (`exemplo-vingo.txt`, só a parte "Entrada"). → Deve usar exatamente as cores e fontes informadas.
 3. **Revisar:** "Revisa: Crie uma landing page moderna e bonita para minha clínica de estética com formulário." → Deve dar notas baixas, apontar o que falta e reescrever, com alerta de compliance para estética.
 4. **Ajustar:** "Ficou animação demais, está tudo se mexendo." → Deve devolver um prompt curto do tipo "mantenha só X e Y, remova o resto, não mexa em Z".
 

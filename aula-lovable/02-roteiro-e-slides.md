@@ -48,7 +48,7 @@ Independente da identidade da Mestre, o deck precisa destes recursos:
 - Subtítulo: Como usar IA para criar LPs com Lovable (e fugir da cara de IA)
 - Rodapé: [Seu nome] · Agência Mestre · [data]
 
-**Visual:** capa na identidade da Mestre. Opcional: o broto da Brota bem discreto num canto, como "teaser" do case.
+**Visual:** capa na identidade da Mestre. Opcional: o broto da Vingô bem discreto num canto, como "teaser" do case.
 
 **Fala**
 - "Hoje vai ser rápido, 30 minutos, e vocês vão sair com uma fórmula e uma ferramenta pronta para usar amanhã."
@@ -72,7 +72,7 @@ Independente da identidade da Mestre, o deck precisa destes recursos:
 ### Slide 3 — A revelação · ⏱ 1:30–2:30
 **Na tela**
 - Esquerda: o prompt da genérica, inteiro, em destaque:
-  > "Crie uma landing page bonita e moderna para um e-book gratuito sobre cuidados com plantas da marca Brota, com formulário para download."
+  > "Crie uma landing page bonita e moderna para um e-book gratuito sobre cuidados com plantas da marca Vingô, com formulário para download."
 - Direita: um bloco de prompt longo e organizado, desfocado (o BRIEF, que só vamos revelar no Ato 4)
 - Frase: **Não mudou a ferramenta. Mudou o pedido.**
 - Linha final: *Hoje não é uma aula de Lovable. É uma aula de como pedir.*
@@ -128,7 +128,7 @@ Independente da identidade da Mestre, o deck precisa destes recursos:
 **Na tela**
 - Título: **Teste rápido: tire o logo. Ainda é a marca?**
 - Esquerda: hero genérico com o logo coberto → "Poderia ser de qualquer marca."
-- Direita: hero da Brota com o logo coberto → "Ainda é a Brota."
+- Direita: hero da Vingô com o logo coberto → "Ainda é a Vingô."
 - Crédito pequeno: critério do guia de frontend da OpenAI
 
 **Visual:** uma tarja preta "cobre" o logo nas duas metades.
@@ -165,7 +165,7 @@ Independente da identidade da Mestre, o deck precisa destes recursos:
 - Dado: Estudo da Wharton (dez/2025) com 6 modelos de IA: dar uma persona de especialista **não melhorou** a precisão das respostas.
 - Conclusão: **Gaste suas palavras no cliente, não no elogio.**
 
-**Visual:** prompt riscado "Você é o melhor designer do mundo, crie uma LP incrível…" → seta → "A Brota é uma loja de plantas para apartamento, público de 25 a 40 anos que já perdeu plantas…"
+**Visual:** prompt riscado "Você é o melhor designer do mundo, crie uma LP incrível…" → seta → "A Vingô é uma loja de plantas para apartamento, público de 25 a 40 anos que já perdeu plantas…"
 
 **Fala**
 - "Muita gente começa o prompt com 'você é o maior especialista do mundo'. Um estudo da Wharton testou isso em 2025 e a persona não deixou as respostas mais certas. Pode ajudar no tom, mas não é o que faz a diferença."
@@ -229,7 +229,7 @@ Independente da identidade da Mestre, o deck precisa destes recursos:
   - O que acontece depois do envio
 - Exemplo do case: *"Ação única: baixar o e-book. CTA 'Quero o guia grátis'. Nome, e-mail e 'Quantas plantas você tem?', que segmenta a régua. LGPD. Tráfego do Instagram, no celular: CTA fixo no rodapé."*
 
-**Visual:** antes/depois do formulário: genérico (nome + e-mail + "🚀") × Brota (pergunta de segmentação em pílulas, LGPD, CTA fixo no celular).
+**Visual:** antes/depois do formulário: genérico (nome + e-mail + "🚀") × Vingô (pergunta de segmentação em pílulas, LGPD, CTA fixo no celular).
 
 **Fala**
 - "R é o resultado. E aqui o pessoal de mídia é quem mais sabe: vocês sabem de onde vem o tráfego, qual é a objeção, o que a régua precisa."
@@ -247,10 +247,10 @@ Independente da identidade da Mestre, o deck precisa destes recursos:
 - Se o cliente **não tem**: use palavras de vibe (próximo slide) + uma referência visual (print)
 - Lembrete: **A IA não lê a pasta do cliente. Ela lê o seu prompt.**
 
-**Visual:** à esquerda, a capa do brandbook da Brota; setas levando "Mata #0E3B2C", "Broto #C9F264", "Bricolage Grotesque", "folhas vetoriais" para dentro de um bloco de prompt. À direita, o hero da Brota com essas cores e fontes.
+**Visual:** à esquerda, a capa do brandbook da Vingô; setas levando "Mata #0E3B2C", "Broto #C9F264", "Bricolage Grotesque", "folhas vetoriais" para dentro de um bloco de prompt. À direita, o hero da Vingô com essas cores e fontes.
 
 **Fala**
-- "I é a identidade. A Brota tem brandbook, e mesmo assim a versão genérica saiu roxa com emoji. Porque o brandbook não estava no prompt."
+- "I é a identidade. A Vingô tem brandbook, e mesmo assim a versão genérica saiu roxa com emoji. Porque o brandbook não estava no prompt."
 - "No Lovable dá para anexar o PDF do brandbook e o logo. Anexem. Mas repitam no texto o que é inegociável: cores em HEX, fontes, personalidade. Anexo ajuda, texto manda."
 - "E quando o cliente não tem brandbook? Aí entram as palavras de vibe."
 
@@ -286,7 +286,7 @@ Independente da identidade da Mestre, o deck precisa destes recursos:
   - Liste as seções **na ordem**
   - Cada seção tem **uma** função: chamar atenção, gerar identificação, mostrar, provar ou converter
   - Escreva a headline e os textos reais. **Lorem ipsum = layout de template.**
-- A estrutura da Brota:
+- A estrutura da Vingô:
   Hero → Desculpas (identificação) → O que tem dentro → Teste de luz (amostra) → Quem escreveu → Prova social → Formulário
 
 **Visual:** miniatura da página inteira (`espetacular-desktop-pagina-inteira.png`) na vertical, com etiquetas da função de cada seção.
@@ -314,7 +314,7 @@ Independente da identidade da Mestre, o deck precisa destes recursos:
 - "F é o fator uau. E aqui tem um aprendizado que eu levei muito tempo para entender."
 - "Primeiro: a IA precisa de **permissão**. Se você não diz que ela pode ousar, ela joga seguro. Isso a própria Anthropic recomenda: peça explicitamente para ir além do básico."
 - "Segundo: ela precisa de **direção**. Se você só diz 'coloca animação', ela coloca o mesmo efeitinho em tudo, e isso é justamente a cara de IA."
-- "A receita é de três movimentos: uma entrada, um momento de scroll e microinterações. Na Brota, o grande momento é esse: um ramo que cresce enquanto você lê os capítulos. Uma ideia, bem feita, que conversa com a marca."
+- "A receita é de três movimentos: uma entrada, um momento de scroll e microinterações. Na Vingô, o grande momento é esse: um ramo que cresce enquanto você lê os capítulos. Uma ideia, bem feita, que conversa com a marca."
 
 ---
 
@@ -357,7 +357,7 @@ Independente da identidade da Mestre, o deck precisa destes recursos:
 **Na tela**
 - Título: **O prompt da direita, finalmente**
 - Esquerda: o prompt BRIEF condensado (versão do arquivo 03, seção 5). A cada clique, um bloco ganha marca-texto na sua cor: **B** e depois **R**
-- Direita: prints da Brota com callouts que acendem junto:
+- Direita: prints da Vingô com callouts que acendem junto:
   - B → headline "Chega de velório de planta." e autora Marina
   - R → CTA "Quero o guia grátis" repetido; formulário com pergunta de segmentação e LGPD; botão fixo no celular
 
@@ -496,7 +496,7 @@ Independente da identidade da Mestre, o deck precisa destes recursos:
 - B · quem é o cliente · R · qual a ação · I · como a marca se parece · E · o que vem em cada parte · F · onde mora o uau · + Carimbo
 - **Desafio:** na próxima LP, usem o BRIEF e mandem o antes e depois no grupo.
 
-**Visual:** as 5 letras coloridas + o comparativo genérica × Brota pequeno, como "lembrança".
+**Visual:** as 5 letras coloridas + o comparativo genérica × Vingô pequeno, como "lembrança".
 
 **Fala**
 - "Resumindo: a IA entrega a média quando ninguém decide. Quem decide são vocês, com um briefing."
@@ -515,7 +515,7 @@ Independente da identidade da Mestre, o deck precisa destes recursos:
 
 # SLIDES EXTRAS (só se perguntarem)
 
-Respostas completas em `05-faq-possiveis-duvidas.md`. Cada extra é um slide simples: pergunta no título + 3–4 linhas.
+Respostas completas em `04-faq-possiveis-duvidas.md`. Cada extra é um slide simples: pergunta no título + 3–4 linhas.
 
 | # | Pergunta | Resposta curta para o slide |
 |---|---|---|

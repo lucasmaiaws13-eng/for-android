@@ -1,4 +1,4 @@
-# 03 — O exemplo da aula: Brota + e-book "Selva de Apê"
+# 03 — O exemplo da aula: Vingô + e-book "Selva de Apê"
 
 > O case fictício que sustenta a parte prática da aula: **um cliente com brandbook**, **um e-book como isca de leads** e **dois prompts** — o "de sempre" e o BRIEF — com as duas LPs que eles representam, já construídas e capturadas.
 
@@ -6,7 +6,7 @@
 
 ## 1. O cliente fictício
 
-**Brota** é uma loja de plantas para apartamento (e-commerce com entrega em São Paulo + loja em Pinheiros).
+**Vingô** é uma loja de plantas para apartamento (e-commerce com entrega em São Paulo + loja em Pinheiros).
 - **Propósito:** fazer qualquer apê virar um cantinho verde, sem culpa e sem planta morta.
 - **Público:** 25 a 40 anos, mora em apartamento, trabalha muito e já perdeu algumas plantas.
 - **Tom de voz:** amiga que entende de planta. Bem-humorada, acolhedora, frases curtas, zero culpa, zero jargão.
@@ -14,15 +14,15 @@
 **A campanha:** captar leads com o e-book gratuito **"Selva de Apê — o guia das plantas que não morrem"** (52 páginas, 7 capítulos, escrito pela bióloga e cofundadora Marina Okabe). O tráfego vem de Instagram e Pinterest Ads, quase todo no celular.
 
 ### O brandbook (existe *antes* do prompt — e é isso que muda o jogo)
-Pasta `exemplos/brota-brandbook/`:
+Pasta `exemplos/vingo-brandbook/`:
 
 | Arquivo | O que é |
 |---|---|
-| `brandbook.html` / `brandbook-brota.pdf` | Brandbook de 1 página: essência, logo, cores, tipografia, elementos gráficos, tom de voz |
-| `logo-brota.svg` | Logo positivo (fundo claro) |
-| `logo-brota-negativo.svg` | Logo negativo (fundo escuro) |
-| `logo-brota-mono.svg` | Logo monocromático |
-| `simbolo-brota.svg` | Símbolo (o "o" com o broto) |
+| `brandbook.html` / `brandbook-vingo.pdf` | Brandbook de 1 página: essência, logo, cores, tipografia, elementos gráficos, tom de voz |
+| `logo-vingo.svg` | Logo positivo (fundo claro) |
+| `logo-vingo-negativo.svg` | Logo negativo (fundo escuro) |
+| `logo-vingo-mono.svg` | Logo monocromático |
+| `simbolo-vingo.svg` | Símbolo (o "ô" com o broto como acento) |
 
 **Resumo do brandbook:**
 - **Cores:** Mata `#0E3B2C` (principal) · Broto `#C9F264` (destaque, só sobre Mata) · Antúrio `#FF6F91` (adesivos de humor, pouco) · Musgo `#3E8E4E` (ilustrações) · Folha Clara `#EEF4E6` (fundo) · Nuvem `#FBFDF7` (respiro)
@@ -37,7 +37,7 @@ Pasta `exemplos/brota-brandbook/`:
 ## 2. Prompt "de sempre" → LP genérica
 
 ```text
-Crie uma landing page bonita e moderna para um e-book gratuito sobre cuidados com plantas da marca Brota, com formulário para download.
+Crie uma landing page bonita e moderna para um e-book gratuito sobre cuidados com plantas da marca Vingô, com formulário para download.
 ```
 
 **Resultado:** `exemplos/lp-generica/index.html` (prints e vídeo em `exemplos/capturas/generica-*`)
@@ -56,21 +56,21 @@ O que aparece (e é o roteiro do slide "aponte os sinais"):
 11. Formulário só com nome e e-mail: nenhuma segmentação, nenhum consentimento LGPD.
 12. Logo = emoji 🌿 + texto. **O logo real da marca nem aparece.**
 
-> Frase para o slide: *"Funciona. Mas poderia ser de qualquer marca. E não é a Brota."* (teste da marca)
+> Frase para o slide: *"Funciona. Mas poderia ser de qualquer marca. E não é a Vingô."* (teste da marca)
 
 ---
 
 ## 3. Prompt BRIEF → LP espetacular
 
-> No Lovable: **anexe o `brandbook-brota.pdf` e o `logo-brota.svg`** na mesma mensagem e cole o prompt abaixo.
+> No Lovable: **anexe o `brandbook-vingo.pdf` e o `logo-vingo.svg`** na mesma mensagem e cole o prompt abaixo.
 > Repare: o essencial do brandbook é **repetido no texto** (cores, fontes, tom). Anexo ajuda, mas o texto do prompt é o que a IA mais segue.
 
 ```text
-Crie a landing page de captura do e-book gratuito "Selva de Apê", da Brota. Anexei o brandbook e o logo: siga à risca.
+Crie a landing page de captura do e-book gratuito "Selva de Apê", da Vingô. Anexei o brandbook e o logo: siga à risca.
 
 [B] SOBRE O CLIENTE
-A Brota é uma loja de plantas para apartamento em São Paulo (e-commerce + loja em Pinheiros). Propósito: fazer qualquer apê virar um cantinho verde, sem culpa e sem planta morta. Público: 25 a 40 anos, mora em apartamento, trabalha muito e já perdeu algumas plantas pelo caminho. Tom de voz: amiga que entende de planta — bem-humorada, acolhedora, frases curtas, zero culpa e zero jargão.
-O e-book: "Selva de Apê — o guia das plantas que não morrem", 52 páginas, da bióloga Marina Okabe, cofundadora da Brota. Capítulos: Que luz é essa?; Rega sem drama; As 12 indestrutíveis; Vaso, terra e drenagem; Pragas sem pânico; Pets e plantas; Calendário verde. Bônus: calendário de rega para imprimir.
+A Vingô é uma loja de plantas para apartamento em São Paulo (e-commerce + loja em Pinheiros). Propósito: fazer qualquer apê virar um cantinho verde, sem culpa e sem planta morta. Público: 25 a 40 anos, mora em apartamento, trabalha muito e já perdeu algumas plantas pelo caminho. Tom de voz: amiga que entende de planta — bem-humorada, acolhedora, frases curtas, zero culpa e zero jargão.
+O e-book: "Selva de Apê — o guia das plantas que não morrem", 52 páginas, da bióloga Marina Okabe, cofundadora da Vingô. Capítulos: Que luz é essa?; Rega sem drama; As 12 indestrutíveis; Vaso, terra e drenagem; Pragas sem pânico; Pets e plantas; Calendário verde. Bônus: calendário de rega para imprimir.
 
 [R] RESULTADO
 Objetivo: captar leads para a régua de e-mails. Ação única: baixar o e-book, com o CTA "Quero o guia grátis". Formulário: nome, e-mail e "Quantas plantas você tem hoje?" (Nenhuma ainda / 1 a 5 / 6 ou mais / Perdi a conta), porque essa resposta segmenta a régua. Checkbox LGPD. O tráfego vem de Instagram e Pinterest Ads, quase todo no celular: formulário curto e CTA sempre à mão (fixo no rodapé no celular). Por enquanto, o envio só mostra uma mensagem de sucesso.
@@ -132,7 +132,7 @@ Base dos slides de anatomia: cada trecho destacado do prompt "acende" a área co
 ## 5. Versão condensada do prompt (para caber no slide)
 
 ```text
-Crie a landing page do e-book "Selva de Apê", da Brota. Anexei o brandbook.
+Crie a landing page do e-book "Selva de Apê", da Vingô. Anexei o brandbook.
 
 [B] Loja de plantas p/ apê · público 25–40 que já perdeu plantas ·
     tom: amiga bem-humorada, zero culpa · e-book de 52 págs da bióloga Marina
@@ -164,7 +164,7 @@ Ele é o prompt BRIEF **sem** os blocos [I], [F] e [Carimbo] (e sem a frase "Ane
 ## 7. Quer validar no Lovable antes da aula? (opcional, ~15 min)
 
 As duas LPs foram construídas como **demonstração fiel** do que cada prompt pede (você disse que podia ser demonstrativo). Se quiser também um resultado 100% Lovable para mostrar ou comparar:
-1. Projeto novo → anexe `brandbook-brota.pdf` + `logo-brota.svg` → cole o prompt BRIEF → Build.
+1. Projeto novo → anexe `brandbook-vingo.pdf` + `logo-vingo.svg` → cole o prompt BRIEF → Build.
 2. Não espere que fique idêntico: o importante é ver os blocos do prompt aparecendo no resultado.
 3. Se faltar polimento, rode os ajustes abaixo, um por vez.
 

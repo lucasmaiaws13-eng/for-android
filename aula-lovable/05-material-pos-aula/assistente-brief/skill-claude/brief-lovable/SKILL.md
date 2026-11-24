@@ -143,4 +143,4 @@ Regras:
 ## Referências
 - `references/dicionario.md` — vibes, fontes, movimento, layout, pedidos de ajuste e checklist "cara de IA". Consulte ao escrever os blocos I e F e no modo Ajustar.
 - `references/segmentos.md` — estrutura, direção visual, ideias de uau, o que evitar e pontos de atenção por segmento. Consulte quando o cliente não tem direção visual ou para montar a estrutura.
-- `references/exemplo-brota.md` — um exemplo completo de entrada e saída no nível de qualidade esperado.
+- `references/exemplo-vingo.md` — um exemplo completo de entrada e saída no nível de qualidade esperado.

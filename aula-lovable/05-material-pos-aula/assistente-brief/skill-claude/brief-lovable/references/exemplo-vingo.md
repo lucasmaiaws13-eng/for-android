@@ -4,7 +4,7 @@ Use este exemplo como referência de **nível de qualidade e formato** da respos
 
 ## Entrada (como o usuário costuma mandar)
 
-> preciso de uma lp pro ebook da brota, aquela loja de plantas de sp. o ebook chama selva de apê, é tipo um guia pra quem mata planta kkk. 52 paginas, quem escreveu foi a marina okabe que é bióloga e sócia. a campanha vai rodar insta e pinterest. querem lead pra régua de email e querem saber quantas plantas a pessoa tem pra segmentar. tenho o brandbook em pdf. cores: verde escuro 0E3B2C, verde limão C9F264, rosa FF6F91, fundo verde claro EEF4E6. fonte bricolage grotesque e figtree. eles são bem humorados. capitulos: luz, rega, 12 plantas indestrutíveis, vaso e terra, pragas, pets, calendário. bonus calendário de rega
+> preciso de uma lp pro ebook da vingô, aquela loja de plantas de sp. o ebook chama selva de apê, é tipo um guia pra quem mata planta kkk. 52 paginas, quem escreveu foi a marina okabe que é bióloga e sócia. a campanha vai rodar insta e pinterest. querem lead pra régua de email e querem saber quantas plantas a pessoa tem pra segmentar. tenho o brandbook em pdf. cores: verde escuro 0E3B2C, verde limão C9F264, rosa FF6F91, fundo verde claro EEF4E6. fonte bricolage grotesque e figtree. eles são bem humorados. capitulos: luz, rega, 12 plantas indestrutíveis, vaso e terra, pragas, pets, calendário. bonus calendário de rega
 
 ## Raciocínio esperado (interno, não precisa mostrar)
 - B: completo o suficiente. Público não foi dito → assumir pelo contexto (25–40, apê, já perdeu plantas) e declarar como suposição.
@@ -19,11 +19,11 @@ Use este exemplo como referência de **nível de qualidade e formato** da respos
 **1. Prompt principal** (cole no Lovable; anexe o brandbook em PDF e o logo)
 
 ```text
-Crie a landing page de captura do e-book gratuito "Selva de Apê", da Brota. Anexei o brandbook e o logo: siga à risca.
+Crie a landing page de captura do e-book gratuito "Selva de Apê", da Vingô. Anexei o brandbook e o logo: siga à risca.
 
 [B] SOBRE O CLIENTE
-A Brota é uma loja de plantas de São Paulo. Público: 25 a 40 anos, mora em apartamento, trabalha muito e já perdeu algumas plantas pelo caminho. Tom de voz: bem-humorado e acolhedor, como uma amiga que entende de planta — frases curtas, zero culpa e zero jargão.
-O e-book: "Selva de Apê — o guia das plantas que não morrem", 52 páginas, da bióloga Marina Okabe, sócia da Brota. Capítulos: Que luz é essa?; Rega sem drama; As 12 indestrutíveis; Vaso, terra e drenagem; Pragas sem pânico; Pets e plantas; Calendário verde. Bônus: calendário de rega para imprimir.
+A Vingô é uma loja de plantas de São Paulo. Público: 25 a 40 anos, mora em apartamento, trabalha muito e já perdeu algumas plantas pelo caminho. Tom de voz: bem-humorado e acolhedor, como uma amiga que entende de planta — frases curtas, zero culpa e zero jargão.
+O e-book: "Selva de Apê — o guia das plantas que não morrem", 52 páginas, da bióloga Marina Okabe, sócia da Vingô. Capítulos: Que luz é essa?; Rega sem drama; As 12 indestrutíveis; Vaso, terra e drenagem; Pragas sem pânico; Pets e plantas; Calendário verde. Bônus: calendário de rega para imprimir.
 
 [R] RESULTADO
 Objetivo: captar leads para a régua de e-mails. Ação única: baixar o e-book, CTA "Quero o guia grátis". Formulário: nome, e-mail e "Quantas plantas você tem hoje?" (Nenhuma ainda / 1 a 5 / 6 ou mais / Perdi a conta), porque essa resposta segmenta a régua. Checkbox LGPD com link para a política de privacidade. O tráfego vem de Instagram e Pinterest Ads, quase todo no celular: formulário curto e CTA fixo no rodapé no mobile. Por enquanto, o envio só mostra uma mensagem de sucesso.
@@ -64,7 +64,7 @@ Sem cara de template: nada de gradiente roxo, emoji como ícone, cards idêntico
 
 **4. Instructions do projeto (cole em Project settings → Instructions)**
 ```text
-Cliente: Brota, loja de plantas para apartamento (SP). Tom: bem-humorado, acolhedor, frases curtas, zero culpa, zero jargão. Nunca usar clichês como "transforme seu lar em um oásis verde".
+Cliente: Vingô, loja de plantas para apartamento (SP). Tom: bem-humorado, acolhedor, frases curtas, zero culpa, zero jargão. Nunca usar clichês como "transforme seu lar em um oásis verde".
 Cores: #0E3B2C (base/texto), #C9F264 (CTAs, só sobre fundo escuro), #EEF4E6 (fundo), #FF6F91 (só adesivos de humor). Fontes: Bricolage Grotesque (títulos) e Figtree (textos). Ilustrações vetoriais de folhas; sem fotos de banco, sem emojis como ícone, sem gradientes decorativos.
 Toda LP: mobile-first, CTA com texto de ação, formulário com consentimento LGPD, carregamento rápido, respeitar "reduzir movimento".
 ```
