@@ -29,7 +29,7 @@ Para mostrar a alguém fora da sua conta, use o menu Share de cada página. O de
 | `03-exemplo-vingo-prompts.md` | O case Vingô: brandbook, prompt de sempre, prompt completo, mapa "trecho do prompt → resultado" e inventário de capturas |
 | `04-faq-possiveis-duvidas.md` | Respostas para as dúvidas prováveis (base dos slides extras) |
 | `exemplos/vingo-brandbook/` | Brandbook da marca fictícia (HTML + PDF) e logos em SVG |
-| `exemplos/lp-generica/` | A LP "cara de IA": cores da marca e os mesmos textos da LP linda, mas com emojis, degradê e cards |
+| `exemplos/lp-generica/` | A LP "cara de IA": como sai de um pedido curto. Logo, cores e os mesmos textos da LP linda, com hero e formulário, boxes, emojis e ✅ |
 | `exemplos/lp-espetacular/` | A LP BRIEF: livro 3D em WebGL entre folhas 3D, manifesto que acende, números fixos, letreiro, capítulos na horizontal, teste de luz, neon e marca gigante no rodapé |
 | `exemplos/capturas/` | Prints e vídeos das duas LPs da Vingô |
 | `05-material-pos-aula/guia-de-bolso-brief.md` | A "cola" para mandar no grupo |

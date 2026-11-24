@@ -36,17 +36,15 @@ Faça uma landing page para o e-book Selva de Apê, da Vingô. O site da marca �
 
 **Resultado:** `exemplos/lp-generica/index.html` · capturas `generica-*`
 
-É uma versão realista: a IA pegou as cores verdes da marca e usou exatamente os mesmos textos da LP espetacular. Mesmo assim, é genérica. Os sinais de "cara de IA" (roteiro do slide "aponte os sinais"):
-1. Emoji no lugar do logo (🌿 Vingô).
-2. Selo com emoji acima do título e acima de cada seção (`✨ E-BOOK GRATUITO · VINGÔ`).
-3. Emoji no fim da headline.
-4. Degradê verde no título, nos botões e no formulário; fonte Inter em vez da Bricolage do brandbook.
-5. Mockup do e-book = card com degradê e emoji.
-6. Badges flutuando por cima do mockup.
-7. Bolhas desfocadas no fundo.
-8. Oito cards idênticos com emoji para os capítulos.
-9. Depoimentos com ⭐⭐⭐⭐⭐ e avatar de iniciais.
-10. O mesmo fade-up em tudo; nenhum momento memorável.
+É uma versão realista, no padrão do que sai de um pedido simples: o logo, as cores verdes da marca e exatamente os mesmos textos da LP espetacular, numa página que funciona. Mesmo assim, é genérica. Os sinais de "cara de IA" (roteiro do slide "aponte os sinais"):
+1. Selo com emoji de brilho acima do título (`✨ E-book gratuito`).
+2. Uma palavra colorida no título, e só.
+3. Lista de benefícios com ✅.
+4. Formulário num card branco com sombra e cantos arredondados.
+5. Emoji no título do formulário e no aviso de privacidade (🌿 🔒).
+6. Degradê suave e espaço vazio no hero; nenhuma imagem do e-book.
+7. Boxes iguais em grade para os números e cards com emoji para os capítulos.
+8. Fonte Inter em vez da Bricolage do brandbook; nada do universo da marca além do logo e das cores.
 
 A lição: **o briefing e os textos eram os mesmos. A diferença foi o prompt** (marca em dados, permissão e direção para o incrível, o que não fazer, a ordem).
 
