@@ -16,6 +16,8 @@
 | **F** | Tela cheia |
 | **G** | Grade com todos os slides (clique para ir direto) |
 
+**Segundo monitor:** abra `apresentador.html` (na mesma pasta, no mesmo Chrome). Ele mostra cada slide com a fala deste guia em letra grande e rola sozinho para o slide atual. Clicar na miniatura muda o slide da apresentação. O botão "Seguir" liga e desliga a rolagem automática.
+
 - Depois da abertura, a aula tem **4 partes**, cada uma com capa. A faixa no rodapé da capa mostra em que parte vocês estão.
 - Nos 5 passos, o medidor no rodapé mostra **o prompt da página linda crescendo**.
 - O selo do Lovable no canto marca os slides sobre a ferramenta.
@@ -55,7 +57,7 @@
 
 **3 · Mas é genérica** (1:30) · *7 cliques*
 - "O problema é que isso é genérico. O que nessa página grita 'foi a IA'?" Vá clicando conforme a sala responde.
-- No 1: "A marca tem logo, e a IA pôs um emoji."
+- Ponto alto: "Tem o logo, as cores e os textos certos. E mesmo assim podia ser de qualquer marca: é o layout que a IA faz para todo mundo."
 - Teste da marca: tape o logo; se poderia ser de qualquer loja de plantas, a direção está fraca.
 
 **4 · Sem direção, a IA entrega a média** (1:00) · *1 clique*
