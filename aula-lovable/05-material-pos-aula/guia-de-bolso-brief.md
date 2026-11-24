@@ -4,7 +4,24 @@
 
 ---
 
-## A fórmula
+## 12 boas práticas de prompt
+
+1. **Mande um briefing, não um pedido.** A IA nunca ouviu falar do seu cliente.
+2. **Explique o porquê.** "Formulário curto *porque* o tráfego é do celular."
+3. **Troque adjetivo por dado.** HEX, nome da fonte, medidas.
+4. **Escreva o texto de verdade.** Headline real muda o layout.
+5. **Use o vocabulário de estilo.** Em português, com os termos de design em inglês.
+6. **Dê permissão e direção para o uau.** Descreva cada momento, tirado da marca.
+7. **Saiba o nome do efeito.** 3D com Three.js, scroll-linked text reveal, sticky section, horizontal scroll, marquee, neon.
+8. **Diga o que fazer, depois o que evitar.** O carimbo vai no fim.
+9. **Organize em blocos.** Começo e fim pesam mais.
+10. **Mostre e repita.** Anexe o brandbook e repita o essencial no texto.
+11. **Peça para ela perguntar.** "Antes de construir, me faça as perguntas que precisar."
+12. **Gaste palavras no cliente, não no elogio.** Persona não faz milagre; contexto faz.
+
+---
+
+## O esqueleto do prompt (BRIEF)
 
 | | Bloco | Pergunta que responde | Não esqueça |
 |---|---|---|---|

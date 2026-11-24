@@ -1,30 +1,10 @@
-# 03 — Os exemplos da aula: o case real (PHE) e o case didático (Vingô)
+# 03 — O exemplo da aula: Vingô e o e-book "Selva de Apê"
 
-A aula usa dois pares "antes e depois":
-
-1. **PHE — Pós em Ciências da Obesidade (case real, feito por você).** Mesmo cliente, mesmos textos, duas páginas: uma com cara de IA e uma cinematográfica. É o gancho da aula: prova que a diferença é real e foi feita aqui dentro.
-2. **Vingô — e-book "Selva de Apê" (case didático, marca fictícia).** Aqui temos o brandbook, o prompt genérico, o prompt BRIEF e as duas LPs. É o case usado para dissecar o prompt, bloco por bloco.
+O case didático da aula: uma marca fictícia **com brandbook**, um **e-book como isca de leads** e **dois prompts** (o de sempre e o completo), com as duas LPs que eles representam, já construídas e capturadas.
 
 ---
 
-## 1. PHE: o case real
-
-| | Versão "cara de IA" | Versão cinematográfica |
-|---|---|---|
-| Link | pheducation.com.br/pos/obesidade | building-a-lovely-something.lovable.app |
-| Visual | Azul-marinho e laranja padrão, Inter/Helvetica, grade de cards com ícone, selos, botões laranja | Fundo quase preto com luz azul e laranja, tipografia fina gigante (Exo 2), linhas de 1 px, granulado |
-| Hero | Título em negrito sobre gradiente, padrão de fundo | O símbolo da marca em **3D (WebGL)**, com luz e reflexo, reagindo ao mouse |
-| Scroll | Seções empilhadas | Texto que **acende palavra por palavra**; **números gigantes** trocando numa seção fixa; o símbolo da marca em **traço fino girando** ao fundo |
-| Conteúdo | Cards iguais (6 módulos, 5 benefícios) | Cards de imagem que **expandem**; sequência de fotos **presa na tela** (01/05); módulos em carrossel |
-| Detalhes | Nenhum momento memorável | Letreiro com o símbolo como separador; **neon** do símbolo; selo circular girando ("7 dias"); monogramas dos coordenadores; nome da marca **gigante no rodapé** |
-
-**A lição do PHE:** o salto não veio de "mais animação". Veio de **tirar o universo visual da marca e transformar em cenário**: o símbolo virou objeto 3D, depois linha, depois neon, depois marca d'água. Cada efeito conta a mesma marca. É isso que o bloco F ensina.
-
-Capturas em `exemplos/capturas/phe-*` (prints de cada versão, comparativo lado a lado e um vídeo de rolagem da versão cinematográfica).
-
----
-
-## 2. Vingô: o cliente fictício
+## 1. Vingô: o cliente fictício
 
 **Vingô** é uma loja de plantas para apartamento (e-commerce em São Paulo + loja em Pinheiros). O nome vem de planta que "vingou"; o broto do logo é o acento do "ô".
 - **Propósito:** fazer qualquer apê virar um cantinho verde, sem culpa e sem planta morta.
@@ -45,7 +25,7 @@ Pasta `exemplos/vingo-brandbook/`: `brandbook.html`, `brandbook-vingo.pdf`, `log
 
 ---
 
-## 3. Prompt "de sempre" → LP genérica
+## 2. Prompt "de sempre" → LP genérica
 
 ```text
 Crie uma landing page bonita e moderna para um e-book gratuito sobre cuidados com plantas da marca Vingô, com formulário para download.
@@ -69,7 +49,7 @@ Os sinais de "cara de IA" (roteiro do slide "aponte os sinais"):
 
 ---
 
-## 4. Prompt BRIEF → LP espetacular
+## 3. Prompt completo (BRIEF) → LP espetacular
 
 > No Lovable: **anexe o `brandbook-vingo.pdf` e o `logo-vingo.svg`** e cole o prompt abaixo. O essencial do brandbook é **repetido no texto**: anexo ajuda, texto manda.
 
@@ -118,7 +98,7 @@ Sem cara de template: nada de gradiente roxo, emoji como ícone, grade de cards 
 
 ---
 
-## 5. Mapa "o que no prompt virou o quê na página"
+## 4. Mapa "o que no prompt virou o quê na página"
 
 Base dos slides de anatomia: cada trecho destacado do prompt acende a área correspondente da LP.
 
@@ -142,7 +122,7 @@ Base dos slides de anatomia: cada trecho destacado do prompt acende a área corr
 
 ---
 
-## 6. Versão condensada do prompt (para o slide)
+## 5. Versão condensada do prompt (para o slide)
 
 ```text
 Crie a landing page do e-book "Selva de Apê", da Vingô. Anexei o brandbook.
@@ -167,7 +147,7 @@ Crie a landing page do e-book "Selva de Apê", da Vingô. Anexei o brandbook.
 
 ---
 
-## 7. Quer validar no Lovable antes da aula? (opcional, ~20 min)
+## 6. Quer validar no Lovable antes da aula? (opcional, ~20 min)
 
 As LPs da Vingô foram construídas como **demonstração fiel** do que cada prompt pede. Para ter também um resultado 100% Lovable:
 1. Projeto novo → anexe `brandbook-vingo.pdf` + `logo-vingo.svg` → cole o prompt BRIEF → Build (ou Plan mode primeiro).
@@ -186,14 +166,10 @@ Faça uma passada crítica na página inteira: tipografia, espaçamento e contra
 
 ---
 
-## 8. Inventário de capturas (`exemplos/capturas/`)
+## 7. Inventário de capturas (`exemplos/capturas/`)
 
 | Arquivo | Conteúdo |
 |---|---|
-| `comparativo-phe.png` | PHE: hero "cara de IA" × hero cinematográfico |
-| `phe-simples-hero.png`, `phe-simples-1..4.png` | PHE versão "cara de IA" |
-| `phe-irado-hero.png`, `phe-irado-1..5.png` | PHE versão cinematográfica |
-| `phe-irado-rolagem.mp4` (40 s) | Rolagem da versão cinematográfica do PHE |
 | `comparativo-heroes.png` | Vingô: hero genérico × hero BRIEF |
 | `generica-hero.png`, `generica-*-pagina-inteira.png`, `generica-rolagem.mp4` | Vingô genérica |
 | `espetacular-hero.png`, `-manifesto`, `-numeros`, `-numeros-2`, `-letreiro`, `-capitulos`, `-teste-de-luz`, `-autora`, `-prova`, `-cta-final`, `-rodape` | Seções da LP BRIEF |

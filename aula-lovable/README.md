@@ -23,15 +23,15 @@ Para mostrar a alguém fora da sua conta, use o menu Share de cada página. O de
 
 | Arquivo / pasta | Para quê |
 |---|---|
-| `apresentacao/index.html` + `assets/` | **O deck.** 30 slides + 6 extras, transição diagonal "//", entradas animadas, prompt com marca-texto, demos animadas, vídeos e notas do apresentador (tecla N) |
-| `02-guia-da-apresentacao.md` | **Guia resumido:** como usar o deck, tempos e o que falar em cada slide |
+| `apresentacao/index.html` + `assets/` | **O deck.** 32 slides + 6 extras: 12 boas práticas de prompt (fraco × forte), o prompt completo, 8 dicas de Lovable, os assistentes. Transições, demos animadas, vídeos e notas do apresentador (tecla N) |
+| `02-guia-da-apresentacao.md` | **Guia resumido:** como usar o deck, tempos (29 min) e o que falar em cada slide |
 | `01-fundamentos-da-pesquisa.md` | A pesquisa que sustenta a aula, com fontes |
-| `03-exemplo-vingo-prompts.md` | Os dois cases (PHE real e Vingô didático), o prompt genérico, o prompt BRIEF completo, o mapa "trecho do prompt → resultado" e o inventário de capturas |
+| `03-exemplo-vingo-prompts.md` | O case Vingô: brandbook, prompt de sempre, prompt completo, mapa "trecho do prompt → resultado" e inventário de capturas |
 | `04-faq-possiveis-duvidas.md` | Respostas para as dúvidas prováveis (base dos slides extras) |
 | `exemplos/vingo-brandbook/` | Brandbook da marca fictícia (HTML + PDF) e logos em SVG |
 | `exemplos/lp-generica/` | A LP "cara de IA" |
 | `exemplos/lp-espetacular/` | A LP BRIEF: livro 3D em WebGL entre folhas 3D, manifesto que acende, números fixos, letreiro, capítulos na horizontal, teste de luz, neon e marca gigante no rodapé |
-| `exemplos/capturas/` | Prints e vídeos das LPs da Vingô e das duas versões do PHE |
+| `exemplos/capturas/` | Prints e vídeos das duas LPs da Vingô |
 | `05-material-pos-aula/guia-de-bolso-brief.md` | A "cola" para mandar no grupo |
 | `05-material-pos-aula/assistente-brief/` | **Assistente BRIEF:** Skill do Claude (`.zip` pronto) e Gem do Gemini (instruções + 3 arquivos), com guia de instalação e casos de teste |
 | `05-material-pos-aula/bonus-lovable-da-agencia/` | Instructions do workspace (padrão Mestre) e duas Skills do Lovable (`/lp-brief`, `/revisao-lp`) |
@@ -42,10 +42,10 @@ Para mostrar a alguém fora da sua conta, use o menu Share de cada página. O de
 
 1. **Abrir o deck** e passar por ele com as notas abertas (N). Siga `02-guia-da-apresentacao.md`.
 2. **Preencher o nome** na capa: procure "[Seu nome]" em `apresentacao/index.html`.
-3. **Criar o Gem** (10 min) com `05-material-pos-aula/assistente-brief/como-instalar-e-usar.md`. Rode os 4 casos de teste e coloque o link no slide 28 (procure "Link do Gem").
-4. **Ensaiar uma vez cronometrando:** chegar no slide 21 até 19:30. Se apertar, pule os slides 7, 15 e 26.
-5. **Deixar a LP da Vingô aberta numa aba** para o slide 24.
-6. **(Opcional, 20 min)** Rodar o prompt BRIEF no Lovable com o brandbook anexado (`03-exemplo-vingo-prompts.md`, seção 7) para ter também um resultado 100% Lovable da Vingô.
+3. **Criar o Gem** (10 min) com `05-material-pos-aula/assistente-brief/como-instalar-e-usar.md`. Rode os 4 casos de teste e coloque o link no slide 29 (procure "Link do Gem").
+4. **Ensaiar uma vez cronometrando:** chegar no slide 18 até 16:00. Se apertar, pule os slides 17, 30 e 26.
+5. **Deixar a LP da Vingô aberta numa aba** para o slide 20.
+6. **(Opcional, 20 min)** Rodar o prompt completo no Lovable com o brandbook anexado (`03-exemplo-vingo-prompts.md`, seção 6) para ter também um resultado 100% Lovable da Vingô.
 
 Se mudar textos do deck, mantenha as regras da Mestre: título termina com ponto, sem travessão, Outfit, tinta e papel.
 
@@ -64,9 +64,10 @@ Se mudar textos do deck, mantenha as regras da Mestre: título termina com ponto
 
 ## Decisões tomadas (e por quê)
 
-- **O gancho é o seu case do PHE.** As duas páginas da pós em Ciências da Obesidade (mesmo cliente, mesmo texto, uma "cara de IA" e uma cinematográfica) provam a tese com trabalho da casa. A Vingô entra depois, para dissecar o prompt bloco a bloco.
-- **O fator uau virou "permissão + direção + coerência".** O PHE mostrou que uma LP pode ter muitos momentos de movimento e continuar sofisticada quando todos nascem da marca (o símbolo vira 3D, linha, neon e rodapé). Isso refinou a pesquisa, que alertava contra efeitos soltos. O que é cara de IA é o efeito genérico repetido em toda seção, não a ambição.
-- **A LP espetacular foi refeita no patamar do PHE:** cena 3D em WebGL (Three.js), GSAP ScrollTrigger e rolagem suave (Lenis). Ela tem versão estática para "reduzir movimento" e o hero adaptado no celular.
-- **O deck segue o design system da Mestre:** tinta e papel, Outfit de 300 a 900, raio zero, sem sombra, palavra fantasma, faixas diagonais e granulado no escuro. Os prints, vídeos e demos levam a cor. A transição entre slides usa as faixas diagonais do "//" do logo.
+- **A aula virou um guia de boas práticas.** Doze práticas de prompt, cada uma com um exemplo de prompt fraco e de prompt forte, e oito dicas de Lovable, uma por slide. O "BRIEF" aparece como esqueleto de prompt, sem tomar o centro: o recado é que o briefing precisa ir inteiro e detalhado para o prompt.
+- **Fio da história:** a mesma IA fez a versão A e a versão B da Vingô. Cada prática acrescenta uma peça ao prompt (o medidor no rodapé dos slides mostra o prompt crescendo) até ele virar o briefing completo, mostrado na íntegra, que gerou a versão B.
+- **Sem slides de frase de impacto.** Toda tela tem conteúdo para falar.
+- **O fator uau é "permissão + direção + coerência":** vários momentos de movimento funcionam quando todos nascem da marca. Efeito genérico repetido em toda seção é cara de IA.
+- **A LP da Vingô é cinematográfica de verdade:** 3D em WebGL (Three.js), GSAP ScrollTrigger e Lenis, com versão estática para "reduzir movimento".
+- **O deck segue o design system da Mestre:** tinta e papel, Outfit de 300 a 900, raio zero, sem sombra. Prints, vídeos e demos levam a cor.
 - **Marca fictícia "Vingô":** o primeiro nome, "Brota", coincidia com uma empresa real do mesmo ramo.
-- **Contexto > persona:** confirmado pelo estudo da Wharton (2025). Valida a sua prática de colocar tudo sobre o cliente no prompt.

@@ -1,8 +1,8 @@
 # 02 — Guia da apresentação
 
-> **Aula:** Prompt bom é briefing bom · IA para LPs com Lovable · Agência Mestre
-> **Deck:** `apresentacao/index.html` (abra no Chrome) · 30 slides + 6 extras · ~30 minutos
-> **Ideia que a sala tem que levar:** a IA entrega a média quando ninguém decide. Quem decide são vocês, com um briefing: a fórmula **BRIEF**.
+> **Aula:** Prompt bom é briefing bom · Boas práticas de IA para LPs no Lovable · Agência Mestre
+> **Deck:** `apresentacao/index.html` (Chrome) · 32 slides + 6 extras · **29 minutos**
+> **A história em uma frase:** a mesma IA fez uma LP genérica e uma LP com cara de marca. A diferença foi o pedido. Cada boa prática acrescenta uma peça ao prompt, até ele virar o briefing completo que gerou a versão boa.
 
 ---
 
@@ -10,181 +10,158 @@
 
 | Tecla | Faz |
 |---|---|
-| → · espaço · clique na tela | Avança (primeiro os passos do slide, depois o próximo slide) |
+| → · espaço · clique | Avança (primeiro os passos do slide, depois o próximo) |
 | ← | Volta |
-| **N** | Abre e fecha as notas do apresentador (canto inferior direito) |
+| **N** | Notas do apresentador |
 | **F** | Tela cheia |
-| Home / End | Primeiro / último slide |
 
-- Os slides com passos revelam cada item por clique: marcadores, letras, trechos do prompt.
-- Os vídeos rodam sozinhos, sem som, quando o slide abre.
-- Para abrir num slide específico: `index.html#s12`.
-- Precisa de internet só para a fonte Outfit. Sem internet, o deck funciona com uma fonte de sistema.
-
-**Antes de começar:** abra o deck em tela cheia (F), deixe uma aba com `exemplos/lp-espetacular/index.html` aberta para o slide 24 e confira o som desligado.
+- Nas dicas de prompt, a faixa no rodapé mostra **o prompt da Vingô crescendo** (de 1 linha a ~700 palavras). Aponte para ela de vez em quando: é o fio da aula.
+- Entre dicas, o conteúdo troca com um deslize suave. Nas viradas de parte, entra a transição diagonal da Mestre.
+- Vídeos rodam sozinhos, sem som. Para abrir num slide: `index.html#s20`.
 
 ---
 
 ## Mapa de tempo
 
-| Ato | Slides | Tempo | Ritmo |
-|---|---|---|---|
-| 1 · O problema | 1–7 | 0:00–7:00 | Gancho com o PHE, a média, o jogo dos sinais |
-| 2 · A virada | 8–9 | 7:00–9:00 | Prompt é briefing; contexto vence elogio |
-| 3 · A fórmula | 10–20 | 9:00–19:30 | B, R, I, E, F e carimbo, com antes e depois |
-| 4 · A prova | 21–24 | 19:30–23:30 | O prompt acendendo bloco a bloco, LP ao vivo |
-| 5 · Lovable além do básico | 25–27 | 23:30–27:30 | Fluxo, ajustes, memória |
-| 6 · Fechamento | 28–30 | 27:30–30:00 | Assistente, desafio, perguntas |
+| Parte | Slides | Tempo acumulado |
+|---|---|---|
+| Abertura: o problema | 1–5 | 0:00 → 4:45 |
+| 12 boas práticas de prompt | 6–17 | 4:45 → 15:50 |
+| O prompt completo e o resultado | 18–20 | 15:50 → 18:50 |
+| 8 dicas de Lovable | 21–28 | 18:50 → 25:40 |
+| Assistentes e checklist | 29–31 | 25:40 → 29:00 |
+| Perguntas | 32 + extras | 29:00 → |
 
-Se o tempo apertar, pule nesta ordem: **7 → 15 → 26** (vira "está no material").
+**Se apertar, pule nesta ordem:** 17 (persona) → 30 (demo do assistente) → 26 (pedidos de ajuste: "estão no guia de bolso"). Economiza uns 2 minutos e meio.
+
+**Checkpoint:** chegar no slide 18 até 16:00.
 
 ---
 
 ## Slide a slide
 
-### Ato 1 · O problema
+### Abertura
 
-**1 · Capa** (30 s)
-- "São 30 minutos. Vocês saem com uma fórmula e um assistente pronto para usar amanhã."
-- "Não vou ensinar a apertar botões do Lovable. Vou ensinar a pedir."
+**1 · Capa** (0:30)
+"São 30 minutos de boas práticas. Vocês saem com dicas para aplicar amanhã e dois assistentes prontos."
 
-**2 · Gancho: as duas páginas do PHE** (1 min) · *2 cliques*
-- Pergunte: "Quem mandaria a A para o cliente aprovar? E a B?" Deixe a sala responder.
-- Clique 1: "As duas foram feitas com IA, aqui na agência. Mesmo cliente, mesmo texto."
-- Clique 2: as legendas. "Então o que mudou?"
+**2 · Qual você mandaria?** (1:15) · *2 cliques*
+- "Quem mandaria a A para o cliente aprovar? E a B?" Deixe responderem.
+- Clique 1: "A ferramenta foi a mesma." Clique 2: "A da esquerda veio de um prompt de uma linha. A da direita, de um briefing de uma página."
+- "A Vingô é uma marca fictícia que criei para a aula, com brandbook próprio."
 
-**3 · A versão B em movimento** (1 min)
-- Deixe o vídeo rodar uns 15 segundos sem falar.
-- "Repara: tudo vem do símbolo da marca. Vira 3D, vira linha, vira neon, vira o rodapé."
-
-**4 · Mudou o pedido** (30 s)
-- "Não mudou a ferramenta. Mudou o pedido. Por isso a aula não é de Lovable, é de como pedir. Vale para qualquer IA."
-
-**5 · A média** (1 min) · *1 clique*
+**3 · A média** (1:00) · *1 clique*
 - "A IA aprendeu com milhões de sites. Quando você não decide, ela decide pela média."
-- Clique: os sites se fundem no "site médio". "Média não vende. Não diferencia o cliente do concorrente."
+- Clique: os sites se fundem. "Média não diferencia o cliente do concorrente."
 
-**6 · Jogo: aponte os sinais** (1min30) · *7 cliques*
+**4 · Cara de IA tem sintomas** (1:30) · *7 cliques*
 - "O que nessa página grita 'foi a IA'?" Vá clicando conforme a sala responde.
-- No sinal 4: "A marca tem logo e brandbook, e a IA colocou um emoji. Porque ninguém contou para ela."
-- "Depois que vocês aprendem a ver, não desveem. E o cliente também está aprendendo."
+- No 4: "A marca tem logo, e a IA pôs um emoji. Ninguém contou para ela."
+- Teste rápido: tape o logo; se poderia ser de qualquer marca, a direção está fraca.
 
-**7 · Teste da marca** (45 s) · *1 clique*
-- Clique: uma tarja cobre o logo. "Tire o logo. Ainda é a marca? Serve para LP, criativo e site, nosso ou de concorrente."
+**5 · O que vamos ver** (0:30)
+"Doze boas práticas de prompt, o prompt completo, oito dicas de Lovable e os assistentes."
 
-### Ato 2 · A virada
+### 12 boas práticas de prompt
+Em cada uma: leia o prompt fraco com voz de "pedido de sempre" e o forte devagar.
 
-**8 · A IA é um freela brilhante** (1 min) · *1 clique*
-- "Pensem num freela excelente no primeiro dia. Vocês mandariam 'faz uma LP bonita e moderna'? Não. Mandariam um briefing."
-- Clique: o briefing se preenche. "Prompt bom é briefing bom. E briefing essa agência sabe fazer."
-- Teste do colega: se alguém de outra equipe não entenderia o prompt, a IA também não.
+**6 · Mande um briefing, não um pedido** (1:15) · *1 clique*
+- "A IA é um freela brilhante que nunca ouviu falar do seu cliente."
+- Clique: o briefing se preenche. "Vocês já sabem fazer briefing. A diferença é ele ir inteiro, detalhado, para o prompt."
+- Teste do colega.
 
-**9 · O mito da persona** (1 min)
-- "Começar com 'você é o melhor designer do mundo' não faz milagre. A Wharton testou em 6 modelos: a persona não deixou as respostas mais certas."
-- "O que mais melhorou minhas LPs foi colocar tudo sobre o cliente no prompt. Gastem as palavras no cliente."
+**7 · Explique o porquê** (1:00)
+"Com o motivo, a IA acerta as decisões que você não escreveu: pedi formulário curto *porque* o tráfego é do celular, e ela também fixou o botão no rodapé."
 
-### Ato 3 · A fórmula
+**8 · Troque adjetivo por dado** (1:00)
+"'Moderno' é interpretação; '#06140E' e 'Bricolage 200 em tamanho enorme' são instrução. Sem dado, ela escolhe o padrão: Inter, roxo, cards."
 
-**10 · Chama briefing** (20 s)
-- "Vocês já sabem fazer isso. A fórmula se chama BRIEF."
+**9 · Escreva o texto de verdade** (0:50) · *1 clique*
+"Pedi 'uma headline chamativa' e veio 'oásis verde'. Escrevi a headline e veio 'Chega de velório de planta'."
 
-**11 · A fórmula** (1 min) · *6 cliques*
-- Uma letra por clique, depois o carimbo.
-- "Não precisa decorar: no fim tem um assistente que monta isso. A ordem importa: a IA dá mais peso ao começo e ao fim."
+**10 · Use o vocabulário de estilo** (1:00)
+- "Sem brandbook, essas palavras são o atalho. Em português, mas com os termos em inglês."
+- Pergunte: "Que estilo vocês dariam para uma clínica odontológica? E para um energético?"
 
-**12 · B · Base do negócio** (1 min) · *1 clique*
-- "B é o que a gente pula quando está com pressa: o que vende, para quem, o tom."
-- Clique: a headline com B. "Ninguém escreveu 'Chega de velório de planta' no prompt. A IA chegou lá porque sabia o público e o tom."
-- "Dica de ouro: digam o porquê."
+**11 · Permissão e direção para o uau** (1:00)
+"Sem permissão, a IA joga seguro. Sem direção, aplica o mesmo efeito em tudo. Descrevam cada momento e tirem o efeito da marca: as folhas 3D vêm do brandbook."
 
-**13 · R · Resultado** (1 min) · *1 clique*
-- "Vocês, de mídia, sabem de onde vem o tráfego, qual é a objeção, o que a régua precisa. Isso quase nunca chega no prompt."
-- Clique: o formulário com R. "Eu disse 'tráfego do celular' e 'essa pergunta segmenta a régua'. A página foi desenhada para converter."
+**12 · Saiba o nome do efeito** (1:00)
+Aponte as demos: "objeto 3D que reage ao mouse, texto que acende no scroll, seção fixa, rolagem horizontal, letreiro, neon. O Lovable instala as bibliotecas sozinho."
 
-**14 · I · Identidade** (1 min) · *2 cliques*
-- "A Vingô tem brandbook e mesmo assim a versão genérica saiu roxa. O brandbook não estava no prompt."
-- Clique 1: "Anexem o PDF, mas repitam o inegociável no texto: HEX, fontes, personalidade." Clique 2: o resultado.
+**13 · Diga o que fazer, depois o que evitar** (0:50)
+"'Não deixa genérico' não ensina nada. Primeiro o caminho, depois a trava: o carimbo vai no fim de todo prompt."
 
-**15 · Palavras de vibe** (1 min)
-- "Sem brandbook? Uma palavra muda o design inteiro. Escrevam em português, mantenham estes termos em inglês."
-- Pergunte: "Que vibe vocês dariam para uma clínica odontológica? E para um energético?"
+**14 · Organize em blocos** (0:45)
+"Blocos com rótulo separam os assuntos, e começo e fim pesam mais. Um esqueleto que funciona: BRIEF. O assistente monta isso para vocês."
 
-**16 · E · Estrutura** (1 min)
-- "Uma seção, uma função: chamar, provar, mostrar, gerar confiança, converter."
-- "E texto de verdade. Lorem ipsum gera layout de template."
+**15 · Mostre e repita** (0:50) · *2 cliques*
+"Anexem o brandbook, mas repitam o inegociável no texto. Na versão A, o brandbook existia e não estava no prompt."
 
-**17 · Permissão e direção** (20 s)
-- "Agora o F. É aqui que a versão B do PHE se separou da A."
+**16 · Peça para ela perguntar** (0:45)
+"Fechem com 'antes de construir, me faça as perguntas que precisar'. Ela volta com dúvidas que a gente nem tinha pensado."
 
-**18 · F · Fator uau** (1min30) · *3 cliques*
-- Clique 1, **permissão**: "Se você não diz que pode ousar, a IA joga seguro."
-- Clique 2, **direção**: "'Coloca animação' vira o mesmo efeito em tudo. Digam cada momento."
-- Clique 3, **coerência**: "Todo efeito nasce da marca. No PHE, o símbolo virou 3D, linha e neon. Na Vingô, as folhas da marca viraram 3D, traço e neon."
+**17 · Gaste palavras no cliente** (0:40) · *pulável*
+"'Você é o melhor designer do mundo' não deixou as respostas mais certas em 6 modelos testados pela Wharton. O que muda é contexto."
 
-**19 · Dicionário uau** (1 min)
-- "Vocês não precisam programar. Precisam saber o nome." Aponte cada demo.
-- "O Lovable instala essas bibliotecas sozinho."
+### O prompt completo
 
-**20 · O carimbo** (40 s)
-- "Eu colo isso no fim de todo prompt. A última frase é preciosa: ele volta com perguntas que a gente nem tinha pensado."
+**18 e 19 · O prompt completo da Vingô** (0:50 cada)
+- "Esse é o prompt da versão B. Não leiam tudo; reparem nos blocos."
+- Aponte: o porquê do formulário, os HEX, a headline escrita, cada momento do uau, o carimbo.
 
-### Ato 4 · A prova
+**20 · O que esse prompt virou** (1:20)
+- Deixe o vídeo correr. Se der, clique em "Abrir a LP da Vingô" e passe por ela ao vivo (mouse no livro, capítulos, formulário).
+- "Cerca de 700 palavras, 15 minutos de briefing. Ou 1 minuto com o assistente."
 
-**21 · Anatomia: B e R** (1 min) · *2 cliques*
-- "Esse é o prompt da Vingô, resumido. Um briefing em blocos."
-- Clique 1: B acende e aparece o hero. Clique 2: R acende e aparecem o formulário e o celular.
+### 8 dicas de Lovable
 
-**22 · Anatomia: I e E** (45 s) · *2 cliques*
-- I: "Noite e verde-limão só onde importa, números finos e gigantes." E: "Dez seções, na ordem pedida."
+**21 · Comece no Plan mode** (1:00)
+"Ele planeja e pergunta antes de construir. Custa 1 crédito por mensagem e não mexe no código. Corrigir o plano é mais barato que corrigir a página."
 
-**23 · Anatomia: F e carimbo** (1 min) · *1 clique*
-- Clique: F e carimbo acendem. Deixe o vídeo mostrar os momentos.
-- "Umas 700 palavras, 15 minutos de briefing."
+**22 · Anexe tudo do cliente** (0:50)
+"PDF, logo, prints, até arquivo do Figma. Site antigo do próprio cliente dá para importar pela URL. Concorrente: só print, como referência."
 
-**24 · Ao vivo** (1 min)
-- Troque para a aba da LP: mexa o mouse no livro, role até os capítulos, clique no teste de luz, envie o formulário.
-- Sem internet? Os quatro vídeos do slide contam a história.
+**23 · O primeiro resultado é o esqueleto** (0:50) · *3 cliques*
+"Prompt completo, depois uma seção por vez, depois polimento. Prompt gigante de correção é onde tudo quebra."
 
-### Ato 5 · Lovable além do básico
+**24 · Ajuste com limites** (1:00)
+"O que muda, onde e o que não pode mudar. Escreveu 'e' mais de duas vezes? Divida."
 
-**25 · O fluxo** (1min30) · *6 cliques*
-- **Plan mode:** ele planeja e pergunta antes de gastar crédito construindo.
-- **Anexe o cliente:** brandbook, logo, prints, Figma.
-- **BRIEF é o esqueleto:** o primeiro resultado é a base, não a obra final.
-- **Ajuste por seção:** "o que muda, onde, e o que não pode mudar".
-- **Aponte:** selecione no preview ou desenhe por cima.
-- **Polimento e memória:** passada final, versão marcada, regras salvas.
-- Fecho: "Escreveu 'e' mais de duas vezes? Divida em dois pedidos."
+**25 · Aponte em vez de descrever** (0:50) · *1 clique*
+"Selecione o botão no preview e peça. Para layout, desenhe por cima: 'move isso para cá'."
 
-**26 · Pedidos de ajuste** (1 min)
-- "Esse é para tirar foto. Funciona muito melhor que 'deixa mais bonito'."
+**26 · Pedidos de ajuste prontos** (0:40) · *pulável*
+"Para tirar foto: mais ousado, mais calmo, enxugar, polimento, explorar antes, celular."
 
-**27 · O Lovable tem memória** (1 min)
-- "Instructions do workspace: o padrão Mestre em todo projeto, configurado uma vez."
-- "Instructions do projeto: o brandbook do cliente. Skills: receitas chamadas com barra."
-- "Truque final: peça para ele escrever as instruções do projeto com base no que foi construído."
+**27 · Marque as versões boas** (0:50)
+"Marcou a versão, pode ousar. Try to fix no máximo duas vezes; depois, peça para investigar a causa no Plan mode."
 
-### Ato 6 · Fechamento
+**28 · Use a memória do Lovable** (1:00)
+"Instructions do workspace: o padrão Mestre em todo projeto. Do projeto: o brandbook do cliente. Skills: receitas com barra. E o truque: peça para ele escrever as instruções do projeto no fim."
 
-**28 · O assistente** (1 min) · *2 cliques*
-- "Montei um assistente no Gemini e no Claude: vocês colam o briefing e ele devolve o prompt."
-- Clique 1: a resposta em B, R, I, E, F. Clique 2: "E ele avisa quando o segmento é regulado."
+### Fechamento
 
-**29 · Para levar** (40 s)
-- "Prompt bom é briefing bom." Lance o desafio: "Na próxima LP, mandem o antes e depois no grupo."
+**29 · Dois assistentes** (1:30)
+- "Tudo o que vimos está dentro deles. Colem o briefing do jeito que estiver e recebam o prompt pronto."
+- Gem no Gemini: pelo link do grupo. Skill no Claude: enviar o zip em Configurações › Capabilities › Skills.
+- "Eles não inventam dados do cliente e avisam quando o segmento é regulado."
 
-**30 · Perguntas** (até o fim)
-- Use os slides extras conforme as perguntas.
+**30 · Na prática** (1:00) · *2 cliques* · *pulável*
+Clique 1: a resposta organizada. Clique 2: o alerta de compliance.
 
-### Extras (só se perguntarem)
-31 créditos · 32 idioma · 33 site do cliente e referências · 34 quando o Lovable erra · 35 pixel, LGPD e SEO · 36 peso do 3D e das animações. Respostas completas em `04-faq-possiveis-duvidas.md`.
+**31 · Checklist** (0:50)
+"Dez perguntas antes de mandar o prompt. Está no guia de bolso." Lance o desafio do antes e depois.
+
+**32 · Perguntas**
+Use os extras: créditos, idioma, 3D no Lovable, referências de concorrente, pixel/LGPD/SEO e performance.
 
 ---
 
 ## Antes da aula
 
-- [ ] Preencher o nome na capa (procure "[Seu nome]" no `index.html`)
-- [ ] Criar o Gem e colocar o link no slide 28 (procure "Link do Gem")
-- [ ] Ensaiar uma vez cronometrando: chegar no slide 21 até 19:30
-- [ ] Deixar a LP espetacular aberta numa aba
-- [ ] Mensagem do grupo pronta (README)
+- [ ] Trocar "[Seu nome]" na capa do `index.html`
+- [ ] Criar o Gem e colocar o link no slide 29 (procure "Link do Gem")
+- [ ] Ensaiar uma vez cronometrando (checkpoint: slide 18 até 16:00)
+- [ ] Deixar a LP da Vingô aberta numa aba para o slide 20
+- [ ] Mensagem do grupo pronta (no README)

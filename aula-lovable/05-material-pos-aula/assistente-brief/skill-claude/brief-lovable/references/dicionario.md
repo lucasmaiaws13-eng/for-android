@@ -48,7 +48,7 @@ Dicas:
 
 Regra: **permissão + direção + coerência.** Dê liberdade, descreva cada momento e faça todo efeito nascer da marca. Efeito solto, repetido igual em toda seção, é cara de IA.
 
-**Padrões de uma LP cinematográfica** (vistos no case do PHE e na LP da Vingô):
+**Padrões de uma LP cinematográfica** (vistos na LP da Vingô):
 | Padrão | Como pedir |
 |---|---|
 | Símbolo ou produto em 3D no hero | "hero com cena 3D em WebGL (Three.js): o [símbolo/produto] como objeto 3D com luz e reflexo, reagindo ao mouse; ao rolar, ele gira e se afasta" |

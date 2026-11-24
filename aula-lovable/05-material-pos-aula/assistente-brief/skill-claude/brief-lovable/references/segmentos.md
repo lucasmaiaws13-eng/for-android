@@ -31,7 +31,7 @@ Cada segmento traz: estrutura típica de LP, direção visual sugerida, ideia de
 ## Educação (faculdade, curso, pós, infoproduto)
 - **Estrutura:** Hero com o curso e a promessa → para quem é → o que vai aprender (módulos) → professores → formato/duração/certificado → depoimentos de alunos → preço/condição → inscrição + FAQ
 - **Visual:** editorial ou ousado (público jovem). Cor institucional forte, tipografia grande.
-- **Momento uau:** símbolo da instituição em 3D no hero · números de mercado em seção fixa · módulos em rolagem horizontal · sequência de fotos presa na tela · neon do símbolo no CTA (ver o case PHE)
+- **Momento uau:** símbolo da instituição em 3D no hero · números de mercado em seção fixa · módulos em rolagem horizontal · sequência de fotos presa na tela · neon do símbolo no CTA
 - **Evitar:** "transforme sua carreira", stock photo de formatura, 12 cards de benefícios
 - **Atenção:** graduações e pós citam credenciamento/ato regulatório quando aplicável.
 

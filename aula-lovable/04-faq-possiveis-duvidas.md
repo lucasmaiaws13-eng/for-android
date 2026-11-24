@@ -106,11 +106,10 @@ Não prometa resultado, não invente dados e sinalize para validação jurídica
 ## Sobre os exemplos da aula
 
 **"Essas LPs foram feitas no Lovable?"**
-- **PHE:** sim. As duas versões são projetos reais da agência; a cinematográfica está publicada em building-a-lovely-something.lovable.app.
-- **Vingô:** as duas LPs foram montadas como demonstração fiel do que cada prompt pede, com o mesmo cliente e o mesmo briefing. O prompt está no material: rodem no Lovable e comparem (passo a passo em `03-exemplo-vingo-prompts.md`, seção 7).
+As duas LPs da Vingô foram montadas como demonstração fiel do que cada prompt pede, com o mesmo cliente e o mesmo briefing. O prompt está no material: rodem no Lovable e comparem (passo a passo em `03-exemplo-vingo-prompts.md`, seção 6).
 
 **"O Lovable faz mesmo 3D e essas animações de scroll?"**
-Faz. O Lovable instala sozinho as bibliotecas que você nomear (Three.js para 3D, GSAP com ScrollTrigger para animações ligadas ao scroll, Lenis para rolagem suave, Framer Motion). O caminho que funciona: pedir no prompt inicial com direção clara (bloco F) e depois refinar **um momento por vez** ("na seção dos números, a troca deve acontecer a cada quarto da rolagem…"). A versão cinematográfica do PHE é a prova.
+Faz. O Lovable instala sozinho as bibliotecas que você nomear (Three.js para 3D, GSAP com ScrollTrigger para animações ligadas ao scroll, Lenis para rolagem suave, Framer Motion). O caminho que funciona: pedir no prompt inicial com direção clara (bloco F) e depois refinar **um momento por vez** ("na seção dos números, a troca deve acontecer a cada quarto da rolagem…").
 
 **"Não é exagero para uma LP de mídia paga?"**
 Depende do objetivo. Para vitrine, lançamento, e-book, curso e marca de consumo, a experiência é o diferencial. Para campanha de conversão rápida, mantenha o hero leve, o CTA na primeira dobra e o 3D mais contido no celular. A regra é a mesma: nenhum efeito sem motivo.
