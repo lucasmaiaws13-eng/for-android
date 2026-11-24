@@ -1,6 +1,6 @@
 # 05 — Possíveis dúvidas (com respostas)
 
-> Respostas para o apresentador. As marcadas com **[slide N]** têm slide extra no deck (slides 29 a 37, ver `02-guia-da-apresentacao.md`).
+> Respostas para o apresentador. As marcadas com **[slide N]** têm slide extra no deck (slides 31 a 38, ver `02-guia-da-apresentacao.md`).
 > Informações do Lovable conferidas na documentação oficial em nov/2026. O produto muda rápido: se algo estiver diferente na tela, a lógica continua valendo.
 
 ---
@@ -13,7 +13,7 @@ O que confunde é prompt **bagunçado**, não comprido. Um briefing de uma pági
 **"Preciso escrever tudo isso toda vez?"**
 Não. Use o Assistente BRIEF (Gem/Skill): você cola o briefing do cliente e ele monta o prompt. E o que é fixo do cliente vai para as *Instructions* do projeto no Lovable, então os próximos pedidos podem ser curtos.
 
-**"Escrevo em português ou inglês?" [slide 29]**
+**"Escrevo em português ou inglês?" [slide 31]**
 Português. O Lovable entende muito bem e a página sai em português. Mantenha em inglês os termos de design que não têm tradução consagrada (*parallax, hover, glassmorphism, sticky scroll, bento grid*): são os "nomes dos ingredientes" que a IA reconhece.
 
 **"Começar com 'você é um designer sênior' ajuda?"**
@@ -32,10 +32,10 @@ O método mostra o contrário: o resultado bom vem de **decisões de direção**
 
 ## Sobre o Lovable
 
-**"Isso demora mais?" [slide 25]**
+**"Isso demora mais?" [slide 27]**
 No começo, um pouco, como qualquer ferramenta nova. Com prática, o prompt sai em minutos, e o agente de prompt (lucasmaiadesign.com/paginas-com-ia) monta o prompt a partir do briefing colado. O tempo que se gasta no prompt volta em menos rodadas de correção.
 
-**"Isso não gasta muito crédito?" [slide 20]**
+**"Isso não gasta muito crédito?" [slide 22]**
 - **Plan mode:** 1 crédito por mensagem (mais a pesquisa, se ele precisar investigar o projeto). Não mexe no código.
 - **Build mode:** cobra pelo trabalho feito. Pedidos pequenos custam menos, gerações grandes e com imagem custam mais.
 - **Chat mode:** o mais barato para tirar dúvidas, coberto pela franquia diária de chat.
@@ -49,13 +49,13 @@ No começo, um pouco, como qualquer ferramenta nova. Com prática, o prompt sai 
 **"Por que às vezes o Lovable me faz perguntas de cor, fonte e layout antes de criar?"**
 São as *design questions*: quando o prompt deixa o visual em aberto, ele pergunta paleta, tipografia e layout com amostras visuais. Se o prompt já define o visual (bloco I), ele pula as perguntas e constrói direto. Se você clicar em "Skip all", ele usa padrões… que é como nasce a cara de IA.
 
-**"Posso usar o site do cliente como base? E o site de um concorrente?" [slide 32]**
+**"Posso usar o site do cliente como base? E o site de um concorrente?" [slide 33]**
 O Lovable importa um site pela URL (lê textos, imagens, fontes, cores e layout) e cria um projeto editável. A documentação é clara: é para **sites que você possui** (no nosso caso, do cliente, com autorização). Site de concorrente ou referência de terceiros: tire print e use como **inspiração** ("use como referência de ritmo e espaçamento, não copie"), nunca como cópia.
 
 **"Como mando o brandbook, o Figma, as referências?"**
 Pelo chat do Lovable: anexe até 10 arquivos por mensagem (PDF, imagens, Word, PowerPoint e até arquivo .fig do Figma). Dá para desenhar por cima de um print anexado para mostrar o que mudar. Sempre repita no texto o que é inegociável (HEX, fontes): o anexo ajuda, o texto manda.
 
-**"E quando o Lovable erra ou quebra algo?" [slide 24]**
+**"E quando o Lovable erra ou quebra algo?" [slide 26]**
 1. Volte para uma versão boa no **histórico** (por isso, marque versões boas).
 2. Use o *Try to fix* no máximo 2 vezes.
 3. Se não resolver: Plan mode + *"Investigue a causa raiz antes de alterar qualquer código e me explique o que encontrou."*
@@ -64,20 +64,20 @@ Pelo chat do Lovable: anexe até 10 arquivos por mensagem (PDF, imagens, Word, P
 **"Dá para mudar um detalhe sem reescrever o prompt?"**
 Sim: no preview, use *Select elements* (seleciona o elemento e descreve a mudança), *Edit text inline* (edita o texto direto) ou *Draw* (rabisca por cima). Apontar é mais rápido e mais preciso que descrever.
 
-**"O que são Instructions e Skills?" [slide 36]**
+**"O que são Instructions e Skills?" [slide 37]**
 - **Instructions** (antigo *Knowledge*): uma memória fixa que vai em toda mensagem. Três níveis: workspace (regras da agência, só admins editam, até 10 mil caracteres), projeto (o cliente) e pessoal.
 - **Skills:** "playbooks" sob demanda, chamados com `/` ou aplicados quando o pedido combina. Deixamos prontas a `/lp-brief` e a `/revisao-lp` (pasta `05-material-pos-aula/bonus-lovable-da-agencia/`).
 
 **"Onde caem os leads do formulário?"**
 O Lovable pode salvar os envios num banco de dados do próprio projeto (Lovable Cloud) e há conectores para ferramentas de e-mail, CRM e automação. Para campanha de verdade, combine com o time responsável pela integração (CRM, régua) e teste o envio de ponta a ponta antes de subir mídia.
 
-**"Como integro o RD Station com a LP do Lovable?" [slide 34]**
+**"Como integro o RD Station com a LP do Lovable?" [slide 35]**
 É simples, e tem dois caminhos:
 - **Recomendado, API do RD:** mantém o formulário com o visual da LP. Pegue a chave de API pública do RD Station Marketing (em Integrações) e peça ao Lovable: "Ao enviar o formulário, mande os campos para o RD Station pela API de conversões (api.rd.services/platform/conversions), com o identificador [nome-da-campanha]. Guarde a chave do RD como secret e envie pelo backend. Mostre a mensagem de sucesso só depois que o RD confirmar."
 - **Mais rápido, formulário do próprio RD:** crie o formulário no RD, copie o código de incorporação e peça ao Lovable para colocá-lo no lugar do formulário. Funciona na hora, mas o visual fica o do RD.
 - **Sempre:** mande um lead de teste e confira no RD se ele chegou com o identificador certo. Para rastrear visitas e a jornada do lead, peça para incluir o código de monitoramento do RD na página. Combine o identificador de conversão com quem cuida da automação.
 
-**"E pixel, GTM, LGPD, SEO?" [slide 33]**
+**"E pixel, GTM, LGPD, SEO?" [slide 34]**
 - **LGPD:** peça no bloco R o checkbox de consentimento e o link da política de privacidade.
 - **Pixel/GTM/eventos:** dá para pedir a instalação, mas valide com quem cuida de tracking (IDs corretos, eventos de conversão, consentimento).
 - **SEO:** peça título, descrição e imagem de compartilhamento; o Lovable tem revisão de SEO/AEO nativa e conexão com o Google Search Console.
@@ -95,13 +95,13 @@ Duplique (*remix*) o projeto e mude só uma variável por vez (headline, hero, C
 
 ## Sobre design e performance
 
-**"Animação não deixa a página pesada?" [slide 35]**
+**"Animação não deixa a página pesada?" [slide 36]**
 Pode deixar. Por isso o carimbo pede mobile-first, página rápida e respeito ao "reduzir movimento". Um momento uau bem escolhido pesa menos que dez efeitos espalhados. 3D completo (Three.js/Spline) é o mais pesado: use em produto/tech, com moderação. Teste sempre no celular. Para mídia isso importa em dinheiro: página lenta derruba conversão (o guia de tendências do Lovable cita que 53% dos usuários de celular abandonam páginas que demoram mais de 3 s).
 
 **"E as imagens?"**
 Três caminhos: (1) fotos reais do cliente (o melhor, quando são boas); (2) imagens geradas pelo próprio Lovable: descreva estilo, luz, enquadramento e peça "sem texto na imagem" (gasta créditos); (3) ilustração vetorial, ótima para marcas sem banco de fotos (como a Vingô). Evite foto de banco genérica: é outro sinal de template.
 
-**"E se o cliente não tem brandbook?" [slide 30]**
+**"E se o cliente não tem brandbook?" [slide 13]**
 Use o bloco I com: 3 palavras de vibe (dicionário), uma paleta de 4 a 6 cores em HEX, 2 fontes e uma referência visual (print). O Assistente BRIEF propõe isso por segmento. Depois de aprovado, salve nas Instructions do projeto: vira o "brandbook mínimo" da LP.
 
 **"Como sei se a LP ficou boa?"**
@@ -117,7 +117,7 @@ Não prometa resultado, não invente dados e sinalize para validação jurídica
 **"Essas LPs foram feitas no Lovable?"**
 As duas LPs da Vingô foram montadas como demonstração fiel do que cada prompt pede, com o mesmo cliente e o mesmo briefing. O prompt está no material: rodem no Lovable e comparem (passo a passo em `03-exemplo-vingo-prompts.md`, seção 6).
 
-**"O Lovable faz mesmo 3D e essas animações de scroll?" [slide 31]**
+**"O Lovable faz mesmo 3D e essas animações de scroll?" [slide 32]**
 Faz. O Lovable instala sozinho as bibliotecas que você nomear (Three.js para 3D, GSAP com ScrollTrigger para animações ligadas ao scroll, Lenis para rolagem suave, Framer Motion). O caminho que funciona: pedir no prompt inicial com direção clara (bloco F) e depois refinar **um momento por vez** ("na seção dos números, a troca deve acontecer a cada quarto da rolagem…").
 
 **"Não é exagero para uma LP de mídia paga?"**

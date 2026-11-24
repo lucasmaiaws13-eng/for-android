@@ -1,6 +1,6 @@
 # Aula: IA para criação de LPs com Lovable · Agência Mestre
 
-> **Treinamento:** *Criação de LPs com IA · Prompts para criar páginas incríveis no Lovable.* Com o mesmo cliente, o mesmo briefing e os mesmos textos, um pedido simples deu uma LP genérica e um prompt bem feito deu uma LP incrível. A aula destrincha como: os 5 passos do prompt, como a IA lê, planejar antes de construir e saber alterar.
+> **Treinamento:** *Criação de LPs com IA · Prompts para criar páginas incríveis no Lovable.* Com o mesmo cliente, o mesmo briefing e os mesmos textos, um pedido simples deu uma LP genérica e um prompt bem feito deu uma LP incrível. A aula destrincha como: os 4 passos do prompt, como a IA lê, planejar antes de construir e saber alterar.
 
 30 minutos + perguntas · público geral da agência.
 
@@ -23,7 +23,7 @@ Para mostrar a alguém fora da sua conta, use o menu Share de cada página. O de
 
 | Arquivo / pasta | Para quê |
 |---|---|
-| `apresentacao/index.html` + `assets/` + `lp/` | **O deck.** 28 slides + 9 extras (inclui a integração com o RD Station). Abertura (meu processo de sempre, a LP genérica, por que ela é genérica, a LP linda) e 4 partes com capa: o prompt em 5 passos, como a IA lê o prompt, planeje antes de construir, aprenda a alterar. Fecha com "isso demora mais?", o agente e o checklist. Notas do apresentador na tecla N e grade com todos os slides na tecla G. **`apresentador.html`** é o roteiro para o segundo monitor: miniatura de cada slide com a fala em letra grande, acompanhando o slide atual quando o `index.html` está aberto no mesmo navegador. Clique em qualquer print ou vídeo de LP para abrir a página de verdade em tela cheia (as cópias ficam em `lp/`; se mudar uma LP em `exemplos/`, copie de novo) |
+| `apresentacao/index.html` + `assets/` + `lp/` | **O deck.** 30 slides + 8 extras (inclui a integração com o RD Station). Abertura (o cliente fictício e seus arquivos, meu processo de sempre, a LP genérica, por que ela é genérica, a LP linda) e 4 partes com capa: o prompt em 4 passos, como a IA lê o prompt (e o que não fazer, no fim), planeje antes de construir, aprenda a alterar. Fecha com "isso demora mais?", o agente e o checklist. Notas do apresentador na tecla N e grade com todos os slides na tecla G. **`apresentador.html`** é o roteiro para o segundo monitor: miniatura de cada slide com a fala em letra grande, acompanhando o slide atual quando o `index.html` está aberto no mesmo navegador. Clique em qualquer print ou vídeo de LP para abrir a página de verdade em tela cheia (as cópias ficam em `lp/`; se mudar uma LP em `exemplos/`, copie de novo) |
 | `02-guia-da-apresentacao.md` | **Guia resumido:** como usar o deck, tempos (~24 min falados) e o que falar em cada slide |
 | `01-fundamentos-da-pesquisa.md` | A pesquisa que sustenta a aula, com fontes |
 | `03-exemplo-vingo-prompts.md` | O case Vingô: brandbook, prompt de sempre, prompt completo, mapa "trecho do prompt → resultado" e inventário de capturas |
@@ -44,9 +44,9 @@ Para mostrar a alguém fora da sua conta, use o menu Share de cada página. O de
 
 1. **Abrir o deck** e passar por ele com as notas abertas (N). Siga `02-guia-da-apresentacao.md`.
 2. **Preencher o nome** na capa: procure "[Seu nome]" em `apresentacao/index.html`.
-3. **Publicar o agente** em lucasmaiadesign.com/paginas-com-ia com `05-material-pos-aula/agente-no-site/`. Rode os 4 testes do fim de `prompt-do-agente.md`. Se o endereço for outro, troque no slide 26 (procure "paginas-com-ia").
-4. **Ensaiar uma vez cronometrando:** chegar no slide 13 até 12:00. Se apertar, pule o slide 23.
-5. **Deixar a LP da Vingô aberta numa aba** para o slide 5.
+3. **Publicar o agente** em lucasmaiadesign.com/paginas-com-ia com `05-material-pos-aula/agente-no-site/`. Rode os 4 testes do fim de `prompt-do-agente.md`. Se o endereço for outro, troque no slide 28 (procure "paginas-com-ia").
+4. **Ensaiar uma vez cronometrando:** chegar no slide 14 até 12:45. Se apertar, pule o slide 25.
+5. **Deixar a LP da Vingô aberta numa aba** para o slide 6.
 6. **(Opcional, 20 min)** Rodar o prompt completo no Lovable com o brandbook anexado (`03-exemplo-vingo-prompts.md`, seção 6) para ter também um resultado 100% Lovable da Vingô.
 
 Se mudar textos do deck, mantenha as regras da Mestre: título termina com ponto, sem travessão, Outfit, tinta e papel.
