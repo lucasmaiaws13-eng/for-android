@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brota — Brandbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mata:#0E3B2C; --broto:#C9F264; --anturio:#FF6F91; --folha:#EEF4E6; --musgo:#3E8E4E; --nuvem:#FBFDF7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Figtree',sans-serif;color:var(--mata);background:var(--nuvem);line-height:1.55;font-size:17px}
+  h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.02}
+  section{padding:72px 8vw;break-inside:avoid;page-break-inside:avoid}
+  .label{font-weight:600;font-size:14px;color:var(--musgo);margin-bottom:10px}
+  h2{font-size:clamp(36px,5vw,56px);margin-bottom:28px}
+  p.lead{font-size:20px;max-width:62ch}
+  /* capa */
+  .cover{background:var(--mata);color:var(--folha);min-height:92vh;display:grid;align-content:center;position:relative;overflow:hidden}
+  .cover img{width:min(560px,70vw)}
+  .cover p{font-size:22px;margin-top:28px;max-width:30ch;font-family:'Bricolage Grotesque';font-weight:500}
+  .cover .meta{position:absolute;left:8vw;bottom:40px;font-size:14px;opacity:.7}
+  .cover svg.deco{position:absolute;right:-60px;top:50%;transform:translateY(-50%) rotate(-18deg);width:min(520px,48vw);opacity:.95}
+  /* grid helpers */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media (max-width:800px){.two,.three{grid-template-columns:1fr}}
+  .card{border-radius:14px;padding:28px}
+  /* logo */
+  .logos{display:grid;grid-template-columns:2fr 2fr 1fr;gap:20px}
+  @media (max-width:800px){.logos{grid-template-columns:1fr}}
+  .logos>div{border-radius:14px;padding:40px;display:grid;place-items:center;min-height:200px}
+  .logos img{width:100%;max-width:340px}
+  .logos .sym img{max-width:120px}
+  .caption{font-size:14px;margin-top:10px;opacity:.75}
+  .dont{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+  @media (max-width:800px){.dont{grid-template-columns:1fr 1fr}}
+  .dont div{background:#fff;border:1.5px solid #e2e8dc;border-radius:12px;padding:18px;text-align:center;font-size:14px}
+  .dont img{width:100%;max-width:160px;margin-bottom:10px}
+  .x{color:#C2334D;font-weight:600}
+  /* cores */
+  .swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  @media (max-width:900px){.swatches{grid-template-columns:1fr 1fr}}
+  .sw{border-radius:14px;overflow:hidden;border:1.5px solid #e2e8dc;background:#fff}
+  .sw .chip{height:120px}
+  .sw .info{padding:14px;font-size:14px}
+  .sw b{display:block;font-family:'Bricolage Grotesque';font-size:19px}
+  .ratio{margin-top:24px;display:flex;height:22px;border-radius:99px;overflow:hidden;border:1.5px solid #d5dfcb}
+  /* tipografia */
+  .type-a{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(64px,10vw,120px);line-height:.9;letter-spacing:-.03em}
+  .type-b{font-size:22px}
+  /* tom */
+  .tone li{list-style:none;padding:12px 0;border-bottom:1px solid #dfe7d6}
+  .say{background:var(--folha)}
+  .nosay{background:#fff;border:1.5px solid #e2e8dc}
+  .nosay li{text-decoration:line-through;text-decoration-color:#C2334D80}
+  .sticker{display:inline-block;background:var(--anturio);color:var(--mata);font-family:'Bricolage Grotesque';font-weight:800;padding:10px 18px;border-radius:99px;transform:rotate(-6deg);font-size:18px}
+  .elements{background:var(--folha)}
+  .elements .row{display:flex;gap:28px;align-items:flex-end;flex-wrap:wrap;margin-top:12px}
+  footer{background:var(--mata);color:var(--folha);padding:40px 8vw;font-size:14px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  footer img{width:120px}
+  @media print{ section{padding:48px 6vw} .cover{min-height:100vh} }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <img src="logo-brota-negativo.svg" alt="Brota">
+  <p>Plantas para quem tem pouco tempo e muita vontade.</p>
+  <span class="meta">Brandbook simplificado · v1.0 · 2026 · marca fictícia criada para fins didáticos</span>
+  <svg class="deco" viewBox="0 0 200 220" aria-hidden="true">
+    <defs><mask id="mc"><rect width="200" height="220" fill="#fff"/><g fill="#000">
+      <path d="M4 58 Q 50 70 93 84 Q 48 80 8 76Z"/><path d="M6 100 Q 52 102 95 106 Q 50 112 12 122Z"/><path d="M28 146 Q 64 128 96 122 Q 70 140 46 162Z"/>
+      <path d="M196 66 Q 150 76 107 90 Q 152 88 192 86Z"/><path d="M192 112 Q 148 112 105 112 Q 150 120 186 134Z"/><path d="M164 154 Q 134 136 104 128 Q 128 148 148 168Z"/></g></mask></defs>
+    <path d="M100 194 C 100 205 98 212 96 220" stroke="#3E8E4E" stroke-width="5" fill="none"/>
+    <path mask="url(#mc)" fill="#3E8E4E" d="M100 40 C 120 12, 170 12, 190 50 C 205 85, 190 140, 150 170 C 130 185, 112 192, 100 196 C 88 192, 70 185, 50 170 C 10 140, -5 85, 10 50 C 30 12, 80 12, 100 40 Z"/>
+  </svg>
+</section>
+
+<section>
+  <div class="label">01 · Essência</div>
+  <h2>Quem é a Brota</h2>
+  <div class="two">
+    <div>
+      <p class="lead">A Brota é uma loja de plantas para apartamento — e-commerce com entrega em São Paulo e uma loja física em Pinheiros. Vende plantas, vasos e kits prontos, sempre com instruções simples de cuidado.</p>
+      <p style="margin-top:18px"><b>Propósito:</b> fazer qualquer apê virar um cantinho verde, sem culpa e sem planta morta.</p>
+    </div>
+    <div class="card" style="background:var(--folha)">
+      <p><b>Público:</b> pessoas de 25 a 40 anos que moram em apartamento, trabalham muito, adoram a ideia de ter plantas e já perderam algumas pelo caminho.</p>
+      <p style="margin-top:12px"><b>Personalidade:</b> bem-humorada, acolhedora, prática. Fala como uma amiga que entende de plantas, nunca como um manual técnico.</p>
+      <p style="margin-top:12px"><b>Promessa:</b> "Se a gente vendeu, a gente te ensina a manter viva."</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff">
+  <div class="label">02 · Logo</div>
+  <h2>O broto que nasce do "o"</h2>
+  <p class="lead" style="margin-bottom:28px">Wordmark em Bricolage Grotesque ExtraBold, em caixa baixa, com um broto saindo do "o". O símbolo (o "o" com o broto) é usado em avatares, favicon e selos.</p>
+  <div class="logos">
+    <div style="background:var(--folha)"><img src="logo-brota.svg" alt="Logo Brota positivo"></div>
+    <div style="background:var(--mata)"><img src="logo-brota-negativo.svg" alt="Logo Brota negativo"></div>
+    <div class="sym" style="background:var(--folha)"><img src="simbolo-brota.svg" alt="Símbolo Brota"></div>
+  </div>
+  <p class="caption">Positivo (fundos claros) · Negativo (fundos escuros, broto em verde-broto) · Símbolo. Área de proteção: a altura do "o" em volta de todo o logo. Tamanho mínimo: 80 px de largura.</p>
+  <div class="dont">
+    <div><img src="logo-brota.svg" style="transform:scaleX(1.4) " alt=""><br><span class="x">Não distorcer</span></div>
+    <div><img src="logo-brota.svg" style="filter:hue-rotate(200deg)" alt=""><br><span class="x">Não mudar as cores</span></div>
+    <div style="background:linear-gradient(90deg,#7b5cff,#3fa0ff)"><img src="logo-brota.svg" alt=""><br><span class="x" style="color:#fff">Não usar sobre gradientes</span></div>
+    <div><img src="logo-brota.svg" style="transform:rotate(-12deg)" alt=""><br><span class="x">Não girar</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="label">03 · Cores</div>
+  <h2>Uma paleta que parece viva</h2>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#0E3B2C"></div><div class="info"><b>Mata</b>#0E3B2C<br>Cor principal: textos, fundos escuros, logo.</div></div>
+    <div class="sw"><div class="chip" style="background:#C9F264"></div><div class="info"><b>Broto</b>#C9F264<br>Destaque: CTAs e ênfases. Só sobre Mata.</div></div>
+    <div class="sw"><div class="chip" style="background:#FF6F91"></div><div class="info"><b>Antúrio</b>#FF6F91<br>Pitada de humor: selos e adesivos. Use pouco.</div></div>
+    <div class="sw"><div class="chip" style="background:#3E8E4E"></div><div class="info"><b>Musgo</b>#3E8E4E<br>Ilustrações e detalhes sobre fundo claro.</div></div>
+    <div class="sw"><div class="chip" style="background:#EEF4E6"></div><div class="info"><b>Folha Clara</b>#EEF4E6<br>Fundo principal das peças claras.</div></div>
+    <div class="sw"><div class="chip" style="background:#FBFDF7"></div><div class="info"><b>Nuvem</b>#FBFDF7<br>Fundo neutro, respiro entre seções.</div></div>
+  </div>
+  <p class="caption" style="margin-top:18px">Proporção de uso:</p>
+  <div class="ratio"><span style="flex:40;background:#0E3B2C"></span><span style="flex:30;background:#EEF4E6"></span><span style="flex:12;background:#FBFDF7"></span><span style="flex:10;background:#3E8E4E"></span><span style="flex:6;background:#C9F264"></span><span style="flex:2;background:#FF6F91"></span></div>
+  <p class="caption">Regra de contraste: verde Broto <b>nunca</b> como texto sobre fundo claro. Texto sobre fundo claro é sempre Mata.</p>
+</section>
+
+<section style="background:#fff">
+  <div class="label">04 · Tipografia</div>
+  <h2>Duas fontes, papéis claros</h2>
+  <div class="two">
+    <div>
+      <div class="type-a">Aa</div>
+      <p style="margin-top:12px"><b>Bricolage Grotesque</b> (ExtraBold 800 e Medium 500) — títulos, chamadas e números. Grande, com entrelinha apertada e espaçamento levemente negativo. Tem personalidade sem perder a leitura.</p>
+    </div>
+    <div>
+      <div class="type-b">Figtree para os textos corridos: amigável, legível em qualquer tela e com cara de conversa. Regular 400 para leitura e SemiBold 600 para destaques e botões.</div>
+      <p class="caption" style="margin-top:16px">Ambas gratuitas no Google Fonts. Nunca usar Inter, Arial ou fontes de sistema nas peças da marca.</p>
+    </div>
+  </div>
+</section>
+
+<section class="elements">
+  <div class="label">05 · Elementos gráficos</div>
+  <h2>Folhas, não fotos de banco</h2>
+  <p class="lead">A Brota se expressa com ilustrações vetoriais chapadas de folhas (costela-de-adão, jiboia, espada-de-são-jorge), sem contorno, nos tons Mata, Musgo e Broto. Elas podem "crescer" e balançar devagar em peças digitais. O adesivo rosa traz o humor.</p>
+  <div class="row">
+    <svg width="150" height="165" viewBox="0 0 200 220"><defs><mask id="me"><rect width="200" height="220" fill="#fff"/><g fill="#000"><path d="M4 58 Q 50 70 93 84 Q 48 80 8 76Z"/><path d="M6 100 Q 52 102 95 106 Q 50 112 12 122Z"/><path d="M28 146 Q 64 128 96 122 Q 70 140 46 162Z"/><path d="M196 66 Q 150 76 107 90 Q 152 88 192 86Z"/><path d="M192 112 Q 148 112 105 112 Q 150 120 186 134Z"/><path d="M164 154 Q 134 136 104 128 Q 128 148 148 168Z"/></g></mask></defs><path d="M100 194 C 100 205 98 212 96 220" stroke="#0E3B2C" stroke-width="5" fill="none"/><path mask="url(#me)" fill="#0E3B2C" d="M100 40 C 120 12, 170 12, 190 50 C 205 85, 190 140, 150 170 C 130 185, 112 192, 100 196 C 88 192, 70 185, 50 170 C 10 140, -5 85, 10 50 C 30 12, 80 12, 100 40 Z"/></svg>
+    <svg width="100" height="120" viewBox="0 0 100 120"><path fill="#3E8E4E" d="M50 110 C 14 84 2 50 14 28 C 24 10 44 12 50 30 C 56 12 76 10 86 28 C 98 50 86 84 50 110Z"/><path d="M50 30 C 51 60 51 90 50 108" stroke="#0E3B2C" stroke-width="2" fill="none" opacity=".35"/></svg>
+    <svg width="60" height="150" viewBox="0 0 40 100"><path fill="#2E5E3A" d="M20 2 C 28 20 34 50 32 98 L 8 98 C 6 50 12 20 20 2Z"/><path d="M11 30 Q20 26 29 30 M10 45 Q20 41 30 45 M9 60 Q20 56 31 60 M9 75 Q20 71 31 75 M9 90 Q20 86 31 90" stroke="#C9F264" stroke-width="2.2" fill="none" opacity=".55"/></svg>
+    <span class="sticker">à prova de esquecidos</span>
+  </div>
+  <p class="caption" style="margin-top:22px">Formas com cantos arredondados (raio 14 px em cartões, botões em pílula). Sombras raras e suaves. Nada de gradientes decorativos, bolhas desfocadas ou emojis no lugar de ícones.</p>
+</section>
+
+<section>
+  <div class="label">06 · Tom de voz</div>
+  <h2>Amiga que entende de planta</h2>
+  <div class="two tone">
+    <div class="card say">
+      <h3 style="font-size:24px;margin-bottom:8px">A Brota fala assim</h3>
+      <ul>
+        <li>"Chega de velório de planta."</li>
+        <li>"Não é falta de mão verde. É falta de manual."</li>
+        <li>"Regar demais também mata. A gente explica."</li>
+        <li>"Sua jiboia aguenta uma semana de viagem. Você também merece."</li>
+      </ul>
+    </div>
+    <div class="card nosay">
+      <h3 style="font-size:24px;margin-bottom:8px">A Brota nunca fala assim</h3>
+      <ul>
+        <li>"Transforme seu lar em um oásis verde."</li>
+        <li>"Descubra os segredos dos especialistas."</li>
+        <li>"Revolucione sua relação com a natureza."</li>
+        <li>"Fotossíntese otimizada para ambientes internos."</li>
+      </ul>
+    </div>
+  </div>
+  <p class="caption" style="margin-top:18px">Frases curtas. Humor leve, nunca debochado com o cliente. Zero culpa. Termos técnicos só com tradução ao lado.</p>
+</section>
+
+<footer>
+  <img src="logo-brota-negativo.svg" alt="Brota">
+  <span>@brota.plantas · brota.com.br · Marca fictícia para a aula "IA para LPs com Lovable"</span>
+</footer>
+
+</body>
+</html>
