@@ -450,6 +450,74 @@ body:hover #ui,#ui:focus-within{opacity:1}
 .warn{margin:0 22px;display:flex;gap:12px;align-items:center;font-size:15.5px;font-weight:500;color:var(--paper);border:1px solid #3a3a3a;padding:12px 16px}
 .warn i{flex:none;width:24px;height:24px;display:grid;place-items:center;background:var(--paper);color:var(--ink);font-style:normal;font-weight:900;font-size:14px}
 
+/* ---------- v4 ---------- */
+.lvui{display:grid;grid-template-columns:360px 1fr;grid-template-rows:auto 560px;border:1px solid var(--ink);background:#fff;font-size:15px}
+.lvui .top{grid-column:1/3;display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:14px}
+.lvui .top img{width:20px}.lvui .top b{font-weight:600}.lvui .top span{margin-left:auto;font-size:12px;border:1px solid var(--line);border-radius:99px;padding:3px 10px;color:var(--grey)}
+.lvui .chatp{display:flex;flex-direction:column;gap:12px;padding:16px;border-right:1px solid var(--line);background:#faf9f6}
+.lvui .msg{align-self:flex-end;background:var(--tone);padding:12px 14px;line-height:1.45;border-radius:12px;max-width:100%}
+.typ2{display:inline;background:linear-gradient(var(--ink),var(--ink)) no-repeat;color:transparent;-webkit-background-clip:text;background-clip:text;background-size:0 100%}
+.sl.active .typ2{animation:typ2 2.6s .8s steps(60) forwards}
+@keyframes typ2{to{background-size:100% 100%}}
+.lvui .fchip{align-self:flex-end}
+.lvui .think{font-size:14px;line-height:1.5;color:var(--grey)}
+.lvui .inp{margin-top:auto;border:1px solid var(--line);border-radius:12px;padding:12px 14px;color:#aaa59b;background:#fff}
+.lvui .prev{position:relative;overflow:hidden;background:#f6f5f1}
+.lvui .loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;color:var(--grey);font-size:14px}
+.lvui .loading i{width:8px;height:8px;border-radius:50%;background:var(--grey);animation:ld 1s infinite alternate}
+.lvui .loading i:nth-child(2){animation-delay:.2s}.lvui .loading i:nth-child(3){animation-delay:.4s}
+.lvui .loading span{margin-left:8px}
+@keyframes ld{to{opacity:.2}}
+.lvui .shot{position:absolute;inset:0;background:#fff}
+.lvui .shot .roll{width:100%;display:block}
+.sl.active .lvui .shot.shown .roll{animation:roll 24s 1s ease-in-out infinite alternate}
+@keyframes roll{0%,5%{transform:translateY(0)}95%,100%{transform:translateY(calc(-100% + 560px))}}
+.ucurve{position:relative;padding:10px 0 0 30px}
+.ucurve svg{width:100%;display:block}
+.ucurve .u{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.8s .6s var(--kease)}
+.sl.active .ucurve .u{stroke-dashoffset:0}
+.ulab{display:grid;grid-template-columns:1fr 1fr 1fr;margin-top:8px;text-align:center}
+.ulab b{display:block;font-size:20px}.ulab span{font-size:15px;color:var(--grey)}
+.ulab div:first-child{text-align:left}.ulab div:last-child{text-align:right}
+.ucurve .yl{position:absolute;left:0;top:50%;transform:rotate(-90deg) translateX(50%);transform-origin:left top;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--grey)}
+.trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.trio .h span{display:block;margin-top:10px;font-size:14px;font-weight:600;color:var(--grey)}
+.trio .h.on span{color:var(--ink)}
+.trio .hv{aspect-ratio:3/4;border:1px solid var(--line);overflow:hidden;position:relative;background:#fff;padding:18px}
+.trio .on .hv{border:2px solid var(--ink)}
+.trio .hv.cin{padding:0;background:#06140E}.trio .hv.cin img{height:100%;width:100%;object-fit:cover;object-position:28% 50%}
+.trio .hv.ed{background:#EEF4E6;color:#0E3B2C}.trio .hv.ed b{font:600 21px/1.1 Georgia,serif;display:block;margin-top:60px}
+.trio .hv.ed i{position:absolute;left:18px;right:18px;bottom:22px;height:110px;border-top:1px solid #0E3B2C;background:repeating-linear-gradient(#0E3B2C 0 1px,transparent 1px 14px);opacity:.4}
+.trio .hv.hum{background:#FF6F91;color:#06140E}.trio .hv.hum b{font-weight:900;font-size:26px;line-height:1.05;display:block;margin-top:40px}
+.trio .hv.hum em{position:absolute;right:14px;bottom:10px;font-style:normal;font-size:64px}
+.flows{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.fl{display:flex;flex-direction:column;gap:8px}
+.fl .st{border:1px solid #2e2e2e;background:#0e0e0e;padding:11px 16px;font-size:16.5px;color:var(--grey-d);position:relative}
+.fl .st.bad{color:#d9a0a0;border-color:#4a2a2a}
+.fl.good .st{color:var(--paper);border-color:#3a3a3a}
+.fl .st.ok{background:var(--paper);color:var(--ink);font-weight:600}
+.speed{display:flex;flex-direction:column;gap:30px}
+.speed>div{display:grid;grid-template-columns:170px 1fr;gap:8px 20px;align-items:center}
+.speed span{font-weight:700;font-size:19px}
+.speed i{height:18px;background:var(--line);width:var(--w);transform-origin:left;transform:scaleX(0);transition:transform 1.3s .7s var(--kease)}
+.sl.active .speed i{transform:scaleX(1)}
+.speed .on i{background:var(--ink)}
+.speed em{grid-column:2;font-style:normal;font-size:15px;color:var(--grey)}
+.agh{display:flex;align-items:flex-end;justify-content:space-between;gap:30px}
+.url{border:1px solid var(--paper);padding:14px 20px;font-weight:700;font-size:24px;white-space:nowrap}
+.url span{display:block;font-weight:500;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--grey-d);margin-bottom:4px}
+.chat2 .ask{margin:0 70px 0 22px;font-size:16px;line-height:1.45;color:var(--grey-d);border-left:2px solid #3a3a3a;padding-left:14px}
+.pstream.still{animation:none!important;transform:translateY(-120px)}
+.pnl.lens .pstream{-webkit-mask-image:linear-gradient(#000 8%,rgba(0,0,0,.12) 40%,rgba(0,0,0,.12) 62%,#000 92%);mask-image:linear-gradient(#000 8%,rgba(0,0,0,.12) 40%,rgba(0,0,0,.12) 62%,#000 92%)}
+.pnl.edit{display:flex;align-items:center}
+.vlist{margin-left:300px;width:440px;display:flex;flex-direction:column;gap:10px}
+.vlist div{border:1px solid #2c2c2c;background:#0e0e0e;padding:13px 18px;font-size:16px;color:var(--grey-d);display:flex;gap:16px;align-items:center}
+.vlist b{color:var(--paper);font-weight:900;width:28px}
+.vlist .bm{border-color:var(--paper);color:var(--paper)}
+.vlist .bm::after{content:"★ marcada";margin-left:auto;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.vlist .bad{color:#d9a0a0;border-color:#4a2a2a}
+.vlist .now{background:var(--paper);color:var(--ink)}.vlist .now b{color:var(--ink)}
+
 </style>
 </head>
 <body>
@@ -472,26 +540,73 @@ body:hover #ui,#ui:focus-within{opacity:1}
 </section>
 
 <!-- 2 -->
-<section class="sl light" data-name="gancho" data-t="wipe" data-steps="2">
-  <div class="kicker" data-a style="--d:0">Mesmo cliente · Mesmo e-book · Mesma IA</div>
-  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Qual você mandaria para o cliente aprovar?</span></h2>
-  <div class="cols c2 mt3" style="gap:40px">
-    <div data-a style="--d:2"><div class="cap-lbl">Versão A</div><div class="win"><div class="bar"><i></i><i></i><i></i><span>LP do e-book Selva de Apê</span></div><img src="assets/generica-hero.webp" alt="Versão A, genérica"></div>
-      <p class="t-md mt2" data-step="2"><span class="b">Prompt de 1 linha.</span> <span style="color:var(--grey)">"Crie uma LP bonita e moderna para um e-book de plantas."</span></p></div>
-    <div data-a style="--d:3"><div class="cap-lbl">Versão B</div><div class="win"><div class="bar"><i></i><i></i><i></i><span>LP do e-book Selva de Apê</span></div><img src="assets/espetacular-hero.webp" alt="Versão B, feita com um briefing"></div>
-      <p class="t-md mt2" data-step="2"><span class="b">Prompt de 1 página.</span> <span style="color:var(--grey)">Um briefing com cliente, objetivo, marca, estrutura e experiência.</span></p></div>
+<section class="sl light" data-name="processo" data-t="wipe" data-steps="1">
+  <div class="cols" style="grid-template-columns:.62fr 1.38fr;gap:48px;align-items:center">
+    <div>
+      <div class="kicker" data-a style="--d:0">Como eu fazia</div>
+      <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">O link do cliente, o briefing e um pedido.</span></h2>
+      <ul class="why mt3" data-a style="--d:2">
+        <li><b>✓</b>Site do cliente</li>
+        <li><b>✓</b>Briefing completo, com os textos</li>
+        <li><b>✓</b>"Faça uma landing page"</li>
+      </ul>
+      <p class="t-small mt2" data-step="1">E pronto. Esse foi o resultado.</p>
+    </div>
+    <div class="lvui" data-a style="--d:2">
+      <div class="top"><img src="assets/lovable-icon.svg" alt=""><b>Vingô · Selva de Apê</b><span>Preview</span></div>
+      <div class="pane chatp">
+        <div class="msg"><span class="typ2">Faça uma landing page para o e-book Selva de Apê, da Vingô. O site da marca é vingoplantas.com.br. Segue o briefing com os textos.</span></div>
+        <span class="fchip"><i>PDF</i>briefing-selva-de-ape.pdf</span>
+        <div class="think" data-step="1">Pronto! Criei uma landing page moderna e responsiva para o e-book, com hero chamativo, seção de benefícios, depoimentos e formulário de captura. 🌿</div>
+        <div class="inp">Peça ao Lovable…</div>
+      </div>
+      <div class="pane prev">
+        <div class="loading"><i></i><i></i><i></i><span>Construindo…</span></div>
+        <div class="shot" data-step="1"><img class="roll" src="assets/generica-pagina-inteira.webp" alt="LP gerada a partir do pedido simples"></div>
+      </div>
+    </div>
   </div>
-  <p class="t-md mt3" data-step="1"><span class="b">A ferramenta foi a mesma.</span> A diferença inteira está no que foi pedido.</p>
-  <aside class="notes"><ul><li>Pergunte: quem mandaria a A? E a B? Deixe a sala responder.</li><li>Clique 1: mesma ferramenta, mesmo cliente. Clique 2: o tamanho e a qualidade do pedido.</li><li>Vingô é uma marca fictícia que criei para a aula, com brandbook próprio.</li></ul></aside>
+  <aside class="notes"><ul><li>"Esse era o meu processo: o link do site do cliente, o briefing com os textos, e 'faça uma landing page'."</li><li>Clique: o resultado. Deixe a página rolar alguns segundos.</li><li>"Tem as cores da marca, tem os textos certos. Parece ok. Mas olhem de perto."</li></ul></aside>
 </section>
 
 <!-- 3 -->
+<section class="sl light" data-name="sinais" data-steps="7">
+  <div class="cols" style="grid-template-columns:1.55fr 1fr;gap:52px;align-items:center">
+    <div data-a style="position:relative;--d:1">
+      <div class="win"><div class="bar"><i></i><i></i><i></i><span>LP do pedido simples</span></div><img src="assets/generica-hero.webp" alt="LP genérica"></div>
+      <span class="mk" data-step="1" style="left:9%;top:6%">1</span>
+      <span class="mk" data-step="2" style="left:11%;top:27%">2</span>
+      <span class="mk" data-step="3" style="left:28%;top:42%">3</span>
+      <span class="mk" data-step="4" style="left:47%;top:33%">4</span>
+      <span class="mk" data-step="5" style="left:73%;top:50%">5</span>
+      <span class="mk" data-step="6" style="left:56%;top:27%">6</span>
+      <span class="mk" data-step="7" style="left:91%;top:86%">7</span>
+    </div>
+    <div>
+      <div class="kicker" data-a style="--d:0">Aponte os sinais</div>
+      <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Mas é genérica.</span> Cara de IA tem sintomas.</h2>
+      <div class="mt2" style="display:flex;flex-direction:column;gap:10px;font-size:17.5px">
+        <div data-step="1"><span class="b">1</span> · Emoji no lugar do logo</div>
+        <div data-step="2"><span class="b">2</span> · Selo com emoji acima do título</div>
+        <div data-step="3"><span class="b">3</span> · Emoji no fim da headline</div>
+        <div data-step="4"><span class="b">4</span> · Degradê no título e a fonte padrão (Inter)</div>
+        <div data-step="5"><span class="b">5</span> · Livro que é um card com emoji</div>
+        <div data-step="6"><span class="b">6</span> · Badges flutuando por cima</div>
+        <div data-step="7"><span class="b">7</span> · Bolhas desfocadas no fundo</div>
+      </div>
+      <p class="t-small mt3" data-a style="--d:3">Teste rápido para qualquer peça: tape o logo. Se poderia ser de qualquer marca, a direção está fraca.</p>
+    </div>
+  </div>
+  <aside class="notes"><ul><li>"O problema é que isso é genérico." Pergunte o que denuncia a IA e vá clicando conforme a sala responde.</li><li>Ponto alto: a marca tem logo e brandbook, e a IA colocou um emoji no lugar.</li><li>Teste da marca: tape o logo. Se poderia ser de qualquer loja de plantas, a direção está fraca.</li></ul></aside>
+</section>
+
+<!-- 4 -->
 <section class="sl light" data-name="media" data-steps="1">
   <div class="cols" style="grid-template-columns:1fr 1fr;align-items:center;gap:40px">
     <div>
       <div class="kicker" data-a style="--d:0">Por que a IA entrega genérico</div>
-      <h2 class="t-xl mt1" data-a style="--d:1"><span class="bk">Quando você não decide,</span> a IA decide pela média.</h2>
-      <p class="t-body mt2" data-a style="--d:2;max-width:560px">A IA aprendeu com milhões de sites. Sem direção, ela devolve o site médio da internet: plausível, funcional e igual a todos os outros.</p>
+      <h2 class="t-xl mt1" data-a style="--d:1"><span class="bk">Sem direção,</span> a IA entrega a média.</h2>
+      <p class="t-body mt2" data-a style="--d:2;max-width:560px">A IA aprendeu com milhões de sites, e a maioria deles é simples. Se você não especifica, ela devolve o site médio da internet. <span class="b">Para sair da média, você precisa pedir e permitir algo além.</span></p>
       <div class="inkbox mt3" data-a style="--d:4;max-width:600px"><div class="lbl">Guia de frontend da OpenAI</div><p class="t-md mt1">"Quando o prompt é pouco específico, os modelos recorrem a padrões de alta frequência. <span class="b">O resultado deriva para estrutura genérica e hierarquia fraca.</span>"</p></div>
     </div>
     <div style="display:grid;place-items:center">
@@ -509,62 +624,45 @@ body:hover #ui,#ui:focus-within{opacity:1}
       </div>
     </div>
   </div>
-  <aside class="notes"><ul><li>Clique: os sites se fundem no "site médio".</li><li>A IA não é ruim. Ela é média. E média não diferencia o cliente do concorrente.</li></ul></aside>
-</section>
-
-<!-- 4 -->
-<section class="sl light" data-name="sinais" data-steps="7">
-  <div class="cols" style="grid-template-columns:1.55fr 1fr;gap:52px;align-items:center">
-    <div data-a style="position:relative;--d:1">
-      <div class="win"><div class="bar"><i></i><i></i><i></i><span>versão A</span></div><img src="assets/generica-hero.webp" alt="LP genérica"></div>
-      <span class="mk" data-step="1" style="left:46%;top:56%">1</span>
-      <span class="mk" data-step="2" style="left:3%;top:30%">2</span>
-      <span class="mk" data-step="3" style="left:31%;top:40%">3</span>
-      <span class="mk" data-step="4" style="left:2.5%;top:3%">4</span>
-      <span class="mk" data-step="5" style="left:75%;top:36%">5</span>
-      <span class="mk" data-step="6" style="left:64%;top:21%">6</span>
-      <span class="mk" data-step="7" style="left:90%;top:76%">7</span>
-    </div>
-    <div>
-      <div class="kicker" data-a style="--d:0">Aponte os sinais</div>
-      <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Cara de IA</span> tem sintomas.</h2>
-      <div class="mt2" style="display:flex;flex-direction:column;gap:10px;font-size:17.5px">
-        <div data-step="1"><span class="b">1</span> · Gradiente roxo numa marca de plantas</div>
-        <div data-step="2"><span class="b">2</span> · Selo com emoji acima do título</div>
-        <div data-step="3"><span class="b">3</span> · "Transforme sua casa em um oásis verde"</div>
-        <div data-step="4"><span class="b">4</span> · Emoji no lugar do logo</div>
-        <div data-step="5"><span class="b">5</span> · Livro que é um retângulo com emoji</div>
-        <div data-step="6"><span class="b">6</span> · Badges flutuando por cima</div>
-        <div data-step="7"><span class="b">7</span> · Bolhas desfocadas no fundo</div>
-      </div>
-      <p class="t-small mt3" data-a style="--d:3">Teste rápido para qualquer peça: tape o logo. Se poderia ser de qualquer marca, a direção está fraca.</p>
-    </div>
-  </div>
-  <aside class="notes"><ul><li>Pergunte o que denuncia a IA e vá clicando conforme a sala responde.</li><li>Ponto alto: a marca tem logo e brandbook, e a IA colocou um emoji. Porque ninguém contou para ela.</li><li>Teste da marca: tape o logo; se poderia ser de qualquer um, a direção está fraca.</li></ul></aside>
+  <aside class="notes"><ul><li>Clique: os sites se fundem no "site médio".</li><li>"A média da internet não é incrível. É simples. Se eu não peço mais, ela me dá simples."</li></ul></aside>
 </section>
 
 <!-- 5 -->
+<section class="sl dark" data-name="linda" data-t="wipe">
+  <div class="cols" style="grid-template-columns:.72fr 1.28fr;gap:56px;align-items:center">
+    <div>
+      <div class="kicker" data-a style="--d:0">Mesmo cliente · mesmo briefing · mesmos textos</div>
+      <h2 class="t-xl mt1" data-a style="--d:1"><span class="bk">Agora, com um prompt melhor.</span></h2>
+      <p class="t-body mt2" data-a style="--d:2">O briefing e os textos são os mesmos. O que mudou foram detalhes no prompt e um pouco mais de esforço para desenrolar.</p>
+      <p class="t-md mt3" data-a style="--d:3">Hoje vou mostrar como chegar <span class="b">nesse resultado em poucos passos.</span></p>
+      <div class="mt3" data-a style="--d:4"><a class="org" style="background:var(--paper);color:var(--ink);text-decoration:none" href="https://claude.ai/artifact/LfUyk1eTUr1QZ4zfbUFf89" target="_blank" rel="noopener">Abrir a LP da Vingô</a></div>
+    </div>
+    <div class="win" data-a style="--d:2"><div class="bar"><i></i><i></i><i></i><span>LP do prompt completo</span></div><video data-src="assets/espetacular-tour-completo.mp4" muted loop playsinline></video></div>
+  </div>
+  <aside class="notes"><ul><li>Deixe o vídeo correr. Se der, abra a LP e passe por ela ao vivo: mouse no livro, capítulos, formulário.</li><li>"Mesmo briefing, mesmos textos. A diferença está nos detalhes do prompt. É isso que vamos destrinchar."</li></ul></aside>
+</section>
+
+<!-- 6 -->
 <section class="sl dark chap" data-name="cap-01" data-t="wipe">
   <div class="pnl" data-a style="--d:2"><div class="pstream"><p>Crie a landing page de captura do e-book gratuito <b>"Selva de Apê"</b>, da Vingô. Anexei o brandbook e o logo: siga à risca. A Vingô é uma loja de plantas para apartamento em São Paulo. <b>Público: 25 a 40 anos</b>, mora em apartamento, trabalha muito e já perdeu algumas plantas pelo caminho. Tom de voz: <b>amiga que entende de planta</b>, bem-humorada, frases curtas, zero culpa. Objetivo: captar leads para a régua de e-mails. Ação única: baixar o e-book, com o CTA <b>"Quero o guia grátis"</b>. Formulário: nome, e-mail e "Quantas plantas você tem hoje?", <b>porque essa resposta segmenta a régua.</b> O tráfego vem de Instagram e Pinterest Ads, quase todo no celular. Direção cinematográfica, escura e botânica. Fundo Noite <b>#06140E</b> com camadas de Mata #0E3B2C; Broto <b>#C9F264</b> é a luz da página. <b>Bricolage Grotesque</b> em pesos finos e tamanhos enormes; Figtree nos textos. Headline: <b>"Chega de velório de planta."</b> Você tem <b>liberdade total</b> para criar uma experiência cinematográfica com 3D, animações ligadas ao scroll e ilustrações vetoriais. Hero com <b>cena 3D em WebGL</b>: o e-book flutuando entre folhas 3D da marca. Manifesto que <b>acende palavra por palavra</b>. Capítulos em <b>rolagem horizontal</b>. Sem cara de template: <b>nada de gradiente roxo, emoji como ícone</b> ou frases genéricas. Nenhum efeito sem motivo. <b>Antes de construir, me faça as perguntas que precisar.</b> </p><p>Crie a landing page de captura do e-book gratuito <b>"Selva de Apê"</b>, da Vingô. Anexei o brandbook e o logo: siga à risca. A Vingô é uma loja de plantas para apartamento em São Paulo. <b>Público: 25 a 40 anos</b>, mora em apartamento, trabalha muito e já perdeu algumas plantas pelo caminho. Tom de voz: <b>amiga que entende de planta</b>, bem-humorada, frases curtas, zero culpa. Objetivo: captar leads para a régua de e-mails. Ação única: baixar o e-book, com o CTA <b>"Quero o guia grátis"</b>. Formulário: nome, e-mail e "Quantas plantas você tem hoje?", <b>porque essa resposta segmenta a régua.</b> O tráfego vem de Instagram e Pinterest Ads, quase todo no celular. Direção cinematográfica, escura e botânica. Fundo Noite <b>#06140E</b> com camadas de Mata #0E3B2C; Broto <b>#C9F264</b> é a luz da página. <b>Bricolage Grotesque</b> em pesos finos e tamanhos enormes; Figtree nos textos. Headline: <b>"Chega de velório de planta."</b> Você tem <b>liberdade total</b> para criar uma experiência cinematográfica com 3D, animações ligadas ao scroll e ilustrações vetoriais. Hero com <b>cena 3D em WebGL</b>: o e-book flutuando entre folhas 3D da marca. Manifesto que <b>acende palavra por palavra</b>. Capítulos em <b>rolagem horizontal</b>. Sem cara de template: <b>nada de gradiente roxo, emoji como ícone</b> ou frases genéricas. Nenhum efeito sem motivo. <b>Antes de construir, me faça as perguntas que precisar.</b> </p></div></div>
   <div class="cl">
     <div class="kicker" data-a style="--d:0">Parte 01 de 04</div>
     <div class="cnum" data-a="clip" style="--d:1">01</div>
-    <h2 class="t-xl" data-a style="--d:2">Boas práticas de prompt.</h2>
-    <p class="t-body mt2" data-a style="--d:3;max-width:560px">Oito práticas, cada uma com um prompt fraco e um prompt forte. A cada uma, o prompt da Vingô ganha uma peça.</p>
+    <h2 class="t-xl" data-a style="--d:2">O prompt em 5 passos.</h2>
+    <p class="t-body mt2" data-a style="--d:3;max-width:560px">Como a página linda foi construída. A cada passo, o prompt da Vingô ganha uma peça.</p>
   </div>
-  <div class="rail" data-a style="--d:6"><div class="on"><i></i><b>01</b><span>Boas práticas de prompt</span><em>8 práticas</em></div><div class=""><i></i><b>02</b><span>O prompt completo</span><em>e o resultado</em></div><div class=""><i></i><b>03</b><span>Dicas de Lovable</span><em>7 dicas</em></div><div class=""><i></i><b>04</b><span>Seus assistentes</span><em>Gemini e Claude</em></div></div>
-  <aside class="notes"><ul><li>A aula tem quatro partes. A maior é esta: oito boas práticas de prompt.</li><li>Reparem no rodapé: o prompt da Vingô vai crescendo a cada prática.</li></ul></aside>
+  <div class="rail" data-a style="--d:6"><div class="on"><i></i><b>01</b><span>O prompt em 5 passos</span><em>como a página linda nasceu</em></div><div class=""><i></i><b>02</b><span>Como a IA lê o prompt</span><em>ordem e o prompt completo</em></div><div class=""><i></i><b>03</b><span>Planeje antes de construir</span><em>e economize crédito</em></div><div class=""><i></i><b>04</b><span>Aprenda a alterar</span><em>ajustes sem quebrar</em></div></div>
+  <aside class="notes"><ul><li>"Vamos destrinchar a página linda. São cinco passos." Aponte o medidor no rodapé dos próximos slides.</li></ul></aside>
 </section>
 
-<!-- 6 -->
+<!-- 7 -->
 <section class="sl light" data-name="dica-1" data-steps="1">
   <div class="cols" style="grid-template-columns:1.05fr 1fr;gap:60px;align-items:center">
     <div>
-      <div class="kicker tipk" data-a style="--d:0"><span class="no">01</span>Boas práticas de prompt</div>
-      <h2 class="t-xl mt1" data-a style="--d:1">Mande um briefing, <span class="bk">não um pedido.</span></h2>
-      <p class="t-body mt2" data-a style="--d:2">A IA é um freela brilhante que nunca ouviu falar do seu cliente. Ela precisa do mesmo briefing detalhado que vocês mandariam para um designer.</p>
-      <div class="inkbox mt3" data-a style="--d:3"><div class="lbl">Teste do colega</div><p class="t-md mt1">Mostre o prompt para alguém de outra equipe. <span class="b">Se a pessoa não saberia o que fazer, a IA também não.</span></p></div>
-      <p class="t-small mt2" data-a style="--d:4"><span class="b">Gaste palavras no cliente, não no elogio.</span> "Você é o melhor designer do mundo" não deixou as respostas mais certas em 6 modelos testados pela Wharton. Contexto, sim.</p>
+      <div class="kicker tipk" data-a style="--d:0"><span class="no">1 / 5</span>O prompt em 5 passos</div>
+      <h2 class="t-xl mt1" data-a style="--d:1">Briefing inteiro, <span class="bk">com os porquês.</span></h2>
+      <p class="t-body mt2" data-a style="--d:2">A IA é um freela brilhante que nunca ouviu falar do seu cliente. Mande tudo, e diga o motivo das decisões: com o motivo, ela acerta o que você não escreveu.</p>
+      <div class="vs mt3" data-a style="grid-template-columns:1fr;--d:3"><div class="strong"><div class="lab"><i>✓</i>Com o porquê</div><q>Formulário curto, <b>porque o tráfego vem do Instagram, no celular.</b></q><div class="res">Ela também fixou o botão no rodapé do celular, sem ninguém pedir.</div></div></div>
     </div>
     <div class="doc" id="bdoc" data-a style="--d:2">
       <div class="dhead"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="t-small" style="margin-left:8px">o que a IA precisa saber</span></div>
@@ -577,91 +675,53 @@ body:hover #ui,#ui:focus-within{opacity:1}
       <div class="row"><span class="k">Estrutura</span><span><span class="skel" style="width:140px"></span><span class="v">10 seções, com texto real</span></span></div>
     </div>
   </div>
-  <div class="meter" data-a style="--d:6"><span>Prompt da Vingô</span><span class="segs" data-n="1"></span><b>~180 palavras</b></div>
-  <aside class="notes"><ul><li>Vocês já sabem fazer briefing. O ponto é: ele tem que ir inteiro para o prompt, detalhado.</li><li>Clique: o briefing se preenche. É exatamente isso que falta na maioria dos prompts.</li><li>Persona de especialista não ajuda: o estudo da Wharton testou "você é um especialista" em 6 modelos e não achou ganho. Gastem as palavras no cliente.</li></ul></aside>
-</section>
-
-<!-- 7 -->
-<section class="sl light" data-name="dica-2">
-  <div class="kicker tipk" data-a style="--d:0"><span class="no">02</span>Boas práticas de prompt</div>
-  <h2 class="t-xl mt1" data-a style="--d:1">Explique o porquê. <span class="muted">A IA generaliza a intenção.</span></h2>
-  <p class="t-body mt2" data-a style="--d:2;max-width:1000px">Uma ordem solta resolve um ponto. O motivo por trás dela ajuda a IA a acertar todas as decisões parecidas que você não escreveu.</p>
-  <div class="cols mt3" style="grid-template-columns:1fr 190px;gap:34px;align-items:center">
-    <div>
-      <div class="vs" data-a style="--d:3">
-    <div class="weak"><div class="lab"><i>✕</i>Prompt fraco</div><q>Formulário curto.</q><div class="res">A IA tira campos, e só.</div></div>
-    <div class="strong"><div class="lab"><i>✓</i>Prompt forte</div><q>Formulário curto, <b>porque o tráfego vem do Instagram, no celular, e cada campo a mais derruba conversão.</b></q><div class="res">A IA também deixa o botão fixo no rodapé do celular e aumenta os campos para o dedo.</div></div>
-  </div>
-      <div class="vs mt2" data-a style="--d:4">
-    <div class="weak"><div class="lab"><i>✕</i>Prompt fraco</div><q>Tom divertido.</q></div>
-    <div class="strong"><div class="lab"><i>✓</i>Prompt forte</div><q>Tom leve e sem culpa, <b>porque o público se sente culpado por ter matado plantas.</b></q></div>
-  </div>
-      </div>
-    <div data-a style="--d:5"><div class="phone" style="width:190px;background:#fff;border-color:var(--ink);padding:5px"><img src="assets/espetacular-celular-cta.webp" alt="LP no celular com botão fixo no rodapé"></div><p class="t-small mt1">O botão fixo no celular veio do porquê.</p></div>
-  </div>
-  <div class="meter" data-a style="--d:6"><span>Prompt da Vingô</span><span class="segs" data-n="2"></span><b>~230 palavras</b></div>
-  <aside class="notes"><ul><li>Essa é uma das recomendações oficiais da Anthropic: dar o motivo faz a IA generalizar.</li><li>Quem é de mídia tem esses porquês na cabeça. Coloquem no prompt.</li></ul></aside>
+  <div class="meter" data-a style="--d:6"><span>Prompt da Vingô</span><span class="segs" data-n="1"></span><b>~230 palavras</b></div>
+  <aside class="notes"><ul><li>"Vocês já sabem fazer briefing. A diferença é ele ir inteiro, e com o porquê de cada decisão."</li><li>Clique: o briefing se preenche.</li><li>Teste do colega: se alguém de outra equipe lesse o prompt e não soubesse o que fazer, a IA também não sabe.</li><li>Não adianta começar com "você é o melhor designer do mundo": a Wharton testou em 6 modelos e não melhorou. Gastem as palavras no cliente.</li></ul></aside>
 </section>
 
 <!-- 8 -->
 <section class="sl light" data-name="dica-3">
-  <div class="kicker tipk" data-a style="--d:0"><span class="no">03</span>Boas práticas de prompt</div>
-  <h2 class="t-xl mt1" data-a style="--d:1">Troque adjetivo por dado.</h2>
-  <p class="t-body mt2" data-a style="--d:2;max-width:1000px">"Moderno", "clean" e "bonito" significam coisas diferentes para cada pessoa. Para a IA, significam a média. Cor em HEX, fonte pelo nome e tamanho pela intenção não deixam dúvida.</p>
+  <div class="kicker tipk" data-a style="--d:0"><span class="no">2 / 5</span>O prompt em 5 passos</div>
+  <h2 class="t-xl mt1" data-a style="--d:1">Mostre a marca. <span class="muted">Em anexo e em dados.</span></h2>
+  <p class="t-body mt2" data-a style="--d:2;max-width:1000px">Anexe tudo o que o cliente tem e repita no texto o que não pode errar. "Verde e moderno" a IA já tinha pegado do site: deu degradê verde e Inter.</p>
   <div class="vs mt3" data-a style="--d:3">
     <div class="weak"><div class="lab"><i>✕</i>Prompt fraco</div><q>Use verde, um visual moderno e uma fonte bonita.</q><div class="res">Verde genérico, Inter, cards arredondados.</div></div>
     <div class="strong"><div class="lab"><i>✓</i>Prompt forte</div><q>Fundo <b>#06140E</b>, verde-limão <b>#C9F264</b> só nos CTAs e na palavra-chave de cada título. Títulos em <b>Bricolage Grotesque 200, em tamanho enorme</b>; textos em Figtree.</q><div class="res">Exatamente a marca, com hierarquia de verdade.</div></div>
   </div>
   <div class="cols c3 mt3" data-a style="gap:30px;--d:5">
-    <div><hr class="hr forte"><div class="t-md b mt1">Cores</div><p class="t-small">Em HEX, com o papel de cada uma.</p></div>
-    <div><hr class="hr forte"><div class="t-md b mt1">Fontes</div><p class="t-small">Pelo nome. Fuja de Inter, Roboto e Arial se a marca não usa.</p></div>
-    <div><hr class="hr forte"><div class="t-md b mt1">Medidas</div><p class="t-small">"Linhas de 1 px", "títulos gigantes", "botões em pílula".</p></div>
+    <div><hr class="hr forte"><div class="t-md b mt1">Anexos</div><p class="t-small">Brandbook em PDF, logo, prints, até arquivo do Figma. Até 10 por mensagem.</p></div>
+    <div><hr class="hr forte"><div class="t-md b mt1">Cores e fontes</div><p class="t-small">Cor em HEX com o papel de cada uma. Fonte pelo nome.</p></div>
+    <div><hr class="hr forte"><div class="t-md b mt1">Personalidade</div><p class="t-small">"Cinematográfica e botânica", "títulos gigantes", "linhas de 1 px".</p></div>
   </div>
-  <div class="meter" data-a style="--d:6"><span>Prompt da Vingô</span><span class="segs" data-n="3"></span><b>~300 palavras</b></div>
-  <aside class="notes"><ul><li>Adjetivo é interpretação. Dado é instrução.</li><li>Quando a IA não tem dado, ela escolhe o padrão: Inter, roxo, cards.</li></ul></aside>
+  <div class="meter" data-a style="--d:6"><span>Prompt da Vingô</span><span class="segs" data-n="2"></span><b>~380 palavras</b></div>
+  <aside class="notes"><ul><li>"Anexo ajuda, texto manda. A IA não lê a pasta do cliente; lê o seu prompt."</li><li>Adjetivo é interpretação. Dado é instrução. Sem dado, ela escolhe o padrão: Inter, degradê, cards.</li></ul></aside>
 </section>
 
 <!-- 9 -->
 <section class="sl light" data-name="dica-4" data-steps="1">
   <div class="cols" style="grid-template-columns:1fr 1fr;gap:56px;align-items:center">
     <div>
-      <div class="kicker tipk" data-a style="--d:0"><span class="no">04</span>Boas práticas de prompt</div>
-      <h2 class="t-xl mt1" data-a style="--d:1">Escreva o texto de verdade.</h2>
-      <p class="t-body mt2" data-a style="--d:2">Lorem ipsum e "uma headline chamativa" geram layout de template. Texto real muda o desenho: uma headline de duas linhas pede outra composição que uma de seis palavras.</p>
-      <p class="t-body mt2" data-a style="--d:3">Não precisa ser a versão final. Precisa ser plausível, no tom da marca.</p>
+      <div class="kicker tipk" data-a style="--d:0"><span class="no">3 / 5</span>O prompt em 5 passos</div>
+      <h2 class="t-xl mt1" data-a style="--d:1">Mande os textos escritos.</h2>
+      <p class="t-body mt2" data-a style="--d:2">As duas páginas usam exatamente o mesmo texto. Ele não foi a diferença, mas é a base: texto real muda o desenho, e sem ele a IA inventa.</p>
+      <p class="t-body mt2" data-a style="--d:3">Não precisa ser a versão final. Precisa ser plausível, no tom da marca, com a headline escrita.</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:22px">
       <div class="vs" data-a style="grid-template-columns:1fr;--d:2"><div class="weak"><div class="lab"><i>✕</i>Prompt fraco</div><q>Uma headline chamativa sobre cuidar de plantas.</q><div class="res">Resultado: "Transforme sua casa em um oásis verde 🌱"</div></div></div>
       <div class="vs" style="grid-template-columns:1fr" data-step="1"><div class="strong"><div class="lab"><i>✓</i>Prompt forte</div><q>Headline: <b>"Chega de velório de planta."</b> Subtítulo: "O guia da Vingô para manter plantas vivas no apê, mesmo com pouca luz e pouco tempo."</q><div class="res">Resultado: a frase que só essa marca diria.</div></div></div>
     </div>
   </div>
-  <div class="meter" data-a style="--d:6"><span>Prompt da Vingô</span><span class="segs" data-n="4"></span><b>~380 palavras</b></div>
-  <aside class="notes"><ul><li>Lovable, OpenAI e Anthropic dizem a mesma coisa: conteúdo real melhora o layout.</li><li>Clique: o prompt forte. A headline com humor só existe porque alguém escreveu.</li></ul></aside>
+  <div class="meter" data-a style="--d:6"><span>Prompt da Vingô</span><span class="segs" data-n="3"></span><b>~480 palavras</b></div>
+  <aside class="notes"><ul><li>"As duas LPs têm o mesmo texto. Mas se eu tivesse pedido só uma headline chamativa, viria isso aqui."</li><li>Clique: o prompt forte. A headline com humor só existe porque alguém escreveu.</li></ul></aside>
 </section>
 
 <!-- 10 -->
-<section class="sl dark" data-name="dica-5">
-  <div class="kicker tipk" data-a style="--d:0"><span class="no">05</span>Boas práticas de prompt</div>
-  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Use o vocabulário de estilo.</span> <span class="muted">Escreva em português, mantenha estes termos em inglês.</span></h2>
-  <div class="vibes mt3">
-    <div class="vb premium" data-a style="--d:2"><div class="scr"></div><div class="nm">Premium</div><div class="kw">refined, layered depth, soft blur</div></div>
-    <div class="vb ousado" data-a style="--d:3"><div class="scr"></div><div class="nm">Ousado</div><div class="kw">bold, brutalist, oversized typography</div></div>
-    <div class="vb editorial" data-a style="--d:4"><div class="scr"></div><div class="nm">Editorial</div><div class="kw">magazine-style grid, pull quotes</div></div>
-    <div class="vb calmo" data-a style="--d:5"><div class="scr"></div><div class="nm">Calmo</div><div class="kw">soft gradients, generous spacing</div></div>
-    <div class="vb futuro" data-a style="--d:6"><div class="scr"></div><div class="nm">Futurista</div><div class="kw">dark mode, glowing edges, motion blur</div></div>
-    <div class="vb organico" data-a style="--d:7"><div class="scr"></div><div class="nm">Orgânico</div><div class="kw">earth tones, hand-drawn, botanical</div></div>
-  </div>
-  <div class="meter" data-a style="--d:6"><span>Prompt da Vingô</span><span class="segs" data-n="5"></span><b>~420 palavras</b></div>
-  <aside class="notes"><ul><li>Quando o cliente não tem brandbook, essas palavras são o atalho. Elas mudam tipografia, espaço, sombra e cor.</li><li>Pergunte: que estilo vocês dariam para uma clínica odontológica? E para um energético?</li><li>"Bold, saturated colors" funciona melhor que "colorido". Os 20 estilos do Lovable estão no guia de bolso.</li></ul></aside>
-</section>
-
-<!-- 11 -->
 <section class="sl light" data-name="dica-6">
   <div class="cols" style="grid-template-columns:1.1fr .9fr;gap:52px;align-items:center">
     <div>
-      <div class="kicker tipk" data-a style="--d:0"><span class="no">06</span>Boas práticas de prompt</div>
-      <h2 class="t-xl mt1" data-a style="--d:1">Dê permissão e direção para o uau.</h2>
-      <p class="t-body mt2" data-a style="--d:2">Sem permissão, a IA joga seguro. Sem direção, ela aplica o mesmo efeito em tudo. Descreva cada momento e faça todo efeito nascer da marca.</p>
+      <div class="kicker tipk" data-a style="--d:0"><span class="no">4 / 5</span>O prompt em 5 passos</div>
+      <h2 class="t-xl mt1" data-a style="--d:1">Permita o incrível. <span class="muted">E diga qual.</span></h2>
+      <p class="t-body mt2" data-a style="--d:2">O padrão da IA é o simples. Dê permissão explícita para 3D, animação e ilustração, e descreva cada momento. Todo efeito nasce da marca: as folhas 3D vêm do brandbook.</p>
       <div class="vs mt3" data-a style="grid-template-columns:1fr;--d:3">
         <div class="weak"><div class="lab"><i>✕</i>Prompt fraco</div><q>Coloca umas animações legais.</q></div>
         <div class="strong"><div class="lab"><i>✓</i>Prompt forte</div><q>Você tem liberdade total para uma experiência cinematográfica. <b>Hero com o e-book em 3D entre folhas 3D da marca, reagindo ao mouse.</b> Manifesto que acende palavra por palavra no scroll. Capítulos em rolagem horizontal. Nenhum efeito sem motivo.</q></div>
@@ -669,14 +729,14 @@ body:hover #ui,#ui:focus-within{opacity:1}
     </div>
     <div data-a style="--d:3"><div class="win"><div class="bar"><i></i><i></i><i></i><span>o que esse trecho gerou</span></div><video data-src="assets/espetacular-clip1-hero-3d.mp4" muted loop playsinline></video></div></div>
   </div>
-  <div class="meter" data-a style="--d:6"><span>Prompt da Vingô</span><span class="segs" data-n="6"></span><b>~560 palavras</b></div>
-  <aside class="notes"><ul><li>A Anthropic recomenda pedir explicitamente para ir além do básico. Isso é a permissão.</li><li>A direção é dizer cada momento. E a coerência: as folhas 3D, o traço e o neon vêm das ilustrações do brandbook.</li></ul></aside>
+  <div class="meter" data-a style="--d:6"><span>Prompt da Vingô</span><span class="segs" data-n="4"></span><b>~620 palavras</b></div>
+  <aside class="notes"><ul><li>A Anthropic recomenda pedir explicitamente para ir além do básico. Isso é a permissão.</li><li>A direção é dizer cada momento. Sem direção, ela aplica o mesmo efeito em tudo, e isso também é cara de IA.</li></ul></aside>
 </section>
 
-<!-- 12 -->
+<!-- 11 -->
 <section class="sl light" data-name="dica-7">
-  <div class="kicker tipk" data-a style="--d:0"><span class="no">07</span>Boas práticas de prompt</div>
-  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Saiba o nome do efeito.</span> <span class="muted">Não precisa programar.</span></h2>
+  <div class="kicker tipk" data-a style="--d:0"><span class="no">4 / 5</span>Passo 4 · os termos</div>
+  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Os termos que destravam.</span> <span class="muted">Não precisa programar.</span></h2>
   <div class="demos mt3">
     <div class="demo" data-a style="--d:2"><div class="stage"><div class="d3d"><i></i></div></div><div class="txt"><b>Objeto 3D que reage ao mouse</b><span>"3D scene with Three.js, tilt on mouse move"</span></div></div>
     <div class="demo" data-a style="--d:3"><div class="stage"><div class="dreveal"><span style="animation-delay:0s">Sua</span> <span style="animation-delay:.25s">planta</span> <span style="animation-delay:.5s">não</span> <span style="animation-delay:.75s">morreu</span> <span style="animation-delay:1s">por</span> <span style="animation-delay:1.25s">falta</span> <span style="animation-delay:1.5s">de</span> <span style="animation-delay:1.75s">amor.</span></div></div><div class="txt"><b>Texto que acende no scroll</b><span>"scroll-linked text reveal, word by word"</span></div></div>
@@ -685,17 +745,17 @@ body:hover #ui,#ui:focus-within{opacity:1}
     <div class="demo" data-a style="--d:6"><div class="stage"><div class="dmarq">esqueci de regar · reguei demais · pouca luz · esqueci de regar · reguei demais · pouca luz ·</div><div class="dmarq o">comprei no impulso · o gato comeu · comprei no impulso · o gato comeu ·</div></div><div class="txt"><b>Letreiro com velocidade</b><span>"marquee that speeds up with scroll velocity"</span></div></div>
     <div class="demo" data-a style="--d:7"><div class="stage"><div class="dneon"><svg viewBox="-10 -10 220 230" width="130"><path pathLength="1" d="M100 40 C 120 12, 170 12, 190 50 C 205 85, 190 140, 150 170 C 130 185, 112 192, 100 196 C 88 192, 70 185, 50 170 C 10 140, -5 85, 10 50 C 30 12, 80 12, 100 40 Z"/></svg></div></div><div class="txt"><b>Neon que se desenha</b><span>"glowing neon outline, SVG path drawing"</span></div></div>
   </div>
-  <p class="t-small mt2" data-a style="--d:8">Bibliotecas que o Lovable instala sozinho quando você nomeia: Three.js · GSAP ScrollTrigger · Lenis (rolagem suave) · Framer Motion · componentes do 21st.dev</p>
-  <div class="meter" data-a style="--d:6"><span>Prompt da Vingô</span><span class="segs" data-n="7"></span><b>~600 palavras</b></div>
-  <aside class="notes"><ul><li>Esses são os nomes que destravam o uau. Mostre cada demo.</li><li>"Sticky" é a seção que trava enquanto o conteúdo muda. "Tilt" é o objeto que inclina com o mouse.</li></ul></aside>
+  <p class="t-small mt2" data-a style="--d:8"><span class="b">Bibliotecas:</span> Three.js · GSAP ScrollTrigger · Lenis · Framer Motion. O Lovable instala sozinho. <span class="b">Não sabe o nome?</span> Descreva o efeito e pergunte para a IA como ele se chama.</p>
+  <div class="meter" data-a style="--d:6"><span>Prompt da Vingô</span><span class="segs" data-n="4"></span><b>~620 palavras</b></div>
+  <aside class="notes"><ul><li>Mostre cada demo. "Sticky" é a seção que trava; "tilt" é o objeto que inclina com o mouse.</li><li>"Não precisa decorar. Descreve com suas palavras e pergunta: como se chama isso?"</li></ul></aside>
 </section>
 
-<!-- 13 -->
+<!-- 12 -->
 <section class="sl dark" data-name="dica-8">
   <div class="diag" style="left:82%"></div>
-  <div class="kicker tipk" data-a style="--d:0"><span class="no">08</span>Boas práticas de prompt</div>
-  <h2 class="t-xl mt1" data-a style="--d:1">Diga o que fazer. <span class="muted">Depois, o que evitar.</span></h2>
-  <p class="t-body mt2" data-a style="--d:2;max-width:1050px">"Não deixa genérico" não ensina nada. Primeiro descreva o caminho; depois feche com uma lista curta do que você não quer ver e peça perguntas. Eu chamo de carimbo: vai no fim de todo prompt.</p>
+  <div class="kicker tipk" data-a style="--d:0"><span class="no">5 / 5</span>O prompt em 5 passos</div>
+  <h2 class="t-xl mt1" data-a style="--d:1">Diga o que não fazer. <span class="muted">No fim.</span></h2>
+  <p class="t-body mt2" data-a style="--d:2;max-width:1050px">"Não deixa genérico" não ensina nada. Depois de descrever o caminho, feche com uma lista concreta dos vícios que você não quer ver, e peça perguntas. Eu chamo de carimbo: vai no fim de todo prompt.</p>
   <div class="vs mt3" data-a style="--d:3">
     <div class="weak"><div class="lab"><i>✕</i>Prompt fraco</div><q>Não deixa com cara de IA nem genérico.</q></div>
     <div class="strong"><div class="lab"><i>✓</i>O carimbo</div><q>Sem cara de template: <b>nada de gradiente roxo, emoji como ícone, grade de cards iguais com ícone ou frases genéricas.</b> Nenhum efeito sem motivo. Mobile-first, rápido e acessível. <b>Antes de construir, me faça as perguntas que precisar.</b></q></div>
@@ -704,27 +764,52 @@ body:hover #ui,#ui:focus-within{opacity:1}
     <div><div class="cap-lbl">Sem o carimbo</div><div class="win"><img class="fit" style="--h:125px" src="assets/generica-hero.webp" alt=""></div></div>
     <div><div class="cap-lbl">Com o carimbo</div><div class="win"><img class="fit" style="--h:125px" src="assets/espetacular-hero.webp" alt=""></div></div>
   </div>
-  <div class="meter" data-a style="--d:6"><span>Prompt da Vingô</span><span class="segs" data-n="8"></span><b>~700 palavras</b></div>
-  <aside class="notes"><ul><li>A Anthropic recomenda dizer o que fazer em vez de só o que não fazer. A lista de proibições funciona como trava, no fim.</li><li>Copiem o carimbo. Ele elimina os sintomas que vimos no começo.</li><li>A última linha é a dica mais simples da documentação do Lovable: pedir perguntas. Ela volta com dúvidas que a gente nem tinha pensado, antes de gastar crédito.</li></ul></aside>
+  <div class="meter" data-a style="--d:6"><span>Prompt da Vingô</span><span class="segs" data-n="5"></span><b>~700 palavras</b></div>
+  <aside class="notes"><ul><li>Copiem o carimbo. Ele elimina os sintomas que vimos no começo: emoji, degradê, cards iguais.</li><li>A última linha pede perguntas: ela volta com dúvidas que a gente nem tinha pensado, antes de gastar crédito.</li></ul></aside>
 </section>
 
-<!-- 14 -->
+<!-- 13 -->
 <section class="sl dark chap" data-name="cap-02" data-t="wipe">
-  <div class="pnl" data-a style="--d:2"><video data-src="assets/espetacular-tour-completo.mp4" muted loop playsinline></video><div class="cap">LP da Vingô · versão B</div></div>
+  <div class="pnl lens" data-a style="--d:2"><div class="pstream still"><p>Crie a landing page de captura do e-book gratuito <b>"Selva de Apê"</b>, da Vingô. Anexei o brandbook e o logo: siga à risca. A Vingô é uma loja de plantas para apartamento em São Paulo. <b>Público: 25 a 40 anos</b>, mora em apartamento, trabalha muito e já perdeu algumas plantas pelo caminho. Tom de voz: <b>amiga que entende de planta</b>, bem-humorada, frases curtas, zero culpa. Objetivo: captar leads para a régua de e-mails. Ação única: baixar o e-book, com o CTA <b>"Quero o guia grátis"</b>. Formulário: nome, e-mail e "Quantas plantas você tem hoje?", <b>porque essa resposta segmenta a régua.</b> O tráfego vem de Instagram e Pinterest Ads, quase todo no celular. Direção cinematográfica, escura e botânica. Fundo Noite <b>#06140E</b> com camadas de Mata #0E3B2C; Broto <b>#C9F264</b> é a luz da página. <b>Bricolage Grotesque</b> em pesos finos e tamanhos enormes; Figtree nos textos. Headline: <b>"Chega de velório de planta."</b> Você tem <b>liberdade total</b> para criar uma experiência cinematográfica com 3D, animações ligadas ao scroll e ilustrações vetoriais. Hero com <b>cena 3D em WebGL</b>: o e-book flutuando entre folhas 3D da marca. Manifesto que <b>acende palavra por palavra</b>. Capítulos em <b>rolagem horizontal</b>. Sem cara de template: <b>nada de gradiente roxo, emoji como ícone</b> ou frases genéricas. Nenhum efeito sem motivo. <b>Antes de construir, me faça as perguntas que precisar.</b> </p><p>Crie a landing page de captura do e-book gratuito <b>"Selva de Apê"</b>, da Vingô. Anexei o brandbook e o logo: siga à risca. A Vingô é uma loja de plantas para apartamento em São Paulo. <b>Público: 25 a 40 anos</b>, mora em apartamento, trabalha muito e já perdeu algumas plantas pelo caminho. Tom de voz: <b>amiga que entende de planta</b>, bem-humorada, frases curtas, zero culpa. Objetivo: captar leads para a régua de e-mails. Ação única: baixar o e-book, com o CTA <b>"Quero o guia grátis"</b>. Formulário: nome, e-mail e "Quantas plantas você tem hoje?", <b>porque essa resposta segmenta a régua.</b> O tráfego vem de Instagram e Pinterest Ads, quase todo no celular. Direção cinematográfica, escura e botânica. Fundo Noite <b>#06140E</b> com camadas de Mata #0E3B2C; Broto <b>#C9F264</b> é a luz da página. <b>Bricolage Grotesque</b> em pesos finos e tamanhos enormes; Figtree nos textos. Headline: <b>"Chega de velório de planta."</b> Você tem <b>liberdade total</b> para criar uma experiência cinematográfica com 3D, animações ligadas ao scroll e ilustrações vetoriais. Hero com <b>cena 3D em WebGL</b>: o e-book flutuando entre folhas 3D da marca. Manifesto que <b>acende palavra por palavra</b>. Capítulos em <b>rolagem horizontal</b>. Sem cara de template: <b>nada de gradiente roxo, emoji como ícone</b> ou frases genéricas. Nenhum efeito sem motivo. <b>Antes de construir, me faça as perguntas que precisar.</b> </p></div></div>
   <div class="cl">
     <div class="kicker" data-a style="--d:0">Parte 02 de 04</div>
     <div class="cnum" data-a="clip" style="--d:1">02</div>
-    <h2 class="t-xl" data-a style="--d:2">O prompt completo.</h2>
-    <p class="t-body mt2" data-a style="--d:3;max-width:560px">O briefing inteiro que gerou a versão B, bloco por bloco, e o que ele virou.</p>
+    <h2 class="t-xl" data-a style="--d:2">Como a IA lê o prompt.</h2>
+    <p class="t-body mt2" data-a style="--d:3;max-width:560px">A IA tem uma ordem de importância. E o prompt completo, na íntegra.</p>
   </div>
-  <div class="rail" data-a style="--d:6"><div class="done"><i></i><b>01</b><span>Boas práticas de prompt</span><em>8 práticas</em></div><div class="on"><i></i><b>02</b><span>O prompt completo</span><em>e o resultado</em></div><div class=""><i></i><b>03</b><span>Dicas de Lovable</span><em>7 dicas</em></div><div class=""><i></i><b>04</b><span>Seus assistentes</span><em>Gemini e Claude</em></div></div>
-  <aside class="notes"><ul><li>Agora o prompt inteiro, montado com tudo o que vimos.</li></ul></aside>
+  <div class="rail" data-a style="--d:6"><div class="done"><i></i><b>01</b><span>O prompt em 5 passos</span><em>como a página linda nasceu</em></div><div class="on"><i></i><b>02</b><span>Como a IA lê o prompt</span><em>ordem e o prompt completo</em></div><div class=""><i></i><b>03</b><span>Planeje antes de construir</span><em>e economize crédito</em></div><div class=""><i></i><b>04</b><span>Aprenda a alterar</span><em>ajustes sem quebrar</em></div></div>
+  <aside class="notes"><ul><li>"Agora, como a IA lê o que vocês escrevem."</li></ul></aside>
+</section>
+
+<!-- 14 -->
+<section class="sl light" data-name="ordem">
+  <div class="cols" style="grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+    <div>
+      <div class="kicker" data-a style="--d:0">Como a IA lê o prompt</div>
+      <h2 class="t-xl mt1" data-a style="--d:1">O começo pesa mais. <span class="muted">O fim também.</span></h2>
+      <p class="t-body mt2" data-a style="--d:2">Em textos longos, os modelos usam melhor o que está no começo e no fim, e se perdem no meio. Organize o prompt a favor disso.</p>
+      <ul class="why mt3" data-a style="--d:3">
+        <li><b>1</b>Comece pelo essencial: o que é, para quem, qual a ação, qual a direção.</li>
+        <li><b>2</b>No meio, os detalhes em blocos com rótulo.</li>
+        <li><b>3</b>Feche com o que não fazer e o pedido de perguntas.</li>
+      </ul>
+      <p class="t-small mt2" data-a style="--d:4">Fontes: "Lost in the Middle", Stanford, 2023 · guia de prompts do GPT-4.1, OpenAI: instruções importantes no começo e no fim.</p>
+    </div>
+    <div class="ucurve" data-a style="--d:2">
+      <svg viewBox="0 0 640 380"><line x1="20" y1="320" x2="620" y2="320" stroke="#dcd8cc" stroke-width="2"/>
+        <path class="u" pathLength="1" d="M30 60 C 120 250, 220 290, 320 292 S 520 250, 610 60" fill="none" stroke="#0a0a0a" stroke-width="5"/>
+        <circle cx="30" cy="60" r="10" fill="#0a0a0a"/><circle cx="610" cy="60" r="10" fill="#0a0a0a"/></svg>
+      <div class="ulab"><div><b>Começo</b><span>cliente, objetivo, direção</span></div><div><b>Meio</b><span>detalhes em blocos</span></div><div><b>Fim</b><span>regras e perguntas</span></div></div>
+      <div class="yl">atenção da IA</div>
+    </div>
+  </div>
+  <aside class="notes"><ul><li>"A IA tem uma ordem de importância. O que está no começo e no fim do prompt pesa mais."</li><li>Por isso o prompt completo abre com quem é o cliente e o objetivo, e fecha com o carimbo.</li><li>Blocos com rótulo ajudam ela a separar os assuntos no meio.</li></ul></aside>
 </section>
 
 <!-- 15 -->
 <section class="sl light" data-name="prompt-1" style="padding-top:48px;padding-bottom:40px">
-  <div class="kicker" data-a style="--d:0">O prompt completo da Vingô · 1 de 2 · brandbook e logo anexados</div>
-  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Em blocos, do cliente às regras.</span> <span class="muted">Começo e fim pesam mais.</span></h2>
+  <div class="kicker" data-a style="--d:0">O prompt da página linda · 1 de 2 · brandbook e logo anexados</div>
+  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Começa pelo essencial.</span> <span class="muted">Passos 1 e 2.</span></h2>
   <div class="fp mt2" data-a style="--d:2">
     <div class="k">Abertura</div><div class="v">Crie a landing page de captura do e-book gratuito "Selva de Apê", da Vingô. Anexei o brandbook e o logo: siga à risca.</div>
     <div class="k">[B]<small>Base</small></div><div class="v">A Vingô é uma loja de plantas para apartamento em São Paulo (e-commerce + loja em Pinheiros). Propósito: fazer qualquer apê virar um cantinho verde, sem culpa e sem planta morta. Público: 25 a 40 anos, mora em apartamento, trabalha muito e já perdeu algumas plantas pelo caminho. Tom de voz: amiga que entende de planta, bem-humorada, frases curtas, zero culpa e zero jargão.
@@ -732,13 +817,13 @@ O e-book: "Selva de Apê, o guia das plantas que não morrem", 52 páginas, da b
     <div class="k">[R]<small>Resultado</small></div><div class="v">Objetivo: captar leads para a régua de e-mails. Ação única: baixar o e-book, com o CTA "Quero o guia grátis". Formulário: nome, e-mail e "Quantas plantas você tem hoje?" (Nenhuma ainda / 1 a 5 / 6 ou mais / Perdi a conta), porque essa resposta segmenta a régua. Checkbox LGPD. O tráfego vem de Instagram e Pinterest Ads, quase todo no celular: CTA sempre à mão, fixo no rodapé no celular.</div>
     <div class="k">[I]<small>Identidade</small></div><div class="v">Direção cinematográfica, escura e botânica, como o lançamento de um produto premium. Fundo Noite #06140E com camadas de Mata #0E3B2C; Broto #C9F264 é a luz da página (CTAs, palavra-chave de cada título, brilhos); Folha Clara #EEF4E6 nos textos; Antúrio #FF6F91 só no selo de humor. Bricolage Grotesque em pesos finos (200 a 300) e tamanhos enormes, com a palavra-chave em 700 verde-limão; Figtree nos textos. Linhas de 1 px, granulado sutil, ilustrações em traço fino feitas das folhas da marca. Nada de foto de banco.</div>
   </div>
-  <aside class="notes"><ul><li>Blocos com rótulo separam os assuntos. Abra com o que é e para quem; feche com as regras. O esqueleto se chama BRIEF, mas não precisa decorar: o assistente monta para vocês.</li><li>Leia em voz alta só as partes em negrito na cabeça: quem é, para quem, qual ação, quais cores.</li><li>Repare no porquê do formulário e do celular, e nos HEX e nomes de fonte.</li></ul></aside>
+  <aside class="notes"><ul><li>"Esse é o prompt da página linda. Não leiam tudo; reparem na ordem."</li><li>Abertura: o que é e o anexo. Depois cliente com os porquês, resultado, identidade com HEX e fontes.</li></ul></aside>
 </section>
 
 <!-- 16 -->
 <section class="sl light" data-name="prompt-2" style="padding-top:48px;padding-bottom:40px">
-  <div class="kicker" data-a style="--d:0">O prompt completo da Vingô · 2 de 2</div>
-  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Estrutura, experiência e carimbo.</span></h2>
+  <div class="kicker" data-a style="--d:0">O prompt da página linda · 2 de 2</div>
+  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Termina com as regras.</span> <span class="muted">Passos 3, 4 e 5.</span></h2>
   <div class="fp mt2" data-a style="--d:2">
     <div class="k">[E]<small>Estrutura</small></div><div class="v">1. Hero em tela cheia: "E-book gratuito · Vingô", headline "Chega de velório de planta.", subtítulo, CTA e "Ver o que tem dentro"; faixa inferior com 5 fatos. 2. Manifesto: "Sua planta não morreu por falta de amor. Morreu por falta de manual…" 3. Por que funciona: 4 números (3 semanas, 12, 10 min, 52). 4. Letreiro com as desculpas clássicas. 5. Capítulos com ilustração em traço. 6. Teste "Qual é a luz do seu apê?". 7. Autora. 8. Prova social: 18.400 downloads e 2 depoimentos. 9. CTA final com formulário. 10. Rodapé com a marca gigante.</div>
     <div class="k">[F]<small>Fator uau</small></div><div class="v">Você tem liberdade total para criar uma experiência cinematográfica com 3D, animações ligadas ao scroll e ilustrações vetoriais. Use Three.js, GSAP com ScrollTrigger e Lenis. Cada efeito vem do universo da marca:
@@ -747,51 +832,34 @@ O e-book: "Selva de Apê, o guia das plantas que não morrem", 52 páginas, da b
 No celular, 3D mais leve. Com "reduzir movimento", versão estática e completa.</div>
     <div class="k">[Carimbo]<small>Regras</small></div><div class="v">Sem cara de template: nada de gradiente roxo, emoji como ícone, grade de cards iguais com ícone ou frases genéricas. Nenhum efeito sem motivo: se não vem da marca ou da história, sai. Mobile-first, carregamento rápido e acessível.</div>
   </div>
-  <aside class="notes"><ul><li>Estrutura com texto real e o uau descrito momento a momento.</li><li>O carimbo fecha. São cerca de 700 palavras e 15 minutos de trabalho, ou 1 minuto com o assistente.</li></ul></aside>
+  <aside class="notes"><ul><li>Estrutura com os textos, o uau descrito momento a momento e o carimbo fechando.</li><li>"Cerca de 700 palavras e 15 minutos de trabalho. Ou 1 minuto com o agente que vou mostrar no final."</li></ul></aside>
 </section>
 
 <!-- 17 -->
-<section class="sl dark" data-name="resultado">
-  <div class="cols" style="grid-template-columns:.8fr 1.3fr;gap:56px;align-items:center">
-    <div>
-      <div class="kicker" data-a style="--d:0">O que esse prompt virou</div>
-      <h2 class="t-xl mt1" data-a style="--d:1"><span class="bk">A versão B,</span> <span class="muted">em movimento.</span></h2>
-      <div class="cols c2 mt3" style="gap:20px">
-        <div data-a style="--d:3"><div class="t-big" style="font-size:96px"><span data-count="700">0</span></div><div class="kicker mt1">palavras</div></div>
-        <div data-a style="--d:4"><div class="t-big" style="font-size:96px"><span data-count="15">0</span></div><div class="kicker mt1">minutos de briefing</div></div>
-      </div>
-      <div class="mt3" data-a style="--d:5;display:flex;gap:12px;flex-wrap:wrap"><a class="org ink" style="background:var(--paper);color:var(--ink);text-decoration:none" href="https://claude.ai/artifact/LfUyk1eTUr1QZ4zfbUFf89" target="_blank" rel="noopener">Abrir a LP da Vingô</a></div>
-    </div>
-    <div class="win" data-a style="--d:2"><div class="bar"><i></i><i></i><i></i><span>LP da Vingô · versão B</span></div><video data-src="assets/espetacular-tour-completo.mp4" muted loop playsinline></video></div>
-  </div>
-  <aside class="notes"><ul><li>Deixe o vídeo correr. Se der, clique em "Abrir a LP" e passe por ela ao vivo: mexa o mouse no livro, role até os capítulos, envie o formulário.</li><li>Cada momento que vocês estão vendo estava escrito no bloco F.</li></ul></aside>
-</section>
-
-<!-- 18 -->
 <section class="sl dark chap" data-name="cap-03" data-t="wipe">
   <div class="pnl lov" data-a style="--d:2"><div class="glow"></div><img class="mark" src="assets/lovable-icon.svg" alt="Lovable"><div class="lvinput"><span class="typ">Crie a landing page do e-book Selva de Apê, da Vingô…</span><span class="mode">Plan</span></div></div>
   <div class="cl">
     <div class="kicker" data-a style="--d:0">Parte 03 de 04</div>
     <div class="cnum" data-a="clip" style="--d:1">03</div>
-    <h2 class="t-xl" data-a style="--d:2">Dicas de Lovable.</h2>
-    <p class="t-body mt2" data-a style="--d:3;max-width:560px">Sete dicas que não estão no tutorial, para gastar menos crédito e acertar mais rápido.</p>
+    <h2 class="t-xl" data-a style="--d:2">Planeje antes de construir.</h2>
+    <p class="t-body mt2" data-a style="--d:3;max-width:560px">Conversar antes de construir. É o que mais economiza crédito.</p>
   </div>
-  <div class="rail" data-a style="--d:6"><div class="done"><i></i><b>01</b><span>Boas práticas de prompt</span><em>8 práticas</em></div><div class="done"><i></i><b>02</b><span>O prompt completo</span><em>e o resultado</em></div><div class="on"><i></i><b>03</b><span>Dicas de Lovable</span><em>7 dicas</em></div><div class=""><i></i><b>04</b><span>Seus assistentes</span><em>Gemini e Claude</em></div></div>
-  <aside class="notes"><ul><li>O prompt é metade. A outra metade é como conduzir o Lovable depois que ele começa a construir.</li></ul></aside>
+  <div class="rail" data-a style="--d:6"><div class="done"><i></i><b>01</b><span>O prompt em 5 passos</span><em>como a página linda nasceu</em></div><div class="done"><i></i><b>02</b><span>Como a IA lê o prompt</span><em>ordem e o prompt completo</em></div><div class="on"><i></i><b>03</b><span>Planeje antes de construir</span><em>e economize crédito</em></div><div class=""><i></i><b>04</b><span>Aprenda a alterar</span><em>ajustes sem quebrar</em></div></div>
+  <aside class="notes"><ul><li>"Antes de construir, planejar. E isso economiza crédito."</li></ul></aside>
 </section>
 
-<!-- 19 -->
+<!-- 18 -->
 <section class="sl light" data-name="lovable-1">
   <div class="lvb" data-a style="--d:0"><img src="assets/lovable-icon.svg" alt="">Lovable</div>
     <div class="cols" style="grid-template-columns:1fr 1fr;gap:60px;align-items:center">
     <div>
-      <div class="kicker tipk" data-a style="--d:0"><span class="no">01</span>Dicas de Lovable</div>
+      <div class="kicker tipk" data-a style="--d:0"><span class="no">1 / 3</span>Planeje antes de construir</div>
       <h2 class="t-xl mt1" data-a style="--d:1">Comece no Plan mode.</h2>
       <p class="t-body mt2" data-a style="--d:2">No Plan mode o Lovable lê o projeto, faz perguntas e escreve um plano que você edita antes de qualquer código. Para uma LP nova, é o jeito mais barato de alinhar.</p>
       <ul class="why mt3" data-a style="--d:3">
         <li><b>1</b>Custa 1 crédito por mensagem e não mexe no código.</li>
         <li><b>2</b>Você edita o plano e aprova; aí ele vai para o Build.</li>
-        <li><b>3</b>Ele faz as perguntas antes. Termine o prompt pedindo isso.</li>
+        <li><b>3</b>Não sabe um termo? Pergunte aqui, antes de construir.</li>
       </ul>
     </div>
     <div class="ui-panel" data-a style="--d:2">
@@ -803,57 +871,63 @@ No celular, 3D mais leve. Com "reduzir movimento", versão estática e completa.
       <div class="ui-input"><span class="ph">Aprovar plano</span><div class="seg2"><span class="on">Plan</span><span>Build</span></div></div>
     </div>
   </div>
-  <aside class="notes"><ul><li>Junta com a prática 8: o prompt termina pedindo perguntas, e o Plan mode é onde elas aparecem.</li><li>Em vez de sair construindo, ele planeja. Vocês corrigem o plano, que custa 1 crédito, e não o código.</li></ul></aside>
+  <aside class="notes"><ul><li>"Em vez de sair construindo, ele planeja e faz as perguntas. Vocês corrigem o plano, e não a página."</li><li>Use também para tirar dúvida de termo: "como se chama aquele efeito em que o texto acende no scroll?"</li></ul></aside>
+</section>
+
+<!-- 19 -->
+<section class="sl light" data-name="versoes3">
+  <div class="lvb" data-a style="--d:0"><img src="assets/lovable-icon.svg" alt="">Lovable</div>
+  <div class="kicker tipk" data-a style="--d:0"><span class="no">2 / 3</span>Planeje antes de construir</div>
+  <h2 class="t-xl mt1" data-a style="--d:1">Peça 3 versões do hero <span class="muted">antes do site inteiro.</span></h2>
+  <div class="cols mt3" style="grid-template-columns:.95fr 1.05fr;gap:48px;align-items:center">
+    <div class="vs" data-a style="grid-template-columns:1fr;--d:2">
+      <div class="weak"><div class="lab"><i>✕</i>Direto para o site</div><q>Crie a landing page completa.</q><div class="res">Não gostou da direção? Agora são dez seções para corrigir.</div></div>
+      <div class="strong"><div class="lab"><i>✓</i>Primeiro a direção</div><q>Antes do site, crie <b>3 versões bem diferentes só do hero:</b> uma editorial, uma cinematográfica e uma bem-humorada. Eu escolho uma e você segue a partir dela.</q></div>
+    </div>
+    <div class="trio" data-a style="--d:3">
+      <div class="h"><div class="hv ed"><b>Chega de velório<br>de planta.</b><i></i></div><span>A · editorial</span></div>
+      <div class="h on"><div class="hv cin"><img src="assets/espetacular-hero.webp" alt=""></div><span>B · cinematográfica ✓</span></div>
+      <div class="h"><div class="hv hum"><b>Sua planta<br>merece mais.</b><em>🌵?</em></div><span>C · bem-humorada</span></div>
+    </div>
+  </div>
+  <aside class="notes"><ul><li>"É melhor pedir 2 ou 3 versões da primeira dobra do que deixar ela construir um site inteiro que no fim não fica bom."</li><li>Escolhida a direção, o resto da página herda o estilo.</li></ul></aside>
 </section>
 
 <!-- 20 -->
-<section class="sl light" data-name="lovable-2">
+<section class="sl dark" data-name="credito">
   <div class="lvb" data-a style="--d:0"><img src="assets/lovable-icon.svg" alt="">Lovable</div>
-    <div class="cols" style="grid-template-columns:1fr 1fr;gap:60px;align-items:center">
-    <div>
-      <div class="kicker tipk" data-a style="--d:0"><span class="no">02</span>Dicas de Lovable</div>
-      <h2 class="t-xl mt1" data-a style="--d:1">Anexe tudo. <span class="muted">E repita o essencial.</span></h2>
-      <p class="t-body mt2" data-a style="--d:2">O chat do Lovable lê PDF, imagens, Word, PowerPoint e até arquivo do Figma. Até 10 arquivos por mensagem. Dá para rabiscar em cima de um print anexado para mostrar o que mudar.</p>
-      <div class="inkbox mt3" data-a style="--d:4"><div class="lbl">Lembra da versão A?</div><p class="t-md mt1">O brandbook existia, mas não estava no prompt. Deu marca roxa e emoji no lugar do logo. <span class="b">A IA não lê a pasta do cliente. Lê o seu prompt.</span></p></div>
-    </div>
-    <div class="ui-panel" data-a style="--d:3">
-      <div class="hd"><span>mensagem · ilustração</span><span>4 anexos</span></div>
-      <div class="bd" style="flex-direction:row;flex-wrap:wrap;gap:10px">
-        <span class="fchip"><i>PDF</i>brandbook-vingo.pdf</span>
-        <span class="fchip"><i>SVG</i>logo-vingo.svg</span>
-        <span class="fchip"><i>PNG</i>referencia-hero.png</span>
-        <span class="fchip"><i>FIG</i>capa-ebook.fig</span>
-      </div>
-      <div class="ui-input"><span class="ph" style="color:var(--ink)">Siga o brandbook anexado à risca: <b>fundo Noite #06140E, Broto #C9F264 só como luz, Bricolage fina e gigante.</b> Use a referência só para o ritmo do hero, não copie.</span></div>
-    </div>
+  <div class="kicker tipk" data-a style="--d:0"><span class="no">3 / 3</span>Planeje antes de construir</div>
+  <h2 class="t-xl mt1" data-a style="--d:1">Gasta mais crédito? <span class="muted">Não. Economiza.</span></h2>
+  <div class="flows mt3">
+    <div class="fl" data-a style="--d:2"><div class="cap-lbl">Sem planejar</div>
+      <div class="st">Prompt curto</div><div class="st">Site inteiro na direção errada</div><div class="st">"Não era bem isso"</div><div class="st">Correção seção por seção</div><div class="st bad">Algo quebra, try to fix</div><div class="st bad">Mais correções</div></div>
+    <div class="fl good" data-a style="--d:3"><div class="cap-lbl">Planejando</div>
+      <div class="st">Prompt completo no Plan mode</div><div class="st">Perguntas e plano, 1 crédito por mensagem</div><div class="st">3 versões do hero</div><div class="st ok">Site inteiro na direção certa</div><div class="st ok">Ajustes pequenos</div></div>
   </div>
-  <aside class="notes"><ul><li>Anexar é rápido e dá muito contexto. Mas repitam no texto o que não pode errar: HEX, fontes, personalidade.</li><li>Site antigo do próprio cliente dá para importar pela URL. De terceiros, só print como referência.</li><li>Print de concorrente é inspiração. Nunca peça para copiar.</li></ul></aside>
+  <p class="t-md mt3" data-a style="--d:4">Conversar com a IA antes é barato. <span class="b">Caro é construir a página errada e corrigir depois.</span></p>
+  <aside class="notes"><ul><li>"A pergunta que sempre aparece: isso não gasta mais crédito? Não. Planejar é o que economiza."</li><li>Plan mode cobra 1 crédito por mensagem e não mexe no código. O caro é a geração grande na direção errada e a sequência de correções.</li></ul></aside>
 </section>
 
 <!-- 21 -->
-<section class="sl light" data-name="lovable-3" data-steps="3">
-  <div class="lvb" data-a style="--d:0"><img src="assets/lovable-icon.svg" alt="">Lovable</div>
-    <div class="cols" style="grid-template-columns:1fr 1fr;gap:60px;align-items:center">
-    <div>
-      <div class="kicker tipk" data-a style="--d:0"><span class="no">03</span>Dicas de Lovable</div>
-      <h2 class="t-xl mt1" data-a style="--d:1">O primeiro resultado é o esqueleto.</h2>
-      <p class="t-body mt2" data-a style="--d:2">Não tente acertar tudo num prompt só. O prompt completo monta a base; depois você refina uma seção por vez e fecha com uma passada de polimento.</p>
-      <p class="t-md mt3" data-a style="--d:3"><span class="b">Cada mensagem constrói em cima da anterior.</span> Decisões de estrutura cedo valem para o resto.</p>
-    </div>
-    <div class="layers">
-      <div data-step="1"><span class="n">1</span><div><b>Prompt completo</b><span>A base: estrutura, marca, textos e momentos.</span></div></div>
-      <div data-step="2"><span class="n">2</span><div><b>Uma seção por vez</b><span>"Agora só o hero." Confere no preview. Próxima.</span></div></div>
-      <div data-step="3" class="on"><span class="n">3</span><div><b>Passada de polimento</b><span>Tipografia, espaço, contraste. Sem funcionalidade nova.</span></div></div>
-    </div>
+<section class="sl dark chap" data-name="cap-04" data-t="wipe">
+  <div class="pnl edit" data-a style="--d:2"><div class="vlist">
+    <div><b>v1</b>Base do prompt completo</div><div><b>v2</b>Hero: livro maior</div><div class="bm"><b>v3</b>Hero aprovado</div>
+    <div><b>v4</b>Capítulos: mais respiro</div><div class="bm"><b>v5</b>Capítulos aprovados</div><div class="bad"><b>v6</b>Teste ousado no formulário</div><div class="now"><b>v7</b>Volta para a v5</div></div></div>
+  <div class="cl">
+    <div class="kicker" data-a style="--d:0">Parte 04 de 04</div>
+    <div class="cnum" data-a="clip" style="--d:1">04</div>
+    <h2 class="t-xl" data-a style="--d:2">Aprenda a alterar.</h2>
+    <p class="t-body mt2" data-a style="--d:3;max-width:560px">O primeiro resultado é o começo. Alterar bem é o que leva ao final.</p>
   </div>
-  <aside class="notes"><ul><li>A documentação do Lovable fala em construir em pequenos ciclos: uma mudança, confere, próxima.</li><li>Prompt gigante de correção que mexe em tudo é onde as coisas quebram.</li></ul></aside>
+  <div class="rail" data-a style="--d:6"><div class="done"><i></i><b>01</b><span>O prompt em 5 passos</span><em>como a página linda nasceu</em></div><div class="done"><i></i><b>02</b><span>Como a IA lê o prompt</span><em>ordem e o prompt completo</em></div><div class="done"><i></i><b>03</b><span>Planeje antes de construir</span><em>e economize crédito</em></div><div class="on"><i></i><b>04</b><span>Aprenda a alterar</span><em>ajustes sem quebrar</em></div></div>
+  <aside class="notes"><ul><li>"Ninguém acerta na primeira. O que importa é saber alterar."</li></ul></aside>
 </section>
 
 <!-- 22 -->
 <section class="sl light" data-name="lovable-4">
   <div class="lvb" data-a style="--d:0"><img src="assets/lovable-icon.svg" alt="">Lovable</div>
-    <div class="kicker tipk" data-a style="--d:0"><span class="no">04</span>Dicas de Lovable</div>
-  <h2 class="t-xl mt1" data-a style="--d:1">Ajuste com limites.</h2>
+    <div class="kicker tipk" data-a style="--d:0"><span class="no">1 / 3</span>Aprenda a alterar</div>
+  <h2 class="t-xl mt1" data-a style="--d:1">Ajuste com limites. <span class="muted">Um assunto por vez.</span></h2>
   <p class="t-md mt2" data-a style="--d:2"><span class="b">O que muda + onde + o que não pode mudar.</span> <span style="color:var(--grey)">Sem limite, um ajuste pequeno bagunça o que já estava bom.</span></p>
   <div class="vs mt3" data-a style="--d:3">
     <div class="weak"><div class="lab"><i>✕</i>Prompt fraco</div><q>Melhora os capítulos e deixa o formulário mais bonito e ajusta as cores e coloca mais animação.</q><div class="res">Quatro pedidos numa frase. Ele mexe em tudo.</div></div>
@@ -861,7 +935,7 @@ No celular, 3D mais leve. Com "reduzir movimento", versão estática e completa.
   </div>
   <div class="inkbox mt3" data-a style="--d:5"><div class="lbl">Regra da documentação</div><p class="t-md mt1">Se você escreveu "e" mais de duas vezes no pedido, <span class="b">divida em dois.</span> Várias mudanças pequenas e independentes? Uma lista numerada numa mensagem só.</p></div>
   <p class="t-small mt2" data-a style="--d:6">No guia de bolso: pedidos de ajuste prontos para "mais ousado", "mais calmo", "enxugar", "polimento", "explorar antes" e "celular".</p>
-  <aside class="notes"><ul><li>Essa é a dica que mais economiza crédito e paciência.</li></ul></aside>
+  <aside class="notes"><ul><li>"O primeiro resultado é o esqueleto. Daqui para frente é ajuste, e ajuste bem pedido é rápido."</li><li>O que muda, onde e o que não pode mudar. Escreveu "e" mais de duas vezes? Divida.</li><li>Os pedidos prontos estão no guia de bolso.</li></ul></aside>
 </section>
 
 <!-- 23 -->
@@ -869,7 +943,7 @@ No celular, 3D mais leve. Com "reduzir movimento", versão estática e completa.
   <div class="lvb" data-a style="--d:0"><img src="assets/lovable-icon.svg" alt="">Lovable</div>
     <div class="cols" style="grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center">
     <div>
-      <div class="kicker tipk" data-a style="--d:0"><span class="no">05</span>Dicas de Lovable</div>
+      <div class="kicker tipk" data-a style="--d:0"><span class="no">2 / 3</span>Aprenda a alterar</div>
       <h2 class="t-xl mt1" data-a style="--d:1">Aponte em vez de descrever.</h2>
       <p class="t-body mt2" data-a style="--d:2">A barra do preview tem quatro modos: selecionar um elemento e pedir a mudança, editar texto direto, desenhar por cima e comentar. Selecionar o botão é mais preciso que explicar onde ele fica.</p>
       <div class="vs mt3" style="grid-template-columns:1fr" data-step="1"><div class="strong"><div class="lab"><i>✓</i>Com o botão selecionado</div><q>Troque o texto para <b>"Quero o guia grátis"</b> e aumente o respiro lateral. Mantenha a cor e a fonte.</q></div></div>
@@ -893,7 +967,7 @@ No celular, 3D mais leve. Com "reduzir movimento", versão estática e completa.
 <!-- 24 -->
 <section class="sl light" data-name="lovable-7">
   <div class="lvb" data-a style="--d:0"><img src="assets/lovable-icon.svg" alt="">Lovable</div>
-    <div class="kicker tipk" data-a style="--d:0"><span class="no">06</span>Dicas de Lovable</div>
+    <div class="kicker tipk" data-a style="--d:0"><span class="no">3 / 3</span>Aprenda a alterar</div>
   <h2 class="t-xl mt1" data-a style="--d:1">Marque as versões boas. <span class="muted">E ouse sem medo.</span></h2>
   <p class="t-body mt2" data-a style="--d:2;max-width:1100px">Toda mudança vira uma versão no histórico. Marque a versão quando algo ficar bom: assim dá para testar uma ideia ousada e voltar em um clique.</p>
   <div class="tl" data-a style="--d:3">
@@ -915,11 +989,143 @@ No celular, 3D mais leve. Com "reduzir movimento", versão estática e completa.
 </section>
 
 <!-- 25 -->
+<section class="sl light" data-name="demora" data-t="wipe">
+  <div class="cols" style="grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+    <div>
+      <div class="kicker" data-a style="--d:0">A outra pergunta que sempre aparece</div>
+      <h2 class="t-xl mt1" data-a style="--d:1">Isso demora mais?</h2>
+      <p class="t-lead mt2" data-a style="--d:2">No começo, um pouco. <span class="b">É uma ferramenta nova, e prompt é prática.</span></p>
+      <p class="t-body mt2" data-a style="--d:3">A cada LP o prompt sai mais rápido e melhor. E você não precisa escrever sozinho: outra IA pode montar o prompt com você.</p>
+    </div>
+    <div class="speed" data-a style="--d:2">
+      <div><span>Primeiras LPs</span><i style="--w:100%"></i><em>escrevendo tudo do zero</em></div>
+      <div><span>Com prática</span><i style="--w:55%"></i><em>com o seu modelo de prompt</em></div>
+      <div class="on"><span>Com o agente</span><i style="--w:18%"></i><em>cola o briefing, ele monta</em></div>
+    </div>
+  </div>
+  <aside class="notes"><ul><li>"Demora mais? No começo, sim, como qualquer ferramenta nova. Depois vira rotina."</li><li>"E dá para pedir para outra IA fazer o prompt para você. Foi para isso que eu criei o agente."</li></ul></aside>
+</section>
+
+<!-- 26 -->
+<section class="sl dark" data-name="assistentes" data-steps="2">
+  <div class="kicker" data-a style="--d:0">Para usar amanhã</div>
+  <div class="agh"><h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Um agente que monta o prompt com vocês.</span></h2><div class="url" data-a style="--d:2"><span>Acesse</span>lucasmaiadesign.com/agente-ia</div></div>
+  <div class="asg mt3">
+    <div class="ags">
+      <div class="ag" data-a style="--d:2"><div class="lg gem"><img src="assets/gemini-icon.svg" alt="Gemini"></div><div><div class="kicker">Gemini</div><div class="t">Gem Assistente BRIEF</div><div class="s">Ele pergunta, você responde com o que tem do cliente, ele monta o prompt.</div></div></div>
+      <div class="ag" data-a style="--d:3"><div class="lg cl"><img src="assets/claude-icon.svg" alt="Claude"></div><div><div class="kicker">Claude</div><div class="t">Skill brief-lovable</div><div class="s">A mesma inteligência como Skill. E o prompt do agente aberto, para usar no ChatGPT.</div></div></div>
+      <div class="gives" data-a style="--d:4"><em>Ele entrega</em><span>Prompt em blocos</span><span>O que anexar</span><span>Próximos ajustes</span><span>Instructions do projeto</span><span>Suposições</span></div>
+    </div>
+    <div class="chat2" data-a style="--d:3">
+      <div class="hd"><span>na prática</span><span>o agente pergunta</span></div>
+      <div class="ask">Me conta o básico: qual é o cliente, o que a página precisa fazer e de onde vem o tráfego?</div>
+      <div class="bub">Clínica Sorriso Vivo, odonto em Curitiba. Campanha de clareamento no Meta, agendamento por WhatsApp, público 25 a 45. Sem brandbook.</div>
+      <div class="ans" data-step="1">
+        <div class="ln"><b>B</b>Clínica de bairro, especialista em clareamento, tom acolhedor e seguro</div>
+        <div class="ln"><b>R</b>Ação única: "Agendar avaliação" no WhatsApp · tráfego Meta no celular</div>
+        <div class="ln"><b>I</b>Calmo e confiável · azul-petróleo #0F4C5C · Manrope + Instrument Serif</div>
+        <div class="ln"><b>E</b>Hero · como funciona · equipe · FAQ · agendamento</div>
+        <div class="ln"><b>F</b>Sorriso em linha que se desenha no scroll · avaliações em seção fixa</div>
+      </div>
+      <div class="warn" data-step="2"><i>!</i>Segmento regulado: validar as regras do CFO com o jurídico antes de publicar.</div>
+    </div>
+  </div>
+  <aside class="notes"><ul><li>"Para não precisar lembrar de tudo: criei um agente. Está no meu site."</li><li>Ele vai perguntando: o cliente, o objetivo, a marca, os textos, o nível de uau. Vocês respondem com o que tiverem.</li><li>Clique 1: o prompt já vem organizado. Clique 2: o alerta de segmento regulado.</li><li>Ele não inventa dados do cliente: o que falta vira marcador para vocês preencherem.</li></ul></aside>
+</section>
+
+<!-- 27 -->
+<section class="sl light" data-name="checklist">
+  <div class="kicker" data-a style="--d:0">Para levar · Checklist antes de mandar o prompt</div>
+  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Prompt bom é briefing bom.</span></h2>
+  <div class="check mt3" data-a style="--d:2">
+    <div><i>✓</i>Briefing inteiro: cliente, público, oferta e tom</div>
+    <div><i>✓</i>Os porquês das decisões importantes</div>
+    <div><i>✓</i>Brandbook anexado e cores e fontes no texto</div>
+    <div><i>✓</i>Os textos escritos, nada de lorem ipsum</div>
+    <div><i>✓</i>Permissão para o incrível e cada momento descrito</div>
+    <div><i>✓</i>Os termos certos dos efeitos</div>
+    <div><i>✓</i>O essencial no começo</div>
+    <div><i>✓</i>O que não fazer e o pedido de perguntas no fim</div>
+    <div><i>✓</i>Plan mode e 3 versões do hero antes do site</div>
+    <div><i>✓</i>Ajustes com limites, um assunto por vez</div>
+  </div>
+  <div class="inkbox mt3" data-a style="--d:4"><div class="lbl">Desafio</div><p class="t-md mt1">Na próxima LP, usem o checklist e mandem o antes e depois no grupo.</p></div>
+  <aside class="notes"><ul><li>Resumo da aula em dez linhas. Está no guia de bolso.</li><li>Lance o desafio.</li></ul></aside>
+</section>
+
+<!-- 28 -->
+<section class="sl dark" data-name="fim" data-t="wipe">
+  <div class="ghost">mestre</div>
+  <div class="diag" style="left:70%"></div><div class="diag" style="left:82%;opacity:.55"></div>
+  <img class="logo-top" src="assets/mestre-logo-branco.svg" alt="Mestre" data-a style="--d:0">
+  <div class="kicker" data-a style="--d:1">Material no grupo · Guia de bolso · Gem · Skill · Exemplos</div>
+  <h2 class="t-big mt2" data-a="clip" style="--d:2;font-size:150px">Perguntas?</h2>
+  <aside class="notes"><ul><li>Abra para perguntas. As respostas prováveis estão nos slides extras a seguir.</li></ul></aside>
+</section>
+
+<!-- 29 -->
+<section class="sl light" data-name="extra-idioma" data-t="wipe">
+  <div class="kicker" data-a style="--d:0">Extra · Idioma</div>
+  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Português ou inglês?</span></h2>
+  <p class="t-lead mt3" data-a style="--d:2;max-width:1100px">Português. A página sai em português. <span class="b">Mantenha em inglês só os termos de design:</span> parallax, sticky, hover, glassmorphism, marquee. São os nomes que a IA reconhece.</p>
+</section>
+
+<!-- 30 -->
+<section class="sl dark" data-name="extra-estilo">
+  <div class="kicker" data-a style="--d:0">Extra · Sem brandbook</div>
+  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">E se o cliente não tem brandbook?</span> <span class="muted">Escreva em português, mantenha estes termos em inglês.</span></h2>
+  <div class="vibes mt3">
+    <div class="vb premium" data-a style="--d:2"><div class="scr"></div><div class="nm">Premium</div><div class="kw">refined, layered depth, soft blur</div></div>
+    <div class="vb ousado" data-a style="--d:3"><div class="scr"></div><div class="nm">Ousado</div><div class="kw">bold, brutalist, oversized typography</div></div>
+    <div class="vb editorial" data-a style="--d:4"><div class="scr"></div><div class="nm">Editorial</div><div class="kw">magazine-style grid, pull quotes</div></div>
+    <div class="vb calmo" data-a style="--d:5"><div class="scr"></div><div class="nm">Calmo</div><div class="kw">soft gradients, generous spacing</div></div>
+    <div class="vb futuro" data-a style="--d:6"><div class="scr"></div><div class="nm">Futurista</div><div class="kw">dark mode, glowing edges, motion blur</div></div>
+    <div class="vb organico" data-a style="--d:7"><div class="scr"></div><div class="nm">Orgânico</div><div class="kw">earth tones, hand-drawn, botanical</div></div>
+  </div>
+  <aside class="notes"><ul><li>Quando o cliente não tem brandbook, essas palavras são o atalho. Elas mudam tipografia, espaço, sombra e cor.</li><li>Pergunte: que estilo vocês dariam para uma clínica odontológica? E para um energético?</li><li>"Bold, saturated colors" funciona melhor que "colorido". Os 20 estilos do Lovable estão no guia de bolso.</li></ul></aside>
+</section>
+
+<!-- 31 -->
+<section class="sl light" data-name="extra-3d">
+  <div class="kicker" data-a style="--d:0">Extra · 3D no Lovable</div>
+  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">O Lovable faz mesmo 3D e animação de scroll?</span></h2>
+  <p class="t-lead mt3" data-a style="--d:2;max-width:1150px">Faz. Ele instala sozinho as bibliotecas que você nomeia: Three.js, GSAP com ScrollTrigger, Lenis, Framer Motion. <span class="b">Peça com direção no prompt inicial e refine um momento por vez.</span></p>
+</section>
+
+<!-- 32 -->
+<section class="sl light" data-name="extra-erro">
+  <div class="kicker" data-a style="--d:0">Extra · Referências</div>
+  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Posso usar o site de um concorrente como base?</span></h2>
+  <div class="cols c2 mt3">
+    <div data-a style="--d:2"><hr class="hr forte"><div class="t-md b mt2">Do cliente: pode</div><p class="t-body mt1">Importe pela URL e vire projeto editável. É para sites próprios, com autorização.</p></div>
+    <div data-a style="--d:3"><hr class="hr forte"><div class="t-md b mt2">De terceiros: inspiração</div><p class="t-body mt1">Print como referência de ritmo e clima. Nunca como cópia.</p></div>
+  </div>
+</section>
+
+<!-- 33 -->
+<section class="sl light" data-name="extra-midia">
+  <div class="kicker" data-a style="--d:0">Extra · Mídia</div>
+  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">E pixel, LGPD e SEO?</span></h2>
+  <div class="cols c3 mt3">
+    <div data-a style="--d:2"><hr class="hr forte"><div class="t-md b mt2">LGPD</div><p class="t-body mt1">Peça no bloco de resultado: consentimento e link da política de privacidade.</p></div>
+    <div data-a style="--d:3"><hr class="hr forte"><div class="t-md b mt2">Pixel e eventos</div><p class="t-body mt1">Dá para pedir, mas valide IDs e eventos com quem cuida de tracking.</p></div>
+    <div data-a style="--d:4"><hr class="hr forte"><div class="t-md b mt2">SEO</div><p class="t-body mt1">Título, descrição e imagem de compartilhamento. Tem revisão de SEO nativa.</p></div>
+  </div>
+</section>
+
+<!-- 34 -->
+<section class="sl light" data-name="extra-peso">
+  <div class="kicker" data-a style="--d:0">Extra · Performance</div>
+  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">3D e animação não deixam a página pesada?</span></h2>
+  <p class="t-lead mt3" data-a style="--d:2;max-width:1150px">Podem deixar. Por isso o prompt pede <span class="b">3D mais leve no celular, versão estática para "reduzir movimento" e carregamento rápido.</span> Teste sempre no celular: LP lenta derruba conversão e a experiência da página nos anúncios.</p>
+</section>
+
+<!-- 35 -->
 <section class="sl dark" data-name="lovable-8">
   <div class="lvb" data-a style="--d:0"><img src="assets/lovable-icon.svg" alt="">Lovable</div>
     <div class="cols" style="grid-template-columns:1fr 1fr;gap:60px;align-items:center">
     <div>
-      <div class="kicker tipk" data-a style="--d:0"><span class="no">07</span>Dicas de Lovable</div>
+      <div class="kicker" data-a style="--d:0">Extra · Lovable</div>
       <h2 class="t-xl mt1" data-a style="--d:1">Use a memória do Lovable.</h2>
       <p class="t-body mt2" data-a style="--d:2">Instructions são regras fixas que entram em toda mensagem. Skills são receitas chamadas com barra. Configurado uma vez, vale para a agência inteira.</p>
       <div class="inkbox mt3" data-a style="--d:4"><div class="lbl">Truque final</div><p class="t-md mt1">"Escreva as instruções do projeto com base no que construímos até agora." <span class="b">Vira o manual daquele cliente.</span></p></div>
@@ -933,126 +1139,23 @@ No celular, 3D mais leve. Com "reduzir movimento", versão estática e completa.
   <aside class="notes"><ul><li>No nível da agência, o padrão Mestre é definido uma vez e todo projeto nasce com ele. Os textos estão prontos no material.</li><li>No projeto, o brandbook do cliente. Cada ajuste já respeita a marca.</li></ul></aside>
 </section>
 
-<!-- 26 -->
-<section class="sl dark chap" data-name="cap-04" data-t="wipe">
-  <div class="pnl duo" data-a style="--d:2"><div class="orb o1"></div><div class="orb o2"></div><div class="lg2"><div class="ic gem"><img src="assets/gemini-icon.svg" alt="Gemini"></div><span>Gem no Gemini</span></div><div class="plus">+</div><div class="lg2"><div class="ic cl"><img src="assets/claude-icon.svg" alt="Claude"></div><span>Skill no Claude</span></div></div>
-  <div class="cl">
-    <div class="kicker" data-a style="--d:0">Parte 04 de 04</div>
-    <div class="cnum" data-a="clip" style="--d:1">04</div>
-    <h2 class="t-xl" data-a style="--d:2">Seus assistentes.</h2>
-    <p class="t-body mt2" data-a style="--d:3;max-width:560px">Tudo o que vimos, num Gem e numa Skill, prontos para usar amanhã.</p>
-  </div>
-  <div class="rail" data-a style="--d:6"><div class="done"><i></i><b>01</b><span>Boas práticas de prompt</span><em>8 práticas</em></div><div class="done"><i></i><b>02</b><span>O prompt completo</span><em>e o resultado</em></div><div class="done"><i></i><b>03</b><span>Dicas de Lovable</span><em>7 dicas</em></div><div class="on"><i></i><b>04</b><span>Seus assistentes</span><em>Gemini e Claude</em></div></div>
-  <aside class="notes"><ul><li>Para ninguém precisar lembrar de tudo isso: dois assistentes que fazem o prompt com vocês.</li></ul></aside>
-</section>
-
-<!-- 27 -->
-<section class="sl dark" data-name="assistentes" data-steps="2">
-  <div class="kicker" data-a style="--d:0">Para usar amanhã</div>
-  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Dois assistentes que escrevem o prompt com vocês.</span></h2>
-  <div class="asg mt3">
-    <div class="ags">
-      <div class="ag" data-a style="--d:2"><div class="lg gem"><img src="assets/gemini-icon.svg" alt="Gemini"></div><div><div class="kicker">Gemini</div><div class="t">Gem Assistente BRIEF</div><div class="s">Abra pelo link do grupo e cole o briefing.</div><span class="org mt1">Link do Gem · [inserir]</span></div></div>
-      <div class="ag" data-a style="--d:3"><div class="lg cl"><img src="assets/claude-icon.svg" alt="Claude"></div><div><div class="kicker">Claude</div><div class="t">Skill brief-lovable</div><div class="s">Configurações › Capabilities › Skills › enviar o brief-lovable.zip.</div></div></div>
-      <div class="gives" data-a style="--d:4"><em>Eles entregam</em><span>Prompt em blocos</span><span>O que anexar</span><span>Próximos ajustes</span><span>Instructions do projeto</span><span>Suposições</span></div>
+<!-- 36 -->
+<section class="sl light" data-name="lovable-3" data-steps="3">
+  <div class="lvb" data-a style="--d:0"><img src="assets/lovable-icon.svg" alt="">Lovable</div>
+    <div class="cols" style="grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+    <div>
+      <div class="kicker" data-a style="--d:0">Extra · Lovable</div>
+      <h2 class="t-xl mt1" data-a style="--d:1">O primeiro resultado é o esqueleto.</h2>
+      <p class="t-body mt2" data-a style="--d:2">Não tente acertar tudo num prompt só. O prompt completo monta a base; depois você refina uma seção por vez e fecha com uma passada de polimento.</p>
+      <p class="t-md mt3" data-a style="--d:3"><span class="b">Cada mensagem constrói em cima da anterior.</span> Decisões de estrutura cedo valem para o resto.</p>
     </div>
-    <div class="chat2" data-a style="--d:3">
-      <div class="hd"><span>na prática</span><span>briefing do atendimento</span></div>
-      <div class="bub">LP pra clínica Sorriso Vivo, odonto em Curitiba. Campanha de clareamento no Meta, agendamento por WhatsApp, público 25 a 45. Sem brandbook.</div>
-      <div class="ans" data-step="1">
-        <div class="ln"><b>B</b>Clínica de bairro, especialista em clareamento, tom acolhedor e seguro</div>
-        <div class="ln"><b>R</b>Ação única: "Agendar avaliação" no WhatsApp · tráfego Meta no celular</div>
-        <div class="ln"><b>I</b>Calmo e confiável · azul-petróleo #0F4C5C · Manrope + Instrument Serif</div>
-        <div class="ln"><b>E</b>Hero · como funciona · equipe · FAQ · agendamento</div>
-        <div class="ln"><b>F</b>Sorriso em linha que se desenha no scroll · avaliações em seção fixa</div>
-      </div>
-      <div class="warn" data-step="2"><i>!</i>Segmento regulado: validar as regras do CFO com o jurídico antes de publicar.</div>
+    <div class="layers">
+      <div data-step="1"><span class="n">1</span><div><b>Prompt completo</b><span>A base: estrutura, marca, textos e momentos.</span></div></div>
+      <div data-step="2"><span class="n">2</span><div><b>Uma seção por vez</b><span>"Agora só o hero." Confere no preview. Próxima.</span></div></div>
+      <div data-step="3" class="on"><span class="n">3</span><div><b>Passada de polimento</b><span>Tipografia, espaço, contraste. Sem funcionalidade nova.</span></div></div>
     </div>
   </div>
-  <aside class="notes"><ul><li>Tudo o que vimos hoje está dentro deles. Colem o briefing do jeito que estiver e recebam o prompt pronto para o Lovable.</li><li>Clique 1: a resposta já vem organizada. Clique 2: o alerta de compliance.</li><li>Eles não inventam dados do cliente: o que falta vira marcador e entra na lista de suposições. Também revisam um prompt seu ("revisa esse prompt").</li><li>O link do Gem e o arquivo da Skill vão no grupo junto com o guia de bolso.</li></ul></aside>
-</section>
-
-<!-- 28 -->
-<section class="sl light" data-name="checklist">
-  <div class="kicker" data-a style="--d:0">Para levar · Checklist antes de mandar o prompt</div>
-  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Prompt bom é briefing bom.</span></h2>
-  <div class="check mt3" data-a style="--d:2">
-    <div><i>✓</i>Tem cliente, público, oferta e tom</div>
-    <div><i>✓</i>Tem a única ação e o porquê de cada campo</div>
-    <div><i>✓</i>Explica os porquês importantes</div>
-    <div><i>✓</i>Cores em HEX e fontes pelo nome</div>
-    <div><i>✓</i>Texto real, nada de lorem ipsum</div>
-    <div><i>✓</i>Estilo descrito com o vocabulário certo</div>
-    <div><i>✓</i>Permissão e cada momento do uau descrito</div>
-    <div><i>✓</i>Fecha com o carimbo e pede perguntas</div>
-    <div><i>✓</i>Brandbook anexado e repetido no texto</div>
-    <div><i>✓</i>Passou no teste do colega</div>
-  </div>
-  <div class="inkbox mt3" data-a style="--d:4"><div class="lbl">Desafio</div><p class="t-md mt1">Na próxima LP, usem o checklist e mandem o antes e depois no grupo.</p></div>
-  <aside class="notes"><ul><li>Resumo da aula em dez linhas. Está no guia de bolso.</li><li>Lance o desafio.</li></ul></aside>
-</section>
-
-<!-- 29 -->
-<section class="sl dark" data-name="fim" data-t="wipe">
-  <div class="ghost">mestre</div>
-  <div class="diag" style="left:70%"></div><div class="diag" style="left:82%;opacity:.55"></div>
-  <img class="logo-top" src="assets/mestre-logo-branco.svg" alt="Mestre" data-a style="--d:0">
-  <div class="kicker" data-a style="--d:1">Material no grupo · Guia de bolso · Gem · Skill · Exemplos</div>
-  <h2 class="t-big mt2" data-a="clip" style="--d:2;font-size:150px">Perguntas?</h2>
-  <aside class="notes"><ul><li>Abra para perguntas. As respostas prováveis estão nos slides extras a seguir.</li></ul></aside>
-</section>
-
-<!-- 30 -->
-<section class="sl light" data-name="extra-creditos" data-t="wipe">
-  <div class="kicker" data-a style="--d:0">Extra · Créditos</div>
-  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Isso não gasta muito crédito?</span></h2>
-  <div class="cols c3 mt3">
-    <div data-a style="--d:2"><hr class="hr forte"><div class="t-md b mt2">Plan mode</div><p class="t-body mt1">1 crédito por mensagem, mais a pesquisa quando ele investiga o projeto. Não mexe no código.</p></div>
-    <div data-a style="--d:3"><hr class="hr forte"><div class="t-md b mt2">Build mode</div><p class="t-body mt1">Cobra pelo trabalho feito. Ajustes pequenos custam menos que gerações grandes com imagem.</p></div>
-    <div data-a style="--d:4"><hr class="hr forte"><div class="t-md b mt2">O que economiza</div><p class="t-body mt1">Um prompt completo bem feito evita as dez mensagens de "não é bem isso". Junte ajustes numa lista.</p></div>
-  </div>
-</section>
-
-<!-- 31 -->
-<section class="sl light" data-name="extra-idioma">
-  <div class="kicker" data-a style="--d:0">Extra · Idioma</div>
-  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Português ou inglês?</span></h2>
-  <p class="t-lead mt3" data-a style="--d:2;max-width:1100px">Português. A página sai em português. <span class="b">Mantenha em inglês só os termos de design:</span> parallax, sticky, hover, glassmorphism, marquee. São os nomes que a IA reconhece.</p>
-</section>
-
-<!-- 32 -->
-<section class="sl light" data-name="extra-3d">
-  <div class="kicker" data-a style="--d:0">Extra · 3D no Lovable</div>
-  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">O Lovable faz mesmo 3D e animação de scroll?</span></h2>
-  <p class="t-lead mt3" data-a style="--d:2;max-width:1150px">Faz. Ele instala sozinho as bibliotecas que você nomeia: Three.js, GSAP com ScrollTrigger, Lenis, Framer Motion. <span class="b">Peça com direção no prompt inicial e refine um momento por vez.</span></p>
-</section>
-
-<!-- 33 -->
-<section class="sl light" data-name="extra-erro">
-  <div class="kicker" data-a style="--d:0">Extra · Referências</div>
-  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">Posso usar o site de um concorrente como base?</span></h2>
-  <div class="cols c2 mt3">
-    <div data-a style="--d:2"><hr class="hr forte"><div class="t-md b mt2">Do cliente: pode</div><p class="t-body mt1">Importe pela URL e vire projeto editável. É para sites próprios, com autorização.</p></div>
-    <div data-a style="--d:3"><hr class="hr forte"><div class="t-md b mt2">De terceiros: inspiração</div><p class="t-body mt1">Print como referência de ritmo e clima. Nunca como cópia.</p></div>
-  </div>
-</section>
-
-<!-- 34 -->
-<section class="sl light" data-name="extra-midia">
-  <div class="kicker" data-a style="--d:0">Extra · Mídia</div>
-  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">E pixel, LGPD e SEO?</span></h2>
-  <div class="cols c3 mt3">
-    <div data-a style="--d:2"><hr class="hr forte"><div class="t-md b mt2">LGPD</div><p class="t-body mt1">Peça no bloco de resultado: consentimento e link da política de privacidade.</p></div>
-    <div data-a style="--d:3"><hr class="hr forte"><div class="t-md b mt2">Pixel e eventos</div><p class="t-body mt1">Dá para pedir, mas valide IDs e eventos com quem cuida de tracking.</p></div>
-    <div data-a style="--d:4"><hr class="hr forte"><div class="t-md b mt2">SEO</div><p class="t-body mt1">Título, descrição e imagem de compartilhamento. Tem revisão de SEO nativa.</p></div>
-  </div>
-</section>
-
-<!-- 35 -->
-<section class="sl light" data-name="extra-peso">
-  <div class="kicker" data-a style="--d:0">Extra · Performance</div>
-  <h2 class="t-lg mt1" data-a style="--d:1"><span class="bk">3D e animação não deixam a página pesada?</span></h2>
-  <p class="t-lead mt3" data-a style="--d:2;max-width:1150px">Podem deixar. Por isso o prompt pede <span class="b">3D mais leve no celular, versão estática para "reduzir movimento" e carregamento rápido.</span> Teste sempre no celular: LP lenta derruba conversão e a experiência da página nos anúncios.</p>
+  <aside class="notes"><ul><li>A documentação do Lovable fala em construir em pequenos ciclos: uma mudança, confere, próxima.</li><li>Prompt gigante de correção que mexe em tudo é onde as coisas quebram.</li></ul></aside>
 </section>
 
 <div id="wipe" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -1070,7 +1173,7 @@ let cur=0,step=0,busy=false;
 function fit(){const s=Math.min(innerWidth/1600,innerHeight/900);deck.style.transform=`translate(${-800*s}px,${-450*s}px) scale(${s})`;}
 addEventListener('resize',fit);fit();
 const steps=sl=>+(sl.dataset.steps||0);
-document.querySelectorAll('.meter .segs').forEach(s=>{const n=+s.dataset.n;s.innerHTML=Array.from({length:8},(_,k)=>`<i class="${k<n?'on':''}${k===n-1?' now':''}"></i>`).join('')});
+document.querySelectorAll('.meter .segs').forEach(s=>{const n=+s.dataset.n;s.innerHTML=Array.from({length:5},(_,k)=>`<i class="${k<n?'on':''}${k===n-1?' now':''}"></i>`).join('')});
 function applySteps(sl,n){
   sl.querySelectorAll('[data-step]').forEach(e=>e.classList.toggle('shown',+e.dataset.step<=n));
   sl.querySelectorAll('[data-hl]').forEach(e=>e.classList.toggle('on',+e.dataset.hl<=n));

@@ -1,6 +1,6 @@
 # Aula: IA para criação de LPs com Lovable · Agência Mestre
 
-> **Ideia central:** *Prompt bom é briefing bom.* A IA é um freela brilhante que nunca ouviu falar do seu cliente; se você não decide, ela decide pela média. A fórmula **BRIEF** (Base, Resultado, Identidade, Estrutura, Fator uau + Carimbo) transforma o briefing que a agência já sabe fazer num prompt que gera uma LP que parece mesmo do cliente.
+> **Ideia central:** *Prompt bom é briefing bom.* Com o mesmo cliente, o mesmo briefing e os mesmos textos, um pedido simples deu uma LP genérica e um prompt bem feito deu uma LP incrível. A aula destrincha como: os 5 passos do prompt, como a IA lê, planejar antes de construir e saber alterar.
 
 30 minutos + perguntas · público geral da agência.
 
@@ -23,16 +23,17 @@ Para mostrar a alguém fora da sua conta, use o menu Share de cada página. O de
 
 | Arquivo / pasta | Para quê |
 |---|---|
-| `apresentacao/index.html` + `assets/` | **O deck.** 29 slides + 6 extras, em 4 partes com capa própria: 8 boas práticas de prompt (fraco × forte), o prompt completo, 7 dicas de Lovable (com o selo do Lovable), os assistentes. Transições, demos animadas, vídeos e notas do apresentador (tecla N) |
-| `02-guia-da-apresentacao.md` | **Guia resumido:** como usar o deck, tempos (~25 min falados) e o que falar em cada slide |
+| `apresentacao/index.html` + `assets/` | **O deck.** 28 slides + 8 extras. Abertura (meu processo de sempre, a LP genérica, por que ela é genérica, a LP linda) e 4 partes com capa: o prompt em 5 passos, como a IA lê o prompt, planeje antes de construir, aprenda a alterar. Fecha com "isso demora mais?", o agente e o checklist. Notas do apresentador na tecla N |
+| `02-guia-da-apresentacao.md` | **Guia resumido:** como usar o deck, tempos (~24 min falados) e o que falar em cada slide |
 | `01-fundamentos-da-pesquisa.md` | A pesquisa que sustenta a aula, com fontes |
 | `03-exemplo-vingo-prompts.md` | O case Vingô: brandbook, prompt de sempre, prompt completo, mapa "trecho do prompt → resultado" e inventário de capturas |
 | `04-faq-possiveis-duvidas.md` | Respostas para as dúvidas prováveis (base dos slides extras) |
 | `exemplos/vingo-brandbook/` | Brandbook da marca fictícia (HTML + PDF) e logos em SVG |
-| `exemplos/lp-generica/` | A LP "cara de IA" |
+| `exemplos/lp-generica/` | A LP "cara de IA": cores da marca e os mesmos textos da LP linda, mas com emojis, degradê e cards |
 | `exemplos/lp-espetacular/` | A LP BRIEF: livro 3D em WebGL entre folhas 3D, manifesto que acende, números fixos, letreiro, capítulos na horizontal, teste de luz, neon e marca gigante no rodapé |
 | `exemplos/capturas/` | Prints e vídeos das duas LPs da Vingô |
 | `05-material-pos-aula/guia-de-bolso-brief.md` | A "cola" para mandar no grupo |
+| `05-material-pos-aula/agente-no-site/` | **O agente para lucasmaiadesign.com/agente-ia:** o prompt do agente (entrevista em 5 etapas, funciona no Gemini, ChatGPT e Claude) e a estrutura e os textos da página |
 | `05-material-pos-aula/assistente-brief/` | **Assistente BRIEF:** Skill do Claude (`.zip` pronto) e Gem do Gemini (instruções + 3 arquivos), com guia de instalação e casos de teste |
 | `05-material-pos-aula/bonus-lovable-da-agencia/` | Instructions do workspace (padrão Mestre) e duas Skills do Lovable (`/lp-brief`, `/revisao-lp`) |
 
@@ -42,9 +43,9 @@ Para mostrar a alguém fora da sua conta, use o menu Share de cada página. O de
 
 1. **Abrir o deck** e passar por ele com as notas abertas (N). Siga `02-guia-da-apresentacao.md`.
 2. **Preencher o nome** na capa: procure "[Seu nome]" em `apresentacao/index.html`.
-3. **Criar o Gem** (10 min) com `05-material-pos-aula/assistente-brief/como-instalar-e-usar.md`. Rode os 4 casos de teste e coloque o link no slide 27 (procure "Link do Gem").
-4. **Ensaiar uma vez cronometrando:** chegar no slide 14 até 13:00. Se apertar, pule os slides 21 e 23.
-5. **Deixar a LP da Vingô aberta numa aba** para o slide 17.
+3. **Publicar o agente** em lucasmaiadesign.com/agente-ia com `05-material-pos-aula/agente-no-site/`. Rode os 4 testes do fim de `prompt-do-agente.md`. Se o endereço for outro, troque no slide 26 (procure "agente-ia").
+4. **Ensaiar uma vez cronometrando:** chegar no slide 13 até 12:00. Se apertar, pule o slide 23.
+5. **Deixar a LP da Vingô aberta numa aba** para o slide 5.
 6. **(Opcional, 20 min)** Rodar o prompt completo no Lovable com o brandbook anexado (`03-exemplo-vingo-prompts.md`, seção 6) para ter também um resultado 100% Lovable da Vingô.
 
 Se mudar textos do deck, mantenha as regras da Mestre: título termina com ponto, sem travessão, Outfit, tinta e papel.
@@ -54,18 +55,19 @@ Se mudar textos do deck, mantenha as regras da Mestre: título termina com ponto
 ## Mensagem pronta para o grupo (pós-aula)
 
 > Pessoal, obrigado pela aula! Aqui está o material:
-> 📌 **Guia de bolso BRIEF**: a fórmula, o modelo de prompt, as palavras que destravam o uau e os pedidos de ajuste → [anexar guia]
-> 🤖 **Assistente BRIEF no Gemini**: cole o briefing do cliente e receba o prompt pronto para o Lovable → [link do Gem]
-> 🤖 **Versão Claude** (Skill): Configurações → Capabilities → Skills → enviar o arquivo → [anexar brief-lovable.zip]
-> 💡 Desafio: na próxima LP, testem o BRIEF e mandem o antes e depois aqui!
+> 📌 **Guia de bolso**: o modelo de prompt, as palavras que destravam o uau e os pedidos de ajuste → [anexar guia]
+> 🤖 **Agente de prompt**: responda as perguntas sobre o cliente e receba o prompt pronto para o Lovable → lucasmaiadesign.com/agente-ia
+> 💡 Desafio: na próxima LP, usem o checklist e mandem o antes e depois aqui!
 > Prompt bom é briefing bom.
 
 ---
 
 ## Decisões tomadas (e por quê)
 
-- **A aula virou um guia de boas práticas.** Oito práticas de prompt, cada uma com um exemplo de prompt fraco e de prompt forte, e sete dicas de Lovable, uma por slide. Cabe em 30 minutos com folga para a sala participar. O "BRIEF" aparece como esqueleto de prompt, sem tomar o centro: o recado é que o briefing precisa ir inteiro e detalhado para o prompt.
-- **Fio da história:** a mesma IA fez a versão A e a versão B da Vingô. Cada prática acrescenta uma peça ao prompt (o medidor no rodapé dos slides mostra o prompt crescendo) até ele virar o briefing completo, mostrado na íntegra, que gerou a versão B.
+- **A aula segue uma narrativa só:** meu processo de sempre gerou a LP genérica; a IA entrega a média quando ninguém pede mais; a LP linda veio do mesmo briefing com um prompt melhor; e o resto da aula destrincha como ela foi feita. As dicas estão agrupadas em 4 partes, não soltas.
+- **A LP genérica é realista:** tem as cores da Vingô e os mesmos textos da LP linda. Assim fica claro que a diferença foi o prompt, e não o briefing.
+- **"Como a IA lê":** o começo e o fim do prompt pesam mais (estudo "Lost in the Middle", Stanford, 2023; guia de prompts da OpenAI). Por isso o essencial abre o prompt e as regras fecham.
+- **Planejar virou uma parte:** Plan mode, 3 versões do hero antes do site inteiro e a resposta para "gasta mais crédito?".
 - **Sem slides de frase de impacto.** Toda tela tem conteúdo para falar.
 - **Quatro partes com capa própria** (número grande, visual da parte e a faixa de progresso), para a aula não virar uma sequência de telas iguais.
 - **O fator uau é "permissão + direção + coerência":** vários momentos de movimento funcionam quando todos nascem da marca. Efeito genérico repetido em toda seção é cara de IA.

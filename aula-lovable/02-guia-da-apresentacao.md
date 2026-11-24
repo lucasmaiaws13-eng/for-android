@@ -1,8 +1,8 @@
 # 02 — Guia da apresentação
 
 > **Aula:** Prompt bom é briefing bom · Boas práticas de prompt e de Lovable para criar landing pages · Agência Mestre
-> **Deck:** `apresentacao/index.html` (Chrome) · 29 slides + 6 extras · **cerca de 25 minutos falados**, com folga para a sala participar
-> **A história em uma frase:** a mesma IA fez uma LP genérica e uma LP que parece mesmo da Vingô. A diferença foi o pedido. Cada boa prática acrescenta uma peça ao prompt, até ele virar o briefing completo que gerou a versão boa.
+> **Deck:** `apresentacao/index.html` (Chrome) · 28 slides + 8 extras · **cerca de 24 minutos falados**, com folga para a sala participar
+> **A história em uma frase:** com o mesmo cliente, o mesmo briefing e os mesmos textos, um pedido simples deu uma LP genérica e um prompt bem feito deu uma LP incrível. A aula destrincha como a página incrível foi feita: os 5 passos do prompt, como a IA lê, planejar antes e saber alterar.
 
 ---
 
@@ -15,10 +15,10 @@
 | **N** | Notas do apresentador |
 | **F** | Tela cheia |
 
-- A aula tem **4 partes**, cada uma com uma capa própria. A faixa no rodapé da capa mostra em que parte vocês estão.
-- Nas práticas de prompt, o medidor no rodapé mostra **o prompt da Vingô crescendo** (de 1 linha a ~700 palavras). Aponte para ele de vez em quando: é o fio da aula.
-- Nas dicas de Lovable, o selo do Lovable no canto marca que o assunto agora é a ferramenta.
-- Vídeos rodam sozinhos, sem som. Para abrir num slide: `index.html#s17`.
+- Depois da abertura, a aula tem **4 partes**, cada uma com capa. A faixa no rodapé da capa mostra em que parte vocês estão.
+- Nos 5 passos, o medidor no rodapé mostra **o prompt da página linda crescendo**.
+- O selo do Lovable no canto marca os slides sobre a ferramenta.
+- Vídeos rodam sozinhos, sem som. Para abrir num slide: `index.html#s5`.
 
 ---
 
@@ -26,18 +26,17 @@
 
 | Parte | Slides | Tempo acumulado |
 |---|---|---|
-| Abertura: o problema | 1–4 | 0:00 → 4:15 |
-| **Parte 01** · 8 boas práticas de prompt | 5–13 | 4:15 → 12:45 |
-| **Parte 02** · O prompt completo e o resultado | 14–17 | 12:45 → 15:50 |
-| **Parte 03** · 7 dicas de Lovable | 18–25 | 15:50 → 22:25 |
-| **Parte 04** · Assistentes e checklist | 26–28 | 22:25 → 25:30 |
-| Perguntas | 29 + extras | 25:30 → |
+| Abertura: a página feia, o porquê, a página linda | 1–5 | 0:00 → 5:30 |
+| **Parte 01** · O prompt em 5 passos | 6–12 | 5:30 → 12:00 |
+| **Parte 02** · Como a IA lê o prompt | 13–16 | 12:00 → 14:45 |
+| **Parte 03** · Planeje antes de construir | 17–20 | 14:45 → 18:00 |
+| **Parte 04** · Aprenda a alterar | 21–24 | 18:00 → 20:45 |
+| Fechamento: demora mais?, o agente, checklist | 25–27 | 20:45 → 24:15 |
+| Perguntas | 28 + extras | 24:15 → |
 
-Sobram uns 4 minutos para a sala responder às perguntas da abertura e para algum imprevisto. Não corra.
+**Checkpoint:** chegar na capa da Parte 02 (slide 13) até 12:00.
 
-**Checkpoint:** chegar na capa da Parte 02 (slide 14) até 13:00.
-
-**Se apertar, pule nesta ordem:** 21 (esqueleto) → 23 (aponte em vez de descrever) → 16 (passe a segunda metade do prompt em 10 segundos). Economiza uns 2 minutos.
+**Se apertar, pule nesta ordem:** 23 (aponte em vez de descrever) → 16 (segunda metade do prompt em 10 segundos) → 11 (os termos: mostre só duas demos).
 
 ---
 
@@ -46,119 +45,116 @@ Sobram uns 4 minutos para a sala responder às perguntas da abertura e para algu
 ### Abertura
 
 **1 · Capa** (0:30)
-"São 30 minutos de boas práticas. Vocês saem com dicas para aplicar amanhã e dois assistentes prontos."
+"São 30 minutos sobre como pedir para a IA uma landing page que não parece feita por IA. Vocês saem com um passo a passo e um agente que faz o prompt com vocês."
 
-**2 · Qual você mandaria?** (1:15) · *2 cliques*
-- "Quem mandaria a A para o cliente aprovar? E a B?" Deixe responderem.
-- Clique 1: "A ferramenta foi a mesma." Clique 2: "A da esquerda veio de um prompt de uma linha. A da direita, de um briefing de uma página."
-- "A Vingô é uma marca fictícia que criei para a aula, com brandbook próprio."
+**2 · Como eu fazia** (1:15) · *1 clique*
+- "Esse era o meu processo: o link do site do cliente, o briefing com os textos, e 'faça uma landing page'."
+- Clique: a página aparece no preview e rola. "E pronto. Esse foi o resultado."
+- "Tem as cores da marca, tem os textos certos. Parece ok."
 
-**3 · A média** (1:00) · *1 clique*
-- "A IA aprendeu com milhões de sites. Quando você não decide, ela decide pela média."
-- Clique: os sites se fundem. "Média não diferencia o cliente do concorrente."
+**3 · Mas é genérica** (1:30) · *7 cliques*
+- "O problema é que isso é genérico. O que nessa página grita 'foi a IA'?" Vá clicando conforme a sala responde.
+- No 1: "A marca tem logo, e a IA pôs um emoji."
+- Teste da marca: tape o logo; se poderia ser de qualquer loja de plantas, a direção está fraca.
 
-**4 · Cara de IA tem sintomas** (1:30) · *7 cliques*
-- "O que nessa página grita 'foi a IA'?" Vá clicando conforme a sala responde.
-- No 4: "A marca tem logo, e a IA pôs um emoji. Ninguém contou para ela."
-- Teste rápido: tape o logo; se poderia ser de qualquer marca, a direção está fraca.
+**4 · Sem direção, a IA entrega a média** (1:00) · *1 clique*
+- "A IA aprendeu com milhões de sites, e a maioria deles é simples. Se eu não especifico, ela me devolve a média."
+- Clique: os sites se fundem. "Para sair da média, eu preciso pedir e permitir algo além."
 
-### Parte 01 · Boas práticas de prompt
+**5 · Agora, com um prompt melhor** (1:15)
+- Deixe o vídeo correr. Se der, clique em "Abrir a LP da Vingô" e passe por ela ao vivo.
+- "Mesmo cliente, mesmo briefing, mesmos textos. O que mudou foram detalhes no prompt e um pouco mais de esforço. Hoje vou mostrar como chegar nesse resultado em poucos passos."
 
-**5 · Capa da Parte 01** (0:20)
-"A aula tem quatro partes." Aponte a faixa do rodapé. "A maior é esta: oito práticas, cada uma com um prompt fraco e um forte. Reparem no medidor: o prompt da Vingô vai crescendo."
+### Parte 01 · O prompt em 5 passos
 
-Em cada prática: leia o prompt fraco com voz de "pedido de sempre" e o forte devagar.
+**6 · Capa** (0:15)
+"Vamos destrinchar a página linda. São cinco passos, e o medidor no rodapé mostra o prompt crescendo."
 
-**6 · 01 Mande um briefing, não um pedido** (1:20) · *1 clique*
-- "A IA é um freela brilhante que nunca ouviu falar do seu cliente."
-- Clique: o briefing se preenche. "Vocês já sabem fazer briefing. A diferença é ele ir inteiro, detalhado, para o prompt."
-- Teste do colega. E de passagem: "'Você é o melhor designer do mundo' não ajuda. A Wharton testou em 6 modelos. Gastem as palavras no cliente."
+**7 · 1/5 Briefing inteiro, com os porquês** (1:15) · *1 clique*
+- "A IA é um freela brilhante que nunca ouviu falar do seu cliente. Mandem tudo, e o motivo de cada decisão."
+- O exemplo: formulário curto *porque* o tráfego é do celular, e ela fixou o botão no rodapé sem ninguém pedir.
+- Clique: o briefing se preenche.
 
-**7 · 02 Explique o porquê** (1:00)
-"Com o motivo, a IA acerta as decisões que você não escreveu: pedi formulário curto *porque* o tráfego é do celular, e ela também fixou o botão no rodapé."
+**8 · 2/5 Mostre a marca** (1:00)
+"Anexem brandbook, logo e referências, e repitam no texto o que não pode errar. 'Verde e moderno' ela já tinha pegado do site: deu degradê e Inter. '#06140E' e 'Bricolage 200 em tamanho enorme' são instrução."
 
-**8 · 03 Troque adjetivo por dado** (1:00)
-"'Moderno' é interpretação; '#06140E' e 'Bricolage 200 em tamanho enorme' são instrução. Sem dado, ela escolhe o padrão: Inter, roxo, cards."
+**9 · 3/5 Mande os textos escritos** (0:50) · *1 clique*
+"As duas páginas têm exatamente o mesmo texto. Ele não foi a diferença, mas é a base: sem ele, a IA inventa 'oásis verde'."
 
-**9 · 04 Escreva o texto de verdade** (0:50) · *1 clique*
-"Pedi 'uma headline chamativa' e veio 'oásis verde'. Escrevi a headline e veio 'Chega de velório de planta'."
+**10 · 4/5 Permita o incrível** (1:00)
+"O padrão da IA é o simples. Escrevam a permissão: 'você tem liberdade total para 3D, animação de scroll e ilustração'. E digam cada momento, tirado da marca: as folhas 3D vêm do brandbook."
 
-**10 · 05 Use o vocabulário de estilo** (1:00)
-- "Sem brandbook, essas palavras são o atalho. Em português, mas com os termos em inglês."
-- Pergunte: "Que estilo vocês dariam para uma clínica odontológica? E para um energético?"
+**11 · 4/5 Os termos que destravam** (1:00)
+Aponte as demos: objeto 3D que reage ao mouse, texto que acende no scroll, seção fixa, rolagem horizontal, letreiro, neon. "Não sabe o nome? Descreve com suas palavras e pergunta para a IA como se chama."
 
-**11 · 06 Permissão e direção para o uau** (1:00)
-"Sem permissão, a IA joga seguro. Sem direção, aplica o mesmo efeito em tudo. Descrevam cada momento e tirem o efeito da marca: as folhas 3D vêm do brandbook."
+**12 · 5/5 Diga o que não fazer, no fim** (1:00)
+"'Não deixa genérico' não ensina nada. No fim do prompt, a lista concreta: sem degradê, sem emoji, sem cards iguais. E a última linha pede perguntas."
 
-**12 · 07 Saiba o nome do efeito** (1:00)
-Aponte as demos: "objeto 3D que reage ao mouse, texto que acende no scroll, seção fixa, rolagem horizontal, letreiro, neon. O Lovable instala as bibliotecas sozinho."
+### Parte 02 · Como a IA lê o prompt
 
-**13 · 08 Diga o que fazer, depois o que evitar** (1:00)
-"'Não deixa genérico' não ensina nada. Primeiro o caminho, depois a trava: o carimbo vai no fim de todo prompt. E a última linha pede perguntas: ela volta com dúvidas que a gente nem tinha pensado."
+**13 · Capa** (0:15)
+"Agora, como a IA lê o que vocês escrevem."
 
-### Parte 02 · O prompt completo
+**14 · O começo pesa mais. O fim também.** (1:10)
+- "A IA tem uma ordem de importância. Em textos longos, ela usa melhor o começo e o fim, e se perde no meio."
+- "Então: o essencial no começo, os detalhes em blocos no meio, as regras e as perguntas no fim."
+- Fontes, se perguntarem: o estudo "Lost in the Middle" (Stanford, 2023) e o guia de prompts da OpenAI.
 
-**14 · Capa da Parte 02** (0:15)
-"Agora o prompt inteiro, montado com tudo o que vimos."
+**15 e 16 · O prompt da página linda** (0:45 e 0:35)
+- "Não leiam tudo; reparem na ordem. Abre com o que é e o anexo, depois cliente, resultado, marca." Clique. "Estrutura com os textos, a experiência momento a momento e, no fim, as regras."
+- "Cerca de 700 palavras, 15 minutos de trabalho. Ou 1 minuto com o agente."
 
-**15 e 16 · O prompt completo da Vingô** (0:50 e 0:40)
-- "Não leiam tudo; reparem nos blocos. Blocos com rótulo separam os assuntos, e começo e fim pesam mais."
-- Aponte: o porquê do formulário, os HEX, a headline escrita, cada momento do uau, o carimbo.
-- "O esqueleto tem nome, BRIEF, mas não precisa decorar: o assistente monta para vocês."
+### Parte 03 · Planeje antes de construir
 
-**17 · O que esse prompt virou** (1:20)
-- Deixe o vídeo correr. Se der, clique em "Abrir a LP da Vingô" e passe por ela ao vivo (mouse no livro, capítulos, formulário).
-- "Cerca de 700 palavras, 15 minutos de briefing. Ou 1 minuto com o assistente."
+**17 · Capa** (0:15)
+"Antes de construir, planejar. E isso economiza crédito."
 
-### Parte 03 · Dicas de Lovable
+**18 · 1/3 Comece no Plan mode** (1:00)
+"Ele lê, pergunta e escreve um plano antes de mexer no código. Custa 1 crédito por mensagem. E é o lugar para tirar dúvida de termo."
 
-**18 · Capa da Parte 03** (0:15)
-"O prompt é metade. A outra metade é como conduzir o Lovable depois que ele começa a construir."
+**19 · 2/3 Peça 3 versões do hero** (1:00)
+"É melhor pedir 2 ou 3 versões da primeira dobra do que deixar ela construir um site inteiro que no fim não fica bom. Escolhida a direção, o resto herda."
 
-**19 · 01 Comece no Plan mode** (1:00)
-"Ele planeja e faz as perguntas antes de construir. Custa 1 crédito por mensagem e não mexe no código. Corrigir o plano é mais barato que corrigir a página."
+**20 · 3/3 Gasta mais crédito? Não. Economiza.** (1:00)
+"Sem planejar: site inteiro na direção errada e uma fila de correções. Planejando: perguntas, plano, três heros, e o site já nasce certo. Conversar é barato; caro é construir a página errada."
 
-**20 · 02 Anexe tudo e repita o essencial** (0:50)
-"PDF, logo, prints, até arquivo do Figma. Mas lembram da versão A? O brandbook existia e não estava no prompt. A IA não lê a pasta do cliente; lê o seu prompt."
+### Parte 04 · Aprenda a alterar
 
-**21 · 03 O primeiro resultado é o esqueleto** (0:50) · *3 cliques* · *pulável*
-"Prompt completo, depois uma seção por vez, depois polimento. Prompt gigante de correção é onde tudo quebra."
+**21 · Capa** (0:15)
+"Ninguém acerta na primeira. O primeiro resultado é o esqueleto; o que importa é saber alterar."
 
-**22 · 04 Ajuste com limites** (1:00)
-"O que muda, onde e o que não pode mudar. Escreveu 'e' mais de duas vezes? Divida. Os pedidos prontos de ajuste estão no guia de bolso."
+**22 · 1/3 Ajuste com limites** (1:00)
+"O que muda, onde e o que não pode mudar. Escreveu 'e' mais de duas vezes? Divida. Os pedidos prontos estão no guia de bolso."
 
-**23 · 05 Aponte em vez de descrever** (0:50) · *1 clique* · *pulável*
-"Selecione o botão no preview e peça. Para layout, desenhe por cima: 'move isso para cá'."
+**23 · 2/3 Aponte em vez de descrever** (0:45) · *1 clique* · *pulável*
+"Selecione o botão no preview e peça. Para layout, desenhe por cima."
 
-**24 · 06 Marque as versões boas** (0:50)
+**24 · 3/3 Marque as versões boas** (0:45)
 "Marcou a versão, pode ousar. Try to fix no máximo duas vezes; depois, peça para investigar a causa no Plan mode."
 
-**25 · 07 Use a memória do Lovable** (1:00)
-"Instructions do workspace: o padrão Mestre em todo projeto. Do projeto: o brandbook do cliente. Skills: receitas com barra. E o truque: peça para ele escrever as instruções do projeto no fim."
+### Fechamento
 
-### Parte 04 · Assistentes
+**25 · Isso demora mais?** (1:00)
+"No começo, um pouco, como qualquer ferramenta nova. Prompt é prática: a cada LP sai mais rápido. E vocês não precisam escrever sozinhos: outra IA pode montar o prompt com vocês."
 
-**26 · Capa da Parte 04** (0:15)
-"Para ninguém precisar lembrar de tudo isso: dois assistentes que fazem o prompt com vocês."
+**26 · O agente** (1:45) · *2 cliques*
+- "Por isso criei um agente. Está em lucasmaiadesign.com/agente-ia, no Gemini, no Claude e com o prompt aberto para o ChatGPT."
+- "Ele vai perguntando: o cliente, a marca, os textos, o nível de uau. Vocês respondem com o que tiverem."
+- Clique 1: o prompt organizado. Clique 2: o alerta de segmento regulado.
+- "Ele não inventa dados do cliente: o que falta vira marcador."
 
-**27 · Dois assistentes** (2:00) · *2 cliques*
-- "Tudo o que vimos está dentro deles. Colem o briefing do jeito que estiver e recebam o prompt pronto."
-- Gem no Gemini: pelo link do grupo. Skill no Claude: enviar o zip em Configurações › Capabilities › Skills.
-- Clique 1: a resposta já vem organizada em blocos. Clique 2: o alerta de segmento regulado.
-- "Eles não inventam dados do cliente: o que falta vira marcador e entra na lista de suposições."
+**27 · Checklist** (0:45)
+"Dez itens antes de mandar o prompt. Está no guia de bolso." Lance o desafio: na próxima LP, mandar o antes e depois no grupo.
 
-**28 · Checklist** (0:50)
-"Dez perguntas antes de mandar o prompt. Está no guia de bolso." Lance o desafio: na próxima LP, mandar o antes e depois no grupo.
-
-**29 · Perguntas**
-Use os extras: créditos (30), idioma (31), 3D no Lovable (32), site de concorrente (33), pixel/LGPD/SEO (34) e performance (35).
+**28 · Perguntas**
+Extras: idioma (29), cliente sem brandbook (30), 3D no Lovable (31), site de concorrente (32), pixel/LGPD/SEO (33), performance (34), memória do Lovable (35), o primeiro resultado é o esqueleto (36).
 
 ---
 
 ## Antes da aula
 
 - [ ] Trocar "[Seu nome]" na capa do `index.html`
-- [ ] Criar o Gem e colocar o link no slide 27 (procure "Link do Gem")
-- [ ] Ensaiar uma vez cronometrando (checkpoint: slide 14 até 13:00)
-- [ ] Deixar a LP da Vingô aberta numa aba para o slide 17
+- [ ] Publicar o agente em lucasmaiadesign.com/agente-ia (`05-material-pos-aula/agente-no-site/`) e conferir se o endereço no slide 26 é o mesmo
+- [ ] Ensaiar uma vez cronometrando (checkpoint: slide 13 até 12:00)
+- [ ] Deixar a LP da Vingô aberta numa aba para o slide 5
 - [ ] Mensagem do grupo pronta (no README)

@@ -27,25 +27,28 @@ Pasta `exemplos/vingo-brandbook/`: `brandbook.html`, `brandbook-vingo.pdf`, `log
 
 ## 2. Prompt "de sempre" → LP genérica
 
+O processo de sempre: o link do cliente, o briefing com os textos e um pedido curto.
+
 ```text
-Crie uma landing page bonita e moderna para um e-book gratuito sobre cuidados com plantas da marca Vingô, com formulário para download.
+Faça uma landing page para o e-book Selva de Apê, da Vingô. O site da marca é vingoplantas.com.br. Segue o briefing com os textos.
+[anexo: briefing-selva-de-ape.pdf, com público, objetivo e todos os textos da página]
 ```
 
 **Resultado:** `exemplos/lp-generica/index.html` · capturas `generica-*`
 
-Os sinais de "cara de IA" (roteiro do slide "aponte os sinais"):
-1. Gradiente roxo → azul numa marca de **plantas** (botão, mockup, formulário e texto em gradiente).
-2. Fonte Inter em tudo.
-3. Selo `✨ E-BOOK 100% GRATUITO` e um selo com emoji acima de cada seção.
-4. Headline clichê: "Transforme sua casa em um oásis verde 🌱".
-5. Emojis no lugar de ícones e de logo.
-6. Seis cards idênticos com ícone, título e frase.
-7. Mockup do e-book = retângulo com gradiente e emoji.
-8. Badges flutuando por cima do mockup; bolhas desfocadas no fundo.
-9. Faixa de números sem contexto (10k+, 50+, 4.9, 100%).
-10. Depoimentos genéricos com ⭐⭐⭐⭐⭐.
-11. Formulário só com nome e e-mail: sem segmentação, sem LGPD.
-12. O mesmo fade-up em tudo.
+É uma versão realista: a IA pegou as cores verdes da marca e usou exatamente os mesmos textos da LP espetacular. Mesmo assim, é genérica. Os sinais de "cara de IA" (roteiro do slide "aponte os sinais"):
+1. Emoji no lugar do logo (🌿 Vingô).
+2. Selo com emoji acima do título e acima de cada seção (`✨ E-BOOK GRATUITO · VINGÔ`).
+3. Emoji no fim da headline.
+4. Degradê verde no título, nos botões e no formulário; fonte Inter em vez da Bricolage do brandbook.
+5. Mockup do e-book = card com degradê e emoji.
+6. Badges flutuando por cima do mockup.
+7. Bolhas desfocadas no fundo.
+8. Oito cards idênticos com emoji para os capítulos.
+9. Depoimentos com ⭐⭐⭐⭐⭐ e avatar de iniciais.
+10. O mesmo fade-up em tudo; nenhum momento memorável.
+
+A lição: **o briefing e os textos eram os mesmos. A diferença foi o prompt** (marca em dados, permissão e direção para o incrível, o que não fazer, a ordem).
 
 ---
 
@@ -171,7 +174,7 @@ Faça uma passada crítica na página inteira: tipografia, espaçamento e contra
 | Arquivo | Conteúdo |
 |---|---|
 | `comparativo-heroes.png` | Vingô: hero genérico × hero BRIEF |
-| `generica-hero.png`, `generica-*-pagina-inteira.png`, `generica-rolagem.mp4` | Vingô genérica |
+| `generica-hero.png`, `generica-*-pagina-inteira.png` | Vingô genérica (cores da marca, mesmos textos, cara de IA) |
 | `espetacular-hero.png`, `-manifesto`, `-numeros`, `-numeros-2`, `-letreiro`, `-capitulos`, `-teste-de-luz`, `-autora`, `-prova`, `-cta-final`, `-rodape` | Seções da LP BRIEF |
 | `espetacular-celular-hero.png`, `espetacular-*-pagina-inteira.png` | Celular e página inteira (versão estática) |
 | `espetacular-clip1-hero-3d.mp4` … `clip6-formulario.mp4` | Cada momento uau (6 a 13 s) |

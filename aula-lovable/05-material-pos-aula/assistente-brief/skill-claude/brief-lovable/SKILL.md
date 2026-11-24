@@ -24,7 +24,7 @@ Identifique o modo pela mensagem do usuário:
 ## Modo 1: Criar
 
 ### Passo 1: Extrair o briefing
-Leia tudo o que o usuário mandou (texto solto, áudio transcrito, briefing colado, PDF) e organize nas 5 letras:
+Leia tudo o que o usuário mandou (texto solto, e-mail do cliente, briefing colado, PDF) e organize nas 5 letras:
 
 - **B — Base do negócio:** quem é o cliente, o que vende, para quem (público real), diferencial/promessa, tom de voz (e o que a marca nunca diria), contexto da campanha.
 - **R — Resultado:** a ÚNICA ação da página, texto do CTA, campos do formulário e por que cada um existe, origem do tráfego e dispositivo, o que acontece depois do envio.
