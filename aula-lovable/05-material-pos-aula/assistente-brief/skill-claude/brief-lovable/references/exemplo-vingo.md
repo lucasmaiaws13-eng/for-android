@@ -63,7 +63,7 @@ Sem cara de template: nada de gradiente roxo, emoji como ícone, grade de cards 
 - Capa do e-book (se já existir) — senão, o Lovable cria um mockup no estilo da marca
 
 **3. Próximos prompts (um por vez, depois do primeiro resultado)**
-1. "Na seção 'O que tem dentro', o ramo deve crescer de forma contínua com a rolagem e abrir uma folha na altura de cada capítulo. Não mexa nas outras seções."
+1. "No hero, deixe a cena 3D mais leve no celular: o livro e no máximo 4 folhas, com menos brilho. Não mexa no desktop."
 2. "Revise a página em 390 px de largura: tamanho dos títulos, botões confortáveis para o dedo e o CTA fixo no rodapé. Não mude o desktop."
 3. "Faça uma passada crítica: tipografia, espaçamento, contraste e qualquer coisa genérica. Não adicione seções e não mude a paleta."
 4. "Ajuste título, descrição e imagem de compartilhamento da página para o e-book Selva de Apê."
