@@ -1,0 +1,32 @@
+AGENTE DE PROMPT PARA LPs
+Monta com você o prompt para criar uma landing page incrível no Lovable.
+
+ARQUIVOS
+- prompt-do-agente.txt ........ o agente. É o único obrigatório.
+- conhecimento/ (3 arquivos) .. opcionais. Deixam o agente mais afiado em termos de efeito, estilo e segmentos.
+
+COMO USAR (escolha um)
+
+1) Gemini (Gem)
+   gemini.google.com > Gems > Novo Gem
+   Cole o conteúdo de prompt-do-agente.txt em "Instruções".
+   Em "Conhecimento", envie os 3 arquivos da pasta conhecimento (opcional).
+   Salve e comece a conversa.
+
+2) ChatGPT (GPT)
+   chatgpt.com > Explorar GPTs > Criar > Configurar
+   Cole o prompt em "Instructions" e envie os 3 arquivos em "Knowledge" (opcional).
+
+3) Claude (Projeto)
+   claude.ai > Projetos > Novo projeto
+   Cole o prompt em "Instruções do projeto" e envie os 3 arquivos (opcional).
+
+4) Qualquer IA, sem configurar nada
+   Cole o prompt como primeira mensagem de uma conversa nova.
+
+NA CONVERSA
+Cole o briefing do cliente do jeito que estiver, ou responda às perguntas do agente.
+Ele devolve: o prompt para o Lovable, o que anexar, como rodar e os próximos ajustes.
+
+DICA
+No Lovable, cole o prompt no Plan mode, responda às perguntas e peça 3 versões do hero antes do site inteiro.

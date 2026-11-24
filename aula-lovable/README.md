@@ -33,7 +33,8 @@ Para mostrar a alguém fora da sua conta, use o menu Share de cada página. O de
 | `exemplos/lp-espetacular/` | A LP BRIEF: livro 3D em WebGL entre folhas 3D, manifesto que acende, números fixos, letreiro, capítulos na horizontal, teste de luz, neon e marca gigante no rodapé |
 | `exemplos/capturas/` | Prints e vídeos das duas LPs da Vingô |
 | `05-material-pos-aula/guia-de-bolso-brief.md` | A "cola" para mandar no grupo |
-| `05-material-pos-aula/agente-no-site/` | **O agente para lucasmaiadesign.com/agente-ia:** o prompt do agente (entrevista em 5 etapas, funciona no Gemini, ChatGPT e Claude) e a estrutura e os textos da página |
+| `06-pagina-do-site/` | **Página lucasmaiadesign.com/paginas-com-ia:** `paginas-com-ia-pacote.zip` com o briefing para o agente do site, a apresentação pronta para incorporar e os downloads do agente |
+| `05-material-pos-aula/agente-no-site/` | **O agente para lucasmaiadesign.com/paginas-com-ia:** o prompt do agente (entrevista em 5 etapas, funciona no Gemini, ChatGPT e Claude) e a estrutura e os textos da página |
 | `05-material-pos-aula/assistente-brief/` | **Assistente BRIEF:** Skill do Claude (`.zip` pronto) e Gem do Gemini (instruções + 3 arquivos), com guia de instalação e casos de teste |
 | `05-material-pos-aula/bonus-lovable-da-agencia/` | Instructions do workspace (padrão Mestre) e duas Skills do Lovable (`/lp-brief`, `/revisao-lp`) |
 
@@ -43,7 +44,7 @@ Para mostrar a alguém fora da sua conta, use o menu Share de cada página. O de
 
 1. **Abrir o deck** e passar por ele com as notas abertas (N). Siga `02-guia-da-apresentacao.md`.
 2. **Preencher o nome** na capa: procure "[Seu nome]" em `apresentacao/index.html`.
-3. **Publicar o agente** em lucasmaiadesign.com/agente-ia com `05-material-pos-aula/agente-no-site/`. Rode os 4 testes do fim de `prompt-do-agente.md`. Se o endereço for outro, troque no slide 26 (procure "agente-ia").
+3. **Publicar o agente** em lucasmaiadesign.com/paginas-com-ia com `05-material-pos-aula/agente-no-site/`. Rode os 4 testes do fim de `prompt-do-agente.md`. Se o endereço for outro, troque no slide 26 (procure "paginas-com-ia").
 4. **Ensaiar uma vez cronometrando:** chegar no slide 13 até 12:00. Se apertar, pule o slide 23.
 5. **Deixar a LP da Vingô aberta numa aba** para o slide 5.
 6. **(Opcional, 20 min)** Rodar o prompt completo no Lovable com o brandbook anexado (`03-exemplo-vingo-prompts.md`, seção 6) para ter também um resultado 100% Lovable da Vingô.
@@ -56,7 +57,7 @@ Se mudar textos do deck, mantenha as regras da Mestre: título termina com ponto
 
 > Pessoal, obrigado pela aula! Aqui está o material:
 > 📌 **Guia de bolso**: o modelo de prompt, as palavras que destravam o uau e os pedidos de ajuste → [anexar guia]
-> 🤖 **Agente de prompt**: responda as perguntas sobre o cliente e receba o prompt pronto para o Lovable → lucasmaiadesign.com/agente-ia
+> 🤖 **Agente de prompt**: responda as perguntas sobre o cliente e receba o prompt pronto para o Lovable → lucasmaiadesign.com/paginas-com-ia
 > 💡 Desafio: na próxima LP, usem o checklist e mandem o antes e depois aqui!
 
 ---

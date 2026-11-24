@@ -1,6 +1,6 @@
 # Agente de prompt para LPs no Lovable
 
-Este é o prompt do agente, para publicar em `lucasmaiadesign.com/agente-ia`. Ele funciona em qualquer IA:
+Este é o prompt do agente, para publicar em `lucasmaiadesign.com/paginas-com-ia`. Ele funciona em qualquer IA:
 - **Gemini:** criar um Gem e colar o bloco abaixo em "Instruções".
 - **ChatGPT:** criar um GPT e colar em "Instructions".
 - **Claude:** criar um Projeto e colar em "Project instructions".

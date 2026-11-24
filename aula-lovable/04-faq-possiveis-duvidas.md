@@ -33,7 +33,7 @@ O método mostra o contrário: o resultado bom vem de **decisões de direção**
 ## Sobre o Lovable
 
 **"Isso demora mais?" [slide 25]**
-No começo, um pouco, como qualquer ferramenta nova. Com prática, o prompt sai em minutos, e o agente de prompt (lucasmaiadesign.com/agente-ia) monta o prompt a partir do briefing colado. O tempo que se gasta no prompt volta em menos rodadas de correção.
+No começo, um pouco, como qualquer ferramenta nova. Com prática, o prompt sai em minutos, e o agente de prompt (lucasmaiadesign.com/paginas-com-ia) monta o prompt a partir do briefing colado. O tempo que se gasta no prompt volta em menos rodadas de correção.
 
 **"Isso não gasta muito crédito?" [slide 20]**
 - **Plan mode:** 1 crédito por mensagem (mais a pesquisa, se ele precisar investigar o projeto). Não mexe no código.

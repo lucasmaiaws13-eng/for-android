@@ -1,4 +1,4 @@
-# Página `lucasmaiadesign.com/agente-ia`: estrutura e textos
+# Página `lucasmaiadesign.com/paginas-com-ia`: estrutura e textos
 
 Sugestão de conteúdo para a página onde o agente fica disponível. Os textos estão prontos para usar.
 

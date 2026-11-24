@@ -138,7 +138,7 @@ Aponte as demos: objeto 3D que reage ao mouse, texto que acende no scroll, seç�
 "No começo, um pouco, como qualquer ferramenta nova. Prompt é prática: a cada LP sai mais rápido. E vocês não precisam escrever sozinhos: outra IA pode montar o prompt com vocês."
 
 **26 · O agente** (1:45) · *2 cliques*
-- "Por isso criei um agente. Está em lucasmaiadesign.com/agente-ia, no Gemini, no Claude e com o prompt aberto para o ChatGPT."
+- "Por isso criei um agente. Está em lucasmaiadesign.com/paginas-com-ia, no Gemini, no Claude e com o prompt aberto para o ChatGPT."
 - "Ele vai perguntando: o cliente, a marca, os textos, o nível de uau. Vocês respondem com o que tiverem."
 - Clique 1: o prompt organizado. Clique 2: o alerta de segmento regulado.
 - "Ele não inventa dados do cliente: o que falta vira marcador."
@@ -154,7 +154,7 @@ Extras: idioma (29), cliente sem brandbook (30), 3D no Lovable (31), site de con
 ## Antes da aula
 
 - [ ] Trocar "[Seu nome]" na capa do `index.html`
-- [ ] Publicar o agente em lucasmaiadesign.com/agente-ia (`05-material-pos-aula/agente-no-site/`) e conferir se o endereço no slide 26 é o mesmo
+- [ ] Publicar o agente em lucasmaiadesign.com/paginas-com-ia (`05-material-pos-aula/agente-no-site/`) e conferir se o endereço no slide 26 é o mesmo
 - [ ] Ensaiar uma vez cronometrando (checkpoint: slide 13 até 12:00)
 - [ ] Deixar a LP da Vingô aberta numa aba para o slide 5
 - [ ] Mensagem do grupo pronta (no README)
