@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selva de Apê — o guia grátis da Brota</title>
+<meta name="description" content="Baixe grátis o Selva de Apê: o guia da Brota para ter plantas que não morrem, mesmo com pouca luz e pouco tempo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mata:#0E3B2C; --broto:#C9F264; --anturio:#FF6F91; --folha:#EEF4E6; --musgo:#3E8E4E; --nuvem:#FBFDF7;
+  --mata-2:#164a38;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --spring:cubic-bezier(.34,1.56,.64,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',sans-serif;color:var(--mata);background:var(--folha);line-height:1.55;font-size:18px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--broto);color:var(--mata)}
+h1,h2,h3,.display{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.03em;line-height:.95}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--anturio);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1240px,100% - 48px);margin-inline:auto}
+
+/* ---------- botões ---------- */
+.btn{display:inline-flex;align-items:center;gap:12px;font:600 17px/1 'Figtree';border:0;cursor:pointer;border-radius:999px;padding:18px 26px 18px 22px;text-decoration:none;transition:transform .35s var(--spring),background .3s,box-shadow .3s}
+.btn svg{width:22px;height:22px;transition:transform .45s var(--spring)}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover svg{transform:rotate(-14deg) scale(1.15)}
+.btn-dark{background:var(--mata);color:var(--folha);box-shadow:0 10px 24px -12px rgba(14,59,44,.6)}
+.btn-dark svg{color:var(--broto)}
+.btn-lime{background:var(--broto);color:var(--mata)}
+.btn-lime svg{color:var(--mata)}
+.btn-lime:hover{box-shadow:0 0 0 6px rgba(201,242,100,.18)}
+
+/* ---------- nav ---------- */
+nav{position:fixed;inset:0 0 auto;z-index:40;transition:background .4s,box-shadow .4s}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+nav .logo svg{height:34px;width:auto;display:block}
+nav .btn{padding:12px 18px 12px 14px;font-size:15px}
+nav.scrolled{background:rgba(238,244,230,.92);backdrop-filter:saturate(1.4) blur(8px);box-shadow:0 1px 0 rgba(14,59,44,.08)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:max(720px,100svh);display:grid;align-items:center;padding:110px 0 60px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(58px,8.6vw,132px);max-width:7.6ch}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding:.04em .02em .12em;margin:-.04em -.02em -.12em}
+.hero h1 .w>span{display:inline-block;transform:translateY(108%) rotate(4deg);transition:transform 1.1s var(--ease-out)}
+.loaded .hero h1 .w>span{transform:none}
+.hero p.sub{font-size:clamp(18px,1.5vw,21px);max-width:34ch;margin:30px 0 34px;opacity:0;transform:translateY(14px);transition:opacity .9s .65s,transform .9s .65s var(--ease-out)}
+.hero .cta-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap;opacity:0;transform:translateY(14px);transition:opacity .9s .8s,transform .9s .8s var(--ease-out)}
+.loaded .hero p.sub,.loaded .hero .cta-row{opacity:1;transform:none}
+.hero .note{font-size:15px;color:var(--musgo);font-weight:500}
+
+/* livro 3D */
+.stage{position:relative;height:min(640px,72vh);display:grid;place-items:center}
+.book-tilt{perspective:1700px;position:relative;z-index:3}
+.floater{animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px)}}
+.book{--t:40px;width:clamp(230px,23vw,320px);aspect-ratio:3/4.2;position:relative;transform-style:preserve-3d;transform:rotateY(-26deg) rotateX(7deg);transition:transform .5s var(--ease-out)}
+.face{position:absolute;inset:0;border-radius:3px 12px 12px 3px;backface-visibility:hidden}
+.front{transform:translateZ(calc(var(--t)/2));background:var(--mata);color:var(--folha);overflow:hidden;padding:9% 9%;display:flex;flex-direction:column;box-shadow:inset 6px 0 10px -6px rgba(0,0,0,.6)}
+.back{transform:rotateY(180deg) translateZ(calc(var(--t)/2));background:#0b3125}
+.spine{position:absolute;top:0;left:calc(var(--t)/-2);width:var(--t);height:100%;transform:rotateY(-90deg);background:#0b3125;display:grid;place-items:center;border-radius:3px}
+.spine span{writing-mode:vertical-rl;transform:rotate(180deg);font:800 15px 'Bricolage Grotesque';color:var(--broto);letter-spacing:.02em}
+.pages{position:absolute;top:1.5%;left:calc(100% - var(--t)/2 - 3px);width:var(--t);height:97%;transform:rotateY(90deg);background:repeating-linear-gradient(90deg,#fbfdf7 0 2px,#dfe6d6 2px 3px);border-radius:2px}
+.book-shadow{position:absolute;left:50%;bottom:-46px;width:78%;height:34px;transform:translateX(-46%);background:radial-gradient(closest-side,rgba(14,59,44,.35),transparent);filter:blur(6px);animation:shadow 6s ease-in-out infinite}
+@keyframes shadow{50%{transform:translateX(-46%) scale(.88);opacity:.7}}
+.cover-logo{width:34%;}
+.cover-logo svg{width:100%;height:auto;display:block}
+.cover-title{font:800 clamp(40px,4.4vw,62px)/.86 'Bricolage Grotesque';letter-spacing:-.04em;color:var(--broto);margin-top:16%}
+.cover-sub{font:500 clamp(12px,1.05vw,15px)/1.25 'Bricolage Grotesque';margin-top:9%;max-width:15ch;color:var(--folha)}
+.cover-author{margin-top:auto;font-size:11px;opacity:.75;position:relative;z-index:2}
+.cover-art{position:absolute;right:-30%;bottom:-22%;width:74%}
+.sticker{position:absolute;z-index:5;background:var(--anturio);color:var(--mata);font:800 15px/1.05 'Bricolage Grotesque';padding:12px 16px;border-radius:999px;transform:rotate(-9deg);box-shadow:0 8px 18px -8px rgba(14,59,44,.5);white-space:nowrap}
+.floater{position:relative}
+.floater .sticker{top:-26px;right:-54px;transform:rotate(9deg)}
+
+/* folhas do hero */
+.leaf{position:absolute;pointer-events:none;transform-origin:50% 100%;animation:sway 7s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(3deg)}}
+.leaf.l1{width:68%;left:-6%;top:2%;animation-duration:8s;z-index:1;rotate:-14deg}
+.leaf.l5{width:40%;right:-8%;top:12%;animation-duration:9.5s;animation-delay:-3s;z-index:1}
+.leaf.l2{width:min(104px,9vw);right:1%;bottom:4%;animation-duration:6.5s;animation-delay:-2s;z-index:4}
+.leaf.l3{width:min(72px,6vw);right:10%;bottom:2%;animation-duration:7.5s;animation-delay:-4s;z-index:4}
+
+
+/* ---------- desculpas (marquee) ---------- */
+.excuses{background:var(--mata);color:var(--folha);padding:90px 0 110px;overflow:hidden;position:relative}
+.marquee{display:flex;width:max-content;animation:marq 38s linear infinite}
+.marquee.rev{animation-direction:reverse;animation-duration:44s;margin-top:14px;opacity:.45}
+.marquee span{font:700 clamp(30px,4.4vw,60px)/1.1 'Bricolage Grotesque';letter-spacing:-.02em;white-space:nowrap;display:flex;align-items:center;gap:.5em;padding-right:.5em}
+.marquee svg{width:.7em;height:.7em;flex:none}
+@keyframes marq{to{transform:translateX(-50%)}}
+.excuses .turn{margin-top:80px;text-align:center}
+.turn .a{font:700 clamp(22px,2.4vw,32px)/1.1 'Bricolage Grotesque';opacity:.7}
+.turn .b{font-size:clamp(54px,8vw,120px);color:var(--folha);margin-top:12px}
+
+/* ---------- dentro (ramo que cresce) ---------- */
+.inside{padding:140px 0 120px;background:var(--nuvem)}
+.inside .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.inside .intro{position:sticky;top:120px}
+.inside h2{font-size:clamp(44px,5.6vw,84px);max-width:9ch}
+.inside .intro p{margin:24px 0 30px;max-width:34ch;font-size:19px}
+.mini-meta{display:flex;gap:28px;margin-bottom:34px}
+.mini-meta div{font:800 40px/1 'Bricolage Grotesque'}
+.mini-meta small{display:block;font:500 14px/1.3 'Figtree';color:var(--musgo);margin-top:6px}
+.chapters{position:relative;padding-left:110px}
+.vine{position:absolute;left:0;top:0;width:110px;height:100%;overflow:visible}
+.vine path.stem{fill:none;stroke:var(--musgo);stroke-width:5;stroke-linecap:round}
+.vine .lf{transform:scale(0);transform-box:fill-box;transform-origin:50% 22%;transition:transform .9s var(--spring)}
+.vine .open .lf{transform:scale(1)}
+.ch{padding:38px 0 46px;opacity:.28;transform:translateX(10px);transition:opacity .6s,transform .8s var(--ease-out)}
+.ch.on{opacity:1;transform:none}
+.ch .n{font:800 18px 'Bricolage Grotesque';color:var(--musgo)}
+.ch h3{font-size:clamp(30px,3vw,44px);margin:6px 0 10px}
+.ch p{max-width:40ch;color:#2b4b3f}
+.ch.bonus h3{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.ch.bonus .tag{font:800 14px 'Bricolage Grotesque';background:var(--anturio);padding:6px 12px;border-radius:999px;transform:rotate(-6deg);display:inline-block;letter-spacing:0}
+
+/* ---------- teste de luz ---------- */
+.light{padding:130px 0;background:var(--folha)}
+.light h2{font-size:clamp(42px,5vw,76px);max-width:14ch}
+.light .lead{max-width:46ch;margin:20px 0 40px;font-size:19px}
+.seg{display:inline-flex;background:#fff;border-radius:999px;padding:6px;gap:4px;box-shadow:0 1px 0 rgba(14,59,44,.08);flex-wrap:wrap}
+.seg button{font:600 16px 'Figtree';border:0;background:transparent;color:var(--mata);padding:14px 22px;border-radius:999px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:background .35s,color .35s}
+.seg button svg{width:22px;height:22px}
+.seg button[aria-selected=true]{background:var(--mata);color:var(--folha)}
+.seg button[aria-selected=true] svg *{stroke:var(--broto)}
+.plants{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.plant{background:#fff;border-radius:14px;padding:26px 26px 28px;opacity:0;transform:translateY(18px)}
+.plant.in{opacity:1;transform:none;transition:opacity .6s,transform .8s var(--ease-out)}
+.plant .art{height:170px;display:grid;place-items:end center;margin-bottom:18px;background:var(--folha);border-radius:10px;padding-top:12px;overflow:hidden}
+.plant .art svg{height:150px;width:auto}
+.plant h3{font-size:28px;margin-bottom:8px}
+.plant p{font-size:16px;color:#2b4b3f}
+.light .tease{margin-top:30px;font-size:16px;color:var(--musgo);font-weight:500}
+
+/* ---------- autora ---------- */
+.author{background:var(--nuvem);padding:130px 0}
+.author .wrap{display:grid;grid-template-columns:auto 1fr;gap:64px;align-items:center}
+.portrait{width:clamp(180px,20vw,260px);aspect-ratio:1;border-radius:50%;background:var(--anturio);position:relative;display:grid;place-items:center;overflow:hidden}
+.portrait svg{width:86%;position:absolute;bottom:-4%}
+blockquote{font:700 clamp(30px,3.6vw,54px)/1.08 'Bricolage Grotesque';letter-spacing:-.025em;max-width:22ch}
+.author cite{display:block;margin-top:26px;font-style:normal;font-size:17px}
+.author cite b{font-weight:600}
+
+/* ---------- prova ---------- */
+.proof{padding:120px 0 130px;background:var(--folha)}
+.proof .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end}
+.big-n{font:800 clamp(90px,13vw,200px)/.85 'Bricolage Grotesque';letter-spacing:-.05em}
+.proof .lbl{font-size:20px;margin-top:14px}
+.quotes{display:grid;gap:20px}
+.q{background:#fff;border-radius:14px;padding:28px}
+.q p{font-size:19px;line-height:1.45}
+.q footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-size:15px;gap:12px;flex-wrap:wrap}
+.q .pl{background:var(--folha);padding:6px 12px;border-radius:999px;color:var(--musgo);font-weight:600;font-size:13px}
+
+/* ---------- cta final ---------- */
+.final{background:var(--mata);color:var(--folha);padding:130px 0 120px;position:relative;overflow:hidden}
+.final .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;position:relative;z-index:2}
+.final h2{font-size:clamp(46px,6vw,92px);max-width:10ch}
+.final .left p{margin-top:22px;font-size:19px;max-width:36ch;opacity:.9}
+.final .flat-book{margin-top:44px;width:200px;transform:rotate(-7deg);border-radius:3px 10px 10px 3px;box-shadow:18px 24px 40px -18px rgba(0,0,0,.6)}
+form{display:grid;gap:18px}
+label.f{display:grid;gap:8px;font-weight:600;font-size:15px}
+input[type=text],input[type=email]{font:500 18px 'Figtree';background:var(--folha);color:var(--mata);border:2px solid transparent;border-radius:14px;padding:17px 18px;transition:border-color .3s}
+input::placeholder{color:#6d8579}
+input:focus{outline:none;border-color:var(--broto)}
+fieldset{border:0;display:grid;gap:10px}
+legend{font-weight:600;font-size:15px;margin-bottom:10px}
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pills label{cursor:pointer}
+.pills input{position:absolute;opacity:0;pointer-events:none}
+.pills span{display:inline-block;padding:11px 16px;border-radius:999px;border:2px solid rgba(238,244,230,.3);font-weight:500;font-size:15px;transition:all .3s}
+.pills input:checked+span{background:var(--broto);color:var(--mata);border-color:var(--broto)}
+.pills input:focus-visible+span{outline:3px solid var(--anturio);outline-offset:2px}
+.lgpd{display:flex;gap:12px;font-size:14px;align-items:flex-start;opacity:.85;cursor:pointer}
+.lgpd input{width:20px;height:20px;accent-color:var(--broto);flex:none;margin-top:2px}
+form .btn{justify-content:center;font-size:18px;padding:20px}
+.success{display:none;text-align:left}
+.success h3{font-size:clamp(36px,4vw,56px);color:var(--broto)}
+.success p{margin-top:14px;font-size:19px}
+.sent form{display:none}.sent .success{display:block}
+.final .bg-leaf{position:absolute;right:-140px;bottom:-160px;width:560px;opacity:.12;transform:rotate(-24deg)}
+
+footer.site{background:#0b3125;color:var(--folha);padding:40px 0;font-size:14px}
+footer.site .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer.site svg{height:28px;width:auto}
+
+/* chuva de folhas */
+.rain{position:fixed;top:-60px;z-index:60;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(calc(100vh + 120px)) rotate(var(--r))}}
+
+/* CTA fixo mobile */
+.mcta{position:fixed;left:12px;right:12px;bottom:12px;z-index:45;display:none;transform:translateY(140%);transition:transform .5s var(--ease-out)}
+.mcta .btn{width:100%;justify-content:center;box-shadow:0 14px 30px -10px rgba(14,59,44,.7)}
+.mcta.show{transform:none}
+
+/* revelações sutis */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s,transform 1s var(--ease-out)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- responsivo ---------- */
+@media (max-width:960px){
+  body{font-size:17px}
+  .hero{padding:100px 0 70px;min-height:auto}
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .hero h1{font-size:clamp(54px,15vw,92px)}
+  .stage{height:420px}
+  .leaf.l1{width:64%;left:2%}
+  .leaf.l2{width:96px}.leaf.l3{width:70px}
+  .inside .wrap,.proof .wrap,.final .wrap{grid-template-columns:1fr;gap:48px}
+  .inside .intro{position:static}
+  .chapters{padding-left:76px}
+  .vine{width:76px}
+  .plants{grid-template-columns:1fr}
+  .author .wrap{grid-template-columns:1fr;gap:36px}
+  .mcta{display:block}
+  .final .flat-book{display:none}
+  .floater .sticker{right:-30px;top:-20px;font-size:13px;padding:10px 13px}
+}
+.cap-final *,.cap-final *::before,.cap-final *::after{transition:none!important}
+.cap-final .mcta{display:none!important}
+@media (max-width:600px){
+  .seg{display:grid;grid-template-columns:repeat(3,1fr);border-radius:18px;width:100%}
+  .seg button{flex-direction:column;gap:6px;padding:12px 4px;font-size:14px;border-radius:14px;text-align:center;line-height:1.2}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero h1 .w>span,.hero p.sub,.hero .cta-row,.rv,.plant,.ch{opacity:1!important;transform:none!important}
+  .vine .lf{transform:scale(1)!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ícone de broto reutilizado nos botões -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="sprout" viewBox="0 0 24 24"><path d="M12 22V11.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" fill="none"/><path fill="currentColor" d="M11.6 13.6C6.6 13.8 2.8 10.6 2.2 5.2 7.6 4.8 11.4 8.2 11.6 13.6Z"/><path fill="currentColor" d="M12.4 11.2C12.6 5.8 16.2 2.4 21.8 2.6 21.6 8 17.8 11.4 12.4 11.2Z"/></symbol>
+    <symbol id="monstera" viewBox="0 0 200 220">
+      <mask id="mm"><rect width="200" height="220" fill="#fff"/><g fill="#000"><path d="M4 58 Q 50 70 93 84 Q 48 80 8 76Z"/><path d="M6 100 Q 52 102 95 106 Q 50 112 12 122Z"/><path d="M28 146 Q 64 128 96 122 Q 70 140 46 162Z"/><path d="M196 66 Q 150 76 107 90 Q 152 88 192 86Z"/><path d="M192 112 Q 148 112 105 112 Q 150 120 186 134Z"/><path d="M164 154 Q 134 136 104 128 Q 128 148 148 168Z"/></g></mask>
+      <path d="M100 194 C 100 205 98 212 96 220" stroke="currentColor" stroke-width="5" fill="none"/>
+      <path mask="url(#mm)" fill="currentColor" d="M100 40 C 120 12, 170 12, 190 50 C 205 85, 190 140, 150 170 C 130 185, 112 192, 100 196 C 88 192, 70 185, 50 170 C 10 140, -5 85, 10 50 C 30 12, 80 12, 100 40 Z"/>
+    </symbol>
+    <symbol id="heart" viewBox="0 0 100 120"><path fill="currentColor" d="M50 110 C 14 84 2 50 14 28 C 24 10 44 12 50 30 C 56 12 76 10 86 28 C 98 50 86 84 50 110Z"/><path d="M50 30 C 51 60 51 90 50 108" stroke="#0E3B2C" stroke-width="2.5" fill="none" opacity=".3"/></symbol>
+    <symbol id="snake" viewBox="0 0 40 100"><path fill="#2E5E3A" d="M20 2 C 28 20 34 50 32 98 L 8 98 C 6 50 12 20 20 2Z"/><path d="M11 30 Q20 26 29 30 M10 45 Q20 41 30 45 M9 60 Q20 56 31 60 M9 75 Q20 71 31 75 M9 90 Q20 86 31 90" stroke="#C9F264" stroke-width="2.2" fill="none" opacity=".55"/></symbol>
+  </defs>
+</svg>
+
+<nav id="nav"><div class="wrap">
+  <a class="logo" href="#" aria-label="Brota, página inicial"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="30 -850 2700 890" role="img" aria-label="Brota">
+<path fill="#0E3B2C" d="M396 14Q346 14 308.5 -5.0Q271 -24 247.5 -62.0Q224 -100 216 -156H197L194 0H62V-259V-720H223V-545Q223 -521 219.5 -494.5Q216 -468 210.5 -439.0Q205 -410 199 -377H222Q236 -431 259.0 -467.0Q282 -503 316.5 -521.5Q351 -540 398 -540Q464 -540 512.5 -506.0Q561 -472 588.0 -409.5Q615 -347 615 -260Q615 -176 588.5 -114.5Q562 -53 513.0 -19.5Q464 14 396 14ZM336 -116Q369 -116 394.0 -134.5Q419 -153 432.5 -186.5Q446 -220 446 -265Q446 -311 433.0 -343.5Q420 -376 396.5 -394.0Q373 -412 340 -412Q318 -412 299.5 -404.0Q281 -396 267.0 -382.0Q253 -368 243.0 -350.5Q233 -333 228.0 -313.5Q223 -294 223 -275V-254Q223 -233 229.0 -209.0Q235 -185 248.5 -164.0Q262 -143 283.5 -129.5Q305 -116 336 -116ZM710 0V-245V-528H842L845 -349H865Q872 -419 891.5 -460.5Q911 -502 947.5 -521.0Q984 -540 1038 -540Q1046 -540 1056.0 -539.5Q1066 -539 1079 -537L1073 -365Q1057 -373 1038.5 -375.5Q1020 -378 1006 -378Q967 -378 938.5 -363.0Q910 -348 893.5 -317.0Q877 -286 872 -239V0ZM1399 14Q1319 14 1257.5 -17.0Q1196 -48 1161.0 -110.0Q1126 -172 1126 -265Q1126 -358 1161.0 -419.5Q1196 -481 1258.0 -511.5Q1320 -542 1400 -542Q1480 -542 1542.0 -511.0Q1604 -480 1639.0 -418.5Q1674 -357 1674 -264Q1674 -169 1638.0 -107.0Q1602 -45 1539.5 -15.5Q1477 14 1399 14ZM1404 -103Q1440 -103 1464.0 -119.5Q1488 -136 1500.0 -170.0Q1512 -204 1512 -254Q1512 -307 1499.0 -343.5Q1486 -380 1460.5 -399.5Q1435 -419 1395 -419Q1361 -419 1336.5 -402.5Q1312 -386 1300.0 -352.0Q1288 -318 1288 -267Q1288 -185 1318.5 -144.0Q1349 -103 1404 -103ZM1974 13Q1881 13 1837.0 -36.5Q1793 -86 1793 -195V-402H1718L1721 -527H1775Q1807 -528 1823.5 -537.0Q1840 -546 1844 -571L1857 -645H1948V-528H2075V-397H1948V-202Q1948 -168 1964.5 -152.0Q1981 -136 2015 -136Q2034 -136 2051.0 -140.0Q2068 -144 2079 -151V-2Q2047 8 2020.5 10.5Q1994 13 1974 13ZM2298 14Q2254 14 2220.0 -3.5Q2186 -21 2167.0 -54.5Q2148 -88 2148 -136Q2148 -181 2165.5 -210.5Q2183 -240 2216.5 -257.5Q2250 -275 2297.0 -286.5Q2344 -298 2404 -307Q2433 -312 2452.5 -316.5Q2472 -321 2482.0 -331.0Q2492 -341 2492 -360Q2492 -385 2474.0 -403.0Q2456 -421 2416 -421Q2388 -421 2365.5 -411.0Q2343 -401 2327.0 -382.0Q2311 -363 2303 -336L2161 -378Q2174 -420 2197.5 -451.0Q2221 -482 2254.0 -502.5Q2287 -523 2329.5 -532.5Q2372 -542 2420 -542Q2500 -542 2550.5 -516.5Q2601 -491 2625.5 -437.5Q2650 -384 2650 -300V-219Q2650 -183 2651.5 -146.5Q2653 -110 2655.5 -73.5Q2658 -37 2662 0H2520Q2516 -23 2512.0 -55.5Q2508 -88 2506 -122H2487Q2473 -84 2446.5 -52.5Q2420 -21 2382.5 -3.5Q2345 14 2298 14ZM2371 -100Q2389 -100 2407.5 -106.5Q2426 -113 2443.0 -124.5Q2460 -136 2474.0 -153.0Q2488 -170 2495 -190L2493 -269L2515 -264Q2496 -252 2473.0 -245.0Q2450 -238 2426.5 -234.0Q2403 -230 2380.5 -225.5Q2358 -221 2340.5 -214.0Q2323 -207 2313.0 -195.0Q2303 -183 2303 -162Q2303 -134 2322.0 -117.0Q2341 -100 2371 -100Z"/>
+<path d="M1400 -548 C1400 -600 1398 -640 1404 -690" stroke="#3E8E4E" stroke-width="40" stroke-linecap="round" fill="none"/>
+<path fill="#3E8E4E" d="M1401 -636 C1336 -634 1266 -684 1246 -772 C1330 -784 1394 -730 1401 -636 Z"/><path fill="#3E8E4E" d="M1407 -684 C1440 -770 1522 -822 1606 -812 C1596 -724 1512 -672 1407 -684 Z"/>
+</svg></a>
+  <a class="btn btn-dark" href="#baixar"><svg aria-hidden="true"><use href="#sprout"/></svg>Baixar grátis</a>
+</div></nav>
+
+<header class="hero" id="hero">
+  <div class="wrap">
+    <div>
+      <h1 aria-label="Chega de velório de planta."><span class="w"><span>Chega</span></span> <span class="w"><span>de</span></span> <span class="w"><span>velório</span></span> <span class="w"><span>de</span></span> <span class="w"><span>planta.</span></span></h1>
+      <p class="sub">Baixe grátis o <b>Selva de Apê</b>, o guia da Brota para escolher, regar e manter suas plantas vivas, mesmo com pouca luz e pouco tempo.</p>
+      <div class="cta-row">
+        <a class="btn btn-dark" href="#baixar"><svg aria-hidden="true"><use href="#sprout"/></svg>Quero o guia grátis</a>
+        <span class="note">52 páginas, direto no seu e-mail</span>
+      </div>
+    </div>
+    <div class="stage">
+      <svg class="leaf l1" viewBox="0 0 200 220" style="color:var(--musgo)" aria-hidden="true"><use href="#monstera"/></svg>
+      <svg class="leaf l5" viewBox="0 0 200 220" style="color:#2E5E3A" aria-hidden="true"><use href="#monstera"/></svg>
+      <div class="book-tilt"><div class="floater">
+        <div class="book" id="book">
+          <div class="face back"></div>
+          <div class="spine"><span>Selva de Apê · brota</span></div>
+          <div class="pages"></div>
+          <div class="face front">
+            <div class="cover-logo"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="30 -850 2700 890" role="img" aria-label="Brota">
+<path fill="#EEF4E6" d="M396 14Q346 14 308.5 -5.0Q271 -24 247.5 -62.0Q224 -100 216 -156H197L194 0H62V-259V-720H223V-545Q223 -521 219.5 -494.5Q216 -468 210.5 -439.0Q205 -410 199 -377H222Q236 -431 259.0 -467.0Q282 -503 316.5 -521.5Q351 -540 398 -540Q464 -540 512.5 -506.0Q561 -472 588.0 -409.5Q615 -347 615 -260Q615 -176 588.5 -114.5Q562 -53 513.0 -19.5Q464 14 396 14ZM336 -116Q369 -116 394.0 -134.5Q419 -153 432.5 -186.5Q446 -220 446 -265Q446 -311 433.0 -343.5Q420 -376 396.5 -394.0Q373 -412 340 -412Q318 -412 299.5 -404.0Q281 -396 267.0 -382.0Q253 -368 243.0 -350.5Q233 -333 228.0 -313.5Q223 -294 223 -275V-254Q223 -233 229.0 -209.0Q235 -185 248.5 -164.0Q262 -143 283.5 -129.5Q305 -116 336 -116ZM710 0V-245V-528H842L845 -349H865Q872 -419 891.5 -460.5Q911 -502 947.5 -521.0Q984 -540 1038 -540Q1046 -540 1056.0 -539.5Q1066 -539 1079 -537L1073 -365Q1057 -373 1038.5 -375.5Q1020 -378 1006 -378Q967 -378 938.5 -363.0Q910 -348 893.5 -317.0Q877 -286 872 -239V0ZM1399 14Q1319 14 1257.5 -17.0Q1196 -48 1161.0 -110.0Q1126 -172 1126 -265Q1126 -358 1161.0 -419.5Q1196 -481 1258.0 -511.5Q1320 -542 1400 -542Q1480 -542 1542.0 -511.0Q1604 -480 1639.0 -418.5Q1674 -357 1674 -264Q1674 -169 1638.0 -107.0Q1602 -45 1539.5 -15.5Q1477 14 1399 14ZM1404 -103Q1440 -103 1464.0 -119.5Q1488 -136 1500.0 -170.0Q1512 -204 1512 -254Q1512 -307 1499.0 -343.5Q1486 -380 1460.5 -399.5Q1435 -419 1395 -419Q1361 -419 1336.5 -402.5Q1312 -386 1300.0 -352.0Q1288 -318 1288 -267Q1288 -185 1318.5 -144.0Q1349 -103 1404 -103ZM1974 13Q1881 13 1837.0 -36.5Q1793 -86 1793 -195V-402H1718L1721 -527H1775Q1807 -528 1823.5 -537.0Q1840 -546 1844 -571L1857 -645H1948V-528H2075V-397H1948V-202Q1948 -168 1964.5 -152.0Q1981 -136 2015 -136Q2034 -136 2051.0 -140.0Q2068 -144 2079 -151V-2Q2047 8 2020.5 10.5Q1994 13 1974 13ZM2298 14Q2254 14 2220.0 -3.5Q2186 -21 2167.0 -54.5Q2148 -88 2148 -136Q2148 -181 2165.5 -210.5Q2183 -240 2216.5 -257.5Q2250 -275 2297.0 -286.5Q2344 -298 2404 -307Q2433 -312 2452.5 -316.5Q2472 -321 2482.0 -331.0Q2492 -341 2492 -360Q2492 -385 2474.0 -403.0Q2456 -421 2416 -421Q2388 -421 2365.5 -411.0Q2343 -401 2327.0 -382.0Q2311 -363 2303 -336L2161 -378Q2174 -420 2197.5 -451.0Q2221 -482 2254.0 -502.5Q2287 -523 2329.5 -532.5Q2372 -542 2420 -542Q2500 -542 2550.5 -516.5Q2601 -491 2625.5 -437.5Q2650 -384 2650 -300V-219Q2650 -183 2651.5 -146.5Q2653 -110 2655.5 -73.5Q2658 -37 2662 0H2520Q2516 -23 2512.0 -55.5Q2508 -88 2506 -122H2487Q2473 -84 2446.5 -52.5Q2420 -21 2382.5 -3.5Q2345 14 2298 14ZM2371 -100Q2389 -100 2407.5 -106.5Q2426 -113 2443.0 -124.5Q2460 -136 2474.0 -153.0Q2488 -170 2495 -190L2493 -269L2515 -264Q2496 -252 2473.0 -245.0Q2450 -238 2426.5 -234.0Q2403 -230 2380.5 -225.5Q2358 -221 2340.5 -214.0Q2323 -207 2313.0 -195.0Q2303 -183 2303 -162Q2303 -134 2322.0 -117.0Q2341 -100 2371 -100Z"/>
+<path d="M1400 -548 C1400 -600 1398 -640 1404 -690" stroke="#C9F264" stroke-width="40" stroke-linecap="round" fill="none"/>
+<path fill="#C9F264" d="M1401 -636 C1336 -634 1266 -684 1246 -772 C1330 -784 1394 -730 1401 -636 Z"/><path fill="#C9F264" d="M1407 -684 C1440 -770 1522 -822 1606 -812 C1596 -724 1512 -672 1407 -684 Z"/>
+</svg></div>
+            <div class="cover-title">Selva<br>de Apê</div>
+            <div class="cover-sub">o guia das plantas que não morrem</div>
+            <div class="cover-author">por Marina Okabe</div>
+            <svg class="cover-art" viewBox="0 0 200 220" style="color:var(--musgo)" aria-hidden="true"><use href="#monstera"/></svg>
+          </div>
+        </div>
+        <div class="sticker">à prova de<br>esquecidos</div>
+      </div><div class="book-shadow"></div></div>
+      <svg class="leaf l2" viewBox="0 0 40 100" aria-hidden="true"><use href="#snake"/></svg>
+      <svg class="leaf l3" viewBox="0 0 40 100" aria-hidden="true" style="animation-name:sway"><use href="#snake"/></svg>
+    </div>
+  </div>
+</header>
+
+<section class="excuses" aria-label="Desculpas clássicas">
+  <div class="marquee" aria-hidden="true"><span>esqueci de regar <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> reguei demais <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> pouca luz <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> o gato comeu <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> viajei dez dias <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> </span><span>esqueci de regar <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> reguei demais <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> pouca luz <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> o gato comeu <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> viajei dez dias <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> </span></div>
+  <div class="marquee rev" aria-hidden="true"><span>comprei no impulso <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> achei que era de plástico <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> deixei no sol do meio-dia <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> troquei de vaso errado <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> conversei pouco com ela <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> </span><span>comprei no impulso <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> achei que era de plástico <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> deixei no sol do meio-dia <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> troquei de vaso errado <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> conversei pouco com ela <svg viewBox="0 0 100 120" style="color:#C9F264"><use href="#heart"/></svg> </span></div>
+  <div class="wrap turn rv">
+    <div class="a">Não é falta de mão verde.</div>
+    <h2 class="b">É falta de manual.</h2>
+  </div>
+</section>
+
+<section class="inside" id="dentro">
+  <div class="wrap">
+    <div class="intro rv">
+      <h2>O que tem dentro do guia</h2>
+      <p>Sete capítulos curtos, sem jargão, escritos para quem tem pouco tempo e um apê de verdade (com aquela janela que só pega sol de manhã).</p>
+      <div class="mini-meta"><div>52<small>páginas</small></div><div>7<small>capítulos</small></div><div>12<small>plantas indestrutíveis</small></div></div>
+      <a class="btn btn-dark" href="#baixar"><svg aria-hidden="true"><use href="#sprout"/></svg>Quero o guia grátis</a>
+    </div>
+    <div class="chapters" id="chapters">
+      <svg class="vine" id="vine" aria-hidden="true"><path class="stem" id="stem"/><g id="vleaves"></g></svg>
+      <article class="ch"><div class="n">Capítulo 1</div><h3>Que luz é essa?</h3><p>Descubra em 2 minutos a luz real de cada canto do seu apê. Spoiler: não é a que você acha.</p></article>
+      <article class="ch"><div class="n">Capítulo 2</div><h3>Rega sem drama</h3><p>O teste do dedo e o fim do afogamento. Regar demais mata mais que esquecer.</p></article>
+      <article class="ch"><div class="n">Capítulo 3</div><h3>As 12 indestrutíveis</h3><p>Plantas que perdoam viagem, esquecimento e segunda-feira.</p></article>
+      <article class="ch"><div class="n">Capítulo 4</div><h3>Vaso, terra e drenagem</h3><p>O básico que ninguém explica, incluindo por que o furo no vaso é inegociável.</p></article>
+      <article class="ch"><div class="n">Capítulo 5</div><h3>Pragas sem pânico</h3><p>Reconheça cochonilha, pulgão e fungo e resolva com o que você já tem em casa.</p></article>
+      <article class="ch"><div class="n">Capítulo 6</div><h3>Pets e plantas</h3><p>O que é seguro para gatos e cachorros curiosos, e o que é melhor deixar no alto.</p></article>
+      <article class="ch"><div class="n">Capítulo 7</div><h3>Calendário verde</h3><p>A rotina de 10 minutos por semana que mantém tudo vivo.</p></article>
+      <article class="ch bonus"><h3>Calendário de rega <span class="tag">bônus</span></h3><p>Para imprimir e colar na geladeira. Sua jiboia agradece.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="luz">
+  <div class="wrap">
+    <h2 class="rv">Qual é a luz do seu apê?</h2>
+    <p class="lead rv">Uma amostra do capítulo 1. Escolha a luz do seu canto preferido e veja três plantas que vão se dar bem por lá.</p>
+    <div class="seg rv" role="tablist" aria-label="Tipo de luz">
+      <button role="tab" aria-selected="true" data-k="sol"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" stroke="#0E3B2C" stroke-width="2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke="#0E3B2C" stroke-width="2" stroke-linecap="round"/></svg>Sol direto</button>
+      <button role="tab" aria-selected="false" data-k="clara"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="#0E3B2C" stroke-width="2"/><path d="M12 3v18M4 12h16" stroke="#0E3B2C" stroke-width="2"/></svg>Claridade, sem sol</button>
+      <button role="tab" aria-selected="false" data-k="pouca"><svg viewBox="0 0 24 24" fill="none"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z" stroke="#0E3B2C" stroke-width="2" stroke-linejoin="round"/></svg>Pouca luz</button>
+    </div>
+    <div class="plants" id="plants" role="tabpanel" aria-live="polite"></div>
+    <p class="tease rv">No guia, a lista completa tem 12 plantas, com rega, luz e nível de dificuldade de cada uma.</p>
+  </div>
+</section>
+
+<section class="author">
+  <div class="wrap">
+    <div class="portrait rv" aria-hidden="true">
+      <svg viewBox="0 0 200 200"><circle cx="100" cy="74" r="34" fill="#F2C9A5"/><path d="M62 70c0-30 22-44 40-44s42 12 40 46c-6-14-18-22-30-24-10 10-30 18-50 22z" fill="#0E3B2C"/><path d="M40 200c4-48 30-74 60-74s56 26 60 74z" fill="#0E3B2C"/><g transform="translate(118 108) scale(.55)" style="color:#C9F264"><use href="#heart" width="100" height="120"/></g></svg>
+    </div>
+    <div class="rv">
+      <blockquote>"Eu já matei uma costela-de-adão de tanto amor. Foi aí que entendi: ninguém ensina o básico."</blockquote>
+      <cite><b>Marina Okabe</b>, bióloga e cofundadora da Brota, autora do Selva de Apê</cite>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="wrap">
+    <div class="rv">
+      <div class="big-n" id="count" data-to="18400">0</div>
+      <div class="lbl">pessoas já baixaram o guia. Os velórios caíram bastante.</div>
+    </div>
+    <div class="quotes">
+      <figure class="q rv"><p>"Minha jiboia sobreviveu às minhas férias. Eu ainda não acredito."</p><footer><span><b>Camila</b>, 31, Vila Mariana</span><span class="pl">1 jiboia, 2 suculentas</span></footer></figure>
+      <figure class="q rv"><p>"Descobri que o problema era regar demais. Seis meses sem perder nenhuma."</p><footer><span><b>Rafael</b>, 36, Santana</span><span class="pl">7 plantas e contando</span></footer></figure>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="baixar">
+  <svg class="bg-leaf" style="color:var(--broto)" aria-hidden="true"><use href="#monstera"/></svg>
+  <div class="wrap">
+    <div class="left rv">
+      <h2>Sua selva começa aqui.</h2>
+      <p>Deixe seu nome e e-mail e o Selva de Apê chega em instantes, com o calendário de rega de bônus.</p>
+      <div class="flat-book face front" style="position:relative;aspect-ratio:3/4.2;padding:9%;display:flex;flex-direction:column;overflow:hidden;transform:rotate(-7deg)">
+        <div class="cover-logo"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="30 -850 2700 890" role="img" aria-label="Brota">
+<path fill="#EEF4E6" d="M396 14Q346 14 308.5 -5.0Q271 -24 247.5 -62.0Q224 -100 216 -156H197L194 0H62V-259V-720H223V-545Q223 -521 219.5 -494.5Q216 -468 210.5 -439.0Q205 -410 199 -377H222Q236 -431 259.0 -467.0Q282 -503 316.5 -521.5Q351 -540 398 -540Q464 -540 512.5 -506.0Q561 -472 588.0 -409.5Q615 -347 615 -260Q615 -176 588.5 -114.5Q562 -53 513.0 -19.5Q464 14 396 14ZM336 -116Q369 -116 394.0 -134.5Q419 -153 432.5 -186.5Q446 -220 446 -265Q446 -311 433.0 -343.5Q420 -376 396.5 -394.0Q373 -412 340 -412Q318 -412 299.5 -404.0Q281 -396 267.0 -382.0Q253 -368 243.0 -350.5Q233 -333 228.0 -313.5Q223 -294 223 -275V-254Q223 -233 229.0 -209.0Q235 -185 248.5 -164.0Q262 -143 283.5 -129.5Q305 -116 336 -116ZM710 0V-245V-528H842L845 -349H865Q872 -419 891.5 -460.5Q911 -502 947.5 -521.0Q984 -540 1038 -540Q1046 -540 1056.0 -539.5Q1066 -539 1079 -537L1073 -365Q1057 -373 1038.5 -375.5Q1020 -378 1006 -378Q967 -378 938.5 -363.0Q910 -348 893.5 -317.0Q877 -286 872 -239V0ZM1399 14Q1319 14 1257.5 -17.0Q1196 -48 1161.0 -110.0Q1126 -172 1126 -265Q1126 -358 1161.0 -419.5Q1196 -481 1258.0 -511.5Q1320 -542 1400 -542Q1480 -542 1542.0 -511.0Q1604 -480 1639.0 -418.5Q1674 -357 1674 -264Q1674 -169 1638.0 -107.0Q1602 -45 1539.5 -15.5Q1477 14 1399 14ZM1404 -103Q1440 -103 1464.0 -119.5Q1488 -136 1500.0 -170.0Q1512 -204 1512 -254Q1512 -307 1499.0 -343.5Q1486 -380 1460.5 -399.5Q1435 -419 1395 -419Q1361 -419 1336.5 -402.5Q1312 -386 1300.0 -352.0Q1288 -318 1288 -267Q1288 -185 1318.5 -144.0Q1349 -103 1404 -103ZM1974 13Q1881 13 1837.0 -36.5Q1793 -86 1793 -195V-402H1718L1721 -527H1775Q1807 -528 1823.5 -537.0Q1840 -546 1844 -571L1857 -645H1948V-528H2075V-397H1948V-202Q1948 -168 1964.5 -152.0Q1981 -136 2015 -136Q2034 -136 2051.0 -140.0Q2068 -144 2079 -151V-2Q2047 8 2020.5 10.5Q1994 13 1974 13ZM2298 14Q2254 14 2220.0 -3.5Q2186 -21 2167.0 -54.5Q2148 -88 2148 -136Q2148 -181 2165.5 -210.5Q2183 -240 2216.5 -257.5Q2250 -275 2297.0 -286.5Q2344 -298 2404 -307Q2433 -312 2452.5 -316.5Q2472 -321 2482.0 -331.0Q2492 -341 2492 -360Q2492 -385 2474.0 -403.0Q2456 -421 2416 -421Q2388 -421 2365.5 -411.0Q2343 -401 2327.0 -382.0Q2311 -363 2303 -336L2161 -378Q2174 -420 2197.5 -451.0Q2221 -482 2254.0 -502.5Q2287 -523 2329.5 -532.5Q2372 -542 2420 -542Q2500 -542 2550.5 -516.5Q2601 -491 2625.5 -437.5Q2650 -384 2650 -300V-219Q2650 -183 2651.5 -146.5Q2653 -110 2655.5 -73.5Q2658 -37 2662 0H2520Q2516 -23 2512.0 -55.5Q2508 -88 2506 -122H2487Q2473 -84 2446.5 -52.5Q2420 -21 2382.5 -3.5Q2345 14 2298 14ZM2371 -100Q2389 -100 2407.5 -106.5Q2426 -113 2443.0 -124.5Q2460 -136 2474.0 -153.0Q2488 -170 2495 -190L2493 -269L2515 -264Q2496 -252 2473.0 -245.0Q2450 -238 2426.5 -234.0Q2403 -230 2380.5 -225.5Q2358 -221 2340.5 -214.0Q2323 -207 2313.0 -195.0Q2303 -183 2303 -162Q2303 -134 2322.0 -117.0Q2341 -100 2371 -100Z"/>
+<path d="M1400 -548 C1400 -600 1398 -640 1404 -690" stroke="#C9F264" stroke-width="40" stroke-linecap="round" fill="none"/>
+<path fill="#C9F264" d="M1401 -636 C1336 -634 1266 -684 1246 -772 C1330 -784 1394 -730 1401 -636 Z"/><path fill="#C9F264" d="M1407 -684 C1440 -770 1522 -822 1606 -812 C1596 -724 1512 -672 1407 -684 Z"/>
+</svg></div>
+        <div class="cover-title" style="font-size:29px">Selva<br>de Apê</div>
+        <div class="cover-sub" style="font-size:10px">o guia das plantas que não morrem</div>
+        <svg class="cover-art" viewBox="0 0 200 220" style="color:var(--musgo)" aria-hidden="true"><use href="#monstera"/></svg>
+      </div>
+    </div>
+    <div class="right rv" id="formbox">
+      <form id="form" novalidate>
+        <label class="f">Seu nome<input type="text" name="nome" autocomplete="given-name" placeholder="Como podemos te chamar?" required></label>
+        <label class="f">Seu e-mail<input type="email" name="email" autocomplete="email" placeholder="voce@email.com" required></label>
+        <fieldset>
+          <legend>Quantas plantas você tem hoje?</legend>
+          <div class="pills">
+            <label><input type="radio" name="plantas" value="0" required><span>Nenhuma ainda</span></label>
+            <label><input type="radio" name="plantas" value="1-5"><span>1 a 5</span></label>
+            <label><input type="radio" name="plantas" value="6+"><span>6 ou mais</span></label>
+            <label><input type="radio" name="plantas" value="perdi"><span>Perdi a conta</span></label>
+          </div>
+        </fieldset>
+        <label class="lgpd"><input type="checkbox" required><span>Quero receber o guia e dicas da Brota por e-mail. Posso cancelar quando quiser.</span></label>
+        <button class="btn btn-lime" type="submit"><svg aria-hidden="true"><use href="#sprout"/></svg>Quero o guia grátis</button>
+      </form>
+      <div class="success" role="status">
+        <h3>Brotou!</h3>
+        <p>O Selva de Apê já está a caminho do seu e-mail. Enquanto isso, dá uma olhada na planta mais perto de você: ela está pedindo água ou é só drama?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="wrap"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="30 -850 2700 890" role="img" aria-label="Brota">
+<path fill="#EEF4E6" d="M396 14Q346 14 308.5 -5.0Q271 -24 247.5 -62.0Q224 -100 216 -156H197L194 0H62V-259V-720H223V-545Q223 -521 219.5 -494.5Q216 -468 210.5 -439.0Q205 -410 199 -377H222Q236 -431 259.0 -467.0Q282 -503 316.5 -521.5Q351 -540 398 -540Q464 -540 512.5 -506.0Q561 -472 588.0 -409.5Q615 -347 615 -260Q615 -176 588.5 -114.5Q562 -53 513.0 -19.5Q464 14 396 14ZM336 -116Q369 -116 394.0 -134.5Q419 -153 432.5 -186.5Q446 -220 446 -265Q446 -311 433.0 -343.5Q420 -376 396.5 -394.0Q373 -412 340 -412Q318 -412 299.5 -404.0Q281 -396 267.0 -382.0Q253 -368 243.0 -350.5Q233 -333 228.0 -313.5Q223 -294 223 -275V-254Q223 -233 229.0 -209.0Q235 -185 248.5 -164.0Q262 -143 283.5 -129.5Q305 -116 336 -116ZM710 0V-245V-528H842L845 -349H865Q872 -419 891.5 -460.5Q911 -502 947.5 -521.0Q984 -540 1038 -540Q1046 -540 1056.0 -539.5Q1066 -539 1079 -537L1073 -365Q1057 -373 1038.5 -375.5Q1020 -378 1006 -378Q967 -378 938.5 -363.0Q910 -348 893.5 -317.0Q877 -286 872 -239V0ZM1399 14Q1319 14 1257.5 -17.0Q1196 -48 1161.0 -110.0Q1126 -172 1126 -265Q1126 -358 1161.0 -419.5Q1196 -481 1258.0 -511.5Q1320 -542 1400 -542Q1480 -542 1542.0 -511.0Q1604 -480 1639.0 -418.5Q1674 -357 1674 -264Q1674 -169 1638.0 -107.0Q1602 -45 1539.5 -15.5Q1477 14 1399 14ZM1404 -103Q1440 -103 1464.0 -119.5Q1488 -136 1500.0 -170.0Q1512 -204 1512 -254Q1512 -307 1499.0 -343.5Q1486 -380 1460.5 -399.5Q1435 -419 1395 -419Q1361 -419 1336.5 -402.5Q1312 -386 1300.0 -352.0Q1288 -318 1288 -267Q1288 -185 1318.5 -144.0Q1349 -103 1404 -103ZM1974 13Q1881 13 1837.0 -36.5Q1793 -86 1793 -195V-402H1718L1721 -527H1775Q1807 -528 1823.5 -537.0Q1840 -546 1844 -571L1857 -645H1948V-528H2075V-397H1948V-202Q1948 -168 1964.5 -152.0Q1981 -136 2015 -136Q2034 -136 2051.0 -140.0Q2068 -144 2079 -151V-2Q2047 8 2020.5 10.5Q1994 13 1974 13ZM2298 14Q2254 14 2220.0 -3.5Q2186 -21 2167.0 -54.5Q2148 -88 2148 -136Q2148 -181 2165.5 -210.5Q2183 -240 2216.5 -257.5Q2250 -275 2297.0 -286.5Q2344 -298 2404 -307Q2433 -312 2452.5 -316.5Q2472 -321 2482.0 -331.0Q2492 -341 2492 -360Q2492 -385 2474.0 -403.0Q2456 -421 2416 -421Q2388 -421 2365.5 -411.0Q2343 -401 2327.0 -382.0Q2311 -363 2303 -336L2161 -378Q2174 -420 2197.5 -451.0Q2221 -482 2254.0 -502.5Q2287 -523 2329.5 -532.5Q2372 -542 2420 -542Q2500 -542 2550.5 -516.5Q2601 -491 2625.5 -437.5Q2650 -384 2650 -300V-219Q2650 -183 2651.5 -146.5Q2653 -110 2655.5 -73.5Q2658 -37 2662 0H2520Q2516 -23 2512.0 -55.5Q2508 -88 2506 -122H2487Q2473 -84 2446.5 -52.5Q2420 -21 2382.5 -3.5Q2345 14 2298 14ZM2371 -100Q2389 -100 2407.5 -106.5Q2426 -113 2443.0 -124.5Q2460 -136 2474.0 -153.0Q2488 -170 2495 -190L2493 -269L2515 -264Q2496 -252 2473.0 -245.0Q2450 -238 2426.5 -234.0Q2403 -230 2380.5 -225.5Q2358 -221 2340.5 -214.0Q2323 -207 2313.0 -195.0Q2303 -183 2303 -162Q2303 -134 2322.0 -117.0Q2341 -100 2371 -100Z"/>
+<path d="M1400 -548 C1400 -600 1398 -640 1404 -690" stroke="#C9F264" stroke-width="40" stroke-linecap="round" fill="none"/>
+<path fill="#C9F264" d="M1401 -636 C1336 -634 1266 -684 1246 -772 C1330 -784 1394 -730 1401 -636 Z"/><path fill="#C9F264" d="M1407 -684 C1440 -770 1522 -822 1606 -812 C1596 -724 1512 -672 1407 -684 Z"/>
+</svg><span>@brota.plantas · Marca fictícia criada para a aula "IA para LPs com Lovable"</span></div></footer>
+
+<div class="mcta" id="mcta"><a class="btn btn-dark" href="#baixar"><svg aria-hidden="true"><use href="#sprout"/></svg>Quero o guia grátis</a></div>
+
+<script>
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINAL = location.search.includes('final');
+if(FINAL) document.documentElement.classList.add('cap-final');
+addEventListener('load',()=>requestAnimationFrame(()=>document.body.classList.add('loaded')));
+setTimeout(()=>document.body.classList.add('loaded'),1200);
+
+/* nav */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passive:true});
+
+/* livro inclina com o mouse */
+const book=document.getElementById('book'), hero=document.getElementById('hero');
+if(!reduce && matchMedia('(pointer:fine)').matches){
+  hero.addEventListener('pointermove',e=>{
+    const r=hero.getBoundingClientRect();
+    const dx=(e.clientX-r.left)/r.width-.5, dy=(e.clientY-r.top)/r.height-.5;
+    book.style.transform=`rotateY(${-26+dx*22}deg) rotateX(${7-dy*14}deg)`;
+  });
+  hero.addEventListener('pointerleave',()=>book.style.transform='');
+}
+
+/* revelações sutis */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.18});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* ramo que cresce */
+const chapters=document.getElementById('chapters'), stem=document.getElementById('stem'), vleaves=document.getElementById('vleaves');
+const items=[...chapters.querySelectorAll('.ch')];
+let L=0, marks=[];
+function buildVine(){
+  const W=chapters.querySelector('.vine').getBoundingClientRect().width, cx=W*0.42, amp=W*0.24;
+  const H=chapters.offsetHeight;
+  let d=`M ${cx} 0`, prev=0; marks=[]; vleaves.innerHTML='';
+  const top0=chapters.getBoundingClientRect().top;
+  items.forEach((it,i)=>{
+    const y=it.querySelector('h3').getBoundingClientRect().top - top0 + 24;
+    const s=i%2?-1:1;
+    d+=` C ${cx+amp*s} ${prev+(y-prev)*.5}, ${cx+amp*s} ${y-(y-prev)*.5}, ${cx} ${y}`;
+    prev=y; marks.push(y);
+    const g=document.createElementNS('http://www.w3.org/2000/svg','g');
+    const ang = s>0 ? -112 : 112;
+    const big = i===items.length-1;
+    g.setAttribute('transform',`translate(${cx} ${y}) rotate(${ang})`);
+    g.innerHTML=`<g class="lf"><use href="#heart" width="100" height="120" transform="scale(${big?.8:.64}) translate(-50 -30)" style="color:${big?'#FF6F91':(i%3===1?'#0E3B2C':'#3E8E4E')}"/></g>`;
+    vleaves.appendChild(g);
+  });
+  d+=` C ${cx} ${prev+40}, ${cx-amp*.4} ${prev+70}, ${cx-amp*.2} ${Math.min(H,prev+110)}`;
+  stem.setAttribute('d',d);
+  L=stem.getTotalLength();
+  stem.style.strokeDasharray=L;
+  growVine();
+}
+function growVine(){
+  const r=chapters.getBoundingClientRect();
+  const reach = (reduce||FINAL) ? 1e9 : (innerHeight*0.62 - r.top);
+  const H=chapters.offsetHeight;
+  const p=Math.max(0,Math.min(1,reach/H));
+  stem.style.strokeDashoffset = (reduce||FINAL)?0:L*(1-p);
+  [...vleaves.children].forEach((g,i)=>{
+    const on=reach>=marks[i];
+    g.classList.toggle('open',on);
+    items[i].classList.toggle('on',on);
+  });
+}
+addEventListener('scroll',growVine,{passive:true});
+addEventListener('resize',buildVine);
+document.fonts.ready.then(buildVine); buildVine();
+
+/* teste de luz */
+const data={
+ sol:[['Suculentas','Amam sol e odeiam excesso de água. Rega a cada 10 a 15 dias.','succ'],['Cacto-bola','O colega de quarto ideal: quase não pede nada.','cact'],['Ave-do-paraíso','Folhas enormes de resort. Gosta de janela bem ensolarada.','bird']],
+ clara:[['Costela-de-adão','A rainha do apê. Quanto mais claridade, mais recortes nas folhas.','mon'],['Jiboia','Cresce caindo da estante e avisa quando tem sede (as folhas murcham).','pot'],['Pacová','Folhas largas e brilhantes. Gosta de umidade, adora banheiro claro.','pac']],
+ pouca:[['Zamioculca','Aguenta três semanas sem água. Sério.','zz'],['Espada-de-são-jorge','Sobrevive a corredor, a esquecimento e a quase tudo.','sna'],['Lírio-da-paz','Floresce na sombra e "desmaia" quando quer água. Regou, levantou.','lil']]
+};
+const pot='<path d="M30 112h60l-7 26H37z" fill="#0E3B2C"/><rect x="26" y="104" width="68" height="10" rx="3" fill="#164a38"/><path d="M28 109h64" stroke="#C9F264" stroke-width="2" opacity=".6"/>';
+const art={
+ succ:`<g transform="translate(60 92)">${[0,45,90,135,180,225,270,315].map(a=>`<ellipse rx="10" ry="24" transform="rotate(${a}) translate(0 -14)" fill="#3E8E4E"/>`).join('')}${[22,112,202,292].map(a=>`<ellipse rx="7" ry="15" transform="rotate(${a}) translate(0 -8)" fill="#6fb06f"/>`).join('')}<circle r="6" fill="#C9F264"/></g>`,
+ cact:`<rect x="40" y="38" width="40" height="70" rx="20" fill="#3E8E4E"/><path d="M40 70h-8a8 8 0 0 1-8-8V50" stroke="#3E8E4E" stroke-width="12" stroke-linecap="round" fill="none"/><path d="M80 80h8a8 8 0 0 0 8-8V60" stroke="#3E8E4E" stroke-width="12" stroke-linecap="round" fill="none"/>${[[52,50],[66,58],[56,74],[70,86],[50,92]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="2" fill="#C9F264"/>`).join('')}<circle cx="60" cy="38" r="7" fill="#FF6F91"/>`,
+ bird:`<path d="M60 106V40M52 106L30 50M68 106L92 44" stroke="#2E5E3A" stroke-width="3"/><ellipse cx="60" cy="28" rx="12" ry="26" fill="#3E8E4E"/><ellipse cx="26" cy="42" rx="11" ry="24" transform="rotate(-24 26 42)" fill="#2E5E3A"/><ellipse cx="96" cy="36" rx="11" ry="24" transform="rotate(22 96 36)" fill="#3E8E4E"/>`,
+ mon:`<use href="#monstera" x="14" y="2" width="92" height="104" style="color:#3E8E4E"/>`,
+ pot:`<path d="M58 104C54 84 40 66 31 57M62 104C66 82 74 58 77 46M60 104C58 90 54 76 50 67M30 108C18 112 12 122 14 127" stroke="#2E5E3A" stroke-width="2.6" fill="none" stroke-linecap="round"/><use href="#heart" x="14" y="46" width="34" height="40" style="color:#3E8E4E"/><use href="#heart" x="58" y="34" width="38" height="46" style="color:#2E5E3A"/><use href="#heart" x="36" y="58" width="28" height="34" style="color:#6fb06f"/><use href="#heart" x="4" y="120" width="20" height="24" style="color:#6fb06f"/>`,
+ pac:`${[-38,-14,10,34].map((a,i)=>`<ellipse cx="60" cy="64" rx="15" ry="40" transform="rotate(${a} 60 104)" fill="${i%2?'#2E5E3A':'#3E8E4E'}"/>`).join('')}`,
+ zz:`${[[48,-14],[72,12],[60,0]].map(([x,a])=>`<g transform="rotate(${a} 60 106)"><path d="M${x} 106V26" stroke="#2E5E3A" stroke-width="3"/>${[34,50,66,82].map(y=>`<ellipse cx="${x-8}" cy="${y}" rx="8" ry="5" fill="#3E8E4E"/><ellipse cx="${x+8}" cy="${y}" rx="8" ry="5" fill="#2E5E3A"/>`).join('')}</g>`).join('')}`,
+ sna:`<use href="#snake" x="24" y="44" width="26" height="65"/><use href="#snake" x="58" y="36" width="30" height="75"/><use href="#snake" x="40" y="18" width="36" height="90"/>`,
+ lil:`${[-40,-14,14,40].map((a,i)=>`<ellipse cx="60" cy="66" rx="13" ry="38" transform="rotate(${a} 60 104)" fill="${i%2?'#2E5E3A':'#3E8E4E'}"/>`).join('')}<path d="M54 52c0-18 6-30 10-34 4 12 2 28-10 34z" fill="#FBFDF7"/><rect x="58" y="40" width="3" height="16" rx="1.5" fill="#C9F264"/>`
+};
+const plantsEl=document.getElementById('plants');
+function show(k){
+  plantsEl.innerHTML=data[k].map(([n,t,a])=>`<article class="plant"><div class="art"><svg viewBox="0 0 120 140" aria-hidden="true">${art[a]}${pot}</svg></div><h3>${n}</h3><p>${t}</p></article>`).join('');
+  [...plantsEl.children].forEach((c,i)=>setTimeout(()=>c.classList.add('in'),reduce?0:60+i*110));
+}
+document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-selected',x===b));
+  show(b.dataset.k);
+}));
+show('sol');
+
+/* contador */
+const cnt=document.getElementById('count');
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(!e.isIntersecting)return;o.disconnect();
+  const to=+cnt.dataset.to, t0=performance.now(), dur=reduce?0:1600;
+  const step=t=>{const p=dur?Math.min(1,(t-t0)/dur):1;cnt.textContent=Math.round(to*(1-Math.pow(1-p,3))).toLocaleString('pt-BR');if(p<1)requestAnimationFrame(step)};
+  requestAnimationFrame(step);
+}),{threshold:.5}).observe(cnt);
+
+/* formulário + chuva de folhas */
+const form=document.getElementById('form');
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  if(!form.checkValidity()){form.reportValidity();return}
+  document.getElementById('formbox').classList.add('sent');
+  if(reduce)return;
+  const cols=['#C9F264','#3E8E4E','#FF6F91','#EEF4E6'];
+  for(let i=0;i<34;i++){
+    const s=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    const sz=16+Math.random()*22;
+    s.setAttribute('viewBox','0 0 100 120');s.setAttribute('width',sz);s.setAttribute('height',sz*1.2);
+    s.innerHTML='<use href="#heart"/>';s.classList.add('rain');
+    s.style.cssText=`left:${Math.random()*100}vw;color:${cols[i%4]};animation-duration:${2.4+Math.random()*2.2}s;animation-delay:${Math.random()*.6}s;--r:${(Math.random()*720-360)|0}deg`;
+    document.body.appendChild(s); setTimeout(()=>s.remove(),5600);
+  }
+});
+
+/* CTA fixo no celular */
+const mcta=document.getElementById('mcta'), fin=document.getElementById('baixar');
+let pastHero=false, atForm=false;
+new IntersectionObserver(es=>{pastHero=!es[0].isIntersecting;upd()}).observe(hero);
+new IntersectionObserver(es=>{atForm=es[0].isIntersecting;upd()},{threshold:.15}).observe(fin);
+function upd(){mcta.classList.toggle('show',pastHero&&!atForm)}
+</script>
+</body>
+</html>
