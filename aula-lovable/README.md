@@ -25,6 +25,16 @@ Duração: 30 min + perguntas · Público: time geral da agência (mídia, atend
 
 ---
 
+## Ver no celular (páginas privadas, só você acessa)
+
+- LP BRIEF (a espetacular): https://claude.ai/artifact/LfUyk1eTUr1QZ4zfbUFf89
+- LP genérica ("cara de IA"): https://claude.ai/artifact/X2fdTrpPeumEWK4NeB5tfg
+- Brandbook Vingô: https://claude.ai/artifact/Mxmyr1seAGc2vurbGd9n11
+
+Também servem para a demo ao vivo (slide 21) se o notebook da apresentação estiver logado no claude.ai. Se for mostrar para alguém fora da sua conta, compartilhe pelo menu Share da própria página.
+
+---
+
 ## Checklist para amanhã de manhã (≈1 hora)
 
 1. **Ler o roteiro** (`02-roteiro-e-slides.md`, ~15 min). Marque o que quiser mudar no seu jeito de falar.
